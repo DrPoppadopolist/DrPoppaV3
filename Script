@@ -887,7 +887,7 @@ if not _G["DrPoppa"] then
 			if not L_6_["CommandsOpen"] then
 				L_54_.Visible = true
 				L_6_["CommandsOpen"] = true
-			elseif not L_6_["CommandsOpen"] then
+			elseif L_6_["CommandsOpen"] then
 				L_6_["CommandsOpen"] = false
 				L_54_.Visible = false
 			end
