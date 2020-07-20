@@ -1,1 +1,1373 @@
-local a=tick()if not _G["DrPoppa"]then _G["DrPoppa"]=true local U={["Players"]=game:GetService("Players"),["UserInputService"]=game:GetService("UserInputService"),["RunService"]=game:GetService("RunService"),["CoreGui"]=game:GetService("CoreGui"),["TeleportService"]=game:GetService("TeleportService"),["Debris"]=game:GetService("Debris"),["StarterGui"]=game:GetService("StarterGui"),["HttpService"]=game:GetService("HttpService")}local Z={["LocalPlayer"]=U["Players"].LocalPlayer,["RenderStepped"]=U["RunService"].RenderStepped,["Heartbeat"]=U["RunService"].Heartbeat,["Camera"]=workspace:WaitForChild("Camera")}local V={["W"]=false,["A"]=false,["S"]=false,["D"]=false,["LeftShift"]=false}local ab={["Aimbot"]=false,["Flying"]=false,["NoSlow"]=false,["AutoStomp"]=false,["Stomping"]=false,["Teleporting"]=false,["GodeMode"]=false,["Airwalk"]=false,["NoClip"]=false,["LoopKilling"]=false,["Triggerbot"]=false,["Triggered"]=false,["Duplicating"]=false,["CanNotify"]=true,["Sprinting"]=false,["CamLocking"]=false,["Sprint"]=false,["Airwalk_Offset"]=0,["CamLockTarget"]=nil,["AimbotTarget"]=nil}local Y={["FlySpeed"]=5,["AimbotVelocity"]=2,["SprintSpeed"]=25,["FlyHotkey"]="F",["NoClipHotkey"]="N",["AirwalkHotkey"]="B",["ResetHotkey"]=" "}if writefile~=nil and readfile~=nil then local c=nil pcall(function()c=readfile("DrPoppav3Settings.lua")end)if c~=nil then c=U["HttpService"]:JSONDecode(readfile("DrPoppav3Settings.lua"))for b,a in next,Y do Y[b]=c[b]end writefile("DrPoppav3Settings.lua",U["HttpService"]:JSONEncode(Y))else c=writefile("DrPoppav3Settings.lua",U["HttpService"]:JSONEncode(Y))end end local b=Instance.new("ScreenGui",U["CoreGui"])local d=Instance.new("Frame",b)d.Size=UDim2.new(0,100,0,250)d.Position=UDim2.new(1,0,1,-260)d.BackgroundColor=BrickColor.new("Salmon")d.Transparency=0.2 d.BorderSizePixel=2 d.BorderColor=BrickColor.new("White")local c=Instance.new("ImageLabel",d)c.Size=UDim2.new(0,27.5,0,27.5)c.Position=UDim2.new(0.5,-12.5,0,5)c.BackgroundTransparency=1 c.Image="http://www.roblox.com/asset/?id=2124384310"local K=Instance.new("Frame",d)K.Size=UDim2.new(0,300,0,250)K.Position=UDim2.new(-3.1,0,0,0)K.Transparency=1 K.Visible=true local S=Instance.new("TextButton",K)S.Size=UDim2.new(0,15,0,25)S.Position=UDim2.new(-0.080,0,0.5,-25)S.BackgroundColor=BrickColor.new("Salmon")S.Transparency=0.2 S.BorderSizePixel=2 S.Text=">"S.TextColor=BrickColor.new("Really black")S.BorderColor=BrickColor.new("White")S.Visible=false S.Font="GothamBlack"S.TextSize=15 local T=Instance.new("Frame",K)T.Size=UDim2.new(0,300,0,250)T.Position=UDim2.new(0,0,0,0)T.BackgroundColor=BrickColor.new("Salmon")T.Transparency=0.2 T.BorderSizePixel=2 T.BorderColor=BrickColor.new("White")T.Visible=false local s=Instance.new("TextButton",d)s.Size=UDim2.new(0,80,0,25)s.Position=UDim2.new(0.5,-40,0,40)s.BackgroundColor=BrickColor.new("Light red")s.Transparency=0.1 s.BorderSizePixel=0 s.Text="Settings"s.TextColor=BrickColor.new("Really black")s.Font="GothamBlack"s.TextSize=15 local x=Instance.new("TextButton",T)x.Size=UDim2.new(0,80,0,20)x.Position=UDim2.new(0,15,0,15)x.BackgroundColor=BrickColor.new("Light red")x.BorderSizePixel=0 x.Text="Airwalk"x.TextColor=BrickColor.new("Really black")x.Font="GothamBlack"x.TextSize=15 local y=Instance.new("Frame",x)y.Size=UDim2.new(0,80,0,3)y.Position=UDim2.new(0,0,0,18)y.BackgroundColor=BrickColor.new("Really red")y.Transparency=0.1 y.BorderSizePixel=0 local w=Instance.new("TextButton",T)w.Size=UDim2.new(0,80,0,20)w.Position=UDim2.new(0,15,0,50)w.BackgroundColor=BrickColor.new("Light red")w.BorderSizePixel=0 w.Text="Fly"w.TextColor=BrickColor.new("Really black")w.Font="GothamBlack"w.TextSize=15 local z=Instance.new("Frame",w)z.Size=UDim2.new(0,80,0,3)z.Position=UDim2.new(0,0,0,18)z.BackgroundColor=BrickColor.new("Really red")z.Transparency=0.1 z.BorderSizePixel=0 local q=Instance.new("TextButton",T)q.Size=UDim2.new(0,80,0,20)q.Position=UDim2.new(0,105,0,15)q.BackgroundColor=BrickColor.new("Light red")q.BorderSizePixel=0 q.Text="No Slow"q.TextColor=BrickColor.new("Really black")q.Font="GothamBlack"q.TextSize=15 local j=Instance.new("Frame",q)j.Size=UDim2.new(0,80,0,3)j.Position=UDim2.new(0,0,0,18)j.BackgroundColor=BrickColor.new("Really red")j.Transparency=0.1 j.BorderSizePixel=0 local u=Instance.new("TextButton",T)u.Size=UDim2.new(0,80,0,20)u.Position=UDim2.new(0,195,0,15)u.BackgroundColor=BrickColor.new("Light red")u.BorderSizePixel=0 u.Text="Auto Stomp"u.TextColor=BrickColor.new("Really black")u.Font="GothamBlack"u.TextSize=13 local g=Instance.new("Frame",u)g.Size=UDim2.new(0,80,0,3)g.Position=UDim2.new(0,0,0,18)g.BackgroundColor=BrickColor.new("Really red")g.Transparency=0.1 g.BorderSizePixel=0 local r=Instance.new("TextButton",T)r.Size=UDim2.new(0,80,0,20)r.Position=UDim2.new(0,105,0,50)r.BackgroundColor=BrickColor.new("Light red")r.BorderSizePixel=0 r.Text="NoClip"r.TextColor=BrickColor.new("Really black")r.Font="GothamBlack"r.TextSize=15 local m=Instance.new("Frame",r)m.Size=UDim2.new(0,80,0,3)m.Position=UDim2.new(0,0,0,18)m.BackgroundColor=BrickColor.new("Really red")m.Transparency=0.1 m.BorderSizePixel=0 local p=Instance.new("TextButton",T)p.Size=UDim2.new(0,80,0,20)p.Position=UDim2.new(0,195,0,50)p.BackgroundColor=BrickColor.new("Light red")p.BorderSizePixel=0 p.Text="TriggerBot"p.TextColor=BrickColor.new("Really black")p.Font="GothamBlack"p.TextSize=15 local i=Instance.new("Frame",p)i.Size=UDim2.new(0,80,0,3)i.Position=UDim2.new(0,0,0,18)i.BackgroundColor=BrickColor.new("Really red")i.Transparency=0.1 i.BorderSizePixel=0 local I=Instance.new("TextButton",T)I.Size=UDim2.new(0,80,0,20)I.Position=UDim2.new(0,15,0,85)I.BackgroundColor=BrickColor.new("Light red")I.BorderSizePixel=0 I.Text="Aimbot"I.TextColor=BrickColor.new("Really black")I.Font="GothamBlack"I.TextSize=15 local h=Instance.new("Frame",I)h.Size=UDim2.new(0,80,0,3)h.Position=UDim2.new(0,0,0,18)h.BackgroundColor=BrickColor.new("Really red")h.Transparency=0.1 h.BorderSizePixel=0 local F=Instance.new("TextBox",I)F.Size=UDim2.new(0,25,0,20)F.Position=UDim2.new(0,30,0,30)F.BackgroundColor=BrickColor.new("Institutional white")F.BorderSizePixel=1 F.Font="GothamBlack"F.BorderColor=BrickColor.new("Really black")F.TextSize=12 F.Text=tostring(Y["AimbotVelocity"])local J=Instance.new("TextBox",I)J.Size=UDim2.new(0,80,0,20)J.Position=UDim2.new(0,0,0,55)J.BackgroundColor=BrickColor.new("Institutional white")J.BorderSizePixel=1 J.Font="GothamBlack"J.BorderColor=BrickColor.new("Really black")J.TextSize=12 J.Text=""local C=Instance.new("TextButton",T)C.Size=UDim2.new(0,80,0,20)C.Position=UDim2.new(0,105,0,85)C.BackgroundColor=BrickColor.new("Light red")C.BorderSizePixel=0 C.Text="CamLock"C.TextColor=BrickColor.new("Really black")C.Font="GothamBlack"C.TextSize=15 local n=Instance.new("Frame",C)n.Size=UDim2.new(0,80,0,3)n.Position=UDim2.new(0,0,0,18)n.BackgroundColor=BrickColor.new("Really red")n.Transparency=0.1 n.BorderSizePixel=0 local M=Instance.new("TextBox",C)M.Size=UDim2.new(0,80,0,20)M.Position=UDim2.new(0,0,0,30)M.BackgroundColor=BrickColor.new("Institutional white")M.BorderSizePixel=1 M.Font="GothamBlack"M.BorderColor=BrickColor.new("Really black")M.TextSize=12 M.Text=""local A=Instance.new("TextButton",T)A.Size=UDim2.new(0,80,0,20)A.Position=UDim2.new(0,195,0,85)A.BackgroundColor=BrickColor.new("Light red")A.BorderSizePixel=0 A.Text="Sprint"A.TextColor=BrickColor.new("Really black")A.Font="GothamBlack"A.TextSize=15 local k=Instance.new("Frame",A)k.Size=UDim2.new(0,80,0,3)k.Position=UDim2.new(0,0,0,18)k.BackgroundColor=BrickColor.new("Really red")k.Transparency=0.1 k.BorderSizePixel=0 local L=Instance.new("TextBox",A)L.Size=UDim2.new(0,25,0,20)L.Position=UDim2.new(0,30,0,30)L.BackgroundColor=BrickColor.new("Institutional white")L.BorderSizePixel=1 L.Font="GothamBlack"L.BorderColor=BrickColor.new("Really black")L.TextSize=12 L.Text=tostring(Y["SprintSpeed"])local l=Instance.new("Frame",K)l.Size=UDim2.new(0,300,0,250)l.Position=UDim2.new(0,0,0)l.BackgroundColor=BrickColor.new("Salmon")l.Transparency=0.2 l.BorderSizePixel=2 l.BorderColor=BrickColor.new("White")l.Visible=false local v=Instance.new("TextButton",d)v.Size=UDim2.new(0,80,0,25)v.Position=UDim2.new(0.5,-40,0,70)v.BackgroundColor=BrickColor.new("Light red")v.Transparency=0.1 v.BorderSizePixel=0 v.Text="Teleports"v.TextColor=BrickColor.new("Really black")v.Font="GothamBlack"v.TextSize=15 local H=Instance.new("Frame",K)H.Size=UDim2.new(0,300,0,250)H.Position=UDim2.new(0,0,0)H.BackgroundColor=BrickColor.new("Salmon")H.Transparency=0.2 H.BorderSizePixel=2 H.BorderColor=BrickColor.new("White")H.Visible=false local t=Instance.new("TextButton",d)t.Size=UDim2.new(0,80,0,25)t.Position=UDim2.new(0.5,-40,0,100)t.BackgroundColor=BrickColor.new("Light red")t.Transparency=0.1 t.BorderSizePixel=0 t.Text="Hotkeys"t.TextColor=BrickColor.new("Really black")t.Font="GothamBlack"t.TextSize=15 local c=Instance.new("TextLabel",H)c.Size=UDim2.new(0,80,0,20)c.Position=UDim2.new(0,15,0,15)c.BackgroundColor=BrickColor.new("Light red")c.Transparency=0.1 c.BorderSizePixel=0 c.Text="Fly"c.TextColor=BrickColor.new("Really black")c.Font="GothamBlack"c.TextSize=15 local B=Instance.new("TextBox",c)B.Size=UDim2.new(0,30,0,20)B.Position=UDim2.new(0,25,0,25)B.BackgroundColor=BrickColor.new("Institutional white")B.BorderSizePixel=0 B.Text=tostring(Y["FlyHotkey"])B.TextColor=BrickColor.new("Really black")B.Font="GothamBlack"B.TextSize=15 local N=Instance.new("TextButton",c)N.Size=UDim2.new(0,60,0,20)N.Position=UDim2.new(0,10,0,50)N.BackgroundColor=BrickColor.new("Light red")N.Transparency=0.1 N.BorderSizePixel=0 N.Text="Apply"N.TextColor=BrickColor.new("Really black")N.Font="GothamBlack"N.TextSize=15 local c=Instance.new("TextLabel",H)c.Size=UDim2.new(0,80,0,20)c.Position=UDim2.new(0,105,0,15)c.BackgroundColor=BrickColor.new("Light red")c.Transparency=0.1 c.BorderSizePixel=0 c.Text="NoClip"c.TextColor=BrickColor.new("Really black")c.Font="GothamBlack"c.TextSize=15 local G=Instance.new("TextBox",c)G.Size=UDim2.new(0,30,0,20)G.Position=UDim2.new(0,25,0,25)G.BackgroundColor=BrickColor.new("Institutional white")G.BorderSizePixel=0 G.Text=tostring(Y["NoClipHotkey"])G.TextColor=BrickColor.new("Really black")G.Font="GothamBlack"G.TextSize=15 local P=Instance.new("TextButton",c)P.Size=UDim2.new(0,60,0,20)P.Position=UDim2.new(0,10,0,50)P.BackgroundColor=BrickColor.new("Light red")P.Transparency=0.1 P.BorderSizePixel=0 P.Text="Apply"P.TextColor=BrickColor.new("Really black")P.Font="GothamBlack"P.TextSize=15 local c=Instance.new("TextLabel",H)c.Size=UDim2.new(0,80,0,20)c.Position=UDim2.new(0,195,0,15)c.BackgroundColor=BrickColor.new("Light red")c.Transparency=0.1 c.BorderSizePixel=0 c.Text="Airwalk"c.TextColor=BrickColor.new("Really black")c.Font="GothamBlack"c.TextSize=15 local D=Instance.new("TextBox",c)D.Size=UDim2.new(0,30,0,20)D.Position=UDim2.new(0,25,0,25)D.BackgroundColor=BrickColor.new("Institutional white")D.BorderSizePixel=0 D.Text=tostring(Y["AirwalkHotkey"])D.TextColor=BrickColor.new("Really black")D.Font="GothamBlack"D.TextSize=15 local Q=Instance.new("TextButton",c)Q.Size=UDim2.new(0,60,0,20)Q.Position=UDim2.new(0,10,0,50)Q.BackgroundColor=BrickColor.new("Light red")Q.Transparency=0.1 Q.BorderSizePixel=0 Q.Text="Apply"Q.TextColor=BrickColor.new("Really black")Q.Font="GothamBlack"Q.TextSize=15 local c=Instance.new("TextLabel",H)c.Size=UDim2.new(0,80,0,20)c.Position=UDim2.new(0,15,0,95)c.BackgroundColor=BrickColor.new("Light red")c.Transparency=0.1 c.BorderSizePixel=0 c.Text="Reset"c.TextColor=BrickColor.new("Really black")c.Font="GothamBlack"c.TextSize=15 local E=Instance.new("TextBox",c)E.Size=UDim2.new(0,30,0,20)E.Position=UDim2.new(0,25,0,25)E.BackgroundColor=BrickColor.new("Institutional white")E.BorderSizePixel=0 E.Text=tostring(Y["ResetHotkey"])E.TextColor=BrickColor.new("Really black")E.Font="GothamBlack"E.TextSize=15 local O=Instance.new("TextButton",c)O.Size=UDim2.new(0,60,0,20)O.Position=UDim2.new(0,10,0,50)O.BackgroundColor=BrickColor.new("Light red")O.Transparency=0.1 O.BorderSizePixel=0 O.Text="Apply"O.TextColor=BrickColor.new("Really black")O.Font="GothamBlack"O.TextSize=15 local W=Instance.new("TextBox",b)W.Size=UDim2.new(0,0,0,25)W.Position=UDim2.new(1,0,1,-295)W.BackgroundColor=BrickColor.new("Salmon")W.TextColor=BrickColor.new("Really black")W.Font="GothamBlack"W.TextSize=15 W.Transparency=0.2 W.Visible=false W.BorderSizePixel=2 W.BorderColor=BrickColor.new("Institutional white")d:TweenPosition(UDim2.new(1,-110,1,-260),"Out","Quad",1,false)local b=Instance.new("Frame",b)b.Size=UDim2.new(0,200,0,250)b.Position=UDim2.new(0,0,1,-250)b.BorderSizePixel=0 b.Transparency=1 local function R(a)if ab["CanNotify"]then repeat Z["RenderStepped"]:wait()until ab["CanNotify"]and#b:GetChildren()<6 ab["CanNotify"]=false for a,a in next,b:GetChildren()do a:TweenPosition(a.Position+UDim2.new(0,0,0,-40),"Out","Quad",0.2,false)Z["RenderStepped"]:wait()end wait(0.2)local b=Instance.new("TextLabel",b)b.Size=UDim2.new(0,185,0,35)b.Position=UDim2.new(0.5,-92.5,1,-40)b.BackgroundColor=BrickColor.new("Salmon")b.TextColor=BrickColor.new("Really black")b.Font="GothamBlack"b.TextScaled=true b.Transparency=0.2 b.BorderSizePixel=2 b.Text=a b.BorderColor=BrickColor.new("White")spawn(function()wait(5)for a=1,16 do b.Transparency=b.Transparency+0.1/2 Z["RenderStepped"]:wait()end b:Destroy()end)Z["RenderStepped"]:wait()ab["CanNotify"]=true end end local function d()Z["LocalPlayer"].Character:ClearAllChildren()local b=Instance.new("Model",workspace)local a=Instance.new("Part",b)a.Name="Torso1"a.Transparency=1 local a=Instance.new("Part",b)a.Name="Head1"a.Transparency=1 local a=Instance.new("Humanoid",b)a.Name="Humanoid"Z["LocalPlayer"].Character=b end local function e()if Z["LocalPlayer"].Character~=nil then local b=Z["LocalPlayer"].Character:WaitForChild("Humanoid")b.Changed:Connect(function(a)if a=="WalkSpeed"and ab["Sprint"]and V["LeftShift"]then b.WalkSpeed=Y["SprintSpeed"]end end)end end local function f(b)local c={}if b=="all"then for a,a in next,U["Players"]:GetPlayers()do if a~=Z["LocalPlayer"]then table.insert(c,a)end end return c else for a,a in next,U["Players"]:GetPlayers()do if string.lower(tostring(b))==string.sub(string.lower(tostring(a)),1,string.len(tostring(b)))then table.insert(c,a)return c end end end end local function o()if writefile~=nil and readfile~=nil then writefile("DrPoppav3Settings.lua",U["HttpService"]:JSONEncode(Y))else R("Exploit unsupportive of 'writefile' and 'readfile'")end end local function X(b,a)if b~=nil and a~=nil then local c=b:FindFirstChildOfClass(a)if not c then c=b:FindFirstChild(a)end if c then return c end end end local function b(g)if Z["LocalPlayer"].Character~=nil and g.Character~=nil then Z["LocalPlayer"].Character:BreakJoints()d()Z["LocalPlayer"].CharacterAdded:Wait()Z["RenderStepped"]:Wait()if Z["LocalPlayer"].Character~=nil and g.Character~=nil then local f=Z["LocalPlayer"].Character:WaitForChild("Humanoid")local b=X(g.Character,"HumanoidRootPart")local c=X(g.Character,"Humanoid")if f~=nil and c~=nil and c.Health~=0 then f:UnequipTools()local e=X(Z["LocalPlayer"].Backpack,"Tool")if e~=nil then local a=X(e,"Part")if a~=nil then f.Name=""local d=f:Clone()d.Parent=Z["LocalPlayer"].Character d.Name=d.ClassName f:Destroy()d.DisplayDistanceType="None"Z["Camera"].CameraSubject=Z["LocalPlayer"].Character wait(0.1)if b~=nil and e~=nil and Z["LocalPlayer"].Character~=nil then e.Parent=Z["LocalPlayer"].Character repeat b.CFrame=a.CFrame Z["RenderStepped"]:wait()until g.Character==nil or Z["LocalPlayer"].Character==nil or c==nil or b==nil or c.Health==0 or f.Health==0 or e.Parent==g.Character d.Health=0 Z["LocalPlayer"].Character=nil end end end end end end end function GetNearestPlayerToMouse()local c={}local f={}local b={}for a,a in next,U["Players"]:GetPlayers()do if a~=Z["LocalPlayer"]then table.insert(c,a)end end for e,g in next,c do local a=X(g.Character,"Humanoid")local d=X(g.Character,"Torso")if g.Character~=nil and d~=nil and a~=nil and a.Health>0 then local c=(d.Position-Z["Camera"].CoordinateFrame.p).magnitude local a=Ray.new(Z["Camera"].CoordinateFrame.p,(Z["LocalPlayer"]:GetMouse().Hit.p-Z["Camera"].CoordinateFrame.p).unit*c)local a,a=workspace:FindPartOnRay(a,workspace)local a=math.floor((a-d.Position).magnitude)f[g.Name..e]={}f[g.Name..e].dist=c f[g.Name..e].plr=g f[g.Name..e].diff=a table.insert(b,a)end end local b=math.floor(math.min(unpack(b)))if b>20 then return end for a,a in pairs(f)do if a.diff==b then return a.plr end end return end local function c(a)local a=string.split(a," ")for a,a in next,a do a=string.lower(tostring(a))end if a[1]=="airwalk"then if not ab["Airwalk"]then ab["Airwalk"]=true y.BackgroundColor=BrickColor.new("Lime green")elseif ab["Airwalk"]then ab["Airwalk"]=false y.BackgroundColor=BrickColor.new("Really red")end elseif a[1]=="rejoin"then U["TeleportService"]:Teleport(game.PlaceId,Z["LocalPlayer"])elseif a[1]=="fly"then if not ab["Flying"]then ab["Flying"]=true z.BackgroundColor=BrickColor.new("Lime green")elseif ab["Flying"]then ab["Flying"]=false z.BackgroundColor=BrickColor.new("Really red")end elseif a[1]=="unfly"then ab["Flying"]=false elseif a[1]=="flyspeed"then Y["FlySpeed"]=a[2]R("Fly speed has been changed to "..tostring(Y["FlySpeed"]))o()elseif a[1]=="sprintspeed"then Y["SprintSpeed"]=a[2]R("Sprint speed has been changed to "..tostring(Y["SprintSpeed"]))ab["Sprint"]=true L.Text=a[2]k.BackgroundColor=BrickColor.new("Lime green")o()elseif a[1]=="camlock"then local a=f(a[2])if a~=nil then for a,a in next,a do if a~=Z["LocalPlayer"]then ab["CamLocking"]=true ab["CamLockTarget"]=a n.BackgroundColor=BrickColor.new("Lime green")M.Text=tostring(a)end end end elseif a[1]=="uncamlock"then ab["CamLockTarget"]=nil ab["CamLocking"]=false n.BackgroundColor=BrickColor.new("Really red")M.Text=""elseif a[1]=="view"then local a=f(a[2])if a~=nil then for a,a in next,a do Z["Camera"].CameraSubject=a.Character end end elseif a[1]=="unview"then if Z["LocalPlayer"].Character~=nil then Z["Camera"].CameraSubject=Z["LocalPlayer"].Character end elseif a[1]=="re"or a[1]=="reset"or a[1]=="respawn"then d()elseif a[1]=="kill"then local a=f(a[2])if a~=nil then for a,a in next,a do b(a)end end end end S.MouseButton1Down:Connect(function()for a,a in next,K:GetChildren()do a.Visible=false end S.Visible=false end)s.MouseButton1Down:Connect(function()for a,a in next,K:GetChildren()do a.Visible=false end T.Visible=true S.Visible=true end)I.MouseButton1Down:Connect(function()if not ab["Aimbot"]then ab["Aimbot"]=true h.BackgroundColor=BrickColor.new("Lime green")elseif ab["Aimbot"]then ab["Aimbot"]=false h.BackgroundColor=BrickColor.new("Really red")end end)C.MouseButton1Down:Connect(function()if not ab["CamLocking"]then ab["CamLocking"]=true n.BackgroundColor=BrickColor.new("Lime green")elseif ab["CamLocking"]then ab["CamLocking"]=false n.BackgroundColor=BrickColor.new("Really red")end end)w.MouseButton1Down:Connect(function()if not ab["Flying"]then ab["Flying"]=true z.BackgroundColor=BrickColor.new("Lime green")elseif ab["Flying"]then ab["Flying"]=false z.BackgroundColor=BrickColor.new("Really red")end end)q.MouseButton1Down:Connect(function()if not ab["NoSlow"]then ab["NoSlow"]=true j.BackgroundColor=BrickColor.new("Lime green")elseif ab["NoSlow"]then ab["NoSlow"]=false j.BackgroundColor=BrickColor.new("Really red")end end)u.MouseButton1Down:Connect(function()if not ab["AutoStomp"]then ab["AutoStomp"]=true g.BackgroundColor=BrickColor.new("Lime green")elseif ab["AutoStomp"]then ab["AutoStomp"]=false g.BackgroundColor=BrickColor.new("Really red")end end)x.MouseButton1Down:Connect(function()if not ab["Airwalk"]then ab["Airwalk"]=true y.BackgroundColor=BrickColor.new("Lime green")elseif ab["Airwalk"]then ab["Airwalk"]=false y.BackgroundColor=BrickColor.new("Really red")end end)r.MouseButton1Down:Connect(function()if not ab["NoClip"]then ab["NoClip"]=true m.BackgroundColor=BrickColor.new("Lime green")elseif ab["NoClip"]then ab["NoClip"]=false m.BackgroundColor=BrickColor.new("Really red")end end)p.MouseButton1Down:Connect(function()if not ab["Triggerbot"]then ab["Triggerbot"]=true i.BackgroundColor=BrickColor.new("Lime green")elseif ab["Triggerbot"]then ab["Triggerbot"]=false ab["Triggered"]=false i.BackgroundColor=BrickColor.new("Really red")end end)A.MouseButton1Down:Connect(function()if not ab["Sprint"]then ab["Sprint"]=true k.BackgroundColor=BrickColor.new("Lime green")elseif ab["Sprint"]then ab["Sprint"]=false k.BackgroundColor=BrickColor.new("Really red")end end)v.MouseButton1Down:Connect(function()for a,a in next,K:GetChildren()do a.Visible=false end l.Visible=true S.Visible=true end)t.MouseButton1Down:Connect(function()for a,a in next,K:GetChildren()do a.Visible=false end H.Visible=true S.Visible=true end)N.MouseButton1Down:Connect(function()if N.Text~="Done!"then N.Text="Done!"if string.len(B.Text)>0 then Y["FlyHotkey"]=string.upper(string.sub(tostring(B.Text),1,1))else Y["FlyHotkey"]=" "end B.Text=tostring(Y["FlyHotkey"])R("Fly hotkey has been changed to "..tostring(Y["FlyHotkey"]))o()wait(0.3)N.Text="Apply"end end)P.MouseButton1Down:Connect(function()if P.Text~="Done!"then P.Text="Done!"if string.len(G.Text)>0 then Y["NoClipHotkey"]=string.upper(string.sub(tostring(G.Text),1,1))else Y["NoClipHotkey"]=" "end G.Text=tostring(Y["NoClipHotkey"])R("NoClip hotkey has been changed to "..tostring(Y["NoClipHotkey"]))o()wait(0.3)P.Text="Apply"end end)Q.MouseButton1Down:Connect(function()if Q.Text~="Done!"then Q.Text="Done!"if string.len(D.Text)>0 then Y["AirwalkHotkey"]=string.upper(string.sub(tostring(D.Text),1,1))else Y["AirwalkHotkey"]=" "end D.Text=tostring(Y["AirwalkHotkey"])R("Airwalk hotkey has been changed to "..tostring(Y["AirwalkHotkey"]))o()wait(0.3)Q.Text="Apply"end end)O.MouseButton1Down:Connect(function()if O.Text~="Done!"then O.Text="Done!"if string.len(E.Text)>0 then Y["ResetHotkey"]=string.upper(string.sub(tostring(E.Text),1,1))else Y["ResetHotkey"]=" "end E.Text=tostring(Y["ResetHotkey"])R("Reset hotkey has been changed to "..tostring(Y["ResetHotkey"]))o()wait(0.3)O.Text="Apply"end end)W.FocusLost:Connect(function()W.Visible=false c(W.Text)W.Text=""W.Size=UDim2.new(0,0,0,25)W.Position=UDim2.new(1,0,1,-30)end)J:GetPropertyChangedSignal("Text"):Connect(function()if string.len(J.Text)>0 then local a=f(J.Text)if a~=nil then for a,a in next,a do ab["AimbotTarget"]=a R("Aimbot targetting  "..tostring(ab["AimbotTarget"]))end end else ab["AimbotTarget"]=nil if ab["Aimbot"]then R("Aimbot target has been changed to no one, will now shoot anyone closest to mouse")else R("Aimbot target has been changed to no one")end end end)F:GetPropertyChangedSignal("Text"):Connect(function()if string.len(F.Text)>0 then Y["AimbotVelocity"]=F.Text R("Aim predicition velocity has been changed to "..tostring(Y["AimbotVelocity"]))o()end end)L:GetPropertyChangedSignal("Text"):Connect(function()if string.len(L.Text)>0 then Y["SprintSpeed"]=L.Text R("Sprint speed has been changed to "..tostring(Y["SprintSpeed"]))o()end end)U["UserInputService"].InputBegan:Connect(function(b,a)if b.KeyCode==Enum.KeyCode.LeftShift and ab["Sprint"]then V["LeftShift"]=true end if not a then if b.KeyCode==Enum.KeyCode.Quote then W.Size=UDim2.new(0,0,0,25)W.Position=UDim2.new(1,0,1,-295)W.Visible=true W:TweenSize(UDim2.new(0,250,0,25),"Out","Quad",0.2,false)W:TweenPosition(UDim2.new(1,-250,1,-295),"Out","Quad",0.2,false)W:CaptureFocus()Z["RenderStepped"]:Wait()W.Text=""elseif b.KeyCode==Enum.KeyCode.LeftControl and ab["Airwalk"]then ab["Airwalk_Offset"]=-0.5 elseif b.KeyCode==Enum.KeyCode.Space and ab["Airwalk"]then ab["Airwalk_Offset"]=0.5 elseif b.KeyCode==Enum.KeyCode.W then V["W"]=true elseif b.KeyCode==Enum.KeyCode.A then V["A"]=true elseif b.KeyCode==Enum.KeyCode.S then V["S"]=true elseif b.KeyCode==Enum.KeyCode.D then V["D"]=true elseif Y["NoClipHotkey"]~=" "and b.KeyCode==Enum.KeyCode[Y["NoClipHotkey"]]then if not ab["NoClip"]then ab["NoClip"]=true m.BackgroundColor=BrickColor.new("Lime green")elseif ab["NoClip"]then ab["NoClip"]=false m.BackgroundColor=BrickColor.new("Really red")end elseif Y["FlyHotkey"]~=" "and b.KeyCode==Enum.KeyCode[Y["FlyHotkey"]]then if not ab["Flying"]then ab["Flying"]=true z.BackgroundColor=BrickColor.new("Lime green")elseif ab["Flying"]then ab["Flying"]=false z.BackgroundColor=BrickColor.new("Really red")end elseif Y["AirwalkHotkey"]~=" "and b.KeyCode==Enum.KeyCode[Y["AirwalkHotkey"]]then if not ab["Airwalk"]then ab["Airwalk"]=true y.BackgroundColor=BrickColor.new("Lime green")elseif ab["Airwalk"]then ab["Airwalk"]=false y.BackgroundColor=BrickColor.new("Really red")end elseif Y["ResetHotkey"]~=" "and b.KeyCode==Enum.KeyCode[Y["ResetHotkey"]]then if Z["LocalPlayer"].Character~=nil then Z["LocalPlayer"].Character:BreakJoints()end end end end)U["UserInputService"].InputEnded:Connect(function(b,a)if b.KeyCode==Enum.KeyCode.LeftShift and ab["Sprint"]then V["LeftShift"]=false local a=X(Z["LocalPlayer"].Character,"Humanoid")if a~=nil then a.WalkSpeed=16 end elseif b.KeyCode==Enum.KeyCode.LeftControl then ab["Airwalk_Offset"]=0 elseif b.KeyCode==Enum.KeyCode.Space then ab["Airwalk_Offset"]=0 elseif b.KeyCode==Enum.KeyCode.W then V["W"]=false elseif b.KeyCode==Enum.KeyCode.A then V["A"]=false elseif b.KeyCode==Enum.KeyCode.S then V["S"]=false elseif b.KeyCode==Enum.KeyCode.D then V["D"]=false end end)local d=debug.getmetatable(game)local b=d.__newindex local c=d.__namecall setreadonly(d,false)d.__newindex=newcclosure(function(d,c,a)if checkcaller()then return b(d,c,a)end if d and d:IsA("Humanoid")then if c=="Health"and a==0 then return end if c=="WalkSpeed"and a==0 and ab["NoSlow"]then return end end if c=="CFrame"and tostring(d)=="Torso"or tostring(d)=="HumanoidRootPart"then return end return b(d,c,a)end)d.__namecall=newcclosure(function(d,...)local b={...}local a=getnamecallmethod()if not checkcaller()then if a=="BreakJoints"then return wait(9e9)end end if a=="FireServer"then if tostring(d)=="lIII"or tostring(d.Parent)=="ReplicatedStorage"then return wait(9e9)end if tostring(d)=="Fire"then if ab["Aimbot"]and ab["AimbotTarget"]~=nil then pcall(function()b[1]=ab["AimbotTarget"].Character.Torso.CFrame+Vector3.new(ab["AimbotTarget"].Character.Torso.Velocity.X/Y["AimbotVelocity"],0,ab["AimbotTarget"].Character.Torso.Velocity.Z/Y["AimbotVelocity"])end)return c(d,unpack(b))end end if tostring(d)=="Input"then if ab["Aimbot"]and ab["AimbotTarget"]~=nil then pcall(function()b[2]["mousehit"]=ab["AimbotTarget"].Character.Torso.CFrame+Vector3.new(ab["AimbotTarget"].Character.Torso.Velocity.X/Y["AimbotVelocity"],0,ab["AimbotTarget"].Character.Torso.Velocity.Z/Y["AimbotVelocity"])end)return c(d,unpack(b))end end if b[1]=="hey"then return wait(9e9)end end return c(d,...)end)if Z["LocalPlayer"].Character~=nil then e()end Z["LocalPlayer"].CharacterAdded:Connect(function()e()end)coroutine.wrap(function()while Z["RenderStepped"]:Wait()do for a,a in next,U["Players"]:GetPlayers()do a.NameDisplayDistance=9e9 a.HealthDisplayDistance=9e9 end for a,a in next,U["Players"]:GetPlayers()do a.NameDisplayDistance=9e9+1 a.HealthDisplayDistance=9e9+1 end if ab["Airwalk"]then local b=X(workspace,"DrPoppaAirwalkPart")local a=X(Z["LocalPlayer"].Character,"HumanoidRootPart")if b==nil then b=Instance.new("Part",workspace)b.Size=Vector3.new(5,1,5)b.Anchored=true b.Name="DrPoppaAirwalkPart"b.Transparency=1 end if a~=nil then b.CFrame=CFrame.new(a.Position)*CFrame.new(0,-3.5+ab["Airwalk_Offset"],0)end elseif not ab["Airwalk"]then local a=X(workspace,"DrPoppaAirwalkPart")if a~=nil then a:Destroy()end end coroutine.wrap(function()if ab["Flying"]then local b=X(Z["LocalPlayer"].Character,"Torso")local d=X(Z["LocalPlayer"].Character,"Humanoid")local e=X(Z["LocalPlayer"].Character,"HumanoidRootPart")if b~=nil and d~=nil then local c=X(b,"DrPoppaBodyGyro")local a=X(b,"DrPoppaBodyVelocity")if c==nil then c=Instance.new("BodyGyro",b)c.MaxTorque=Vector3.new(9e9,9e9,9e9)c.Name="DrPoppaBodyGyro"end if a==nil then a=Instance.new("BodyVelocity",b)a.MaxForce=Vector3.new(9e9,9e9,9e9)a.Name="DrPoppaBodyVelocity"end c.CFrame=b.CFrame local b=Vector3.new(0,0,0)if V["W"]then b=b+e.CFrame.lookVector*Y["FlySpeed"]*25 end if V["S"]then b=b+e.CFrame.lookVector*-Y["FlySpeed"]*25 end if V["A"]then b=b+e.CFrame.rightVector*-Y["FlySpeed"]*25 end if V["D"]then b=b+e.CFrame.rightVector*Y["FlySpeed"]*25 end if not V["W"]and not V["S"]and not V["A"]and not V["D"]then b=Vector3.new(0,0,0)end a.Velocity=b if e~=nil then e.CFrame=CFrame.new(e.Position,Z["Camera"].CoordinateFrame.lookVector*9e9)end c.CFrame=Z["Camera"].CoordinateFrame d.PlatformStand=false local a=d.StateChanged:Connect(function(a,a)if a==Enum.HumanoidStateType.PlatformStanding then d.PlatformStand=false end end)d:ChangeState(3)for a,a in next,d:GetPlayingAnimationTracks()do if a.Animation.AnimationId=="http://www.roblox.com/asset/?id=125750702"then a:Stop()end end Z["RenderStepped"]:Wait()if d~=nil then d:ChangeState(8)end if e~=nil then e.CFrame=CFrame.new(e.Position,Z["Camera"].CoordinateFrame.lookVector*9e9)end a:Disconnect()end elseif not ab["Flying"]then local c=X(Z["LocalPlayer"].Character,"Torso")local a=X(Z["LocalPlayer"].Character,"Humanoid")if c~=nil and a~=nil then local b=X(c,"DrPoppaBodyGyro")local a=X(c,"DrPoppaBodyVelocity")if b~=nil then b:Destroy()end if a~=nil then a:Destroy()end end end end)()if ab["NoClip"]then local a=X(Z["LocalPlayer"].Character,"Humanoid")if a~=nil then a:ChangeState(11)end end if ab["Aimbot"]and J.Text==""then ab["AimbotTarget"]=GetNearestPlayerToMouse()end if ab["AimbotTarget"]~=nil then local b=X(ab["AimbotTarget"].Character,"Torso")local a=X(Z["LocalPlayer"].Character,"Torso")if a~=nil and b~=nil then if not X(b,"BoxHandleAdornment")then local a=(a.Position-b.Position).magnitude/10 local c=Instance.new("BoxHandleAdornment",b)c.Adornee=b c.AlwaysOnTop=true c.ZIndex=5 c.Transparency=0.5 c.Size=b.Size*2+Vector3.new(a,a,a)c.Color3=Color3.new((math.sin(workspace.DistributedGameTime/2)/2)+0.5,(math.sin(workspace.DistributedGameTime)/2)+0.5,(math.sin(workspace.DistributedGameTime*1.5)/2)+0.5)U["Debris"]:AddItem(c,0.05)end end end if M.Text~=""and ab["CamLocking"]then local a=f(M.Text)if a~=nil then for a,a in next,a do if a~=Z["LocalPlayer"]then local a=X(a.Character,"Torso")if a~=nil then Z["Camera"].CoordinateFrame=CFrame.new(Z["Camera"].CoordinateFrame.p,a.Position)end end end elseif ab["CamLockTarget"]~=nil and ab["CamLocking"]then local a=X(ab["CamLockTarget"].Character,"Torso")if a~=nil then Z["Camera"].CoordinateFrame=CFrame.new(Z["Camera"].CoordinateFrame.p,a.Position)end end end end end)()o()R("DrPoppa v3 Loaded")R("Took "..tick()-a)R("Press ' for the command bar & enter 'cmds' for the commands")end
+
+local L_1_ = tick()
+
+if not _G["DrPoppa"] then
+
+	_G["DrPoppa"] = true
+	local L_2_ = {
+		["Players"] = game:GetService("Players"),
+		["UserInputService"] = game:GetService("UserInputService"),
+		["RunService"] = game:GetService("RunService"),
+		["CoreGui"] = game:GetService("CoreGui"),
+		["TeleportService"] = game:GetService("TeleportService"),
+		["Debris"] = game:GetService("Debris"),
+		["StarterGui"] = game:GetService("StarterGui"),
+		["HttpService"] = game:GetService("HttpService"),
+	}
+
+    -- // VARIABLES \\ --
+
+	local L_3_ = {
+		["LocalPlayer"] = L_2_["Players"].LocalPlayer,
+		["RenderStepped"] = L_2_["RunService"].RenderStepped,
+		["Heartbeat"] = L_2_["RunService"].Heartbeat,
+		["Camera"] = workspace:WaitForChild("Camera"),
+	}
+
+    -- // KEYS \\ --
+
+	local L_4_ = {
+		["W"] = false,
+		["A"] = false,
+		["S"] = false,
+		["D"] = false,
+		["LeftShift"] = false,
+	}
+
+    -- // EDITABLE VARIABLES \\ --
+
+	local L_5_ = {
+		["Aimbot"] = false,
+		["Flying"] = false,
+		["NoSlow"] = false,
+		["AutoStomp"] = false,
+		["Stomping"] = false,
+		["Teleporting"] = false,
+		["GodeMode"] = false,
+		["Airwalk"] = false,
+		["NoClip"] = false,
+		["LoopKilling"] = false,
+		["Triggerbot"] = false,
+		["Triggered"] = false,
+		["Duplicating"] = false,
+		["CanNotify"] = true,
+		["Sprinting"] = false,
+		["CamLocking"] = false,
+		["Sprint"] = false,
+		["Airwalk_Offset"] = 0,
+		["CamLockTarget"] = nil,
+		["AimbotTarget"] = nil,
+	}
+
+	local L_6_ = {
+		["FlySpeed"] = 5,
+		["AimbotVelocity"] = 2,
+		["SprintSpeed"] = 25,
+		["FlyHotkey"] = "F",
+		["NoClipHotkey"] = "N",
+		["AirwalkHotkey"] = "B",
+		["ResetHotkey"] = " ",
+	}
+
+	if writefile ~= nil and readfile ~= nil then
+		local L_65_ = nil
+		pcall(function()
+			L_65_ = readfile("DrPoppav3Settings.lua")
+		end)
+		if L_65_ ~= nil then
+			L_65_ = L_2_["HttpService"]:JSONDecode(readfile("DrPoppav3Settings.lua"))
+			for L_66_forvar1, L_67_forvar2 in next, L_6_ do
+				L_6_[L_66_forvar1] = L_65_[L_66_forvar1]
+			end
+			writefile("DrPoppav3Settings.lua", L_2_["HttpService"]:JSONEncode(L_6_))
+		else
+			L_65_ = writefile("DrPoppav3Settings.lua", L_2_["HttpService"]:JSONEncode(L_6_))
+		end
+	end
+
+	local L_7_ = Instance.new("ScreenGui", L_2_["CoreGui"])
+
+    -- // FRAMES \\ --
+
+	local L_8_ = Instance.new("Frame", L_7_)
+	L_8_.Size = UDim2.new(0, 100, 0, 250)
+	L_8_.Position = UDim2.new(1, 0, 1, -260)
+	L_8_.BackgroundColor = BrickColor.new("Salmon")
+	L_8_.Transparency = 0.2
+	L_8_.BorderSizePixel = 2
+	L_8_.BorderColor = BrickColor.new("White")
+
+	local L_9_ = Instance.new("ImageLabel", L_8_)
+	L_9_.Size = UDim2.new(0, 27.5, 0, 27.5)
+	L_9_.Position = UDim2.new(0.5, -12.5, 0, 5)
+	L_9_.BackgroundTransparency = 1
+	L_9_.Image = "http://www.roblox.com/asset/?id=2124384310"
+
+	local L_10_ = Instance.new("Frame", L_8_)
+	L_10_.Size = UDim2.new(0, 300, 0, 250)
+	L_10_.Position = UDim2.new(-3.1, 0, 0, 0)
+	L_10_.Transparency = 1
+	L_10_.Visible = true
+
+	local L_11_ = Instance.new("TextButton", L_10_)
+	L_11_.Size = UDim2.new(0, 15, 0, 25)
+	L_11_.Position = UDim2.new(-0.080, 0, 0.5, -25)
+	L_11_.BackgroundColor = BrickColor.new("Salmon")
+	L_11_.Transparency = 0.2
+	L_11_.BorderSizePixel = 2
+	L_11_.Text = ">"
+	L_11_.TextColor = BrickColor.new("Really black")
+	L_11_.BorderColor = BrickColor.new("White")
+	L_11_.Visible = false
+	L_11_.Font = "GothamBlack"
+	L_11_.TextSize = 15
+
+    -- // SETTINGS FRAME \\ --
+
+	local L_12_ = Instance.new("Frame", L_10_)
+	L_12_.Size = UDim2.new(0, 300, 0, 250)
+	L_12_.Position = UDim2.new(0, 0, 0, 0)
+	L_12_.BackgroundColor = BrickColor.new("Salmon")
+	L_12_.Transparency = 0.2
+	L_12_.BorderSizePixel = 2
+	L_12_.BorderColor = BrickColor.new("White")
+	L_12_.Visible = false
+
+	local L_13_ = Instance.new("TextButton", L_8_)
+	L_13_.Size = UDim2.new(0, 80, 0, 25)
+	L_13_.Position = UDim2.new(0.5, -40, 0, 40)
+	L_13_.BackgroundColor = BrickColor.new("Light red")
+	L_13_.Transparency = 0.1
+	L_13_.BorderSizePixel = 0
+	L_13_.Text = "Settings"
+	L_13_.TextColor = BrickColor.new("Really black")
+	L_13_.Font = "GothamBlack"
+	L_13_.TextSize = 15
+
+	local L_14_ = Instance.new("TextButton", L_12_)
+	L_14_.Size = UDim2.new(0, 80, 0, 20)
+	L_14_.Position = UDim2.new(0, 15, 0, 15)
+	L_14_.BackgroundColor = BrickColor.new("Light red")
+	L_14_.BorderSizePixel = 0
+	L_14_.Text = "Airwalk"
+	L_14_.TextColor = BrickColor.new("Really black")
+	L_14_.Font = "GothamBlack"
+	L_14_.TextSize = 15
+
+	local L_15_ = Instance.new("Frame", L_14_)
+	L_15_.Size = UDim2.new(0, 80, 0, 3)
+	L_15_.Position = UDim2.new(0, 0, 0, 18)
+	L_15_.BackgroundColor = BrickColor.new("Really red")
+	L_15_.Transparency = 0.1
+	L_15_.BorderSizePixel = 0
+
+	local L_16_ = Instance.new("TextButton", L_12_)
+	L_16_.Size = UDim2.new(0, 80, 0, 20)
+	L_16_.Position = UDim2.new(0, 15, 0, 50)
+	L_16_.BackgroundColor = BrickColor.new("Light red")
+	L_16_.BorderSizePixel = 0
+	L_16_.Text = "Fly"
+	L_16_.TextColor = BrickColor.new("Really black")
+	L_16_.Font = "GothamBlack"
+	L_16_.TextSize = 15
+
+	local L_17_ = Instance.new("Frame", L_16_)
+	L_17_.Size = UDim2.new(0, 80, 0, 3)
+	L_17_.Position = UDim2.new(0, 0, 0, 18)
+	L_17_.BackgroundColor = BrickColor.new("Really red")
+	L_17_.Transparency = 0.1
+	L_17_.BorderSizePixel = 0
+
+	local L_18_ = Instance.new("TextButton", L_12_)
+	L_18_.Size = UDim2.new(0, 80, 0, 20)
+	L_18_.Position = UDim2.new(0, 105, 0, 15)
+	L_18_.BackgroundColor = BrickColor.new("Light red")
+	L_18_.BorderSizePixel = 0
+	L_18_.Text = "No Slow"
+	L_18_.TextColor = BrickColor.new("Really black")
+	L_18_.Font = "GothamBlack"
+	L_18_.TextSize = 15
+
+	local L_19_ = Instance.new("Frame", L_18_)
+	L_19_.Size = UDim2.new(0, 80, 0, 3)
+	L_19_.Position = UDim2.new(0, 0, 0, 18)
+	L_19_.BackgroundColor = BrickColor.new("Really red")
+	L_19_.Transparency = 0.1
+	L_19_.BorderSizePixel = 0
+
+	local L_20_ = Instance.new("TextButton", L_12_)
+	L_20_.Size = UDim2.new(0, 80, 0, 20)
+	L_20_.Position = UDim2.new(0, 195, 0, 15)
+	L_20_.BackgroundColor = BrickColor.new("Light red")
+	L_20_.BorderSizePixel = 0
+	L_20_.Text = "Auto Stomp"
+	L_20_.TextColor = BrickColor.new("Really black")
+	L_20_.Font = "GothamBlack"
+	L_20_.TextSize = 13
+
+	local L_21_ = Instance.new("Frame", L_20_)
+	L_21_.Size = UDim2.new(0, 80, 0, 3)
+	L_21_.Position = UDim2.new(0, 0, 0, 18)
+	L_21_.BackgroundColor = BrickColor.new("Really red")
+	L_21_.Transparency = 0.1
+	L_21_.BorderSizePixel = 0
+
+	local L_22_ = Instance.new("TextButton", L_12_)
+	L_22_.Size = UDim2.new(0, 80, 0, 20)
+	L_22_.Position = UDim2.new(0, 105, 0, 50)
+	L_22_.BackgroundColor = BrickColor.new("Light red")
+	L_22_.BorderSizePixel = 0
+	L_22_.Text = "NoClip"
+	L_22_.TextColor = BrickColor.new("Really black")
+	L_22_.Font = "GothamBlack"
+	L_22_.TextSize = 15
+
+	local L_23_ = Instance.new("Frame", L_22_)
+	L_23_.Size = UDim2.new(0, 80, 0, 3)
+	L_23_.Position = UDim2.new(0, 0, 0, 18)
+	L_23_.BackgroundColor = BrickColor.new("Really red")
+	L_23_.Transparency = 0.1
+	L_23_.BorderSizePixel = 0
+
+	local L_24_ = Instance.new("TextButton", L_12_)
+	L_24_.Size = UDim2.new(0, 80, 0, 20)
+	L_24_.Position = UDim2.new(0, 195, 0, 50)
+	L_24_.BackgroundColor = BrickColor.new("Light red")
+	L_24_.BorderSizePixel = 0
+	L_24_.Text = "TriggerBot"
+	L_24_.TextColor = BrickColor.new("Really black")
+	L_24_.Font = "GothamBlack"
+	L_24_.TextSize = 15
+
+	local L_25_ = Instance.new("Frame", L_24_)
+	L_25_.Size = UDim2.new(0, 80, 0, 3)
+	L_25_.Position = UDim2.new(0, 0, 0, 18)
+	L_25_.BackgroundColor = BrickColor.new("Really red")
+	L_25_.Transparency = 0.1
+	L_25_.BorderSizePixel = 0
+
+	local L_26_ = Instance.new("TextButton", L_12_)
+	L_26_.Size = UDim2.new(0, 80, 0, 20)
+	L_26_.Position = UDim2.new(0, 15, 0, 85)
+	L_26_.BackgroundColor = BrickColor.new("Light red")
+	L_26_.BorderSizePixel = 0
+	L_26_.Text = "Aimbot"
+	L_26_.TextColor = BrickColor.new("Really black")
+	L_26_.Font = "GothamBlack"
+	L_26_.TextSize = 15
+
+	local L_27_ = Instance.new("Frame", L_26_)
+	L_27_.Size = UDim2.new(0, 80, 0, 3)
+	L_27_.Position = UDim2.new(0, 0, 0, 18)
+	L_27_.BackgroundColor = BrickColor.new("Really red")
+	L_27_.Transparency = 0.1
+	L_27_.BorderSizePixel = 0
+
+	local L_28_ = Instance.new("TextBox", L_26_)
+	L_28_.Size = UDim2.new(0, 25, 0, 20)
+	L_28_.Position = UDim2.new(0, 30, 0, 30)
+	L_28_.BackgroundColor = BrickColor.new("Institutional white")
+	L_28_.BorderSizePixel = 1
+	L_28_.Font = "GothamBlack"
+	L_28_.BorderColor = BrickColor.new("Really black")
+	L_28_.TextSize = 12
+	L_28_.Text = tostring(L_6_["AimbotVelocity"])
+
+	local L_29_ = Instance.new("TextBox", L_26_)
+	L_29_.Size = UDim2.new(0, 80, 0, 20)
+	L_29_.Position = UDim2.new(0, 0, 0, 55)
+	L_29_.BackgroundColor = BrickColor.new("Institutional white")
+	L_29_.BorderSizePixel = 1
+	L_29_.Font = "GothamBlack"
+	L_29_.BorderColor = BrickColor.new("Really black")
+	L_29_.TextSize = 12
+	L_29_.Text = ""
+
+	local L_30_ = Instance.new("TextButton", L_12_)
+	L_30_.Size = UDim2.new(0, 80, 0, 20)
+	L_30_.Position = UDim2.new(0, 105, 0, 85)
+	L_30_.BackgroundColor = BrickColor.new("Light red")
+	L_30_.BorderSizePixel = 0
+	L_30_.Text = "CamLock"
+	L_30_.TextColor = BrickColor.new("Really black")
+	L_30_.Font = "GothamBlack"
+	L_30_.TextSize = 15
+
+    
+	local L_31_ = Instance.new("Frame", L_30_)
+	L_31_.Size = UDim2.new(0, 80, 0, 3)
+	L_31_.Position = UDim2.new(0, 0, 0, 18)
+	L_31_.BackgroundColor = BrickColor.new("Really red")
+	L_31_.Transparency = 0.1
+	L_31_.BorderSizePixel = 0
+
+	local L_32_ = Instance.new("TextBox", L_30_)
+	L_32_.Size = UDim2.new(0, 80, 0, 20)
+	L_32_.Position = UDim2.new(0, 0, 0, 30)
+	L_32_.BackgroundColor = BrickColor.new("Institutional white")
+	L_32_.BorderSizePixel = 1
+	L_32_.Font = "GothamBlack"
+	L_32_.BorderColor = BrickColor.new("Really black")
+	L_32_.TextSize = 12
+	L_32_.Text = ""
+
+	local L_33_ = Instance.new("TextButton", L_12_)
+	L_33_.Size = UDim2.new(0, 80, 0, 20)
+	L_33_.Position = UDim2.new(0, 195, 0, 85)
+	L_33_.BackgroundColor = BrickColor.new("Light red")
+	L_33_.BorderSizePixel = 0
+	L_33_.Text = "Sprint"
+	L_33_.TextColor = BrickColor.new("Really black")
+	L_33_.Font = "GothamBlack"
+	L_33_.TextSize = 15
+
+	local L_34_ = Instance.new("Frame", L_33_)
+	L_34_.Size = UDim2.new(0, 80, 0, 3)
+	L_34_.Position = UDim2.new(0, 0, 0, 18)
+	L_34_.BackgroundColor = BrickColor.new("Really red")
+	L_34_.Transparency = 0.1
+	L_34_.BorderSizePixel = 0
+
+	local L_35_ = Instance.new("TextBox", L_33_)
+	L_35_.Size = UDim2.new(0, 25, 0, 20)
+	L_35_.Position = UDim2.new(0, 30, 0, 30)
+	L_35_.BackgroundColor = BrickColor.new("Institutional white")
+	L_35_.BorderSizePixel = 1
+	L_35_.Font = "GothamBlack"
+	L_35_.BorderColor = BrickColor.new("Really black")
+	L_35_.TextSize = 12
+	L_35_.Text = tostring(L_6_["SprintSpeed"])
+
+    -- // TELEPORTS FRAME \\ --
+
+	local L_36_ = Instance.new("Frame", L_10_)
+	L_36_.Size = UDim2.new(0, 300, 0, 250)
+	L_36_.Position = UDim2.new(0, 0, 0)
+	L_36_.BackgroundColor = BrickColor.new("Salmon")
+	L_36_.Transparency = 0.2
+	L_36_.BorderSizePixel = 2
+	L_36_.BorderColor = BrickColor.new("White")
+	L_36_.Visible = false
+
+	local L_37_ = Instance.new("TextButton", L_8_)
+	L_37_.Size = UDim2.new(0, 80, 0, 25)
+	L_37_.Position = UDim2.new(0.5, -40, 0, 70)
+	L_37_.BackgroundColor = BrickColor.new("Light red")
+	L_37_.Transparency = 0.1
+	L_37_.BorderSizePixel = 0
+	L_37_.Text = "Teleports"
+	L_37_.TextColor = BrickColor.new("Really black")
+	L_37_.Font = "GothamBlack"
+	L_37_.TextSize = 15
+
+    -- // TELEPORTS FRAME \\ --
+
+	local L_38_ = Instance.new("Frame", L_10_)
+	L_38_.Size = UDim2.new(0, 300, 0, 250)
+	L_38_.Position = UDim2.new(0, 0, 0)
+	L_38_.BackgroundColor = BrickColor.new("Salmon")
+	L_38_.Transparency = 0.2
+	L_38_.BorderSizePixel = 2
+	L_38_.BorderColor = BrickColor.new("White")
+	L_38_.Visible = false
+
+	local L_39_ = Instance.new("TextButton", L_8_)
+	L_39_.Size = UDim2.new(0, 80, 0, 25)
+	L_39_.Position = UDim2.new(0.5, -40, 0, 100)
+	L_39_.BackgroundColor = BrickColor.new("Light red")
+	L_39_.Transparency = 0.1
+	L_39_.BorderSizePixel = 0
+	L_39_.Text = "Hotkeys"
+	L_39_.TextColor = BrickColor.new("Really black")
+	L_39_.Font = "GothamBlack"
+	L_39_.TextSize = 15
+
+	local L_40_ = Instance.new("TextLabel", L_38_)
+	L_40_.Size = UDim2.new(0, 80, 0, 20)
+	L_40_.Position = UDim2.new(0, 15, 0, 15)
+	L_40_.BackgroundColor = BrickColor.new("Light red")
+	L_40_.Transparency = 0.1
+	L_40_.BorderSizePixel = 0
+	L_40_.Text = "Fly"
+	L_40_.TextColor = BrickColor.new("Really black")
+	L_40_.Font = "GothamBlack"
+	L_40_.TextSize = 15
+
+	local L_41_ = Instance.new("TextBox", L_40_)
+	L_41_.Size = UDim2.new(0, 30, 0, 20)
+	L_41_.Position = UDim2.new(0, 25, 0, 25)
+	L_41_.BackgroundColor = BrickColor.new("Institutional white")
+	L_41_.BorderSizePixel = 0
+	L_41_.Text = tostring(L_6_["FlyHotkey"])
+	L_41_.TextColor = BrickColor.new("Really black")
+	L_41_.Font = "GothamBlack"
+	L_41_.TextSize = 15
+
+	local L_42_ = Instance.new("TextButton", L_40_)
+	L_42_.Size = UDim2.new(0, 60, 0, 20)
+	L_42_.Position = UDim2.new(0, 10, 0, 50)
+	L_42_.BackgroundColor = BrickColor.new("Light red")
+	L_42_.Transparency = 0.1
+	L_42_.BorderSizePixel = 0
+	L_42_.Text = "Apply"
+	L_42_.TextColor = BrickColor.new("Really black")
+	L_42_.Font = "GothamBlack"
+	L_42_.TextSize = 15
+
+	local L_43_ = Instance.new("TextLabel", L_38_)
+	L_43_.Size = UDim2.new(0, 80, 0, 20)
+	L_43_.Position = UDim2.new(0, 105, 0, 15)
+	L_43_.BackgroundColor = BrickColor.new("Light red")
+	L_43_.Transparency = 0.1
+	L_43_.BorderSizePixel = 0
+	L_43_.Text = "NoClip"
+	L_43_.TextColor = BrickColor.new("Really black")
+	L_43_.Font = "GothamBlack"
+	L_43_.TextSize = 15
+
+	local L_44_ = Instance.new("TextBox", L_43_)
+	L_44_.Size = UDim2.new(0, 30, 0, 20)
+	L_44_.Position = UDim2.new(0, 25, 0, 25)
+	L_44_.BackgroundColor = BrickColor.new("Institutional white")
+	L_44_.BorderSizePixel = 0
+	L_44_.Text = tostring(L_6_["NoClipHotkey"])
+	L_44_.TextColor = BrickColor.new("Really black")
+	L_44_.Font = "GothamBlack"
+	L_44_.TextSize = 15
+
+	local L_45_ = Instance.new("TextButton", L_43_)
+	L_45_.Size = UDim2.new(0, 60, 0, 20)
+	L_45_.Position = UDim2.new(0, 10, 0, 50)
+	L_45_.BackgroundColor = BrickColor.new("Light red")
+	L_45_.Transparency = 0.1
+	L_45_.BorderSizePixel = 0
+	L_45_.Text = "Apply"
+	L_45_.TextColor = BrickColor.new("Really black")
+	L_45_.Font = "GothamBlack"
+	L_45_.TextSize = 15
+
+	local L_46_ = Instance.new("TextLabel", L_38_)
+	L_46_.Size = UDim2.new(0, 80, 0, 20)
+	L_46_.Position = UDim2.new(0, 195, 0, 15)
+	L_46_.BackgroundColor = BrickColor.new("Light red")
+	L_46_.Transparency = 0.1
+	L_46_.BorderSizePixel = 0
+	L_46_.Text = "Airwalk"
+	L_46_.TextColor = BrickColor.new("Really black")
+	L_46_.Font = "GothamBlack"
+	L_46_.TextSize = 15
+
+	local L_47_ = Instance.new("TextBox", L_46_)
+	L_47_.Size = UDim2.new(0, 30, 0, 20)
+	L_47_.Position = UDim2.new(0, 25, 0, 25)
+	L_47_.BackgroundColor = BrickColor.new("Institutional white")
+	L_47_.BorderSizePixel = 0
+	L_47_.Text = tostring(L_6_["AirwalkHotkey"])
+	L_47_.TextColor = BrickColor.new("Really black")
+	L_47_.Font = "GothamBlack"
+	L_47_.TextSize = 15
+
+	local L_48_ = Instance.new("TextButton", L_46_)
+	L_48_.Size = UDim2.new(0, 60, 0, 20)
+	L_48_.Position = UDim2.new(0, 10, 0, 50)
+	L_48_.BackgroundColor = BrickColor.new("Light red")
+	L_48_.Transparency = 0.1
+	L_48_.BorderSizePixel = 0
+	L_48_.Text = "Apply"
+	L_48_.TextColor = BrickColor.new("Really black")
+	L_48_.Font = "GothamBlack"
+	L_48_.TextSize = 15
+
+	local L_49_ = Instance.new("TextLabel", L_38_)
+	L_49_.Size = UDim2.new(0, 80, 0, 20)
+	L_49_.Position = UDim2.new(0, 15, 0, 95)
+	L_49_.BackgroundColor = BrickColor.new("Light red")
+	L_49_.Transparency = 0.1
+	L_49_.BorderSizePixel = 0
+	L_49_.Text = "Reset"
+	L_49_.TextColor = BrickColor.new("Really black")
+	L_49_.Font = "GothamBlack"
+	L_49_.TextSize = 15
+
+	local L_50_ = Instance.new("TextBox", L_49_)
+	L_50_.Size = UDim2.new(0, 30, 0, 20)
+	L_50_.Position = UDim2.new(0, 25, 0, 25)
+	L_50_.BackgroundColor = BrickColor.new("Institutional white")
+	L_50_.BorderSizePixel = 0
+	L_50_.Text = tostring(L_6_["ResetHotkey"])
+	L_50_.TextColor = BrickColor.new("Really black")
+	L_50_.Font = "GothamBlack"
+	L_50_.TextSize = 15
+
+	local L_51_ = Instance.new("TextButton", L_49_)
+	L_51_.Size = UDim2.new(0, 60, 0, 20)
+	L_51_.Position = UDim2.new(0, 10, 0, 50)
+	L_51_.BackgroundColor = BrickColor.new("Light red")
+	L_51_.Transparency = 0.1
+	L_51_.BorderSizePixel = 0
+	L_51_.Text = "Apply"
+	L_51_.TextColor = BrickColor.new("Really black")
+	L_51_.Font = "GothamBlack"
+	L_51_.TextSize = 15
+
+    -- // COMMAND BAR STUFFZ \\ --
+
+	local L_52_ = Instance.new("TextBox", L_7_)
+	L_52_.Size = UDim2.new(0, 0, 0, 25)
+	L_52_.Position = UDim2.new(1, 0, 1, -295)
+	L_52_.BackgroundColor = BrickColor.new("Salmon")
+	L_52_.TextColor = BrickColor.new("Really black")
+	L_52_.Font = "GothamBlack"
+	L_52_.TextSize = 15
+	L_52_.Transparency = 0.2
+	L_52_.Visible = false
+	L_52_.BorderSizePixel = 2
+	L_52_.BorderColor = BrickColor.new("Institutional white")
+
+	L_8_:TweenPosition(UDim2.new(1, -110, 1, -260), "Out", "Quad", 1, false)
+
+    -- // NOTIFICATION FRAME \\ --
+
+	local L_53_ = Instance.new("Frame", L_7_)
+	L_53_.Size = UDim2.new(0, 200, 0, 250)
+	L_53_.Position = UDim2.new(0, 0, 1, -250)
+	L_53_.BorderSizePixel = 0
+	L_53_.Transparency = 1
+
+    -- // LOCAL FUNCTIONS \\ --
+
+	local function L_54_func(L_68_arg1, L_69_arg2, L_70_arg3)
+		if L_68_arg1 ~= nil and L_69_arg2 ~= nil then
+			if L_70_arg3 == "Find" then
+				local L_71_ = L_68_arg1:FindFirstChildOfClass(L_69_arg2)
+				if not L_71_ then
+					L_71_ = L_68_arg1:FindFirstChild(L_69_arg2)
+				end
+				if L_71_ then
+					return L_71_
+				end
+			elseif L_70_arg3 == "Wait" then
+				local L_72_ = L_68_arg1:WaitForChild(L_69_arg2)
+				if L_72_ then
+					return L_72_
+				end
+			end
+		end
+	end
+
+	local function L_55_func(L_73_arg1)
+		if L_5_["CanNotify"] then
+			repeat
+				L_3_["RenderStepped"]:wait()
+			until L_5_["CanNotify"] and #L_53_:GetChildren() < 6
+			L_5_["CanNotify"] = false
+			for L_75_forvar1, L_76_forvar2 in next, L_53_:GetChildren() do
+				L_76_forvar2:TweenPosition(L_76_forvar2.Position + UDim2.new(0, 0, 0, -40), "Out", "Quad", 0.2, false)
+				L_3_["RenderStepped"]:wait()
+			end
+			wait(0.2)
+			local L_74_ = Instance.new("TextLabel", L_53_)
+			L_74_.Size = UDim2.new(0, 185, 0, 35)
+			L_74_.Position = UDim2.new(0.5, -92.5, 1, -40)
+			L_74_.BackgroundColor = BrickColor.new("Salmon")
+			L_74_.TextColor = BrickColor.new("Really black")
+			L_74_.Font = "GothamBlack"
+			L_74_.TextScaled = true
+			L_74_.Transparency = 0.2
+			L_74_.BorderSizePixel = 2
+			L_74_.Text = L_73_arg1
+			L_74_.BorderColor = BrickColor.new("White")
+			spawn(function()
+				wait(5)
+				for L_77_forvar1 = 1, 16 do
+					L_74_.Transparency = L_74_.Transparency + 0.1 / 2
+					L_3_["RenderStepped"]:wait()
+				end
+				L_74_:Destroy()
+			end)
+			L_3_["RenderStepped"]:wait()
+			L_5_["CanNotify"] = true
+		end
+	end
+
+	local function L_56_func()
+		L_3_["LocalPlayer"].Character:ClearAllChildren()
+		local L_78_ = Instance.new("Model", workspace)
+		local L_79_ = Instance.new("Part", L_78_)
+		L_79_.Name = "Torso1"
+		L_79_.Transparency = 1
+		local L_80_ = Instance.new("Part", L_78_)
+		L_80_.Name = "Head1"
+		L_80_.Transparency = 1
+		local L_81_ = Instance.new("Humanoid", L_78_)
+		L_81_.Name = "Humanoid"
+		L_3_["LocalPlayer"].Character = L_78_
+	end
+
+	local function L_57_func()
+		if L_3_["LocalPlayer"].Character ~= nil then
+			local L_82_ = L_54_func(L_3_["LocalPlayer"].Character, "Humanoid", "Wait")
+			L_82_.Changed:Connect(function(L_83_arg1)
+				if L_83_arg1 == "WalkSpeed" and L_5_["Sprint"] and L_4_["LeftShift"] then
+					L_82_.WalkSpeed = L_6_["SprintSpeed"]
+				end
+			end)
+		end
+	end
+
+	local function L_58_func(L_84_arg1)
+		local L_85_ = {}
+		if L_84_arg1 == "all" then
+			for L_86_forvar1, L_87_forvar2 in next, L_2_["Players"]:GetPlayers() do
+				if L_87_forvar2 ~= L_3_["LocalPlayer"] then
+					table.insert(L_85_, L_87_forvar2)
+				end
+			end
+			return L_85_
+		else
+			for L_88_forvar1, L_89_forvar2 in next, L_2_["Players"]:GetPlayers() do
+				if string.lower(tostring(L_84_arg1)) == string.sub(string.lower(tostring(L_89_forvar2)), 1, string.len(tostring(L_84_arg1))) then
+					table.insert(L_85_, L_89_forvar2)
+					return L_85_
+				end
+			end
+		end
+	end
+
+	local function L_59_func()
+		if writefile ~= nil and readfile ~= nil then
+			writefile("DrPoppav3Settings.lua", L_2_["HttpService"]:JSONEncode(L_6_))
+		else
+			L_55_func("Exploit unsupportive of 'writefile' and 'readfile'")
+		end
+	end
+
+	local function L_60_func(L_90_arg1)
+		if L_3_["LocalPlayer"].Character ~= nil and L_90_arg1.Character ~= nil then
+			L_3_["LocalPlayer"].Character:BreakJoints()
+			L_56_func()
+			L_3_["LocalPlayer"].CharacterAdded:Wait()
+			L_3_["RenderStepped"]:Wait()
+			if L_3_["LocalPlayer"].Character ~= nil and L_90_arg1.Character ~= nil then
+				local L_91_ = L_54_func(L_3_["LocalPlayer"].Character, "Humanoid", "Find")
+				local L_92_ = L_54_func(L_3_["LocalPlayer"].Character, "HumanoidRootPart", "Find")
+				local L_93_ = L_54_func(L_90_arg1.Character, "Torso", "Find")
+				local L_94_ = L_54_func(L_90_arg1.Character, "Humanoid", "Find")
+				if L_91_ ~= nil and L_92_ ~= nil and L_93_ ~= nil and L_94_ ~= nil and L_94_.Health ~= 0 then
+					L_91_:UnequipTools()
+					local L_95_ = L_54_func(L_3_["LocalPlayer"].Backpack, "Tool", "Find")
+					if L_95_ ~= nil then
+						L_91_.Name = ""
+						local L_96_ = L_91_:Clone()
+						L_96_.Parent = L_3_["LocalPlayer"].Character
+						L_96_.Name = L_96_.ClassName
+						L_91_:Destroy()
+						L_96_.DisplayDistanceType = "None"
+						L_3_["Camera"].CameraSubject = L_3_["LocalPlayer"].Character
+						wait(0.1)
+						if L_95_ ~= nil and L_3_["LocalPlayer"].Character ~= nil then
+							L_95_.Parent = L_3_["LocalPlayer"].Character
+							repeat
+								L_92_.CFrame = L_93_.CFrame + L_93_.CFrame.rightVector * -2
+								L_3_["RenderStepped"]:wait()
+							until L_90_arg1.Character == nil or L_3_["LocalPlayer"].Character == nil or L_94_ == nil or L_94_.Health == 0 or L_91_.Health == 0 or L_95_.Parent == L_90_arg1.Character
+							L_96_.Health = 0
+							L_3_["LocalPlayer"].Character = nil
+						end
+					end
+				end
+			end
+		end
+	end
+
+	function GetNearestPlayerToMouse()
+		local L_97_ = {}
+		local L_98_ = {}
+		local L_99_ = {}
+		for L_101_forvar1, L_102_forvar2 in next, L_2_["Players"]:GetPlayers() do
+			if L_102_forvar2 ~= L_3_["LocalPlayer"] and L_54_func(L_102_forvar2.Character, "KO", "Find") then
+				table.insert(L_97_, L_102_forvar2)
+			end
+		end
+		for L_103_forvar1, L_104_forvar2 in next, L_97_ do
+			local L_105_ = L_54_func(L_104_forvar2.Character, "Humanoid", "Find")
+			local L_106_ = L_54_func(L_104_forvar2.Character, "Torso", "Find")
+			if L_104_forvar2.Character ~= nil and L_106_ ~= nil and L_105_ ~= nil and L_105_.Health > 0 then
+				local L_107_ = (L_106_.Position - L_3_["Camera"].CoordinateFrame.p).magnitude
+				local L_108_ = Ray.new(L_3_["Camera"].CoordinateFrame.p, (L_3_["LocalPlayer"]:GetMouse().Hit.p - L_3_["Camera"].CoordinateFrame.p).unit * L_107_)
+				local L_109_, L_110_ = workspace:FindPartOnRay(L_108_, workspace)
+				local L_111_ = math.floor((L_110_ - L_106_.Position).magnitude)
+				L_98_[L_104_forvar2.Name .. L_103_forvar1] = {}
+				L_98_[L_104_forvar2.Name .. L_103_forvar1].dist = L_107_
+				L_98_[L_104_forvar2.Name .. L_103_forvar1].plr = L_104_forvar2
+				L_98_[L_104_forvar2.Name .. L_103_forvar1].diff = L_111_
+				table.insert(L_99_, L_111_)
+			end
+		end
+		local L_100_ = math.floor(math.min(unpack(L_99_)))
+		if L_100_ > 20 then
+			return
+		end
+        
+		for L_112_forvar1, L_113_forvar2 in pairs(L_98_) do
+			if L_113_forvar2.diff == L_100_ then
+				return L_113_forvar2.plr
+			end
+		end
+		return
+	end
+
+	local function L_61_func(L_114_arg1)
+		local L_115_ = string.split(L_114_arg1, " ")
+		for L_116_forvar1, L_117_forvar2 in next, L_115_ do
+			L_117_forvar2 = string.lower(tostring(L_117_forvar2))
+		end
+		if L_115_[1] == "airwalk" then
+			if not L_5_["Airwalk"] then
+				L_5_["Airwalk"] = true
+				L_15_.BackgroundColor = BrickColor.new("Lime green")
+			elseif L_5_["Airwalk"] then
+				L_5_["Airwalk"] = false
+				L_15_.BackgroundColor = BrickColor.new("Really red")
+			end
+		elseif L_115_[1] == "rejoin" then
+			L_2_["TeleportService"]:Teleport(game.PlaceId, L_3_["LocalPlayer"])
+		elseif L_115_[1] == "fly" then
+			if not L_5_["Flying"] then
+				L_5_["Flying"] = true
+				L_17_.BackgroundColor = BrickColor.new("Lime green")
+			elseif L_5_["Flying"] then
+				L_5_["Flying"] = false
+				L_17_.BackgroundColor = BrickColor.new("Really red")
+			end
+		elseif L_115_[1] == "unfly" then
+			L_5_["Flying"] = false
+		elseif L_115_[1] == "flyspeed" then
+			L_6_["FlySpeed"] = L_115_[2]
+			L_55_func("Fly speed has been changed to " .. tostring(L_6_["FlySpeed"]))
+			L_59_func()
+		elseif L_115_[1] == "sprintspeed" then
+			L_6_["SprintSpeed"] = L_115_[2]
+			L_55_func("Sprint speed has been changed to " .. tostring(L_6_["SprintSpeed"]))
+			L_5_["Sprint"] = true
+			L_35_.Text = L_115_[2]
+			L_34_.BackgroundColor = BrickColor.new("Lime green")
+			L_59_func()
+		elseif L_115_[1] == "camlock" then
+			local L_118_ = L_58_func(L_115_[2])
+			if L_118_ ~= nil then
+				for L_119_forvar1, L_120_forvar2 in next, L_118_ do
+					if L_120_forvar2 ~= L_3_["LocalPlayer"] then
+						L_5_["CamLocking"] = true
+						L_5_["CamLockTarget"] = L_120_forvar2
+						L_31_.BackgroundColor = BrickColor.new("Lime green")
+						L_32_.Text = tostring(L_120_forvar2)
+					end
+				end
+			end
+		elseif L_115_[1] == "uncamlock" then
+			L_5_["CamLockTarget"] = nil
+			L_5_["CamLocking"] = false
+			L_31_.BackgroundColor = BrickColor.new("Really red")
+			L_32_.Text = ""
+		elseif L_115_[1] == "view" then
+			local L_121_ = L_58_func(L_115_[2])
+			if L_121_ ~= nil then
+				for L_122_forvar1, L_123_forvar2 in next, L_121_ do
+					L_3_["Camera"].CameraSubject = L_123_forvar2.Character
+				end
+			end
+		elseif L_115_[1] == "unview" then
+			if L_3_["LocalPlayer"].Character ~= nil then
+				L_3_["Camera"].CameraSubject = L_3_["LocalPlayer"].Character
+			end
+		elseif L_115_[1] == "re" or L_115_[1] == "reset" or L_115_[1] == "respawn" then
+			L_56_func()
+		elseif L_115_[1] == "kill" then
+			local L_124_ = L_58_func(L_115_[2])
+			if L_124_ ~= nil then
+				for L_125_forvar1, L_126_forvar2 in next, L_124_ do
+					L_60_func(L_126_forvar2)
+				end
+			end
+		end
+	end
+
+    -- // GUI FUNCTIONS \\ --
+
+	L_11_.MouseButton1Down:Connect(function()
+		for L_127_forvar1, L_128_forvar2 in next, L_10_:GetChildren() do
+			L_128_forvar2.Visible = false
+		end
+		L_11_.Visible = false
+	end)
+
+    -- // SETTINGS FUNCTIONS \\ --
+
+	L_13_.MouseButton1Down:Connect(function()
+		for L_129_forvar1, L_130_forvar2 in next, L_10_:GetChildren() do
+			L_130_forvar2.Visible = false
+		end
+		L_12_.Visible = true
+		L_11_.Visible = true
+	end)
+
+	L_26_.MouseButton1Down:Connect(function()
+		if not L_5_["Aimbot"] then
+			L_5_["Aimbot"] = true
+			L_27_.BackgroundColor = BrickColor.new("Lime green")
+		elseif L_5_["Aimbot"] then
+			L_5_["Aimbot"] = false
+			L_27_.BackgroundColor = BrickColor.new("Really red")
+		end
+	end)
+
+	L_30_.MouseButton1Down:Connect(function()
+		if not L_5_["CamLocking"] then
+			L_5_["CamLocking"] = true
+			L_31_.BackgroundColor = BrickColor.new("Lime green")
+		elseif L_5_["CamLocking"] then
+			L_5_["CamLocking"] = false
+			L_31_.BackgroundColor = BrickColor.new("Really red")
+		end
+	end)
+
+
+	L_16_.MouseButton1Down:Connect(function()
+		if not L_5_["Flying"] then
+			L_5_["Flying"] = true
+			L_17_.BackgroundColor = BrickColor.new("Lime green")
+		elseif L_5_["Flying"] then
+			L_5_["Flying"] = false
+			L_17_.BackgroundColor = BrickColor.new("Really red")
+		end
+	end)
+
+	L_18_.MouseButton1Down:Connect(function()
+		if not L_5_["NoSlow"] then
+			L_5_["NoSlow"] = true
+			L_19_.BackgroundColor = BrickColor.new("Lime green")
+		elseif L_5_["NoSlow"] then
+			L_5_["NoSlow"] = false
+			L_19_.BackgroundColor = BrickColor.new("Really red")
+		end
+	end)
+
+	L_20_.MouseButton1Down:Connect(function()
+		if not L_5_["AutoStomp"] then
+			L_5_["AutoStomp"] = true
+			L_21_.BackgroundColor = BrickColor.new("Lime green")
+		elseif L_5_["AutoStomp"] then
+			L_5_["AutoStomp"] = false
+			L_21_.BackgroundColor = BrickColor.new("Really red")
+		end
+	end)
+
+
+	L_14_.MouseButton1Down:Connect(function()
+		if not L_5_["Airwalk"] then
+			L_5_["Airwalk"] = true
+			L_15_.BackgroundColor = BrickColor.new("Lime green")
+		elseif L_5_["Airwalk"] then
+			L_5_["Airwalk"] = false
+			L_15_.BackgroundColor = BrickColor.new("Really red")
+		end
+	end)
+
+	L_22_.MouseButton1Down:Connect(function()
+		if not L_5_["NoClip"] then
+			L_5_["NoClip"] = true
+			L_23_.BackgroundColor = BrickColor.new("Lime green")
+		elseif L_5_["NoClip"] then
+			L_5_["NoClip"] = false
+			L_23_.BackgroundColor = BrickColor.new("Really red")
+		end
+	end)
+
+	L_24_.MouseButton1Down:Connect(function()
+		if not L_5_["Triggerbot"] then
+			L_5_["Triggerbot"] = true
+			L_25_.BackgroundColor = BrickColor.new("Lime green")
+		elseif L_5_["Triggerbot"] then
+			L_5_["Triggerbot"] = false
+			L_5_["Triggered"] = false
+			L_25_.BackgroundColor = BrickColor.new("Really red")
+		end
+	end)
+
+	L_33_.MouseButton1Down:Connect(function()
+		if not L_5_["Sprint"] then
+			L_5_["Sprint"] = true
+			L_34_.BackgroundColor = BrickColor.new("Lime green")
+		elseif L_5_["Sprint"] then
+			L_5_["Sprint"] = false
+			L_34_.BackgroundColor = BrickColor.new("Really red")
+		end
+	end)
+
+	L_37_.MouseButton1Down:Connect(function()
+		for L_131_forvar1, L_132_forvar2 in next, L_10_:GetChildren() do
+			L_132_forvar2.Visible = false
+		end
+		L_36_.Visible = true
+		L_11_.Visible = true
+	end)
+
+	L_39_.MouseButton1Down:Connect(function()
+		for L_133_forvar1, L_134_forvar2 in next, L_10_:GetChildren() do
+			L_134_forvar2.Visible = false
+		end
+		L_38_.Visible = true
+		L_11_.Visible = true
+	end)
+
+	L_42_.MouseButton1Down:Connect(function()
+		if L_42_.Text ~= "Done!" then
+			L_42_.Text = "Done!"
+			if string.len(L_41_.Text) > 0 then
+				L_6_["FlyHotkey"] = string.upper(string.sub(tostring(L_41_.Text), 1, 1))
+			else
+				L_6_["FlyHotkey"] = " "
+			end
+			L_41_.Text = tostring(L_6_["FlyHotkey"])
+			L_55_func("Fly hotkey has been changed to " .. tostring(L_6_["FlyHotkey"]))
+			L_59_func()
+			wait(0.3)
+			L_42_.Text = "Apply"
+		end
+	end)
+
+	L_45_.MouseButton1Down:Connect(function()
+		if L_45_.Text ~= "Done!" then
+			L_45_.Text = "Done!"
+			if string.len(L_44_.Text) > 0 then
+				L_6_["NoClipHotkey"] = string.upper(string.sub(tostring(L_44_.Text), 1, 1))
+			else
+				L_6_["NoClipHotkey"] = " "
+			end
+			L_44_.Text = tostring(L_6_["NoClipHotkey"])
+			L_55_func("NoClip hotkey has been changed to " .. tostring(L_6_["NoClipHotkey"]))
+			L_59_func()
+			wait(0.3)
+			L_45_.Text = "Apply"
+		end
+	end)
+
+	L_48_.MouseButton1Down:Connect(function()
+		if L_48_.Text ~= "Done!" then
+			L_48_.Text = "Done!"
+			if string.len(L_47_.Text) > 0 then
+				L_6_["AirwalkHotkey"] = string.upper(string.sub(tostring(L_47_.Text), 1, 1))
+			else
+				L_6_["AirwalkHotkey"] = " "
+			end
+			L_47_.Text = tostring(L_6_["AirwalkHotkey"])
+			L_55_func("Airwalk hotkey has been changed to " .. tostring(L_6_["AirwalkHotkey"]))
+			L_59_func()
+			wait(0.3)
+			L_48_.Text = "Apply"
+		end
+	end)
+
+	L_51_.MouseButton1Down:Connect(function()
+		if L_51_.Text ~= "Done!" then
+			L_51_.Text = "Done!"
+			if string.len(L_50_.Text) > 0 then
+				L_6_["ResetHotkey"] = string.upper(string.sub(tostring(L_50_.Text), 1, 1))
+			else
+				L_6_["ResetHotkey"] = " "
+			end
+			L_50_.Text = tostring(L_6_["ResetHotkey"])
+			L_55_func("Reset hotkey has been changed to " .. tostring(L_6_["ResetHotkey"]))
+			L_59_func()
+			wait(0.3)
+			L_51_.Text = "Apply"
+		end
+	end)
+
+	L_52_.FocusLost:Connect(function()
+		L_52_.Visible = false
+		L_61_func(L_52_.Text)
+		L_52_.Text = ""
+		L_52_.Size = UDim2.new(0, 0, 0, 25)
+		L_52_.Position = UDim2.new(1, 0, 1, -30)
+	end)
+
+	L_29_:GetPropertyChangedSignal("Text"):Connect(function()
+		if string.len(L_29_.Text) > 0 then
+			local L_135_ = L_58_func(L_29_.Text)
+			if L_135_ ~= nil then
+				for L_136_forvar1, L_137_forvar2 in next, L_135_ do
+					L_5_["AimbotTarget"] = L_137_forvar2
+					L_55_func("Aimbot targetting " .. tostring(L_5_["AimbotTarget"]))
+				end
+			end
+		else
+			L_5_["AimbotTarget"] = nil
+			if L_5_["Aimbot"] then
+				L_55_func("Aimbot target has been changed to no one, will now shoot anyone closest to mouse")
+			else
+				L_55_func("Aimbot target has been changed to no one")
+			end
+		end
+	end)
+
+	L_32_:GetPropertyChangedSignal("Text"):Connect(function()
+		if string.len(L_32_.Text) > 0 then
+			local L_138_ = L_58_func(L_32_.Text)
+			if L_138_ ~= nil then
+				for L_139_forvar1, L_140_forvar2 in next, L_138_ do
+					L_5_["CamLockTarget"] = L_140_forvar2
+					L_55_func("Camlock targetting " .. tostring(L_5_["CamLockTarget"]))
+				end
+			end
+		else
+			L_5_["CamLockTarget"] = nil
+			if L_5_["CamLocking"] then
+				L_55_func("CamLock target has been changed to no one, will now shoot anyone closest to mouse")
+			else
+				L_55_func("CamLock target has been changed to no one")
+			end
+		end
+	end)
+
+	L_28_:GetPropertyChangedSignal("Text"):Connect(function()
+		if string.len(L_28_.Text) > 0 then
+			L_6_["AimbotVelocity"] = L_28_.Text
+			L_55_func("Aim predicition velocity has been changed to " .. tostring(L_6_["AimbotVelocity"]))
+			L_59_func()
+		end
+	end)
+
+	L_35_:GetPropertyChangedSignal("Text"):Connect(function()
+		if string.len(L_35_.Text) > 0 then
+			L_6_["SprintSpeed"] = L_35_.Text
+			L_55_func("Sprint speed has been changed to " .. tostring(L_6_["SprintSpeed"]))
+			L_59_func()
+		end
+	end)
+
+
+	L_2_["UserInputService"].InputBegan:Connect(function(L_141_arg1, L_142_arg2)
+		if L_141_arg1.KeyCode == Enum.KeyCode.LeftShift and L_5_["Sprint"] then
+			L_4_["LeftShift"] = true
+		end
+		if not L_142_arg2 then
+			if L_141_arg1.KeyCode == Enum.KeyCode.Quote then
+				L_52_.Size = UDim2.new(0, 0, 0, 25)
+				L_52_.Position = UDim2.new(1, 0, 1, -295)
+				L_52_.Visible = true
+				L_52_:TweenSize(UDim2.new(0, 250, 0, 25), "Out", "Quad", 0.2, false)
+				L_52_:TweenPosition(UDim2.new(1, -250, 1, -295), "Out", "Quad", 0.2, false)
+				L_52_:CaptureFocus()
+				L_3_["RenderStepped"]:Wait()
+				L_52_.Text = ""
+			elseif L_141_arg1.KeyCode == Enum.KeyCode.LeftControl and L_5_["Airwalk"] then
+				L_5_["Airwalk_Offset"] = -0.5
+			elseif L_141_arg1.KeyCode == Enum.KeyCode.Space and L_5_["Airwalk"] then
+				L_5_["Airwalk_Offset"] = 0.5
+			elseif L_141_arg1.KeyCode == Enum.KeyCode.W then
+				L_4_["W"] = true
+			elseif L_141_arg1.KeyCode == Enum.KeyCode.A then
+				L_4_["A"] = true
+			elseif L_141_arg1.KeyCode == Enum.KeyCode.S then
+				L_4_["S"] = true
+			elseif L_141_arg1.KeyCode == Enum.KeyCode.D then
+				L_4_["D"] = true
+			elseif L_6_["NoClipHotkey"] ~= " " and L_141_arg1.KeyCode == Enum.KeyCode[L_6_["NoClipHotkey"]] then
+				if not L_5_["NoClip"] then
+					L_5_["NoClip"] = true
+					L_23_.BackgroundColor = BrickColor.new("Lime green")
+				elseif L_5_["NoClip"] then
+					L_5_["NoClip"] = false
+					L_23_.BackgroundColor = BrickColor.new("Really red")
+				end
+			elseif L_6_["FlyHotkey"] ~= " " and L_141_arg1.KeyCode == Enum.KeyCode[L_6_["FlyHotkey"]] then
+				if not L_5_["Flying"] then
+					L_5_["Flying"] = true
+					L_17_.BackgroundColor = BrickColor.new("Lime green")
+				elseif L_5_["Flying"] then
+					L_5_["Flying"] = false
+					L_17_.BackgroundColor = BrickColor.new("Really red")
+				end
+			elseif L_6_["AirwalkHotkey"] ~= " " and L_141_arg1.KeyCode == Enum.KeyCode[L_6_["AirwalkHotkey"]] then
+				if not L_5_["Airwalk"] then
+					L_5_["Airwalk"] = true
+					L_15_.BackgroundColor = BrickColor.new("Lime green")
+				elseif L_5_["Airwalk"] then
+					L_5_["Airwalk"] = false
+					L_15_.BackgroundColor = BrickColor.new("Really red")
+				end
+			elseif L_6_["ResetHotkey"] ~= " " and L_141_arg1.KeyCode == Enum.KeyCode[L_6_["ResetHotkey"]] then
+				if L_3_["LocalPlayer"].Character ~= nil then
+					L_3_["LocalPlayer"].Character:BreakJoints()
+				end
+			end
+		end
+	end)
+
+	L_2_["UserInputService"].InputEnded:Connect(function(L_143_arg1, L_144_arg2)
+		if L_143_arg1.KeyCode == Enum.KeyCode.LeftShift and L_5_["Sprint"] then
+			L_4_["LeftShift"] = false
+			local L_145_ = L_54_func(L_3_["LocalPlayer"].Character, "Humanoid", "Find")
+			if L_145_ ~= nil then
+				L_145_.WalkSpeed = 16
+			end
+		elseif L_143_arg1.KeyCode == Enum.KeyCode.LeftControl then
+			L_5_["Airwalk_Offset"] = 0
+		elseif L_143_arg1.KeyCode == Enum.KeyCode.Space then
+			L_5_["Airwalk_Offset"] = 0
+		elseif L_143_arg1.KeyCode == Enum.KeyCode.W then
+			L_4_["W"] = false
+		elseif L_143_arg1.KeyCode == Enum.KeyCode.A then
+			L_4_["A"] = false
+		elseif L_143_arg1.KeyCode == Enum.KeyCode.S then
+			L_4_["S"] = false
+		elseif L_143_arg1.KeyCode == Enum.KeyCode.D then
+			L_4_["D"] = false
+		end
+	end)
+
+    -- // BYPASS \\ --
+
+	local L_62_ = debug.getmetatable(game)
+	local L_63_ = L_62_.__newindex
+	local L_64_ = L_62_.__namecall
+	setreadonly(L_62_, false)
+
+	L_62_.__newindex = newcclosure(function(L_146_arg1, L_147_arg2, L_148_arg3)
+		if checkcaller() then 
+			return L_63_(L_146_arg1, L_147_arg2, L_148_arg3)
+		end
+		if L_146_arg1 and L_146_arg1:IsA("Humanoid") then
+			if L_147_arg2 == "Health" and L_148_arg3 == 0 then
+				return
+			end
+			if L_147_arg2 == "WalkSpeed" and L_148_arg3 == 0 and L_5_["NoSlow"] then
+				return
+			end
+		end
+		if L_147_arg2 == "CFrame" and tostring(L_146_arg1) == "Torso" or tostring(L_146_arg1) == "HumanoidRootPart" then 
+			return
+		end
+		return L_63_(L_146_arg1, L_147_arg2, L_148_arg3)
+	end)
+
+	L_62_.__namecall = newcclosure(function(L_149_arg1, ...)
+		local L_150_ = {
+			...
+		}
+		local L_151_ = getnamecallmethod()
+		if not checkcaller() and L_151_ == "BreakJoints" then 
+			return wait(9e9)
+		end
+		if L_151_ == "FireServer" then 
+			if tostring(L_149_arg1) == "lIII" or tostring(L_149_arg1.Parent) == "ReplicatedStorage" then 
+				return wait(9e9)
+			end
+			if tostring(L_149_arg1) == "Fire" then
+				if L_5_["Aimbot"] and L_5_["AimbotTarget"] ~= nil then
+					pcall(function()
+						L_150_[1] = L_5_["AimbotTarget"].Character.Torso.CFrame + Vector3.new(L_5_["AimbotTarget"].Character.Torso.Velocity.X / L_6_["AimbotVelocity"], 0, L_5_["AimbotTarget"].Character.Torso.Velocity.Z / L_6_["AimbotVelocity"])
+					end)
+					return L_64_(L_149_arg1, unpack(L_150_))
+				end
+			end
+			if tostring(L_149_arg1) == "Input" then
+				if L_5_["Aimbot"] and L_5_["AimbotTarget"] ~= nil then
+					pcall(function()
+						L_150_[2]["mousehit"] = L_5_["AimbotTarget"].Character.Torso.CFrame + Vector3.new(L_5_["AimbotTarget"].Character.Torso.Velocity.X / L_6_["AimbotVelocity"], 0, L_5_["AimbotTarget"].Character.Torso.Velocity.Z / L_6_["AimbotVelocity"])
+					end)
+					return L_64_(L_149_arg1, unpack(L_150_))
+				end
+			end
+			if L_150_[1] == "hey" then 
+				return wait(9e9)
+			end
+		end
+		return L_64_(L_149_arg1, ...)
+	end)
+
+
+	if L_3_["LocalPlayer"].Character ~= nil then
+		L_57_func()
+	end
+
+	L_3_["LocalPlayer"].CharacterAdded:Connect(function()
+		L_57_func()
+	end)
+
+	coroutine.wrap(function()
+		while L_3_["RenderStepped"]:Wait() do
+			local L_152_ = L_54_func(L_3_["LocalPlayer"], "PlayerGui", "Find")
+			if L_152_ ~= nil then
+				local L_153_ = L_54_func(L_152_, "HUD", "Find")
+				if L_153_ ~= nil then
+					local L_154_ = L_54_func(L_153_, "Ammo", "Find")
+					if L_154_ ~= nil then
+						local L_155_ = L_54_func(L_3_["LocalPlayer"].Character, "Tool", "Find")
+						if L_155_  ~= nil then
+							local L_156_ = L_54_func(L_155_, "Clips", "Find")
+							local L_157_ = L_54_func(L_155_, "Ammo", "Find")
+							if L_156_ ~= nil and L_157_ ~= nil then
+								L_154_.Text = tostring(L_156_.Value) .. " Clips\n" .. tostring(L_157_.Value) .. " Ammo"
+							end
+						end
+					end
+				end
+			end
+			for L_158_forvar1, L_159_forvar2 in next, L_2_["Players"]:GetPlayers() do
+				local L_160_ = L_54_func(L_159_forvar2.Character, "Humanoid", "Find")
+				if L_160_ ~= nil then
+					L_160_.NameDisplayDistance = 9e9
+					L_160_.HealthDisplayDistance = 9e9
+				end
+			end
+			if L_5_["Airwalk"] then
+				local L_161_ = L_54_func(workspace, "DrPoppaAirwalkPart", "Find")
+				local L_162_ = L_54_func(L_3_["LocalPlayer"].Character, "HumanoidRootPart", "Find")
+				if L_161_ == nil then
+					L_161_ = Instance.new("Part", workspace)
+					L_161_.Size = Vector3.new(5, 1, 5)
+					L_161_.Anchored = true
+					L_161_.Name = "DrPoppaAirwalkPart"
+					L_161_.Transparency = 1
+				end
+				if L_162_ ~= nil then
+					L_161_.CFrame = CFrame.new(L_162_.Position) * CFrame.new(0, -3.5 + L_5_["Airwalk_Offset"], 0)
+				end
+			elseif not L_5_["Airwalk"] then
+				local L_163_ = L_54_func(workspace, "DrPoppaAirwalkPart", "Find")
+				if L_163_ ~= nil then
+					L_163_:Destroy()
+				end
+			end
+			coroutine.wrap(function()
+				if L_5_["Flying"] then
+					local L_164_ = L_54_func(L_3_["LocalPlayer"].Character, "Torso", "Find")
+					local L_165_ = L_54_func(L_3_["LocalPlayer"].Character, "Humanoid", "Find")
+					local L_166_ = L_54_func(L_3_["LocalPlayer"].Character, "HumanoidRootPart", "Find")
+					if L_164_ ~= nil and L_165_ ~= nil then
+						local L_167_ = L_54_func(L_164_, "DrPoppaBodyGyro", "Find")
+						local L_168_ = L_54_func(L_164_, "DrPoppaBodyVelocity", "Find")
+						if L_167_ == nil then
+							L_167_ = Instance.new("BodyGyro", L_164_)
+							L_167_.MaxTorque = Vector3.new(9e9, 9e9, 9e9)
+							L_167_.Name = "DrPoppaBodyGyro"
+						end
+						if L_168_ == nil then
+							L_168_ = Instance.new("BodyVelocity", L_164_)
+							L_168_.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+							L_168_.P = 9e4
+							L_168_.Name = "DrPoppaBodyVelocity"
+						end
+						L_167_.CFrame = L_164_.CFrame
+						local L_169_ = Vector3.new(0, 0, 0)
+						if L_4_["W"] then
+							L_169_ = L_169_ + L_166_.CFrame.lookVector * L_6_["FlySpeed"] * 25 
+						end
+						if L_4_["S"] then
+							L_169_ = L_169_ + L_166_.CFrame.lookVector * -L_6_["FlySpeed"] * 25
+						end
+						if L_4_["A"] then
+							L_169_ = L_169_ + L_166_.CFrame.rightVector * -L_6_["FlySpeed"] * 25
+						end
+						if L_4_["D"] then
+							L_169_ = L_169_ + L_166_.CFrame.rightVector * L_6_["FlySpeed"] * 25
+						end
+						if not L_4_["W"] and not L_4_["S"] and not L_4_["A"] and not L_4_["D"] then
+							L_169_ = Vector3.new(0, 0, 0)
+						end
+						L_168_.Velocity = L_169_
+						if L_166_ ~= nil then
+							L_166_.CFrame = CFrame.new(L_166_.Position, L_3_["Camera"].CoordinateFrame.lookVector * 9e9) + L_166_.CFrame.lookVector * 0.060
+						end
+						L_167_.CFrame = L_3_["Camera"].CoordinateFrame
+						L_165_.PlatformStand = false
+						local L_170_ = L_165_.StateChanged:Connect(function(L_171_arg1, L_172_arg2)
+							if L_172_arg2 == Enum.HumanoidStateType.PlatformStanding then
+								L_165_.PlatformStand = false
+							end
+						end)
+						L_165_:ChangeState(3)
+						for L_173_forvar1, L_174_forvar2 in next, L_165_:GetPlayingAnimationTracks() do
+							if L_174_forvar2.Animation.AnimationId == "http://www.roblox.com/asset/?id=125750702" then 
+								L_174_forvar2:Stop()
+							end
+						end
+						L_3_["RenderStepped"]:Wait()
+						if L_165_ ~= nil then
+							L_165_:ChangeState(8)
+						end
+						if L_166_ ~= nil then
+							L_166_.CFrame = CFrame.new(L_166_.Position, L_3_["Camera"].CoordinateFrame.lookVector * 9e9)
+						end
+						L_170_:Disconnect()
+					end
+				elseif not L_5_["Flying"] then
+					local L_175_ = L_54_func(L_3_["LocalPlayer"].Character, "Torso", "Find")
+					local L_176_ = L_54_func(L_3_["LocalPlayer"].Character, "Humanoid", "Find")
+					if L_175_ ~= nil and L_176_ ~= nil then
+						local L_177_ = L_54_func(L_175_, "DrPoppaBodyGyro", "Find")
+						local L_178_ = L_54_func(L_175_, "DrPoppaBodyVelocity", "Find")
+						if L_177_ ~= nil then
+							L_177_:Destroy()
+						end
+						if L_178_ ~= nil then
+							L_178_:Destroy()
+						end
+					end
+				end
+			end)()
+			if L_5_["NoClip"] then
+				local L_179_ = L_54_func(L_3_["LocalPlayer"].Character, "Humanoid", "Find")
+				if L_179_ ~= nil then
+					L_179_:ChangeState(11)
+				end
+			end
+			if L_5_["Aimbot"] and L_29_.Text == "" then
+				L_5_["AimbotTarget"] = GetNearestPlayerToMouse()
+			end
+			if L_5_["AimbotTarget"] ~= nil then
+				local L_180_ = L_54_func(L_5_["AimbotTarget"].Character, "Torso", "Find")
+				local L_181_ = L_54_func(L_3_["LocalPlayer"].Character, "Torso", "Find")
+				if L_181_ ~= nil and L_180_ ~= nil then
+					if not L_54_func(L_180_, "BoxHandleAdornment", "Find") then
+						local L_182_ = (L_181_.Position - L_180_.Position).magnitude / 10
+						local L_183_ = Instance.new("BoxHandleAdornment", L_180_)
+						L_183_.Adornee = L_180_
+						L_183_.AlwaysOnTop = true
+						L_183_.ZIndex = 5
+						L_183_.Transparency = 0.5
+						L_183_.Size = L_180_.Size * 2 + Vector3.new(L_182_, L_182_, L_182_)
+						L_183_.Color3 = Color3.new((math.sin(workspace.DistributedGameTime / 2) / 2) + 0.5, (math.sin(workspace.DistributedGameTime) / 2) + 0.5, (math.sin(workspace.DistributedGameTime * 1.5) / 2) + 0.5)
+						L_2_["Debris"]:AddItem(L_183_, 0.05)
+					end
+				end
+			end
+			if L_32_.Text ~= "" and L_5_["CamLocking"] then
+				local L_184_ = L_58_func(L_32_.Text)
+				if L_184_ ~= nil then
+					for L_185_forvar1, L_186_forvar2 in next, L_184_ do
+						if L_186_forvar2 ~= L_3_["LocalPlayer"] then
+							local L_187_ = L_54_func(L_186_forvar2.Character, "Torso", "Find")
+							if L_187_ ~= nil then
+								L_3_["Camera"].CoordinateFrame = CFrame.new(L_3_["Camera"].CoordinateFrame.p, L_187_.Position)
+							end
+						end
+					end
+				elseif L_5_["CamLockTarget"] ~= nil and L_5_["CamLocking"] then
+					local L_188_ = L_54_func(L_5_["CamLockTarget"].Character, "Torso", "Find")
+					if L_188_ ~= nil then
+						L_3_["Camera"].CoordinateFrame = CFrame.new(L_3_["Camera"].CoordinateFrame.p, L_188_.Position)
+					end
+				end
+			end
+		end
+	end)()
+
+	L_59_func()
+	L_55_func("DrPoppa v3 Loaded")
+	L_55_func("Took " .. tick() - L_1_)
+	L_55_func("Press ' for the command bar & enter 'cmds' for the commands")
+end
