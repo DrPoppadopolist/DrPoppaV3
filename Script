@@ -17,7 +17,7 @@ if not _G["DrPoppa"] then
 	}
 
 	local L_3_ = {
-		["airwalk"] = "CTRL to go down or hold space to go up",
+		["airwalk"] = "basically allows you to float hold CTRL to go down or hold space to go up",
 		["rejoin"] = "rejoins the game",
 		["fly/unfly"] = "yes.",
 		["flyspeed number"] = "changes flyspeed cus yeah",
@@ -1423,6 +1423,7 @@ if not _G["DrPoppa"] then
 							L_202_ = Instance.new("BodyGyro", L_200_)
 							L_202_.MaxTorque = Vector3.new(9e9, 9e9, 9e9)
 							L_202_.Name = "DrPoppaBodyGyro"
+							L_202_.P = 9e9
 						end
 						if L_203_ == nil then
 							L_203_ = Instance.new("BodyVelocity", L_200_)
@@ -1433,16 +1434,16 @@ if not _G["DrPoppa"] then
 						L_202_.CFrame = L_200_.CFrame
 						local L_204_ = Vector3.new(0, 0, 0)
 						if L_5_["W"] then
-							L_204_ = L_204_ + L_200_.CFrame.lookVector * L_7_["FlySpeed"] * 25 
+							L_204_ = L_204_ + L_4_["Camera"].CoordinateFrame.lookVector * L_7_["FlySpeed"] * 25 
 						end
 						if L_5_["S"] then
-							L_204_ = L_204_ + L_200_.CFrame.lookVector * -L_7_["FlySpeed"] * 25
+							L_204_ = L_204_ + L_4_["Camera"].CoordinateFrame.lookVector * -L_7_["FlySpeed"] * 25
 						end
 						if L_5_["A"] then
-							L_204_ = L_204_ + L_200_.CFrame.rightVector * -L_7_["FlySpeed"] * 25
+							L_204_ = L_204_ + L_4_["Camera"].CoordinateFrame.rightVector * -L_7_["FlySpeed"] * 25
 						end
 						if L_5_["D"] then
-							L_204_ = L_204_ + L_200_.CFrame.rightVector * L_7_["FlySpeed"] * 25
+							L_204_ = L_204_ + L_4_["Camera"].CoordinateFrame.rightVector * L_7_["FlySpeed"] * 25
 						end
 						if L_5_["Q"] then
 							L_204_ = L_204_ + Vector3.new(0, -L_7_["FlySpeed"] * 25, 0)
@@ -1454,9 +1455,6 @@ if not _G["DrPoppa"] then
 							L_204_ = Vector3.new(0, 0, 0)
 						end
 						L_203_.Velocity = L_204_
-						if L_201_ ~= nil then
-							L_201_.CFrame = CFrame.new(L_201_.Position, L_4_["Camera"].CoordinateFrame.lookVector * 9e9) + L_201_.CFrame.lookVector * 0.07
-						end
 						L_202_.CFrame = L_4_["Camera"].CoordinateFrame
 						L_198_.PlatformStand = false
 						local L_205_ = L_198_.StateChanged:Connect(function(L_206_arg1, L_207_arg2)
@@ -1473,9 +1471,6 @@ if not _G["DrPoppa"] then
 						L_4_["RenderStepped"]:Wait()
 						if L_198_ ~= nil then
 							L_198_:ChangeState(8)
-						end
-						if L_201_ ~= nil then
-							L_201_.CFrame = CFrame.new(L_201_.Position, L_4_["Camera"].CoordinateFrame.lookVector * 9e9)
 						end
 						L_205_:Disconnect()
 					end
