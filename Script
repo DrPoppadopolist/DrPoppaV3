@@ -4,6 +4,7 @@ local L_1_ = tick()
 if not _G["DrPoppa"] then
 
 	_G["DrPoppa"] = true
+
 	local L_2_ = {
 		["Players"] = game:GetService("Players"),
 		["UserInputService"] = game:GetService("UserInputService"),
@@ -69,6 +70,7 @@ if not _G["DrPoppa"] then
 		["Camlocking"] = false,
 		["Sprint"] = false,
 		["Attacking"] = false,
+		["CommandsOpen"] = false,
 		["Airwalk_Offset"] = 0,
 		["CamlockTarget"] = nil,
 		["AimbotTarget"] = nil,
@@ -554,9 +556,9 @@ if not _G["DrPoppa"] then
 
 	for L_72_forvar1, L_73_forvar2 in next, L_3_ do
 		local L_74_ = Instance.new("TextLabel", L_54_)
-		L_74_.Size = UDim2.new(1, 0, 0, 25)
-		L_74_.Position = UDim2.new(0, 0, 0, -25 + #L_54_:GetChildren() * 25)
-		L_74_.BackgroundTransparency = 0
+		L_74_.Size = UDim2.new(0, 440, 0, 25)
+		L_74_.Position = UDim2.new(0, 5, 0, -20 + #L_54_:GetChildren() * 30)
+		L_74_.BackgroundTransparency = 0.4
 		L_74_.BackgroundColor = BrickColor.new("Salmon")
 		L_74_.TextWrapped = true
 		L_74_.BorderColor = BrickColor.new("White")
@@ -880,6 +882,12 @@ if not _G["DrPoppa"] then
 			end
 		elseif L_138_[1] == "re" or L_138_[1] == "reset" or L_138_[1] == "respawn" then
 			L_58_func()
+		elseif L_138_[1] == "cmds" then
+			if not L_6_["CommandsOpen"] then
+				L_54_.Visible = true
+			elseif not L_6_["CommandsOpen"] then
+				L_54_.Visible = false
+			end
 		elseif L_138_[1] == "kill" then
 			local L_150_ = L_60_func(L_138_[2])
 			if L_150_ ~= nil then
