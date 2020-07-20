@@ -1498,53 +1498,46 @@ if not _G["DrPoppa"] then
 					L_214_.CanCollide = false
 					L_215_.CanCollide = false
 				end
-			elseif not L_6_["NoClip"] then
-				local L_216_ = L_56_func(L_4_["LocalPlayer"].Character, "Head", "Find")
-				local L_217_ = L_56_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
-				if L_216_ ~= nil and L_217_ ~= nil then
-					L_216_.CanCollide = true
-					L_217_.CanCollide = true
-				end
 			end
 			if L_6_["Aimbot"] and L_30_.Text == "" then
 				L_6_["AimbotTarget"] = GetNearestPlayerToMouse()
 			end
 			if L_6_["AimbotTarget"] ~= nil then
-				for L_218_forvar1, L_219_forvar2 in next, L_2_["Players"]:GetPlayers() do
-					local L_220_ = L_56_func(L_219_forvar2.Character, "Torso", "Find")
-					local L_221_ = L_56_func(L_219_forvar2.Character, "Torso", "Find")
-					if L_221_ ~= nil and L_220_ ~= nil then
-						local L_222_ = L_56_func(L_220_, "BoxHandleAdornment", "Find")
-						if L_222_ ~= nil and L_219_forvar2 ~= L_6_["AimbotTarget"] then
-							L_222_:Destroy()
-						elseif L_219_forvar2 == L_6_["AimbotTarget"] and not L_56_func(L_220_, "BoxHandleAdornment", "Find") then
-							local L_223_ = (L_221_.Position - L_220_.Position).magnitude / 25
-							local L_224_ = Instance.new("BoxHandleAdornment", L_220_)
-							L_224_.Adornee = L_220_
-							L_224_.AlwaysOnTop = true
-							L_224_.ZIndex = 5
-							L_224_.Transparency = 0.5
-							L_224_.Size = L_220_.Size * 2 + Vector3.new(L_223_, L_223_, L_223_)
-							L_224_.Color3 = Color3.new((math.sin(workspace.DistributedGameTime / 2) / 2) + 0.5, (math.sin(workspace.DistributedGameTime) / 2) + 0.5, (math.sin(workspace.DistributedGameTime * 1.5) / 2) + 0.5)
+				for L_216_forvar1, L_217_forvar2 in next, L_2_["Players"]:GetPlayers() do
+					local L_218_ = L_56_func(L_217_forvar2.Character, "Torso", "Find")
+					local L_219_ = L_56_func(L_217_forvar2.Character, "Torso", "Find")
+					if L_219_ ~= nil and L_218_ ~= nil then
+						local L_220_ = L_56_func(L_218_, "BoxHandleAdornment", "Find")
+						if L_220_ ~= nil and L_217_forvar2 ~= L_6_["AimbotTarget"] then
+							L_220_:Destroy()
+						elseif L_217_forvar2 == L_6_["AimbotTarget"] and not L_56_func(L_218_, "BoxHandleAdornment", "Find") then
+							local L_221_ = (L_219_.Position - L_218_.Position).magnitude / 25
+							local L_222_ = Instance.new("BoxHandleAdornment", L_218_)
+							L_222_.Adornee = L_218_
+							L_222_.AlwaysOnTop = true
+							L_222_.ZIndex = 5
+							L_222_.Transparency = 0.5
+							L_222_.Size = L_218_.Size * 2 + Vector3.new(L_221_, L_221_, L_221_)
+							L_222_.Color3 = Color3.new((math.sin(workspace.DistributedGameTime / 2) / 2) + 0.5, (math.sin(workspace.DistributedGameTime) / 2) + 0.5, (math.sin(workspace.DistributedGameTime * 1.5) / 2) + 0.5)
 						end
 					end
 				end
 			end
 			if L_33_.Text ~= "" and L_6_["Camlocking"] then
-				local L_225_ = L_61_func(L_33_.Text)
-				if L_225_ ~= nil then
-					for L_226_forvar1, L_227_forvar2 in next, L_225_ do
-						if L_227_forvar2 ~= L_4_["LocalPlayer"] then
-							local L_228_ = L_56_func(L_227_forvar2.Character, "Torso", "Find")
-							if L_228_ ~= nil then
-								L_4_["Camera"].CoordinateFrame = CFrame.new(L_4_["Camera"].CoordinateFrame.p, L_228_.Position)
+				local L_223_ = L_61_func(L_33_.Text)
+				if L_223_ ~= nil then
+					for L_224_forvar1, L_225_forvar2 in next, L_223_ do
+						if L_225_forvar2 ~= L_4_["LocalPlayer"] then
+							local L_226_ = L_56_func(L_225_forvar2.Character, "Torso", "Find")
+							if L_226_ ~= nil then
+								L_4_["Camera"].CoordinateFrame = CFrame.new(L_4_["Camera"].CoordinateFrame.p, L_226_.Position)
 							end
 						end
 					end
 				elseif L_6_["CamlockTarget"] ~= nil and L_6_["Camlocking"] then
-					local L_229_ = L_56_func(L_6_["CamlockTarget"].Character, "Torso", "Find")
-					if L_229_ ~= nil then
-						L_4_["Camera"].CoordinateFrame = CFrame.new(L_4_["Camera"].CoordinateFrame.p, L_229_.Position)
+					local L_227_ = L_56_func(L_6_["CamlockTarget"].Character, "Torso", "Find")
+					if L_227_ ~= nil then
+						L_4_["Camera"].CoordinateFrame = CFrame.new(L_4_["Camera"].CoordinateFrame.p, L_227_.Position)
 					end
 				end
 			end
