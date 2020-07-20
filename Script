@@ -17,11 +17,11 @@ if not _G["DrPoppa"] then
 	}
 
 	local L_3_ = {
-		["airwalk"] = "basically allows you to float hold CTRL to go down or hold space to go up",
+		["airwalk"] = "hold CTRL to go down or hold space to go up",
 		["rejoin"] = "rejoins the game",
 		["fly/unfly"] = "yes.",
 		["flyspeed number"] = "changes flyspeed cus yeah",
-		["sprintspeed number"] = "changes sprintspeed beacuse why not ( must be enabled in gui )",
+		["sprintspeed number"] = "changes sprintspeed beacuse why not",
 		["camlock player"] = "camlocks a player cus tryhard speds",
 		["view/unview player"] = "view people for whatever reason",
 		["re/reset/respawn"] = "will respawn you cus yeah",
