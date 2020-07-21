@@ -1312,11 +1312,11 @@ if not _G["DrPoppa"] then
 			if L_185_ ~= nil then
 				for L_186_forvar1, L_187_forvar2 in next, L_185_ do
 					L_6_["FeLoopTarget"] = L_187_forvar2
-					L_63_func("Fe Loop target is now " .. tostring(L_6_["CamlockTarget"]))
+					L_63_func("Fe Loop target is now " .. tostring(L_6_["FeLoopTarget"]))
 				end
 			end
 		else
-			L_6_["CamlockTarget"] = nil
+			L_6_["FeLoopTarget"] = nil
 			L_63_func("Fe Loop target has been changed to no one")
 		end
 	end)
@@ -1490,7 +1490,11 @@ if not _G["DrPoppa"] then
 				L_199_ = L_61_func(L_4_["LocalPlayer"]:WaitForChild("Backpack"), "Glock", "Find")
 			end
 			if L_199_ ~= nil then
-				L_61_func(L_199_, "Barrel", "Wait").CanCollide = false
+				if L_6_["NoClip"] or L_6_["Flying"] then
+					L_61_func(L_199_, "Barrel", "Wait").CanCollide = false
+				else
+					L_61_func(L_199_, "Barrel", "Wait").CanCollide = true
+				end
 			end
 			local L_200_ = L_61_func(L_4_["LocalPlayer"], "PlayerGui", "Find")
 			if L_200_ ~= nil then
