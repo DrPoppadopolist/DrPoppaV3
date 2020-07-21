@@ -593,7 +593,7 @@ if not _G["DrPoppa"] then
     -- // COMMANDS MENU \\ --
 
 	local L_59_ = Instance.new("ScrollingFrame", L_8_)
-	L_59_.Size = UDim2.new(0, 450, 0, 250)
+	L_59_.Size = UDim2.new(0, 500, 0, 250)
 	L_59_.Position = UDim2.new(0.5, -225, 0.5, -125)
 	L_59_.BackgroundColor = BrickColor.new("Salmon")
 	L_59_.Transparency = 0.2
@@ -604,7 +604,7 @@ if not _G["DrPoppa"] then
 
 	for L_78_forvar1, L_79_forvar2 in next, L_3_ do
 		local L_80_ = Instance.new("TextLabel", L_59_)
-		L_80_.Size = UDim2.new(0, 440, 0, 25)
+		L_80_.Size = UDim2.new(0, 490, 0, 25)
 		L_80_.Position = UDim2.new(0, 5, 0, -20 + #L_59_:GetChildren() * 30)
 		L_80_.BackgroundTransparency = 0.4
 		L_80_.BackgroundColor = BrickColor.new("Salmon")
