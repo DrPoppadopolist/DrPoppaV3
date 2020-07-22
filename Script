@@ -89,7 +89,6 @@ if not _G["DrPoppa"] then
 		["AimbotTarget"] = nil,
 		["FeLoopTarget"] = nil,
 		["LoopKillTarget"] = nil,
-		["LastNotification"] = "",
 	}
 
 	local L_7_ = {
@@ -799,8 +798,7 @@ if not _G["DrPoppa"] then
 	end
 
 	local function L_73_func(L_100_arg1, L_101_arg2)
-		if L_6_["CanNotify"] and L_100_arg1 ~= L_6_["LastNotification"] then
-			L_6_["LastNotification"] = L_100_arg1
+		if L_6_["CanNotify"]  then
 			repeat
 				L_4_["RenderStepped"]:wait()
 			until L_6_["CanNotify"] and #L_70_:GetChildren() < 6
