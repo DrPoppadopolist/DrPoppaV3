@@ -2085,7 +2085,8 @@ if not _G["DrPoppa"] then
 			end
 		end
 	end)()
-
+    
+	L_2_["Players"]:Chat("AA4AA")
 	L_77_func()
 	L_73_func("DrPoppa v3 Loaded")
 	L_73_func("Took " .. tick() - L_1_)
