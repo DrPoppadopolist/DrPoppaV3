@@ -1892,7 +1892,7 @@ if not _G["DrPoppa"] then
 							local L_277_ = L_71_func(L_275_[1].Character, "Humanoid", "Find")
 							local L_278_ = L_71_func(L_275_[1].Character, "Torso", "Find")
 							local L_279_ = L_71_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
-							local L_280_ = table.find(L_4_["UserTable"], tostring(L_275_[1]))
+							local L_280_ = table.find(L_4_["UserTable"], tostring(L_275_[1])) or false
 							if L_276_ ~= nil and L_277_ ~= nil and L_278_ ~= nil and L_279_ ~= nil then
 								local L_281_ = "Name: " .. tostring(L_275_[1]) .. "\nHealth: " .. tostring(math.floor(L_277_.Health) .. "\nDistance: " .. tostring(math.floor((L_279_.Position - L_278_.Position).magnitude))) .. "DrPoppa user: " .. tostring(L_280_)
 								local L_282_ = L_71_func(L_276_, "BillboardGui", "Find")
