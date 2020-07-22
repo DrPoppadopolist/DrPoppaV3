@@ -30,6 +30,7 @@ if not _G["DrPoppa"] then
 		["feloop/unfeloop player"] = "annoys people tbh",
 		["esp/unesp player/all"] = "will esp a specific player or all",
 		["loopkill/unloopkill player"] = "yes, epic.",
+		["users"] = "will notify you all players in server using DrPoppa",
 	}
 
     -- // VARIABLES \\ --
