@@ -1151,7 +1151,7 @@ if not _G["DrPoppa"] then
 			end
 		elseif L_165_[1] == "users" then
 			for L_183_forvar1 = 1, #L_4_["UserTable"] do
-				L_73_func(L_4_["UserTable"][L_183_forvar1] .. " is a drpoppa user")
+				L_73_func(L_4_["UserTable"][L_183_forvar1] .. " is a drpoppa user", "Really red")
 				wait(0.5)
 			end
 		elseif L_165_[1] == "esp" then
