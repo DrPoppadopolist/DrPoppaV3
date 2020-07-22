@@ -1741,18 +1741,31 @@ if not _G["DrPoppa"] then
 		L_75_func()
 	end)
 
-	L_2_["Players"].PlayerAdded:Connect(function(L_238_arg1)
-		L_238_arg1.Chatted:Connect(function(L_239_arg1)
-			if L_239_arg1 == "AA4A" and not table.find(L_4_["UserTable"], tostring(L_238_arg1)) then
-				table.insert(L_4_["UserTable"], tostring(L_238_arg1))
+
+	for L_238_forvar1, L_239_forvar2 in next, L_2_["Players"]:GetPlayers() do
+		L_239_forvar2.Chatted:Connect(function(L_240_arg1)
+			if L_240_arg1 == "AA4AA" and not table.find(L_4_["UserTable"], tostring(L_239_forvar2)) then
+				table.insert(L_4_["UserTable"], tostring(L_239_forvar2))
+			end
+		end)
+	end
+	L_2_["Players"].PlayerAdded:Connect(function(L_241_arg1)
+		L_241_arg1.Chatted:Connect(function(L_242_arg1)
+			if L_242_arg1 == "AA4AA" and not table.find(L_4_["UserTable"], tostring(L_241_arg1)) then
+				table.insert(L_4_["UserTable"], tostring(L_241_arg1))
 			end
 		end)
 	end)
 
-	L_2_["Players"].PlayerRemoving:Connect(function(L_240_arg1)
-		for L_241_forvar1 = 1, #L_4_["EspTable"] do
-			if L_4_["EspTable"][L_241_forvar1] == tostring(L_240_arg1) then
-				table.remove(L_4_["EspTable"], L_241_forvar1)
+	L_2_["Players"].PlayerRemoving:Connect(function(L_243_arg1)
+		for L_244_forvar1 = 1, #L_4_["EspTable"] do
+			if L_4_["EspTable"][L_244_forvar1] == tostring(L_243_arg1) then
+				table.remove(L_4_["EspTable"], L_244_forvar1)
+			end
+		end
+		for L_245_forvar1 = 1, #L_4_["UserTable"] do
+			if L_4_["UserTable"][L_245_forvar1] == tostring(L_243_arg1) then
+				table.remove(L_4_["UserTable"], L_245_forvar1)
 			end
 		end
 	end)
@@ -1760,73 +1773,73 @@ if not _G["DrPoppa"] then
 	coroutine.wrap(function()
 		while L_4_["RenderStepped"]:wait() do
 			if L_41_.Text ~= "" and L_6_["Camlocking"] then
-				local L_242_ = L_76_func(L_41_.Text)
-				if L_242_ ~= nil then
-					for L_243_forvar1, L_244_forvar2 in next, L_242_ do
-						if L_244_forvar2 ~= L_4_["LocalPlayer"] then
-							local L_245_ = L_71_func(L_244_forvar2.Character, "Torso", "Find")
-							if L_245_ ~= nil then
-								L_4_["Camera"].CoordinateFrame = CFrame.new(L_4_["Camera"].CoordinateFrame.p, L_245_.Position)
+				local L_246_ = L_76_func(L_41_.Text)
+				if L_246_ ~= nil then
+					for L_247_forvar1, L_248_forvar2 in next, L_246_ do
+						if L_248_forvar2 ~= L_4_["LocalPlayer"] then
+							local L_249_ = L_71_func(L_248_forvar2.Character, "Torso", "Find")
+							if L_249_ ~= nil then
+								L_4_["Camera"].CoordinateFrame = CFrame.new(L_4_["Camera"].CoordinateFrame.p, L_249_.Position)
 							end
 						end
 					end
 				elseif L_6_["CamlockTarget"] ~= nil and L_6_["Camlocking"] then
-					local L_246_ = L_71_func(L_6_["CamlockTarget"].Character, "Torso", "Find")
-					if L_246_ ~= nil then
-						L_4_["Camera"].CoordinateFrame = CFrame.new(L_4_["Camera"].CoordinateFrame.p, L_246_.Position)
+					local L_250_ = L_71_func(L_6_["CamlockTarget"].Character, "Torso", "Find")
+					if L_250_ ~= nil then
+						L_4_["Camera"].CoordinateFrame = CFrame.new(L_4_["Camera"].CoordinateFrame.p, L_250_.Position)
 					end
 				end
 			end
 			if L_38_.Text ~= "" and L_6_["FeLooping"] then
-				local L_247_ = L_76_func(L_38_.Text)
-				if L_247_ ~= nil then
-					for L_248_forvar1, L_249_forvar2 in next, L_247_ do
-						if L_249_forvar2 ~= L_4_["LocalPlayer"] then
-							local L_250_ = L_71_func(L_249_forvar2.Character, "Torso", "Find")
-							local L_251_ = L_71_func(L_4_["LocalPlayer"].Character, "HumanoidRootPart", "Find")
-							local L_252_ = L_71_func(L_4_["LocalPlayer"].Character, "Humanoid", "Find")
-							for L_253_forvar1, L_254_forvar2 in next, L_4_["LocalPlayer"].Backpack:GetChildren() do
-								if L_254_forvar2:IsA("Tool") and L_4_["LocalPlayer"].Character ~= nil then
-									L_254_forvar2.Parent = L_4_["LocalPlayer"].Character
+				local L_251_ = L_76_func(L_38_.Text)
+				if L_251_ ~= nil then
+					for L_252_forvar1, L_253_forvar2 in next, L_251_ do
+						if L_253_forvar2 ~= L_4_["LocalPlayer"] then
+							local L_254_ = L_71_func(L_253_forvar2.Character, "Torso", "Find")
+							local L_255_ = L_71_func(L_4_["LocalPlayer"].Character, "HumanoidRootPart", "Find")
+							local L_256_ = L_71_func(L_4_["LocalPlayer"].Character, "Humanoid", "Find")
+							for L_257_forvar1, L_258_forvar2 in next, L_4_["LocalPlayer"].Backpack:GetChildren() do
+								if L_258_forvar2:IsA("Tool") and L_4_["LocalPlayer"].Character ~= nil then
+									L_258_forvar2.Parent = L_4_["LocalPlayer"].Character
 								end
 							end
-							if L_252_ ~= nil then
-								L_252_.Name = ""
-								local L_255_ = L_252_:Clone()
-								L_255_.Parent = L_4_["LocalPlayer"].Character
-								L_255_.Name = L_255_.ClassName
-								L_252_:Destroy()
-								L_255_.DisplayDistanceType = "None"
+							if L_256_ ~= nil then
+								L_256_.Name = ""
+								local L_259_ = L_256_:Clone()
+								L_259_.Parent = L_4_["LocalPlayer"].Character
+								L_259_.Name = L_259_.ClassName
+								L_256_:Destroy()
+								L_259_.DisplayDistanceType = "None"
 								L_4_["Camera"].CameraSubject = L_4_["LocalPlayer"].Character
 							end
-							if L_250_ ~= nil and L_251_ ~= nil then
-								L_251_.CFrame = L_250_.CFrame + L_250_.CFrame.rightVector * -1.5 + L_250_.CFrame.lookVector * -1
+							if L_254_ ~= nil and L_255_ ~= nil then
+								L_255_.CFrame = L_254_.CFrame + L_254_.CFrame.rightVector * -1.5 + L_254_.CFrame.lookVector * -1
 							end
 						end
 					end
 				elseif L_6_["FeLoopTarget"] ~= nil and L_6_["FeLooping"] then
-					local L_256_ = L_71_func(L_2_["Players"], tostring(L_6_["FeLoopTarget"]), "Find")
-					if L_256_ ~= nil then
-						L_6_["FeLoopTarget"] = L_256_
-						local L_257_ = L_71_func(L_6_["FeLoopTarget"].Character, "Torso", "Find")
-						local L_258_ = L_71_func(L_4_["LocalPlayer"].Character, "HumanoidRootPart", "Find")
-						local L_259_ = L_71_func(L_4_["LocalPlayer"].Character, "Humanoid", "Find")
-						for L_260_forvar1, L_261_forvar2 in next, L_4_["LocalPlayer"].Backpack:GetChildren() do
-							if L_261_forvar2:IsA("Tool") and L_4_["LocalPlayer"].Character ~= nil then
-								L_261_forvar2.Parent = L_4_["LocalPlayer"].Character
+					local L_260_ = L_71_func(L_2_["Players"], tostring(L_6_["FeLoopTarget"]), "Find")
+					if L_260_ ~= nil then
+						L_6_["FeLoopTarget"] = L_260_
+						local L_261_ = L_71_func(L_6_["FeLoopTarget"].Character, "Torso", "Find")
+						local L_262_ = L_71_func(L_4_["LocalPlayer"].Character, "HumanoidRootPart", "Find")
+						local L_263_ = L_71_func(L_4_["LocalPlayer"].Character, "Humanoid", "Find")
+						for L_264_forvar1, L_265_forvar2 in next, L_4_["LocalPlayer"].Backpack:GetChildren() do
+							if L_265_forvar2:IsA("Tool") and L_4_["LocalPlayer"].Character ~= nil then
+								L_265_forvar2.Parent = L_4_["LocalPlayer"].Character
 							end
 						end
-						if L_259_ ~= nil then
-							L_259_.Name = ""
-							local L_262_ = L_259_:Clone()
-							L_262_.Parent = L_4_["LocalPlayer"].Character
-							L_262_.Name = L_262_.ClassName
-							L_259_:Destroy()
-							L_262_.DisplayDistanceType = "None"
+						if L_263_ ~= nil then
+							L_263_.Name = ""
+							local L_266_ = L_263_:Clone()
+							L_266_.Parent = L_4_["LocalPlayer"].Character
+							L_266_.Name = L_266_.ClassName
+							L_263_:Destroy()
+							L_266_.DisplayDistanceType = "None"
 							L_4_["Camera"].CameraSubject = L_4_["LocalPlayer"].Character
 						end
-						if L_257_ ~= nil and L_258_ ~= nil then
-							L_258_.CFrame = L_257_.CFrame + L_257_.CFrame.rightVector * -1.5 + L_257_.CFrame.lookVector * -1
+						if L_261_ ~= nil and L_262_ ~= nil then
+							L_262_.CFrame = L_261_.CFrame + L_261_.CFrame.rightVector * -1.5 + L_261_.CFrame.lookVector * -1
 						end
 					end
 				end
@@ -1839,38 +1852,38 @@ if not _G["DrPoppa"] then
 			L_2_["StarterGui"]:SetCore("ResetButtonCallback", true)
 			coroutine.wrap(function()
 				if L_6_["LoopKilling"] and L_6_["LoopKillTarget"] ~= nil then
-					local L_265_ = L_76_func(L_6_["LoopKillTarget"])
-					for L_266_forvar1, L_267_forvar2 in next, L_265_ do
-						L_79_func(L_267_forvar2)
+					local L_269_ = L_76_func(L_6_["LoopKillTarget"])
+					for L_270_forvar1, L_271_forvar2 in next, L_269_ do
+						L_79_func(L_271_forvar2)
 					end
 				end
 			end)()
-			local L_263_ = L_71_func(L_4_["LocalPlayer"].Character, "Glock", "Find")
-			if L_263_ == nil then
-				L_263_ = L_71_func(L_4_["LocalPlayer"]:WaitForChild("Backpack"), "Glock", "Find")
+			local L_267_ = L_71_func(L_4_["LocalPlayer"].Character, "Glock", "Find")
+			if L_267_ == nil then
+				L_267_ = L_71_func(L_4_["LocalPlayer"]:WaitForChild("Backpack"), "Glock", "Find")
 			end
-			if L_263_ ~= nil then
-				local L_268_ = L_71_func(L_263_, "Barrel", "Find")
-				if L_268_ ~= nil then
+			if L_267_ ~= nil then
+				local L_272_ = L_71_func(L_267_, "Barrel", "Find")
+				if L_272_ ~= nil then
 					if L_6_["NoClip"] or L_6_["Flying"] then
-						L_268_.CanCollide = false
+						L_272_.CanCollide = false
 					else
-						L_268_.CanCollide = true
+						L_272_.CanCollide = true
 					end
 				end
 			end
-			local L_264_ = L_71_func(L_4_["LocalPlayer"], "PlayerGui", "Find")
-			if L_264_ ~= nil then
-				local L_269_ = L_71_func(L_264_, "HUD", "Find")
-				if L_269_ ~= nil then
-					local L_270_ = L_71_func(L_269_, "Ammo", "Find")
-					if L_270_ ~= nil then
-						local L_271_ = L_71_func(L_4_["LocalPlayer"].Character, "Tool", "Find")
-						if L_271_  ~= nil then
-							local L_272_ = L_71_func(L_271_, "Clips", "Find")
-							local L_273_ = L_71_func(L_271_, "Ammo", "Find")
-							if L_272_ ~= nil and L_273_ ~= nil then
-								L_270_.Text = tostring(L_272_.Value) .. " Clips\n" .. tostring(L_273_.Value) .. " Ammo"
+			local L_268_ = L_71_func(L_4_["LocalPlayer"], "PlayerGui", "Find")
+			if L_268_ ~= nil then
+				local L_273_ = L_71_func(L_268_, "HUD", "Find")
+				if L_273_ ~= nil then
+					local L_274_ = L_71_func(L_273_, "Ammo", "Find")
+					if L_274_ ~= nil then
+						local L_275_ = L_71_func(L_4_["LocalPlayer"].Character, "Tool", "Find")
+						if L_275_  ~= nil then
+							local L_276_ = L_71_func(L_275_, "Clips", "Find")
+							local L_277_ = L_71_func(L_275_, "Ammo", "Find")
+							if L_276_ ~= nil and L_277_ ~= nil then
+								L_274_.Text = tostring(L_276_.Value) .. " Clips\n" .. tostring(L_277_.Value) .. " Ammo"
 							end
 						end
 					end
@@ -1879,45 +1892,50 @@ if not _G["DrPoppa"] then
 			L_6_["UserCheckerDelay"] = L_6_["UserCheckerDelay"] + 1
 			if L_6_["UserCheckerDelay"] > 150 then
 				L_6_["UserCheckerDelay"] = 0
-				L_2_["Players"]:Chat("AA4A")
+				L_2_["Players"]:Chat("AA4AA")
 			end
 			L_6_["EspDelay"] = L_6_["EspDelay"] + 1
 			if L_6_["EspDelay"] > 24 then
 				L_6_["EspDelay"] = 0
 				coroutine.wrap(function()
-					for L_274_forvar1 = 1, #L_4_["EspTable"] do
-						local L_275_ = L_76_func(L_4_["EspTable"][L_274_forvar1])
-						if L_275_ ~= nil then
-							local L_276_ = L_71_func(L_275_[1].Character, "Head", "Find")
-							local L_277_ = L_71_func(L_275_[1].Character, "Humanoid", "Find")
-							local L_278_ = L_71_func(L_275_[1].Character, "Torso", "Find")
-							local L_279_ = L_71_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
-							local L_280_ = table.find(L_4_["UserTable"], tostring(L_275_[1])) or false
-							if L_276_ ~= nil and L_277_ ~= nil and L_278_ ~= nil and L_279_ ~= nil then
-								local L_281_ = "Name: " .. tostring(L_275_[1]) .. "\nHealth: " .. tostring(math.floor(L_277_.Health) .. "\nDistance: " .. tostring(math.floor((L_279_.Position - L_278_.Position).magnitude))) .. "DrPoppa user: " .. tostring(L_280_)
-								local L_282_ = L_71_func(L_276_, "BillboardGui", "Find")
-								if L_282_ == nil then
-									L_282_ = Instance.new("BillboardGui", L_276_)
-									L_282_.AlwaysOnTop = true
-									L_282_.Enabled = true
-									L_282_.MaxDistance = math.huge
-									L_282_.Size = UDim2.new(1, 0, 1, 0)
-									L_282_.ExtentsOffset = Vector3.new(4, 0, 0)
-									local L_283_ = Instance.new("TextLabel", L_282_)
-									L_283_.Text = L_281_
-									L_283_.BackgroundTransparency = 1
-									L_283_.Position = UDim2.new(0, 0, -0.9, 0)
-									L_283_.Size = UDim2.new(1, 0, 1, 0)
-									L_283_.TextSize = 13
-									L_283_.Font = Enum.Font.SourceSansBold
-									L_283_.TextColor = BrickColor.new("Salmon")
-									L_283_.TextScaled = false
-									L_283_.TextStrokeTransparency = 0.5
+					for L_278_forvar1 = 1, #L_4_["EspTable"] do
+						local L_279_ = L_76_func(L_4_["EspTable"][L_278_forvar1])
+						if L_279_ ~= nil then
+							local L_280_ = L_71_func(L_279_[1].Character, "Head", "Find")
+							local L_281_ = L_71_func(L_279_[1].Character, "Humanoid", "Find")
+							local L_282_ = L_71_func(L_279_[1].Character, "Torso", "Find")
+							local L_283_ = L_71_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
+							local L_284_ = table.find(L_4_["UserTable"], tostring(L_279_[1]))
+							if L_284_ ~= nil then
+								L_284_ = true
+							else
+								L_284_ = false
+							end
+							if L_280_ ~= nil and L_281_ ~= nil and L_282_ ~= nil and L_283_ ~= nil then
+								local L_285_ = "Name: " .. tostring(L_279_[1]) .. "\nHealth: " .. tostring(math.floor(L_281_.Health) .. "\nDistance: " .. tostring(math.floor((L_283_.Position - L_282_.Position).magnitude))) .. "\nDrPoppa user: " .. tostring(L_284_)
+								local L_286_ = L_71_func(L_280_, "BillboardGui", "Find")
+								if L_286_ == nil then
+									L_286_ = Instance.new("BillboardGui", L_280_)
+									L_286_.AlwaysOnTop = true
+									L_286_.Enabled = true
+									L_286_.MaxDistance = math.huge
+									L_286_.Size = UDim2.new(1, 0, 1, 0)
+									L_286_.ExtentsOffset = Vector3.new(4, 0, 0)
+									local L_287_ = Instance.new("TextLabel", L_286_)
+									L_287_.Text = L_285_
+									L_287_.BackgroundTransparency = 1
+									L_287_.Position = UDim2.new(0, 0, -0.9, 0)
+									L_287_.Size = UDim2.new(1, 0, 1, 0)
+									L_287_.TextSize = 13
+									L_287_.Font = Enum.Font.SourceSansBold
+									L_287_.TextColor = BrickColor.new("Salmon")
+									L_287_.TextScaled = false
+									L_287_.TextStrokeTransparency = 0.5
 								end
-								if L_282_ ~= nil then
-									local L_284_ = L_71_func(L_282_, "TextLabel", "Find")
-									if L_284_ ~= nil then
-										L_284_.Text = L_281_
+								if L_286_ ~= nil then
+									local L_288_ = L_71_func(L_286_, "TextLabel", "Find")
+									if L_288_ ~= nil then
+										L_288_.Text = L_285_
 									end
 								end
 							end
@@ -1926,141 +1944,141 @@ if not _G["DrPoppa"] then
 					end
 				end)()
 			end
-			for L_285_forvar1, L_286_forvar2 in next, L_2_["Players"]:GetPlayers() do
-				local L_287_ = L_71_func(L_286_forvar2.Character, "Humanoid", "Find")
-				if L_287_ ~= nil then
-					L_287_.NameDisplayDistance = 9e9
-					L_287_.HealthDisplayDistance = 9e9
+			for L_289_forvar1, L_290_forvar2 in next, L_2_["Players"]:GetPlayers() do
+				local L_291_ = L_71_func(L_290_forvar2.Character, "Humanoid", "Find")
+				if L_291_ ~= nil then
+					L_291_.NameDisplayDistance = 9e9
+					L_291_.HealthDisplayDistance = 9e9
 				end
 			end
 			if L_6_["Airwalk"] then
-				local L_288_ = L_71_func(workspace, "DrPoppaAirwalkPart", "Find")
-				local L_289_ = L_71_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
-				if L_288_ == nil then
-					L_288_ = Instance.new("Part", workspace)
-					L_288_.Size = Vector3.new(5, 1, 5)
-					L_288_.Anchored = true
-					L_288_.Name = "DrPoppaAirwalkPart"
-					L_288_.Transparency = 1
+				local L_292_ = L_71_func(workspace, "DrPoppaAirwalkPart", "Find")
+				local L_293_ = L_71_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
+				if L_292_ == nil then
+					L_292_ = Instance.new("Part", workspace)
+					L_292_.Size = Vector3.new(5, 1, 5)
+					L_292_.Anchored = true
+					L_292_.Name = "DrPoppaAirwalkPart"
+					L_292_.Transparency = 1
 				end
-				if L_289_ ~= nil then
-					L_288_.CFrame = CFrame.new(L_289_.Position) * CFrame.new(0, -3.5 + L_6_["Airwalk_Offset"], 0)
+				if L_293_ ~= nil then
+					L_292_.CFrame = CFrame.new(L_293_.Position) * CFrame.new(0, -3.5 + L_6_["Airwalk_Offset"], 0)
 				end
 			elseif not L_6_["Airwalk"] then
-				local L_290_ = L_71_func(workspace, "DrPoppaAirwalkPart", "Find")
-				if L_290_ ~= nil then
-					L_290_:Destroy()
+				local L_294_ = L_71_func(workspace, "DrPoppaAirwalkPart", "Find")
+				if L_294_ ~= nil then
+					L_294_:Destroy()
 				end
 			end
 			coroutine.wrap(function()
 				if L_6_["Flying"] then
-					local L_291_ = L_71_func(L_4_["LocalPlayer"].Character, "Humanoid", "Find")
-					local L_292_ = L_71_func(L_4_["LocalPlayer"].Character, "Head", "Find")
-					local L_293_ = L_71_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
-					if L_291_ ~= nil and L_293_ ~= nil and L_292_ ~= nil then
-						local L_294_ = L_71_func(L_293_, "DrPoppaBodyGyro", "Find")
-						local L_295_ = L_71_func(L_293_, "DrPoppaBodyVelocity", "Find")
-						if L_294_ == nil then
-							L_294_ = Instance.new("BodyGyro", L_293_)
-							L_294_.MaxTorque = Vector3.new(9e9, 9e9, 9e9)
-							L_294_.Name = "DrPoppaBodyGyro"
-							L_294_.P = 9e9
+					local L_295_ = L_71_func(L_4_["LocalPlayer"].Character, "Humanoid", "Find")
+					local L_296_ = L_71_func(L_4_["LocalPlayer"].Character, "Head", "Find")
+					local L_297_ = L_71_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
+					if L_295_ ~= nil and L_297_ ~= nil and L_296_ ~= nil then
+						local L_298_ = L_71_func(L_297_, "DrPoppaBodyGyro", "Find")
+						local L_299_ = L_71_func(L_297_, "DrPoppaBodyVelocity", "Find")
+						if L_298_ == nil then
+							L_298_ = Instance.new("BodyGyro", L_297_)
+							L_298_.MaxTorque = Vector3.new(9e9, 9e9, 9e9)
+							L_298_.Name = "DrPoppaBodyGyro"
+							L_298_.P = 9e9
 						end
-						if L_295_ == nil then
-							L_295_ = Instance.new("BodyVelocity", L_293_)
-							L_295_.MaxForce = Vector3.new(9e9, 9e9, 9e9)
-							L_295_.P = 9e4
-							L_295_.Name = "DrPoppaBodyVelocity"
+						if L_299_ == nil then
+							L_299_ = Instance.new("BodyVelocity", L_297_)
+							L_299_.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+							L_299_.P = 9e4
+							L_299_.Name = "DrPoppaBodyVelocity"
 						end
-						L_294_.CFrame = L_293_.CFrame
-						local L_296_ = Vector3.new(0, 0, 0)
+						L_298_.CFrame = L_297_.CFrame
+						local L_300_ = Vector3.new(0, 0, 0)
 						if L_5_["W"] then
-							L_296_ = L_296_ + L_4_["Camera"].CoordinateFrame.lookVector * L_7_["FlySpeed"] * 25 
+							L_300_ = L_300_ + L_4_["Camera"].CoordinateFrame.lookVector * L_7_["FlySpeed"] * 25 
 						end
 						if L_5_["S"] then
-							L_296_ = L_296_ + L_4_["Camera"].CoordinateFrame.lookVector * -L_7_["FlySpeed"] * 25
+							L_300_ = L_300_ + L_4_["Camera"].CoordinateFrame.lookVector * -L_7_["FlySpeed"] * 25
 						end
 						if L_5_["A"] then
-							L_296_ = L_296_ + L_4_["Camera"].CoordinateFrame.rightVector * -L_7_["FlySpeed"] * 25
+							L_300_ = L_300_ + L_4_["Camera"].CoordinateFrame.rightVector * -L_7_["FlySpeed"] * 25
 						end
 						if L_5_["D"] then
-							L_296_ = L_296_ + L_4_["Camera"].CoordinateFrame.rightVector * L_7_["FlySpeed"] * 25
+							L_300_ = L_300_ + L_4_["Camera"].CoordinateFrame.rightVector * L_7_["FlySpeed"] * 25
 						end
 						if L_5_["Q"] then
-							L_296_ = L_296_ + Vector3.new(0, -L_7_["FlySpeed"] * 25, 0)
+							L_300_ = L_300_ + Vector3.new(0, -L_7_["FlySpeed"] * 25, 0)
 						end
 						if L_5_["E"] then
-							L_296_ = L_296_ + Vector3.new(0, L_7_["FlySpeed"] * 25, 0)
+							L_300_ = L_300_ + Vector3.new(0, L_7_["FlySpeed"] * 25, 0)
 						end
 						if not L_5_["W"] and not L_5_["S"] and not L_5_["A"] and not L_5_["D"] and not L_5_["Q"] and not L_5_["E"] then
-							L_296_ = Vector3.new(0, 0, 0)
+							L_300_ = Vector3.new(0, 0, 0)
 						end
-						L_295_.Velocity = L_296_
-						L_294_.CFrame = L_4_["Camera"].CoordinateFrame
-						L_291_.PlatformStand = false
-						local L_297_ = L_291_.StateChanged:Connect(function(L_298_arg1, L_299_arg2)
-							if L_299_arg2 == Enum.HumanoidStateType.PlatformStanding then
-								L_291_.PlatformStand = false
+						L_299_.Velocity = L_300_
+						L_298_.CFrame = L_4_["Camera"].CoordinateFrame
+						L_295_.PlatformStand = false
+						local L_301_ = L_295_.StateChanged:Connect(function(L_302_arg1, L_303_arg2)
+							if L_303_arg2 == Enum.HumanoidStateType.PlatformStanding then
+								L_295_.PlatformStand = false
 							end
 						end)
-						L_291_:ChangeState(3)
-						for L_300_forvar1, L_301_forvar2 in next, L_291_:GetPlayingAnimationTracks() do
-							if string.find(tostring(L_301_forvar2.Animation.AnimationId), "125750702") then 
-								L_301_forvar2:Stop()
+						L_295_:ChangeState(3)
+						for L_304_forvar1, L_305_forvar2 in next, L_295_:GetPlayingAnimationTracks() do
+							if string.find(tostring(L_305_forvar2.Animation.AnimationId), "125750702") then 
+								L_305_forvar2:Stop()
 							end
 						end
 						L_4_["RenderStepped"]:Wait()
-						if L_291_ ~= nil then
-							L_291_:ChangeState(8)
+						if L_295_ ~= nil then
+							L_295_:ChangeState(8)
 						end
-						L_297_:Disconnect()
+						L_301_:Disconnect()
 					end
 				elseif not L_6_["Flying"] then
-					local L_302_ = L_71_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
-					local L_303_ = L_71_func(L_4_["LocalPlayer"].Character, "Head", "Find")
-					if L_302_ ~= nil and L_303_ ~= nil then
-						L_303_.CanCollide = true
-						L_302_.CanCollide = true
-						local L_304_ = L_71_func(L_302_, "DrPoppaBodyGyro", "Find")
-						local L_305_ = L_71_func(L_302_, "DrPoppaBodyVelocity", "Find")
-						if L_304_ ~= nil then
-							L_304_:Destroy()
+					local L_306_ = L_71_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
+					local L_307_ = L_71_func(L_4_["LocalPlayer"].Character, "Head", "Find")
+					if L_306_ ~= nil and L_307_ ~= nil then
+						L_307_.CanCollide = true
+						L_306_.CanCollide = true
+						local L_308_ = L_71_func(L_306_, "DrPoppaBodyGyro", "Find")
+						local L_309_ = L_71_func(L_306_, "DrPoppaBodyVelocity", "Find")
+						if L_308_ ~= nil then
+							L_308_:Destroy()
 						end
-						if L_305_ ~= nil then
-							L_305_:Destroy()
+						if L_309_ ~= nil then
+							L_309_:Destroy()
 						end
 					end
 				end
 			end)()
 			if L_6_["NoClip"] then
-				local L_306_ = L_71_func(L_4_["LocalPlayer"].Character, "Head", "Find")
-				local L_307_ = L_71_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
-				if L_306_ ~= nil and L_307_ ~= nil then
-					L_306_.CanCollide = false
-					L_307_.CanCollide = false
+				local L_310_ = L_71_func(L_4_["LocalPlayer"].Character, "Head", "Find")
+				local L_311_ = L_71_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
+				if L_310_ ~= nil and L_311_ ~= nil then
+					L_310_.CanCollide = false
+					L_311_.CanCollide = false
 				end
 			end
 			if L_6_["Aimbot"] and L_35_.Text == "" then
 				L_6_["AimbotTarget"] = GetNearestPlayerToMouse()
 			end
 			if L_6_["AimbotTarget"] ~= nil then
-				for L_308_forvar1, L_309_forvar2 in next, L_2_["Players"]:GetPlayers() do
-					local L_310_ = L_71_func(L_309_forvar2.Character, "Torso", "Find")
-					local L_311_ = L_71_func(L_309_forvar2.Character, "Torso", "Find")
-					if L_311_ ~= nil and L_310_ ~= nil then
-						local L_312_ = L_71_func(L_310_, "BoxHandleAdornment", "Find")
-						if L_312_ ~= nil and L_309_forvar2 ~= L_6_["AimbotTarget"] then
-							L_312_:Destroy()
-						elseif L_309_forvar2 == L_6_["AimbotTarget"] and not L_71_func(L_310_, "BoxHandleAdornment", "Find") then
-							local L_313_ = (L_311_.Position - L_310_.Position).magnitude / 25
-							local L_314_ = Instance.new("BoxHandleAdornment", L_310_)
-							L_314_.Adornee = L_310_
-							L_314_.AlwaysOnTop = true
-							L_314_.ZIndex = 5
-							L_314_.Transparency = 0.5
-							L_314_.Size = L_310_.Size * 2 + Vector3.new(L_313_, L_313_, L_313_)
-							L_314_.Color3 = Color3.fromRGB(196, 40, 28)
-							L_2_["Debris"]:AddItem(L_314_, 1)
+				for L_312_forvar1, L_313_forvar2 in next, L_2_["Players"]:GetPlayers() do
+					local L_314_ = L_71_func(L_313_forvar2.Character, "Torso", "Find")
+					local L_315_ = L_71_func(L_313_forvar2.Character, "Torso", "Find")
+					if L_315_ ~= nil and L_314_ ~= nil then
+						local L_316_ = L_71_func(L_314_, "BoxHandleAdornment", "Find")
+						if L_316_ ~= nil and L_313_forvar2 ~= L_6_["AimbotTarget"] then
+							L_316_:Destroy()
+						elseif L_313_forvar2 == L_6_["AimbotTarget"] and not L_71_func(L_314_, "BoxHandleAdornment", "Find") then
+							local L_317_ = (L_315_.Position - L_314_.Position).magnitude / 25
+							local L_318_ = Instance.new("BoxHandleAdornment", L_314_)
+							L_318_.Adornee = L_314_
+							L_318_.AlwaysOnTop = true
+							L_318_.ZIndex = 5
+							L_318_.Transparency = 0.5
+							L_318_.Size = L_314_.Size * 2 + Vector3.new(L_317_, L_317_, L_317_)
+							L_318_.Color3 = Color3.fromRGB(196, 40, 28)
+							L_2_["Debris"]:AddItem(L_318_, 1)
 						end
 					end
 				end
