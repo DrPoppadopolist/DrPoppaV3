@@ -1,1307 +1,1310 @@
-
+    
 local L_1_ = tick()
 
-if not _G["DrPoppa"] then
+if not _G["\68\114\80\111\112\112\97"] then
 
-	_G["DrPoppa"] = true
+	_G["\68\114\80\111\112\112\97"] = true
 
 	local L_2_ = {
-		["Players"] = game:GetService("Players"),
-		["UserInputService"] = game:GetService("UserInputService"),
-		["RunService"] = game:GetService("RunService"),
-		["CoreGui"] = game:GetService("CoreGui"),
-		["TeleportService"] = game:GetService("TeleportService"),
-		["Debris"] = game:GetService("Debris"),
-		["StarterGui"] = game:GetService("StarterGui"),
-		["HttpService"] = game:GetService("HttpService"),
+		["\80\108\97\121\101\114\115"] = game:GetService("\80\108\97\121\101\114\115"),
+		["\85\115\101\114\73\110\112\117\116\83\101\114\118\105\99\101"] = game:GetService("\85\115\101\114\73\110\112\117\116\83\101\114\118\105\99\101"),
+		["\82\117\110\83\101\114\118\105\99\101"] = game:GetService("\82\117\110\83\101\114\118\105\99\101"),
+		["\67\111\114\101\71\117\105"] = game:GetService("\67\111\114\101\71\117\105"),
+		["\84\101\108\101\112\111\114\116\83\101\114\118\105\99\101"] = game:GetService("\84\101\108\101\112\111\114\116\83\101\114\118\105\99\101"),
+		["\68\101\98\114\105\115"] = game:GetService("\68\101\98\114\105\115"),
+		["\83\116\97\114\116\101\114\71\117\105"] = game:GetService("\83\116\97\114\116\101\114\71\117\105"),
+		["\72\116\116\112\83\101\114\118\105\99\101"] = game:GetService("\72\116\116\112\83\101\114\118\105\99\101"),
 	}
 
 	local L_3_ = {
-		["airwalk/unairwalk"] = "hold CTRL to go down or hold space to go up",
-		["rejoin"] = "rejoins the game",
-		["fly/unfly"] = "yes.",
-		["flyspeed number"] = "changes flyspeed cus yeah",
-		["sprintspeed number"] = "changes sprintspeed or u can do it in the UI",
-		["camlock player"] = "camlocks a player cus tryhard speds",
-		["view/unview player"] = "view people for whatever reason",
-		["re/reset/respawn"] = "will respawn you cus yeah",
-		["kill player"] = "attemps to kill a player (fixed)",
-		["tpbypass"] = "bypasses server teleport check but breaks some other stuff too",
-		["feloop/unfeloop player"] = "annoys people tbh",
-		["esp/unesp player/all"] = "will esp a specific player or all",
-		["loopkill/unloopkill player"] = "yes, epic.",
-		["users"] = "will notify you all players in server using DrPoppa",
-		["aimbotvelocity"] = "changes aimbot velocity duh",
+		["\97\105\114\119\97\108\107\47\117\110\97\105\114\119\97\108\107"] = "\104\111\108\100\32\67\84\82\76\32\116\111\32\103\111\32\100\111\119\110\32\111\114\32\104\111\108\100\32\115\112\97\99\101\32\116\111\32\103\111\32\117\112",
+		["\114\101\106\111\105\110"] = "\114\101\106\111\105\110\115\32\116\104\101\32\103\97\109\101",
+		["\102\108\121\47\117\110\102\108\121"] = "\121\101\115\46",
+		["\102\108\121\115\112\101\101\100\32\110\117\109\98\101\114"] = "\99\104\97\110\103\101\115\32\102\108\121\115\112\101\101\100\32\99\117\115\32\121\101\97\104",
+		["\115\112\114\105\110\116\115\112\101\101\100\32\110\117\109\98\101\114"] = "\99\104\97\110\103\101\115\32\115\112\114\105\110\116\115\112\101\101\100\32\111\114\32\117\32\99\97\110\32\100\111\32\105\116\32\105\110\32\116\104\101\32\85\73",
+		["\99\97\109\108\111\99\107\32\112\108\97\121\101\114"] = "\99\97\109\108\111\99\107\115\32\97\32\112\108\97\121\101\114\32\99\117\115\32\116\114\121\104\97\114\100\32\115\112\101\100\115",
+		["\118\105\101\119\47\117\110\118\105\101\119\32\112\108\97\121\101\114"] = "\118\105\101\119\32\112\101\111\112\108\101\32\102\111\114\32\119\104\97\116\101\118\101\114\32\114\101\97\115\111\110",
+		["\114\101\47\114\101\115\101\116\47\114\101\115\112\97\119\110"] = "\119\105\108\108\32\114\101\115\112\97\119\110\32\121\111\117\32\99\117\115\32\121\101\97\104",
+		["\107\105\108\108\32\112\108\97\121\101\114"] = "\97\116\116\101\109\112\115\32\116\111\32\107\105\108\108\32\97\32\112\108\97\121\101\114\32\40\102\105\120\101\100\41",
+		["\116\112\98\121\112\97\115\115"] = "\98\121\112\97\115\115\101\115\32\115\101\114\118\101\114\32\116\101\108\101\112\111\114\116\32\99\104\101\99\107\32\98\117\116\32\98\114\101\97\107\115\32\115\111\109\101\32\111\116\104\101\114\32\115\116\117\102\102\32\116\111\111",
+		["\102\101\108\111\111\112\47\117\110\102\101\108\111\111\112\32\112\108\97\121\101\114"] = "\97\110\110\111\121\115\32\112\101\111\112\108\101\32\116\98\104",
+		["\101\115\112\47\117\110\101\115\112\32\112\108\97\121\101\114\47\97\108\108"] = "\119\105\108\108\32\101\115\112\32\97\32\115\112\101\99\105\102\105\99\32\112\108\97\121\101\114\32\111\114\32\97\108\108",
+		["\108\111\111\112\107\105\108\108\47\117\110\108\111\111\112\107\105\108\108\32\112\108\97\121\101\114"] = "\121\101\115\44\32\101\112\105\99\46",
+		["\117\115\101\114\115"] = "\119\105\108\108\32\110\111\116\105\102\121\32\121\111\117\32\97\108\108\32\112\108\97\121\101\114\115\32\105\110\32\115\101\114\118\101\114\32\117\115\105\110\103\32\68\114\80\111\112\112\97",
+		["\97\105\109\98\111\116\118\101\108\111\99\105\116\121"] = "\99\104\97\110\103\101\115\32\97\105\109\98\111\116\32\118\101\108\111\99\105\116\121\32\100\117\104",
 	}
 
     -- // VARIABLES \\ --
 
 	local L_4_ = {
-		["LocalPlayer"] = L_2_["Players"].LocalPlayer,
-		["RenderStepped"] = L_2_["RunService"].RenderStepped,
-		["Stepped"] = L_2_["RunService"].Stepped,
-		["Heartbeat"] = L_2_["RunService"].Heartbeat,
-		["Camera"] = workspace:WaitForChild("Camera"),
+		["\76\111\99\97\108\80\108\97\121\101\114"] = L_2_["\80\108\97\121\101\114\115"].LocalPlayer,
+		["\82\101\110\100\101\114\83\116\101\112\112\101\100"] = L_2_["\82\117\110\83\101\114\118\105\99\101"].RenderStepped,
+		["\83\116\101\112\112\101\100"] = L_2_["\82\117\110\83\101\114\118\105\99\101"].Stepped,
+		["\72\101\97\114\116\98\101\97\116"] = L_2_["\82\117\110\83\101\114\118\105\99\101"].Heartbeat,
+		["\67\97\109\101\114\97"] = workspace:WaitForChild("\67\97\109\101\114\97"),
 	}
 
     -- // KEYS \\ --
 
 	local L_5_ = {
-		["W"] = false,
-		["A"] = false,
-		["S"] = false,
-		["D"] = false,
-		["Q"] = false,
-		["E"] = false,
-		["LeftShift"] = false,
+		["\87"] = false,
+		["\65"] = false,
+		["\83"] = false,
+		["\68"] = false,
+		["\81"] = false,
+		["\69"] = false,
+		["\76\101\102\116\83\104\105\102\116"] = false,
 	}
 
     -- // EDITABLE VARIABLES \\ --
 
 	local L_6_ = {
-		["Aimbot"] = false,
-		["Flying"] = false,
-		["NoSlow"] = false,
-		["AutoStomp"] = false,
-		["Stomping"] = false,
-		["Teleporting"] = false,
-		["GodeMode"] = false,
-		["Airwalk"] = false,
-		["NoClip"] = false,
-		["LoopKilling"] = false,
-		["Triggerbot"] = false,
-		["Triggered"] = false,
-		["Duplicating"] = false,
-		["CanNotify"] = true,
-		["Sprinting"] = false,
-		["Camlocking"] = false,
-		["Sprint"] = false,
-		["Attacking"] = false,
-		["CommandsOpen"] = false,
-		["TpBypass"] = false,
-		["GunAnim"] = false,
-		["HasLooped"] = true,
-		["VanDisabled"] = false,
-		["SpawnsEsp"] = false,
-		["Stomping"] = false,
-		["EspDelay"] = 0,
-		["UserCheckerDelay"] = 0,
-		["SpawnsEspDelay"] = 0,
-		["Airwalk_Offset"] = 0,
-		["CamlockTarget"] = nil,
-		["AimbotTarget"] = nil,
-		["FeLoopTarget"] = nil,
-		["LoopKillTarget"] = nil,
-		["Van"] = nil,
-		["EspTable"] = {},
-		["UserTable"] = {},
-		["SpawnsTable"] = {},
+		["\65\105\109\98\111\116"] = false,
+		["\70\108\121\105\110\103"] = false,
+		["\78\111\83\108\111\119"] = false,
+		["\65\117\116\111\83\116\111\109\112"] = false,
+		["\83\116\111\109\112\105\110\103"] = false,
+		["\84\101\108\101\112\111\114\116\105\110\103"] = false,
+		["\71\111\100\101\77\111\100\101"] = false,
+		["\65\105\114\119\97\108\107"] = false,
+		["\78\111\67\108\105\112"] = false,
+		["\76\111\111\112\75\105\108\108\105\110\103"] = false,
+		["\84\114\105\103\103\101\114\98\111\116"] = false,
+		["\84\114\105\103\103\101\114\101\100"] = false,
+		["\68\117\112\108\105\99\97\116\105\110\103"] = false,
+		["\67\97\110\78\111\116\105\102\121"] = true,
+		["\83\112\114\105\110\116\105\110\103"] = false,
+		["\67\97\109\108\111\99\107\105\110\103"] = false,
+		["\83\112\114\105\110\116"] = false,
+		["\65\116\116\97\99\107\105\110\103"] = false,
+		["\67\111\109\109\97\110\100\115\79\112\101\110"] = false,
+		["\84\112\66\121\112\97\115\115"] = false,
+		["\71\117\110\65\110\105\109"] = false,
+		["\72\97\115\76\111\111\112\101\100"] = true,
+		["\86\97\110\68\105\115\97\98\108\101\100"] = false,
+		["\83\112\97\119\110\115\69\115\112"] = false,
+		["\83\116\111\109\112\105\110\103"] = false,
+		["\66\108\97\99\107\67\111\111\108\100\111\119\110"] = false,
+		["\69\115\112\68\101\108\97\121"] = 0,
+		["\85\115\101\114\67\104\101\99\107\101\114\68\101\108\97\121"] = 0,
+		["\83\112\97\119\110\115\69\115\112\68\101\108\97\121"] = 0,
+		["\65\105\114\119\97\108\107\95\79\102\102\115\101\116"] = 0,
+		["\67\97\109\108\111\99\107\84\97\114\103\101\116"] = nil,
+		["\65\105\109\98\111\116\84\97\114\103\101\116"] = nil,
+		["\70\101\76\111\111\112\84\97\114\103\101\116"] = nil,
+		["\76\111\111\112\75\105\108\108\84\97\114\103\101\116"] = nil,
+		["\86\97\110"] = nil,
+		["\69\115\112\84\97\98\108\101"] = {},
+		["\85\115\101\114\84\97\98\108\101"] = {},
+		["\83\112\97\119\110\115\84\97\98\108\101"] = {},
 	}
 
 	local L_7_ = {
-		["FlySpeed"] = 5,
-		["AimbotVelocity"] = 2,
-		["SprintSpeed"] = 25,
-		["FlyHotkey"] = "F",
-		["NoClipHotkey"] = "N",
-		["AirwalkHotkey"] = "B",
-		["ResetHotkey"] = " ",
+		["\70\108\121\83\112\101\101\100"] = 5,
+		["\65\105\109\98\111\116\86\101\108\111\99\105\116\121"] = 2,
+		["\83\112\114\105\110\116\83\112\101\101\100"] = 25,
+		["\70\108\121\72\111\116\107\101\121"] = "\70",
+		["\78\111\67\108\105\112\72\111\116\107\101\121"] = "\78",
+		["\65\105\114\119\97\108\107\72\111\116\107\101\121"] = "\66",
+		["\82\101\115\101\116\72\111\116\107\101\121"] = "\32",
 	}
 
+	local L_8_ = {}
+
 	if writefile ~= nil and readfile ~= nil then
-		local L_91_ = nil
+		local L_92_ = nil
 		pcall(function()
-			L_91_ = readfile("DrPoppav3Settings.lua")
+			L_92_ = readfile("\68\114\80\111\112\112\97\118\51\83\101\116\116\105\110\103\115\46\108\117\97")
 		end)
-		if L_91_ ~= nil then
-			L_91_ = L_2_["HttpService"]:JSONDecode(readfile("DrPoppav3Settings.lua"))
-			for L_92_forvar1, L_93_forvar2 in next, L_7_ do
-				L_7_[L_92_forvar1] = L_91_[L_92_forvar1]
+		if L_92_ ~= nil then
+			L_92_ = L_2_["\72\116\116\112\83\101\114\118\105\99\101"]:JSONDecode(readfile("\68\114\80\111\112\112\97\118\51\83\101\116\116\105\110\103\115\46\108\117\97"))
+			for L_93_forvar1, L_94_forvar2 in next, L_7_ do
+				L_7_[L_93_forvar1] = L_92_[L_93_forvar1]
 			end
-			writefile("DrPoppav3Settings.lua", L_2_["HttpService"]:JSONEncode(L_7_))
+			writefile("\68\114\80\111\112\112\97\118\51\83\101\116\116\105\110\103\115\46\108\117\97", L_2_["\72\116\116\112\83\101\114\118\105\99\101"]:JSONEncode(L_7_))
 		else
-			L_91_ = writefile("DrPoppav3Settings.lua", L_2_["HttpService"]:JSONEncode(L_7_))
+			L_92_ = writefile("\68\114\80\111\112\112\97\118\51\83\101\116\116\105\110\103\115\46\108\117\97", L_2_["\72\116\116\112\83\101\114\118\105\99\101"]:JSONEncode(L_7_))
 		end
 	end
 
-	local function L_8_func(L_94_arg1, L_95_arg2, L_96_arg3)
-		if L_94_arg1 ~= nil and L_95_arg2 ~= nil then
-			if L_96_arg3 == "Find" then
-				local L_97_ = L_94_arg1:FindFirstChildOfClass(L_95_arg2)
-				if not L_97_ then
-					L_97_ = L_94_arg1:FindFirstChild(L_95_arg2)
+	local function L_9_func(L_95_arg1, L_96_arg2, L_97_arg3)
+		if L_95_arg1 ~= nil and L_96_arg2 ~= nil then
+			if L_97_arg3 == "\70\105\110\100" then
+				local L_98_ = L_95_arg1:FindFirstChildOfClass(L_96_arg2)
+				if not L_98_ then
+					L_98_ = L_95_arg1:FindFirstChild(L_96_arg2)
 				end
-				if L_97_ then
-					return L_97_
-				end
-			elseif L_96_arg3 == "Wait" then
-				local L_98_ = L_94_arg1:WaitForChild(L_95_arg2)
 				if L_98_ then
 					return L_98_
 				end
+			elseif L_97_arg3 == "\87\97\105\116" then
+				local L_99_ = L_95_arg1:WaitForChild(L_96_arg2)
+				if L_99_ then
+					return L_99_
+				end
 			end
 		end
 	end
 
-	local L_9_ = Instance.new("ScreenGui", L_2_["CoreGui"])
+	local L_10_ = Instance.new("\83\99\114\101\101\110\71\117\105", L_2_["\67\111\114\101\71\117\105"])
 
     -- // FRAMES \\ --
 
-	local L_10_ = Instance.new("Frame", L_9_)
-	L_10_.Size = UDim2.new(0, 100, 0, 250)
-	L_10_.Position = UDim2.new(1, 0, 1, -260)
-	L_10_.BackgroundColor = BrickColor.new("Salmon")
-	L_10_.Transparency = 0.2
-	L_10_.BorderSizePixel = 2
-	L_10_.BorderColor = BrickColor.new("White")
+	local L_11_ = Instance.new("\70\114\97\109\101", L_10_)
+	L_11_.Size = UDim2.new(0, 100, 0, 250)
+	L_11_.Position = UDim2.new(1, 0, 1, -260)
+	L_11_.BackgroundColor = BrickColor.new("\83\97\108\109\111\110")
+	L_11_.Transparency = 0.2
+	L_11_.BorderSizePixel = 2
+	L_11_.BorderColor = BrickColor.new("\87\104\105\116\101")
 
-	local L_11_ = Instance.new("ImageLabel", L_10_)
-	L_11_.Size = UDim2.new(0, 27.5, 0, 27.5)
-	L_11_.Position = UDim2.new(0.5, -12.5, 0, 5)
-	L_11_.BackgroundTransparency = 1
-	L_11_.Image = "http://www.roblox.com/asset/?id=2124384310"
+	local L_12_ = Instance.new("\73\109\97\103\101\76\97\98\101\108", L_11_)
+	L_12_.Size = UDim2.new(0, 27.5, 0, 27.5)
+	L_12_.Position = UDim2.new(0.5, -12.5, 0, 5)
+	L_12_.BackgroundTransparency = 1
+	L_12_.Image = "\104\116\116\112\58\47\47\119\119\119\46\114\111\98\108\111\120\46\99\111\109\47\97\115\115\101\116\47\63\105\100\61\50\49\50\52\51\56\52\51\49\48"
 
-	local L_12_ = Instance.new("Frame", L_10_)
-	L_12_.Size = UDim2.new(0, 300, 0, 250)
-	L_12_.Position = UDim2.new(-3.1, 0, 0, 0)
-	L_12_.Transparency = 1
-	L_12_.Visible = true
+	local L_13_ = Instance.new("\70\114\97\109\101", L_11_)
+	L_13_.Size = UDim2.new(0, 300, 0, 250)
+	L_13_.Position = UDim2.new(-3.1, 0, 0, 0)
+	L_13_.Transparency = 1
+	L_13_.Visible = true
 
-	local L_13_ = Instance.new("TextButton", L_12_)
-	L_13_.Size = UDim2.new(0, 15, 0, 25)
-	L_13_.Position = UDim2.new(-0.080, 0, 0.5, -25)
-	L_13_.BackgroundColor = BrickColor.new("Salmon")
-	L_13_.Transparency = 0.2
-	L_13_.BorderSizePixel = 2
-	L_13_.Text = ">"
-	L_13_.TextColor = BrickColor.new("Really black")
-	L_13_.BorderColor = BrickColor.new("White")
-	L_13_.Visible = false
-	L_13_.Font = "GothamBlack"
-	L_13_.TextSize = 15
+	local L_14_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_13_)
+	L_14_.Size = UDim2.new(0, 15, 0, 25)
+	L_14_.Position = UDim2.new(-0.080, 0, 0.5, -25)
+	L_14_.BackgroundColor = BrickColor.new("\83\97\108\109\111\110")
+	L_14_.Transparency = 0.2
+	L_14_.BorderSizePixel = 2
+	L_14_.Text = "\62"
+	L_14_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_14_.BorderColor = BrickColor.new("\87\104\105\116\101")
+	L_14_.Visible = false
+	L_14_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_14_.TextSize = 15
 
     -- // SETTINGS FRAME \\ --
 
-	local L_14_ = Instance.new("Frame", L_12_)
-	L_14_.Size = UDim2.new(0, 300, 0, 250)
-	L_14_.Position = UDim2.new(0, 0, 0, 0)
-	L_14_.BackgroundColor = BrickColor.new("Salmon")
-	L_14_.Transparency = 0.2
-	L_14_.BorderSizePixel = 2
-	L_14_.BorderColor = BrickColor.new("White")
-	L_14_.Visible = false
-
-	local L_15_ = Instance.new("Frame", L_12_)
+	local L_15_ = Instance.new("\70\114\97\109\101", L_13_)
 	L_15_.Size = UDim2.new(0, 300, 0, 250)
 	L_15_.Position = UDim2.new(0, 0, 0, 0)
-	L_15_.BackgroundColor = BrickColor.new("Salmon")
+	L_15_.BackgroundColor = BrickColor.new("\83\97\108\109\111\110")
 	L_15_.Transparency = 0.2
 	L_15_.BorderSizePixel = 2
-	L_15_.BorderColor = BrickColor.new("White")
+	L_15_.BorderColor = BrickColor.new("\87\104\105\116\101")
 	L_15_.Visible = false
 
-	local L_16_ = Instance.new("TextButton", L_14_)
-	L_16_.Size = UDim2.new(0, 12.5, 0, 25)
-	L_16_.Position = UDim2.new(0, 285, 0.5, -25)
-	L_16_.BackgroundColor = BrickColor.new("Salmon")
+	local L_16_ = Instance.new("\70\114\97\109\101", L_13_)
+	L_16_.Size = UDim2.new(0, 300, 0, 250)
+	L_16_.Position = UDim2.new(0, 0, 0, 0)
+	L_16_.BackgroundColor = BrickColor.new("\83\97\108\109\111\110")
 	L_16_.Transparency = 0.2
-	L_16_.BorderSizePixel = 0
-	L_16_.Text = ">"
-	L_16_.TextColor = BrickColor.new("Really black")
-	L_16_.Font = "GothamBlack"
-	L_16_.TextSize = 15
+	L_16_.BorderSizePixel = 2
+	L_16_.BorderColor = BrickColor.new("\87\104\105\116\101")
+	L_16_.Visible = false
 
-	local L_17_ = Instance.new("TextButton", L_15_)
+	local L_17_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_15_)
 	L_17_.Size = UDim2.new(0, 12.5, 0, 25)
-	L_17_.Position = UDim2.new(0, 7.5, 0.5, -25)
-	L_17_.BackgroundColor = BrickColor.new("Salmon")
+	L_17_.Position = UDim2.new(0, 285, 0.5, -25)
+	L_17_.BackgroundColor = BrickColor.new("\83\97\108\109\111\110")
 	L_17_.Transparency = 0.2
 	L_17_.BorderSizePixel = 0
-	L_17_.Text = "<"
-	L_17_.TextColor = BrickColor.new("Really black")
-	L_17_.Font = "GothamBlack"
+	L_17_.Text = "\62"
+	L_17_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_17_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
 	L_17_.TextSize = 15
 
-	local L_18_ = Instance.new("TextButton", L_10_)
-	L_18_.Size = UDim2.new(0, 80, 0, 25)
-	L_18_.Position = UDim2.new(0.5, -40, 0, 40)
-	L_18_.BackgroundColor = BrickColor.new("Light red")
-	L_18_.Transparency = 0.1
+	local L_18_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_16_)
+	L_18_.Size = UDim2.new(0, 12.5, 0, 25)
+	L_18_.Position = UDim2.new(0, 7.5, 0.5, -25)
+	L_18_.BackgroundColor = BrickColor.new("\83\97\108\109\111\110")
+	L_18_.Transparency = 0.2
 	L_18_.BorderSizePixel = 0
-	L_18_.Text = "Settings"
-	L_18_.TextColor = BrickColor.new("Really black")
-	L_18_.Font = "GothamBlack"
+	L_18_.Text = "\60"
+	L_18_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_18_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
 	L_18_.TextSize = 15
 
-	local L_19_ = Instance.new("TextButton", L_14_)
-	L_19_.Size = UDim2.new(0, 80, 0, 20)
-	L_19_.Position = UDim2.new(0, 20, 0, 15)
-	L_19_.BackgroundColor = BrickColor.new("Light red")
+	local L_19_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_11_)
+	L_19_.Size = UDim2.new(0, 80, 0, 25)
+	L_19_.Position = UDim2.new(0.5, -40, 0, 40)
+	L_19_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
+	L_19_.Transparency = 0.1
 	L_19_.BorderSizePixel = 0
-	L_19_.Text = "Airwalk"
-	L_19_.TextColor = BrickColor.new("Really black")
-	L_19_.Font = "GothamBlack"
+	L_19_.Text = "\83\101\116\116\105\110\103\115"
+	L_19_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_19_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
 	L_19_.TextSize = 15
 
-	local L_20_ = Instance.new("Frame", L_19_)
-	L_20_.Size = UDim2.new(0, 80, 0, 3)
-	L_20_.Position = UDim2.new(0, 0, 0, 18)
-	L_20_.BackgroundColor = BrickColor.new("Really red")
-	L_20_.Transparency = 0.1
+	local L_20_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_15_)
+	L_20_.Size = UDim2.new(0, 80, 0, 20)
+	L_20_.Position = UDim2.new(0, 20, 0, 15)
+	L_20_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_20_.BorderSizePixel = 0
+	L_20_.Text = "\65\105\114\119\97\108\107"
+	L_20_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_20_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_20_.TextSize = 15
 
-	local L_21_ = Instance.new("TextButton", L_14_)
-	L_21_.Size = UDim2.new(0, 80, 0, 20)
-	L_21_.Position = UDim2.new(0, 20, 0, 50)
-	L_21_.BackgroundColor = BrickColor.new("Light red")
+	local L_21_ = Instance.new("\70\114\97\109\101", L_20_)
+	L_21_.Size = UDim2.new(0, 80, 0, 3)
+	L_21_.Position = UDim2.new(0, 0, 0, 18)
+	L_21_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+	L_21_.Transparency = 0.1
 	L_21_.BorderSizePixel = 0
-	L_21_.Text = "Fly"
-	L_21_.TextColor = BrickColor.new("Really black")
-	L_21_.Font = "GothamBlack"
-	L_21_.TextSize = 15
 
-	local L_22_ = Instance.new("Frame", L_21_)
-	L_22_.Size = UDim2.new(0, 80, 0, 3)
-	L_22_.Position = UDim2.new(0, 0, 0, 18)
-	L_22_.BackgroundColor = BrickColor.new("Really red")
-	L_22_.Transparency = 0.1
+	local L_22_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_15_)
+	L_22_.Size = UDim2.new(0, 80, 0, 20)
+	L_22_.Position = UDim2.new(0, 20, 0, 50)
+	L_22_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_22_.BorderSizePixel = 0
+	L_22_.Text = "\70\108\121"
+	L_22_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_22_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_22_.TextSize = 15
 
-	local L_23_ = Instance.new("TextButton", L_14_)
-	L_23_.Size = UDim2.new(0, 80, 0, 20)
-	L_23_.Position = UDim2.new(0, 110, 0, 15)
-	L_23_.BackgroundColor = BrickColor.new("Light red")
+	local L_23_ = Instance.new("\70\114\97\109\101", L_22_)
+	L_23_.Size = UDim2.new(0, 80, 0, 3)
+	L_23_.Position = UDim2.new(0, 0, 0, 18)
+	L_23_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+	L_23_.Transparency = 0.1
 	L_23_.BorderSizePixel = 0
-	L_23_.Text = "No Slow"
-	L_23_.TextColor = BrickColor.new("Really black")
-	L_23_.Font = "GothamBlack"
-	L_23_.TextSize = 15
 
-	local L_24_ = Instance.new("Frame", L_23_)
-	L_24_.Size = UDim2.new(0, 80, 0, 3)
-	L_24_.Position = UDim2.new(0, 0, 0, 18)
-	L_24_.BackgroundColor = BrickColor.new("Really red")
-	L_24_.Transparency = 0.1
+	local L_24_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_15_)
+	L_24_.Size = UDim2.new(0, 80, 0, 20)
+	L_24_.Position = UDim2.new(0, 110, 0, 15)
+	L_24_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_24_.BorderSizePixel = 0
+	L_24_.Text = "\78\111\32\83\108\111\119"
+	L_24_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_24_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_24_.TextSize = 15
 
-	local L_25_ = Instance.new("TextButton", L_14_)
-	L_25_.Size = UDim2.new(0, 80, 0, 20)
-	L_25_.Position = UDim2.new(0, 200, 0, 15)
-	L_25_.BackgroundColor = BrickColor.new("Light red")
+	local L_25_ = Instance.new("\70\114\97\109\101", L_24_)
+	L_25_.Size = UDim2.new(0, 80, 0, 3)
+	L_25_.Position = UDim2.new(0, 0, 0, 18)
+	L_25_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+	L_25_.Transparency = 0.1
 	L_25_.BorderSizePixel = 0
-	L_25_.Text = "Auto Stomp"
-	L_25_.TextColor = BrickColor.new("Really black")
-	L_25_.Font = "GothamBlack"
-	L_25_.TextSize = 13
 
-	local L_26_ = Instance.new("Frame", L_25_)
-	L_26_.Size = UDim2.new(0, 80, 0, 3)
-	L_26_.Position = UDim2.new(0, 0, 0, 18)
-	L_26_.BackgroundColor = BrickColor.new("Really red")
-	L_26_.Transparency = 0.1
+	local L_26_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_15_)
+	L_26_.Size = UDim2.new(0, 80, 0, 20)
+	L_26_.Position = UDim2.new(0, 200, 0, 15)
+	L_26_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_26_.BorderSizePixel = 0
+	L_26_.Text = "\65\117\116\111\32\83\116\111\109\112"
+	L_26_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_26_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_26_.TextSize = 13
 
-	local L_27_ = Instance.new("TextButton", L_14_)
-	L_27_.Size = UDim2.new(0, 80, 0, 20)
-	L_27_.Position = UDim2.new(0, 110, 0, 50)
-	L_27_.BackgroundColor = BrickColor.new("Light red")
+	local L_27_ = Instance.new("\70\114\97\109\101", L_26_)
+	L_27_.Size = UDim2.new(0, 80, 0, 3)
+	L_27_.Position = UDim2.new(0, 0, 0, 18)
+	L_27_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+	L_27_.Transparency = 0.1
 	L_27_.BorderSizePixel = 0
-	L_27_.Text = "NoClip"
-	L_27_.TextColor = BrickColor.new("Really black")
-	L_27_.Font = "GothamBlack"
-	L_27_.TextSize = 15
 
-	local L_28_ = Instance.new("Frame", L_27_)
-	L_28_.Size = UDim2.new(0, 80, 0, 3)
-	L_28_.Position = UDim2.new(0, 0, 0, 18)
-	L_28_.BackgroundColor = BrickColor.new("Really red")
-	L_28_.Transparency = 0.1
+	local L_28_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_15_)
+	L_28_.Size = UDim2.new(0, 80, 0, 20)
+	L_28_.Position = UDim2.new(0, 110, 0, 50)
+	L_28_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_28_.BorderSizePixel = 0
+	L_28_.Text = "\78\111\67\108\105\112"
+	L_28_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_28_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_28_.TextSize = 15
 
-	local L_29_ = Instance.new("TextButton", L_14_)
-	L_29_.Size = UDim2.new(0, 80, 0, 20)
-	L_29_.Position = UDim2.new(0, 200, 0, 50)
-	L_29_.BackgroundColor = BrickColor.new("Light red")
+	local L_29_ = Instance.new("\70\114\97\109\101", L_28_)
+	L_29_.Size = UDim2.new(0, 80, 0, 3)
+	L_29_.Position = UDim2.new(0, 0, 0, 18)
+	L_29_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+	L_29_.Transparency = 0.1
 	L_29_.BorderSizePixel = 0
-	L_29_.Text = "TriggerBot"
-	L_29_.TextColor = BrickColor.new("Really black")
-	L_29_.Font = "GothamBlack"
-	L_29_.TextSize = 15
 
-	local L_30_ = Instance.new("Frame", L_29_)
-	L_30_.Size = UDim2.new(0, 80, 0, 3)
-	L_30_.Position = UDim2.new(0, 0, 0, 18)
-	L_30_.BackgroundColor = BrickColor.new("Really red")
-	L_30_.Transparency = 0.1
+	local L_30_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_15_)
+	L_30_.Size = UDim2.new(0, 80, 0, 20)
+	L_30_.Position = UDim2.new(0, 200, 0, 50)
+	L_30_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_30_.BorderSizePixel = 0
+	L_30_.Text = "\84\114\105\103\103\101\114\66\111\116"
+	L_30_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_30_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_30_.TextSize = 15
 
-	local L_31_ = Instance.new("TextButton", L_14_)
-	L_31_.Size = UDim2.new(0, 80, 0, 20)
-	L_31_.Position = UDim2.new(0, 20, 0, 85)
-	L_31_.BackgroundColor = BrickColor.new("Light red")
+	local L_31_ = Instance.new("\70\114\97\109\101", L_30_)
+	L_31_.Size = UDim2.new(0, 80, 0, 3)
+	L_31_.Position = UDim2.new(0, 0, 0, 18)
+	L_31_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+	L_31_.Transparency = 0.1
 	L_31_.BorderSizePixel = 0
-	L_31_.Text = "TP Bypass"
-	L_31_.TextColor = BrickColor.new("Really black")
-	L_31_.Font = "GothamBlack"
-	L_31_.TextSize = 15
 
-	local L_32_ = Instance.new("Frame", L_31_)
-	L_32_.Size = UDim2.new(0, 80, 0, 3)
-	L_32_.Position = UDim2.new(0, 0, 0, 18)
-	L_32_.BackgroundColor = BrickColor.new("Really red")
-	L_32_.Transparency = 0.1
+	local L_32_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_15_)
+	L_32_.Size = UDim2.new(0, 80, 0, 20)
+	L_32_.Position = UDim2.new(0, 20, 0, 85)
+	L_32_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_32_.BorderSizePixel = 0
-    
-	local L_33_ = Instance.new("TextButton", L_14_)
-	L_33_.Size = UDim2.new(0, 80, 0, 20)
-	L_33_.Position = UDim2.new(0, 20, 0, 120)
-	L_33_.BackgroundColor = BrickColor.new("Light red")
+	L_32_.Text = "\84\80\32\66\121\112\97\115\115"
+	L_32_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_32_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_32_.TextSize = 15
+
+	local L_33_ = Instance.new("\70\114\97\109\101", L_32_)
+	L_33_.Size = UDim2.new(0, 80, 0, 3)
+	L_33_.Position = UDim2.new(0, 0, 0, 18)
+	L_33_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+	L_33_.Transparency = 0.1
 	L_33_.BorderSizePixel = 0
-	L_33_.Text = "Spawns ESP"
-	L_33_.TextColor = BrickColor.new("Really black")
-	L_33_.Font = "GothamBlack"
-	L_33_.TextSize = 14
-
-	local L_34_ = Instance.new("Frame", L_33_)
-	L_34_.Size = UDim2.new(0, 80, 0, 3)
-	L_34_.Position = UDim2.new(0, 0, 0, 18)
-	L_34_.BackgroundColor = BrickColor.new("Really red")
-	L_34_.Transparency = 0.1
+    
+	local L_34_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_15_)
+	L_34_.Size = UDim2.new(0, 80, 0, 20)
+	L_34_.Position = UDim2.new(0, 20, 0, 120)
+	L_34_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_34_.BorderSizePixel = 0
+	L_34_.Text = "\83\112\97\119\110\115\32\69\83\80"
+	L_34_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_34_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_34_.TextSize = 14
 
-	local L_35_ = Instance.new("TextButton", L_14_)
-	L_35_.Size = UDim2.new(0, 80, 0, 20)
-	L_35_.Position = UDim2.new(0, 20, 0, 155)
-	L_35_.BackgroundColor = BrickColor.new("Light red")
+	local L_35_ = Instance.new("\70\114\97\109\101", L_34_)
+	L_35_.Size = UDim2.new(0, 80, 0, 3)
+	L_35_.Position = UDim2.new(0, 0, 0, 18)
+	L_35_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+	L_35_.Transparency = 0.1
 	L_35_.BorderSizePixel = 0
-	L_35_.Text = "Aimbot"
-	L_35_.TextColor = BrickColor.new("Really black")
-	L_35_.Font = "GothamBlack"
-	L_35_.TextSize = 15
 
-	local L_36_ = Instance.new("Frame", L_35_)
-	L_36_.Size = UDim2.new(0, 80, 0, 3)
-	L_36_.Position = UDim2.new(0, 0, 0, 18)
-	L_36_.BackgroundColor = BrickColor.new("Really red")
-	L_36_.Transparency = 0.1
+	local L_36_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_15_)
+	L_36_.Size = UDim2.new(0, 80, 0, 20)
+	L_36_.Position = UDim2.new(0, 20, 0, 155)
+	L_36_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_36_.BorderSizePixel = 0
+	L_36_.Text = "\65\105\109\98\111\116"
+	L_36_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_36_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_36_.TextSize = 15
 
-	local L_37_ = Instance.new("TextBox", L_35_)
-	L_37_.Size = UDim2.new(0, 25, 0, 20)
-	L_37_.Position = UDim2.new(0, 30, 0, 30)
-	L_37_.BackgroundColor = BrickColor.new("Institutional white")
-	L_37_.BorderSizePixel = 1
-	L_37_.Font = "GothamBlack"
-	L_37_.BorderColor = BrickColor.new("Really black")
-	L_37_.TextSize = 12
-	L_37_.Text = tostring(L_7_["AimbotVelocity"])
+	local L_37_ = Instance.new("\70\114\97\109\101", L_36_)
+	L_37_.Size = UDim2.new(0, 80, 0, 3)
+	L_37_.Position = UDim2.new(0, 0, 0, 18)
+	L_37_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+	L_37_.Transparency = 0.1
+	L_37_.BorderSizePixel = 0
 
-	local L_38_ = Instance.new("TextBox", L_35_)
-	L_38_.Size = UDim2.new(0, 80, 0, 20)
-	L_38_.Position = UDim2.new(0, 0, 0, 55)
-	L_38_.BackgroundColor = BrickColor.new("Institutional white")
+	local L_38_ = Instance.new("\84\101\120\116\66\111\120", L_36_)
+	L_38_.Size = UDim2.new(0, 25, 0, 20)
+	L_38_.Position = UDim2.new(0, 30, 0, 30)
+	L_38_.BackgroundColor = BrickColor.new("\73\110\115\116\105\116\117\116\105\111\110\97\108\32\119\104\105\116\101")
 	L_38_.BorderSizePixel = 1
-	L_38_.Font = "GothamBlack"
-	L_38_.BorderColor = BrickColor.new("Really black")
+	L_38_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_38_.BorderColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
 	L_38_.TextSize = 12
-	L_38_.Text = ""
+	L_38_.Text = tostring(L_7_["\65\105\109\98\111\116\86\101\108\111\99\105\116\121"])
 
-	local L_39_ = Instance.new("TextButton", L_15_)
+	local L_39_ = Instance.new("\84\101\120\116\66\111\120", L_36_)
 	L_39_.Size = UDim2.new(0, 80, 0, 20)
-	L_39_.Position = UDim2.new(0, 110, 0, 15 )
-	L_39_.BackgroundColor = BrickColor.new("Light red")
-	L_39_.BorderSizePixel = 0
-	L_39_.Text = "Fe Loop"
-	L_39_.TextColor = BrickColor.new("Really black")
-	L_39_.Font = "GothamBlack"
-	L_39_.TextSize = 15
-    
-	local L_40_ = Instance.new("Frame", L_39_)
-	L_40_.Size = UDim2.new(0, 80, 0, 3)
-	L_40_.Position = UDim2.new(0, 0, 0, 18)
-	L_40_.BackgroundColor = BrickColor.new("Really red")
-	L_40_.Transparency = 0.1
+	L_39_.Position = UDim2.new(0, 0, 0, 55)
+	L_39_.BackgroundColor = BrickColor.new("\73\110\115\116\105\116\117\116\105\111\110\97\108\32\119\104\105\116\101")
+	L_39_.BorderSizePixel = 1
+	L_39_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_39_.BorderColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_39_.TextSize = 12
+	L_39_.Text = ""
+
+	local L_40_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_16_)
+	L_40_.Size = UDim2.new(0, 80, 0, 20)
+	L_40_.Position = UDim2.new(0, 110, 0, 15 )
+	L_40_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_40_.BorderSizePixel = 0
+	L_40_.Text = "\70\101\32\76\111\111\112"
+	L_40_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_40_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_40_.TextSize = 15
+    
+	local L_41_ = Instance.new("\70\114\97\109\101", L_40_)
+	L_41_.Size = UDim2.new(0, 80, 0, 3)
+	L_41_.Position = UDim2.new(0, 0, 0, 18)
+	L_41_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+	L_41_.Transparency = 0.1
+	L_41_.BorderSizePixel = 0
 
-	local L_41_ = Instance.new("TextBox", L_39_)
-	L_41_.Size = UDim2.new(0, 80, 0, 20)
-	L_41_.Position = UDim2.new(0, 0, 0, 30)
-	L_41_.BackgroundColor = BrickColor.new("Institutional white")
-	L_41_.BorderSizePixel = 1
-	L_41_.Font = "GothamBlack"
-	L_41_.BorderColor = BrickColor.new("Really black")
-	L_41_.TextSize = 12
-	L_41_.Text = ""
-
-	local L_42_ = Instance.new("TextButton", L_14_)
+	local L_42_ = Instance.new("\84\101\120\116\66\111\120", L_40_)
 	L_42_.Size = UDim2.new(0, 80, 0, 20)
-	L_42_.Position = UDim2.new(0, 110, 0, 155)
-	L_42_.BackgroundColor = BrickColor.new("Light red")
-	L_42_.BorderSizePixel = 0
-	L_42_.Text = "Camlock"
-	L_42_.TextColor = BrickColor.new("Really black")
-	L_42_.Font = "GothamBlack"
-	L_42_.TextSize = 15
-    
-	local L_43_ = Instance.new("Frame", L_42_)
-	L_43_.Size = UDim2.new(0, 80, 0, 3)
-	L_43_.Position = UDim2.new(0, 0, 0, 18)
-	L_43_.BackgroundColor = BrickColor.new("Really red")
-	L_43_.Transparency = 0.1
+	L_42_.Position = UDim2.new(0, 0, 0, 30)
+	L_42_.BackgroundColor = BrickColor.new("\73\110\115\116\105\116\117\116\105\111\110\97\108\32\119\104\105\116\101")
+	L_42_.BorderSizePixel = 1
+	L_42_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_42_.BorderColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_42_.TextSize = 12
+	L_42_.Text = ""
+
+	local L_43_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_15_)
+	L_43_.Size = UDim2.new(0, 80, 0, 20)
+	L_43_.Position = UDim2.new(0, 110, 0, 155)
+	L_43_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_43_.BorderSizePixel = 0
+	L_43_.Text = "\67\97\109\108\111\99\107"
+	L_43_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_43_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_43_.TextSize = 15
+    
+	local L_44_ = Instance.new("\70\114\97\109\101", L_43_)
+	L_44_.Size = UDim2.new(0, 80, 0, 3)
+	L_44_.Position = UDim2.new(0, 0, 0, 18)
+	L_44_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+	L_44_.Transparency = 0.1
+	L_44_.BorderSizePixel = 0
 
-	local L_44_ = Instance.new("TextBox", L_42_)
-	L_44_.Size = UDim2.new(0, 80, 0, 20)
-	L_44_.Position = UDim2.new(0, 0, 0, 30)
-	L_44_.BackgroundColor = BrickColor.new("Institutional white")
-	L_44_.BorderSizePixel = 1
-	L_44_.Font = "GothamBlack"
-	L_44_.BorderColor = BrickColor.new("Really black")
-	L_44_.TextSize = 12
-	L_44_.Text = ""
-
-	local L_45_ = Instance.new("TextButton", L_15_)
+	local L_45_ = Instance.new("\84\101\120\116\66\111\120", L_43_)
 	L_45_.Size = UDim2.new(0, 80, 0, 20)
-	L_45_.Position = UDim2.new(0, 200, 0, 15)
-	L_45_.BackgroundColor = BrickColor.new("Light red")
-	L_45_.BorderSizePixel = 0
-	L_45_.Text = "Sprint"
-	L_45_.TextColor = BrickColor.new("Really black")
-	L_45_.Font = "GothamBlack"
-	L_45_.TextSize = 15
+	L_45_.Position = UDim2.new(0, 0, 0, 30)
+	L_45_.BackgroundColor = BrickColor.new("\73\110\115\116\105\116\117\116\105\111\110\97\108\32\119\104\105\116\101")
+	L_45_.BorderSizePixel = 1
+	L_45_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_45_.BorderColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_45_.TextSize = 12
+	L_45_.Text = ""
 
-	local L_46_ = Instance.new("Frame", L_45_)
-	L_46_.Size = UDim2.new(0, 80, 0, 3)
-	L_46_.Position = UDim2.new(0, 0, 0, 18)
-	L_46_.BackgroundColor = BrickColor.new("Really red")
-	L_46_.Transparency = 0.1
+	local L_46_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_16_)
+	L_46_.Size = UDim2.new(0, 80, 0, 20)
+	L_46_.Position = UDim2.new(0, 200, 0, 15)
+	L_46_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_46_.BorderSizePixel = 0
+	L_46_.Text = "\83\112\114\105\110\116"
+	L_46_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_46_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_46_.TextSize = 15
 
-	local L_47_ = Instance.new("TextBox", L_45_)
-	L_47_.Size = UDim2.new(0, 25, 0, 20)
-	L_47_.Position = UDim2.new(0, 30, 0, 30)
-	L_47_.BackgroundColor = BrickColor.new("Institutional white")
-	L_47_.BorderSizePixel = 1
-	L_47_.Font = "GothamBlack"
-	L_47_.BorderColor = BrickColor.new("Really black")
-	L_47_.TextSize = 12
-	L_47_.Text = tostring(L_7_["SprintSpeed"])
+	local L_47_ = Instance.new("\70\114\97\109\101", L_46_)
+	L_47_.Size = UDim2.new(0, 80, 0, 3)
+	L_47_.Position = UDim2.new(0, 0, 0, 18)
+	L_47_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+	L_47_.Transparency = 0.1
+	L_47_.BorderSizePixel = 0
 
-	local L_48_ = Instance.new("TextLabel", L_14_)
-	L_48_.Size = UDim2.new(0, 80, 0, 20)
-	L_48_.Position = UDim2.new(0, 200, 0, 155)
-	L_48_.BackgroundColor = BrickColor.new("Light red")
-	L_48_.BorderSizePixel = 0
-	L_48_.Text = "Flyspeed"
-	L_48_.TextColor = BrickColor.new("Really black")
-	L_48_.Font = "GothamBlack"
-	L_48_.TextSize = 15
+	local L_48_ = Instance.new("\84\101\120\116\66\111\120", L_46_)
+	L_48_.Size = UDim2.new(0, 25, 0, 20)
+	L_48_.Position = UDim2.new(0, 30, 0, 30)
+	L_48_.BackgroundColor = BrickColor.new("\73\110\115\116\105\116\117\116\105\111\110\97\108\32\119\104\105\116\101")
+	L_48_.BorderSizePixel = 1
+	L_48_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_48_.BorderColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_48_.TextSize = 12
+	L_48_.Text = tostring(L_7_["\83\112\114\105\110\116\83\112\101\101\100"])
 
-	local L_49_ = Instance.new("TextBox", L_48_)
-	L_49_.Size = UDim2.new(0, 25, 0, 20)
-	L_49_.Position = UDim2.new(0, 30, 0, 30)
-	L_49_.BackgroundColor = BrickColor.new("Institutional white")
-	L_49_.BorderSizePixel = 1
-	L_49_.Font = "GothamBlack"
-	L_49_.BorderColor = BrickColor.new("Really black")
-	L_49_.TextSize = 12
-	L_49_.Text = tostring(L_7_["FlySpeed"])
+	local L_49_ = Instance.new("\84\101\120\116\76\97\98\101\108", L_15_)
+	L_49_.Size = UDim2.new(0, 80, 0, 20)
+	L_49_.Position = UDim2.new(0, 200, 0, 155)
+	L_49_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
+	L_49_.BorderSizePixel = 0
+	L_49_.Text = "\70\108\121\115\112\101\101\100"
+	L_49_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_49_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_49_.TextSize = 15
 
-	local L_50_ = Instance.new("TextButton", L_15_)
-	L_50_.Size = UDim2.new(0, 80, 0, 20)
-	L_50_.Position = UDim2.new(0, 20, 0, 15)
-	L_50_.BackgroundColor = BrickColor.new("Light red")
-	L_50_.BorderSizePixel = 0
-	L_50_.Text = "Loop Kill"
-	L_50_.TextColor = BrickColor.new("Really black")
-	L_50_.Font = "GothamBlack"
-	L_50_.TextSize = 15
-    
-	local L_51_ = Instance.new("Frame", L_50_)
-	L_51_.Size = UDim2.new(0, 80, 0, 3)
-	L_51_.Position = UDim2.new(0, 0, 0, 18)
-	L_51_.BackgroundColor = BrickColor.new("Really red")
-	L_51_.Transparency = 0.1
+	local L_50_ = Instance.new("\84\101\120\116\66\111\120", L_49_)
+	L_50_.Size = UDim2.new(0, 25, 0, 20)
+	L_50_.Position = UDim2.new(0, 30, 0, 30)
+	L_50_.BackgroundColor = BrickColor.new("\73\110\115\116\105\116\117\116\105\111\110\97\108\32\119\104\105\116\101")
+	L_50_.BorderSizePixel = 1
+	L_50_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_50_.BorderColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_50_.TextSize = 12
+	L_50_.Text = tostring(L_7_["\70\108\121\83\112\101\101\100"])
+
+	local L_51_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_16_)
+	L_51_.Size = UDim2.new(0, 80, 0, 20)
+	L_51_.Position = UDim2.new(0, 20, 0, 15)
+	L_51_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_51_.BorderSizePixel = 0
+	L_51_.Text = "\76\111\111\112\32\75\105\108\108"
+	L_51_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_51_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_51_.TextSize = 15
+    
+	local L_52_ = Instance.new("\70\114\97\109\101", L_51_)
+	L_52_.Size = UDim2.new(0, 80, 0, 3)
+	L_52_.Position = UDim2.new(0, 0, 0, 18)
+	L_52_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+	L_52_.Transparency = 0.1
+	L_52_.BorderSizePixel = 0
 
-	local L_52_ = Instance.new("TextBox", L_50_)
-	L_52_.Size = UDim2.new(0, 80, 0, 20)
-	L_52_.Position = UDim2.new(0, 0, 0, 30)
-	L_52_.BackgroundColor = BrickColor.new("Institutional white")
-	L_52_.BorderSizePixel = 1
-	L_52_.Font = "GothamBlack"
-	L_52_.BorderColor = BrickColor.new("Really black")
-	L_52_.TextSize = 12
-	L_52_.Text = ""
-
-	local L_53_ = Instance.new("TextButton", L_14_)
+	local L_53_ = Instance.new("\84\101\120\116\66\111\120", L_51_)
 	L_53_.Size = UDim2.new(0, 80, 0, 20)
-	L_53_.Position = UDim2.new(0, 110, 0, 85)
-	L_53_.BackgroundColor = BrickColor.new("Light red")
-	L_53_.BorderSizePixel = 0
-	L_53_.Text = "Gun Anim"
-	L_53_.TextColor = BrickColor.new("Really black")
-	L_53_.Font = "GothamBlack"
-	L_53_.TextSize = 15
-    
-	local L_54_ = Instance.new("Frame", L_53_)
-	L_54_.Size = UDim2.new(0, 80, 0, 3)
-	L_54_.Position = UDim2.new(0, 0, 0, 18)
-	L_54_.BackgroundColor = BrickColor.new("Really red")
-	L_54_.Transparency = 0.1
+	L_53_.Position = UDim2.new(0, 0, 0, 30)
+	L_53_.BackgroundColor = BrickColor.new("\73\110\115\116\105\116\117\116\105\111\110\97\108\32\119\104\105\116\101")
+	L_53_.BorderSizePixel = 1
+	L_53_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_53_.BorderColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_53_.TextSize = 12
+	L_53_.Text = ""
+
+	local L_54_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_15_)
+	L_54_.Size = UDim2.new(0, 80, 0, 20)
+	L_54_.Position = UDim2.new(0, 110, 0, 85)
+	L_54_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_54_.BorderSizePixel = 0
-
-	local L_55_ = Instance.new("TextButton", L_14_)
-	L_55_.Size = UDim2.new(0, 80, 0, 20)
-	L_55_.Position = UDim2.new(0, 200, 0, 85)
-	L_55_.BackgroundColor = BrickColor.new("Light red")
+	L_54_.Text = "\71\117\110\32\65\110\105\109"
+	L_54_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_54_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_54_.TextSize = 15
+    
+	local L_55_ = Instance.new("\70\114\97\109\101", L_54_)
+	L_55_.Size = UDim2.new(0, 80, 0, 3)
+	L_55_.Position = UDim2.new(0, 0, 0, 18)
+	L_55_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+	L_55_.Transparency = 0.1
 	L_55_.BorderSizePixel = 0
-	L_55_.Text = "Van Disable"
-	L_55_.TextColor = BrickColor.new("Really black")
-	L_55_.Font = "GothamBlack"
-	L_55_.TextSize = 15
-    
-	local L_56_ = Instance.new("Frame", L_55_)
-	L_56_.Size = UDim2.new(0, 80, 0, 3)
-	L_56_.Position = UDim2.new(0, 0, 0, 18)
-	L_6_["Van"] = L_8_func(workspace, "Armoured Truck", "Find")
-	if L_6_["Van"] ~= nil then
-		L_56_.BackgroundColor = BrickColor.new("Lime green")
-		L_6_["VanDisabled"] = true
-		L_6_["Van"].Parent = L_2_["CoreGui"]
-	else
-		L_56_.BackgroundColor = BrickColor.new("Really red")
-	end
-	L_56_.Transparency = 0.1
+
+	local L_56_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_15_)
+	L_56_.Size = UDim2.new(0, 80, 0, 20)
+	L_56_.Position = UDim2.new(0, 200, 0, 85)
+	L_56_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_56_.BorderSizePixel = 0
+	L_56_.Text = "\86\97\110\32\68\105\115\97\98\108\101"
+	L_56_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_56_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_56_.TextSize = 15
+    
+	local L_57_ = Instance.new("\70\114\97\109\101", L_56_)
+	L_57_.Size = UDim2.new(0, 80, 0, 3)
+	L_57_.Position = UDim2.new(0, 0, 0, 18)
+	L_6_["\86\97\110"] = L_9_func(workspace, "\65\114\109\111\117\114\101\100\32\84\114\117\99\107", "\70\105\110\100")
+	if L_6_["\86\97\110"] ~= nil then
+		L_57_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+		L_6_["\86\97\110\68\105\115\97\98\108\101\100"] = true
+		L_6_["\86\97\110"].Parent = L_2_["\67\111\114\101\71\117\105"]
+	else
+		L_57_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+	end
+	L_57_.Transparency = 0.1
+	L_57_.BorderSizePixel = 0
     
 
     -- // TELEPORTS FRAME \\ --
 
-	local L_57_ = Instance.new("Frame", L_12_)
-	L_57_.Size = UDim2.new(0, 300, 0, 250)
-	L_57_.Position = UDim2.new(0, 0, 0)
-	L_57_.BackgroundColor = BrickColor.new("Salmon")
-	L_57_.Transparency = 0.2
-	L_57_.BorderSizePixel = 2
-	L_57_.BorderColor = BrickColor.new("White")
-	L_57_.Visible = false
+	local L_58_ = Instance.new("\70\114\97\109\101", L_13_)
+	L_58_.Size = UDim2.new(0, 300, 0, 250)
+	L_58_.Position = UDim2.new(0, 0, 0)
+	L_58_.BackgroundColor = BrickColor.new("\83\97\108\109\111\110")
+	L_58_.Transparency = 0.2
+	L_58_.BorderSizePixel = 2
+	L_58_.BorderColor = BrickColor.new("\87\104\105\116\101")
+	L_58_.Visible = false
 
-	local L_58_ = Instance.new("TextButton", L_10_)
-	L_58_.Size = UDim2.new(0, 80, 0, 25)
-	L_58_.Position = UDim2.new(0.5, -40, 0, 70)
-	L_58_.BackgroundColor = BrickColor.new("Light red")
-	L_58_.Transparency = 0.1
-	L_58_.BorderSizePixel = 0
-	L_58_.Text = "Teleports"
-	L_58_.TextColor = BrickColor.new("Really black")
-	L_58_.Font = "GothamBlack"
-	L_58_.TextSize = 15
+	local L_59_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_11_)
+	L_59_.Size = UDim2.new(0, 80, 0, 25)
+	L_59_.Position = UDim2.new(0.5, -40, 0, 70)
+	L_59_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
+	L_59_.Transparency = 0.1
+	L_59_.BorderSizePixel = 0
+	L_59_.Text = "\84\101\108\101\112\111\114\116\115"
+	L_59_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_59_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_59_.TextSize = 15
 
     -- // TELEPORTS FRAME \\ --
 
-	local L_59_ = Instance.new("Frame", L_12_)
-	L_59_.Size = UDim2.new(0, 300, 0, 250)
-	L_59_.Position = UDim2.new(0, 0, 0)
-	L_59_.BackgroundColor = BrickColor.new("Salmon")
-	L_59_.Transparency = 0.2
-	L_59_.BorderSizePixel = 2
-	L_59_.BorderColor = BrickColor.new("White")
-	L_59_.Visible = false
+	local L_60_ = Instance.new("\70\114\97\109\101", L_13_)
+	L_60_.Size = UDim2.new(0, 300, 0, 250)
+	L_60_.Position = UDim2.new(0, 0, 0)
+	L_60_.BackgroundColor = BrickColor.new("\83\97\108\109\111\110")
+	L_60_.Transparency = 0.2
+	L_60_.BorderSizePixel = 2
+	L_60_.BorderColor = BrickColor.new("\87\104\105\116\101")
+	L_60_.Visible = false
 
-	local L_60_ = Instance.new("TextButton", L_10_)
-	L_60_.Size = UDim2.new(0, 80, 0, 25)
-	L_60_.Position = UDim2.new(0.5, -40, 0, 100)
-	L_60_.BackgroundColor = BrickColor.new("Light red")
-	L_60_.Transparency = 0.1
-	L_60_.BorderSizePixel = 0
-	L_60_.Text = "Hotkeys"
-	L_60_.TextColor = BrickColor.new("Really black")
-	L_60_.Font = "GothamBlack"
-	L_60_.TextSize = 15
-
-	local L_61_ = Instance.new("TextLabel", L_59_)
-	L_61_.Size = UDim2.new(0, 80, 0, 20)
-	L_61_.Position = UDim2.new(0, 20, 0, 15)
-	L_61_.BackgroundColor = BrickColor.new("Light red")
+	local L_61_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_11_)
+	L_61_.Size = UDim2.new(0, 80, 0, 25)
+	L_61_.Position = UDim2.new(0.5, -40, 0, 100)
+	L_61_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_61_.Transparency = 0.1
 	L_61_.BorderSizePixel = 0
-	L_61_.Text = "Fly"
-	L_61_.TextColor = BrickColor.new("Really black")
-	L_61_.Font = "GothamBlack"
+	L_61_.Text = "\72\111\116\107\101\121\115"
+	L_61_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_61_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
 	L_61_.TextSize = 15
 
-	local L_62_ = Instance.new("TextBox", L_61_)
-	L_62_.Size = UDim2.new(0, 30, 0, 20)
-	L_62_.Position = UDim2.new(0, 25, 0, 25)
-	L_62_.BackgroundColor = BrickColor.new("Institutional white")
+	local L_62_ = Instance.new("\84\101\120\116\76\97\98\101\108", L_60_)
+	L_62_.Size = UDim2.new(0, 80, 0, 20)
+	L_62_.Position = UDim2.new(0, 20, 0, 15)
+	L_62_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
+	L_62_.Transparency = 0.1
 	L_62_.BorderSizePixel = 0
-	L_62_.Text = tostring(L_7_["FlyHotkey"])
-	L_62_.TextColor = BrickColor.new("Really black")
-	L_62_.Font = "GothamBlack"
+	L_62_.Text = "\70\108\121"
+	L_62_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_62_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
 	L_62_.TextSize = 15
 
-	local L_63_ = Instance.new("TextButton", L_61_)
-	L_63_.Size = UDim2.new(0, 60, 0, 20)
-	L_63_.Position = UDim2.new(0, 10, 0, 50)
-	L_63_.BackgroundColor = BrickColor.new("Light red")
-	L_63_.Transparency = 0.1
+	local L_63_ = Instance.new("\84\101\120\116\66\111\120", L_62_)
+	L_63_.Size = UDim2.new(0, 30, 0, 20)
+	L_63_.Position = UDim2.new(0, 25, 0, 25)
+	L_63_.BackgroundColor = BrickColor.new("\73\110\115\116\105\116\117\116\105\111\110\97\108\32\119\104\105\116\101")
 	L_63_.BorderSizePixel = 0
-	L_63_.Text = "Apply"
-	L_63_.TextColor = BrickColor.new("Really black")
-	L_63_.Font = "GothamBlack"
+	L_63_.Text = tostring(L_7_["\70\108\121\72\111\116\107\101\121"])
+	L_63_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_63_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
 	L_63_.TextSize = 15
 
-	local L_64_ = Instance.new("TextLabel", L_59_)
-	L_64_.Size = UDim2.new(0, 80, 0, 20)
-	L_64_.Position = UDim2.new(0, 110, 0, 15)
-	L_64_.BackgroundColor = BrickColor.new("Light red")
+	local L_64_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_62_)
+	L_64_.Size = UDim2.new(0, 60, 0, 20)
+	L_64_.Position = UDim2.new(0, 10, 0, 50)
+	L_64_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_64_.Transparency = 0.1
 	L_64_.BorderSizePixel = 0
-	L_64_.Text = "NoClip"
-	L_64_.TextColor = BrickColor.new("Really black")
-	L_64_.Font = "GothamBlack"
+	L_64_.Text = "\65\112\112\108\121"
+	L_64_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_64_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
 	L_64_.TextSize = 15
 
-	local L_65_ = Instance.new("TextBox", L_64_)
-	L_65_.Size = UDim2.new(0, 30, 0, 20)
-	L_65_.Position = UDim2.new(0, 25, 0, 25)
-	L_65_.BackgroundColor = BrickColor.new("Institutional white")
+	local L_65_ = Instance.new("\84\101\120\116\76\97\98\101\108", L_60_)
+	L_65_.Size = UDim2.new(0, 80, 0, 20)
+	L_65_.Position = UDim2.new(0, 110, 0, 15)
+	L_65_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
+	L_65_.Transparency = 0.1
 	L_65_.BorderSizePixel = 0
-	L_65_.Text = tostring(L_7_["NoClipHotkey"])
-	L_65_.TextColor = BrickColor.new("Really black")
-	L_65_.Font = "GothamBlack"
+	L_65_.Text = "\78\111\67\108\105\112"
+	L_65_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_65_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
 	L_65_.TextSize = 15
 
-	local L_66_ = Instance.new("TextButton", L_64_)
-	L_66_.Size = UDim2.new(0, 60, 0, 20)
-	L_66_.Position = UDim2.new(0, 10, 0, 50)
-	L_66_.BackgroundColor = BrickColor.new("Light red")
-	L_66_.Transparency = 0.1
+	local L_66_ = Instance.new("\84\101\120\116\66\111\120", L_65_)
+	L_66_.Size = UDim2.new(0, 30, 0, 20)
+	L_66_.Position = UDim2.new(0, 25, 0, 25)
+	L_66_.BackgroundColor = BrickColor.new("\73\110\115\116\105\116\117\116\105\111\110\97\108\32\119\104\105\116\101")
 	L_66_.BorderSizePixel = 0
-	L_66_.Text = "Apply"
-	L_66_.TextColor = BrickColor.new("Really black")
-	L_66_.Font = "GothamBlack"
+	L_66_.Text = tostring(L_7_["\78\111\67\108\105\112\72\111\116\107\101\121"])
+	L_66_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_66_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
 	L_66_.TextSize = 15
 
-	local L_67_ = Instance.new("TextLabel", L_59_)
-	L_67_.Size = UDim2.new(0, 80, 0, 20)
-	L_67_.Position = UDim2.new(0, 200, 0, 15)
-	L_67_.BackgroundColor = BrickColor.new("Light red")
+	local L_67_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_65_)
+	L_67_.Size = UDim2.new(0, 60, 0, 20)
+	L_67_.Position = UDim2.new(0, 10, 0, 50)
+	L_67_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_67_.Transparency = 0.1
 	L_67_.BorderSizePixel = 0
-	L_67_.Text = "Airwalk"
-	L_67_.TextColor = BrickColor.new("Really black")
-	L_67_.Font = "GothamBlack"
+	L_67_.Text = "\65\112\112\108\121"
+	L_67_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_67_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
 	L_67_.TextSize = 15
 
-	local L_68_ = Instance.new("TextBox", L_67_)
-	L_68_.Size = UDim2.new(0, 30, 0, 20)
-	L_68_.Position = UDim2.new(0, 25, 0, 25)
-	L_68_.BackgroundColor = BrickColor.new("Institutional white")
+	local L_68_ = Instance.new("\84\101\120\116\76\97\98\101\108", L_60_)
+	L_68_.Size = UDim2.new(0, 80, 0, 20)
+	L_68_.Position = UDim2.new(0, 200, 0, 15)
+	L_68_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
+	L_68_.Transparency = 0.1
 	L_68_.BorderSizePixel = 0
-	L_68_.Text = tostring(L_7_["AirwalkHotkey"])
-	L_68_.TextColor = BrickColor.new("Really black")
-	L_68_.Font = "GothamBlack"
+	L_68_.Text = "\65\105\114\119\97\108\107"
+	L_68_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_68_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
 	L_68_.TextSize = 15
 
-	local L_69_ = Instance.new("TextButton", L_67_)
-	L_69_.Size = UDim2.new(0, 60, 0, 20)
-	L_69_.Position = UDim2.new(0, 10, 0, 50)
-	L_69_.BackgroundColor = BrickColor.new("Light red")
-	L_69_.Transparency = 0.1
+	local L_69_ = Instance.new("\84\101\120\116\66\111\120", L_68_)
+	L_69_.Size = UDim2.new(0, 30, 0, 20)
+	L_69_.Position = UDim2.new(0, 25, 0, 25)
+	L_69_.BackgroundColor = BrickColor.new("\73\110\115\116\105\116\117\116\105\111\110\97\108\32\119\104\105\116\101")
 	L_69_.BorderSizePixel = 0
-	L_69_.Text = "Apply"
-	L_69_.TextColor = BrickColor.new("Really black")
-	L_69_.Font = "GothamBlack"
+	L_69_.Text = tostring(L_7_["\65\105\114\119\97\108\107\72\111\116\107\101\121"])
+	L_69_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_69_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
 	L_69_.TextSize = 15
 
-	local L_70_ = Instance.new("TextLabel", L_59_)
-	L_70_.Size = UDim2.new(0, 80, 0, 20)
-	L_70_.Position = UDim2.new(0, 20, 0, 95)
-	L_70_.BackgroundColor = BrickColor.new("Light red")
+	local L_70_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_68_)
+	L_70_.Size = UDim2.new(0, 60, 0, 20)
+	L_70_.Position = UDim2.new(0, 10, 0, 50)
+	L_70_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
 	L_70_.Transparency = 0.1
 	L_70_.BorderSizePixel = 0
-	L_70_.Text = "Reset"
-	L_70_.TextColor = BrickColor.new("Really black")
-	L_70_.Font = "GothamBlack"
+	L_70_.Text = "\65\112\112\108\121"
+	L_70_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_70_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
 	L_70_.TextSize = 15
 
-	local L_71_ = Instance.new("TextBox", L_70_)
-	L_71_.Size = UDim2.new(0, 30, 0, 20)
-	L_71_.Position = UDim2.new(0, 25, 0, 25)
-	L_71_.BackgroundColor = BrickColor.new("Institutional white")
+	local L_71_ = Instance.new("\84\101\120\116\76\97\98\101\108", L_60_)
+	L_71_.Size = UDim2.new(0, 80, 0, 20)
+	L_71_.Position = UDim2.new(0, 20, 0, 95)
+	L_71_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
+	L_71_.Transparency = 0.1
 	L_71_.BorderSizePixel = 0
-	L_71_.Text = tostring(L_7_["ResetHotkey"])
-	L_71_.TextColor = BrickColor.new("Really black")
-	L_71_.Font = "GothamBlack"
+	L_71_.Text = "\82\101\115\101\116"
+	L_71_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_71_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
 	L_71_.TextSize = 15
 
-	local L_72_ = Instance.new("TextButton", L_70_)
-	L_72_.Size = UDim2.new(0, 60, 0, 20)
-	L_72_.Position = UDim2.new(0, 10, 0, 50)
-	L_72_.BackgroundColor = BrickColor.new("Light red")
-	L_72_.Transparency = 0.1
+	local L_72_ = Instance.new("\84\101\120\116\66\111\120", L_71_)
+	L_72_.Size = UDim2.new(0, 30, 0, 20)
+	L_72_.Position = UDim2.new(0, 25, 0, 25)
+	L_72_.BackgroundColor = BrickColor.new("\73\110\115\116\105\116\117\116\105\111\110\97\108\32\119\104\105\116\101")
 	L_72_.BorderSizePixel = 0
-	L_72_.Text = "Apply"
-	L_72_.TextColor = BrickColor.new("Really black")
-	L_72_.Font = "GothamBlack"
+	L_72_.Text = tostring(L_7_["\82\101\115\101\116\72\111\116\107\101\121"])
+	L_72_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_72_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
 	L_72_.TextSize = 15
+
+	local L_73_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_71_)
+	L_73_.Size = UDim2.new(0, 60, 0, 20)
+	L_73_.Position = UDim2.new(0, 10, 0, 50)
+	L_73_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
+	L_73_.Transparency = 0.1
+	L_73_.BorderSizePixel = 0
+	L_73_.Text = "\65\112\112\108\121"
+	L_73_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_73_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_73_.TextSize = 15
 
     -- // COMMAND BAR STUFFZ \\ --
 
-	local L_73_ = Instance.new("TextBox", L_9_)
-	L_73_.Size = UDim2.new(0, 0, 0, 25)
-	L_73_.Position = UDim2.new(1, 0, 1, -295)
-	L_73_.BackgroundColor = BrickColor.new("Salmon")
-	L_73_.TextColor = BrickColor.new("Really black")
-	L_73_.Font = "GothamBlack"
-	L_73_.TextSize = 15
-	L_73_.Transparency = 0.2
-	L_73_.Visible = false
-	L_73_.BorderSizePixel = 2
-	L_73_.BorderColor = BrickColor.new("Institutional white")
+	local L_74_ = Instance.new("\84\101\120\116\66\111\120", L_10_)
+	L_74_.Size = UDim2.new(0, 0, 0, 25)
+	L_74_.Position = UDim2.new(1, 0, 1, -295)
+	L_74_.BackgroundColor = BrickColor.new("\83\97\108\109\111\110")
+	L_74_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_74_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_74_.TextSize = 15
+	L_74_.Transparency = 0.2
+	L_74_.Visible = false
+	L_74_.BorderSizePixel = 2
+	L_74_.BorderColor = BrickColor.new("\73\110\115\116\105\116\117\116\105\111\110\97\108\32\119\104\105\116\101")
 
-	L_10_:TweenPosition(UDim2.new(1, -110, 1, -260), "Out", "Quad", 1, false)
+	L_11_:TweenPosition(UDim2.new(1, -110, 1, -260), "\79\117\116", "\81\117\97\100", 1, false)
 
     -- // COMMANDS MENU \\ --
 
-	local L_74_ = Instance.new("ScrollingFrame", L_9_)
-	L_74_.Size = UDim2.new(0, 500, 0, 250)
-	L_74_.Position = UDim2.new(0.5, -225, 0.5, -125)
-	L_74_.BackgroundColor = BrickColor.new("Salmon")
-	L_74_.Transparency = 0.2
-	L_74_.BorderSizePixel = 2
-	L_74_.BorderColor = BrickColor.new("White")
-	L_74_.ScrollBarThickness = 0
-	L_74_.Visible = false
+	local L_75_ = Instance.new("\83\99\114\111\108\108\105\110\103\70\114\97\109\101", L_10_)
+	L_75_.Size = UDim2.new(0, 500, 0, 250)
+	L_75_.Position = UDim2.new(0.5, -225, 0.5, -125)
+	L_75_.BackgroundColor = BrickColor.new("\83\97\108\109\111\110")
+	L_75_.Transparency = 0.2
+	L_75_.BorderSizePixel = 2
+	L_75_.BorderColor = BrickColor.new("\87\104\105\116\101")
+	L_75_.ScrollBarThickness = 0
+	L_75_.Visible = false
 
-	for L_99_forvar1, L_100_forvar2 in next, L_3_ do
-		local L_101_ = Instance.new("TextLabel", L_74_)
-		L_101_.Size = UDim2.new(0, 490, 0, 25)
-		L_101_.Position = UDim2.new(0, 5, 0, -20 + #L_74_:GetChildren() * 30)
-		L_101_.BackgroundTransparency = 0.4
-		L_101_.BackgroundColor = BrickColor.new("Salmon")
-		L_101_.TextWrapped = true
-		L_101_.BorderColor = BrickColor.new("White")
-		L_101_.TextColor = BrickColor.new("Really black")
-		L_101_.Font = "GothamBlack"
-		L_101_.TextSize = 15
-		L_101_.Text = tostring(L_99_forvar1) .. " | " .. tostring(L_100_forvar2)
+	for L_100_forvar1, L_101_forvar2 in next, L_3_ do
+		local L_102_ = Instance.new("\84\101\120\116\76\97\98\101\108", L_75_)
+		L_102_.Size = UDim2.new(0, 490, 0, 25)
+		L_102_.Position = UDim2.new(0, 5, 0, -20 + #L_75_:GetChildren() * 30)
+		L_102_.BackgroundTransparency = 0.4
+		L_102_.BackgroundColor = BrickColor.new("\83\97\108\109\111\110")
+		L_102_.TextWrapped = true
+		L_102_.BorderColor = BrickColor.new("\87\104\105\116\101")
+		L_102_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+		L_102_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+		L_102_.TextSize = 15
+		L_102_.Text = tostring(L_100_forvar1) .. "\32\124\32" .. tostring(L_101_forvar2)
 	end
 
     -- // NOTIFICATION FRAME \\ --
 
-	local L_75_ = Instance.new("Frame", L_9_)
-	L_75_.Size = UDim2.new(0, 200, 0, 250)
-	L_75_.Position = UDim2.new(0, 0, 1, -250)
-	L_75_.BorderSizePixel = 0
-	L_75_.Transparency = 1
+	local L_76_ = Instance.new("\70\114\97\109\101", L_10_)
+	L_76_.Size = UDim2.new(0, 200, 0, 250)
+	L_76_.Position = UDim2.new(0, 0, 1, -250)
+	L_76_.BorderSizePixel = 0
+	L_76_.Transparency = 1
 
     -- // LOCAL FUNCTIONS \\ --
 
-	local function L_76_func(L_102_arg1)
-		local L_103_ = L_8_func(L_4_["LocalPlayer"].Character, "HumanoidRootPart", "Find")
-		local L_104_ = L_8_func(L_4_["LocalPlayer"].Character, "Humanoid", "Find")
-		if typeof(L_102_arg1) == "Instance" and L_102_arg1:IsA("Player") then
-			local L_105_ = L_8_func(L_102_arg1.Character, "Torso", "Find")
-			if L_105_ ~= nil then
-				if L_6_["TpBypass"] then
-					L_4_["LocalPlayer"].Character:MoveTo(L_105_.Position)
-				elseif not L_6_["TpBypass"] then
-					if L_104_ ~= nil and L_103_ ~= nil then
+	local function L_77_func(L_103_arg1)
+		local L_104_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\117\109\97\110\111\105\100\82\111\111\116\80\97\114\116", "\70\105\110\100")
+		local L_105_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\117\109\97\110\111\105\100", "\70\105\110\100")
+		if typeof(L_103_arg1) == "\73\110\115\116\97\110\99\101" and L_103_arg1:IsA("\80\108\97\121\101\114") then
+			local L_106_ = L_9_func(L_103_arg1.Character, "\84\111\114\115\111", "\70\105\110\100")
+			if L_106_ ~= nil then
+				if L_6_["\84\112\66\121\112\97\115\115"] then
+					L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character:MoveTo(L_106_.Position)
+				elseif not L_6_["\84\112\66\121\112\97\115\115"] then
+					if L_105_ ~= nil and L_104_ ~= nil then
 						repeat
-							L_104_:ChangeState(3)
-							L_104_:ChangeState(11)
-							L_104_.PlatformStand = true
-							L_103_.CFrame = CFrame.new(L_103_.Position, L_105_.Position)
-							L_103_.CFrame = L_103_.CFrame + L_103_.CFrame.lookVector * 3
-							L_4_["RenderStepped"]:Wait()
-						until L_4_["LocalPlayer"].Character == nil or L_102_arg1 == nil or L_102_arg1.Character == nil or L_105_ == nil or (L_103_.Position - L_105_.Position).magnitude < 2
-						if L_104_ ~= nil then
-							L_104_.PlatformStand = false
+							L_105_:ChangeState(3)
+							L_105_:ChangeState(11)
+							L_105_.PlatformStand = true
+							L_104_.CFrame = CFrame.new(L_104_.Position, L_106_.Position)
+							L_104_.CFrame = L_104_.CFrame + L_104_.CFrame.lookVector * 3
+							L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:Wait()
+						until L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character == nil or L_103_arg1 == nil or L_103_arg1.Character == nil or L_106_ == nil or (L_104_.Position - L_106_.Position).magnitude < 2
+						if L_105_ ~= nil then
+							L_105_.PlatformStand = false
 						end
 					end
 				end
 			end
-		elseif typeof(L_102_arg1) == "Vector3" then
-			if L_6_["TpBypass"] then
-				L_4_["LocalPlayer"].Character:MoveTo(L_102_arg1)
-			elseif not L_6_["TpBypass"] then
-				if L_104_ ~= nil and L_103_ ~= nil then
+		elseif typeof(L_103_arg1) == "\86\101\99\116\111\114\51" then
+			if L_6_["\84\112\66\121\112\97\115\115"] then
+				L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character:MoveTo(L_103_arg1)
+			elseif not L_6_["\84\112\66\121\112\97\115\115"] then
+				if L_105_ ~= nil and L_104_ ~= nil then
 					repeat
-						L_104_:ChangeState(3)
-						L_104_:ChangeState(11)
-						L_104_.PlatformStand = true
-						L_103_.CFrame = CFrame.new(L_103_.Position, L_102_arg1)
-						L_103_.CFrame = L_103_.CFrame + L_103_.CFrame.lookVector * 3
-						L_4_["RenderStepped"]:Wait()
-					until L_4_["LocalPlayer"].Character == nil or (L_103_.Position - L_102_arg1).magnitude < 2
-					if L_104_ ~= nil then
-						L_104_.PlatformStand = false
+						L_105_:ChangeState(3)
+						L_105_:ChangeState(11)
+						L_105_.PlatformStand = true
+						L_104_.CFrame = CFrame.new(L_104_.Position, L_103_arg1)
+						L_104_.CFrame = L_104_.CFrame + L_104_.CFrame.lookVector * 3
+						L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:Wait()
+					until L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character == nil or (L_104_.Position - L_103_arg1).magnitude < 2
+					if L_105_ ~= nil then
+						L_105_.PlatformStand = false
 					end
 				end
 			end
 		end
 	end
 
-	local function L_77_func(L_106_arg1, L_107_arg2)
-		if L_6_["CanNotify"]  then
+	local function L_78_func(L_107_arg1, L_108_arg2)
+		if L_6_["\67\97\110\78\111\116\105\102\121"]  then
 			repeat
-				L_4_["RenderStepped"]:wait()
-			until L_6_["CanNotify"] and #L_75_:GetChildren() < 6
-			L_6_["CanNotify"] = false
-			for L_109_forvar1, L_110_forvar2 in next, L_75_:GetChildren() do
-				L_110_forvar2:TweenPosition(L_110_forvar2.Position + UDim2.new(0, 0, 0, -40), "Out", "Quad", 0.2, false)
-				L_4_["RenderStepped"]:wait()
+				L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:wait()
+			until L_6_["\67\97\110\78\111\116\105\102\121"] and #L_76_:GetChildren() < 6
+			L_6_["\67\97\110\78\111\116\105\102\121"] = false
+			for L_110_forvar1, L_111_forvar2 in next, L_76_:GetChildren() do
+				L_111_forvar2:TweenPosition(L_111_forvar2.Position + UDim2.new(0, 0, 0, -40), "\79\117\116", "\81\117\97\100", 0.2, false)
+				L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:wait()
 			end
 			wait(0.2)
-			local L_108_ = Instance.new("TextLabel", L_75_)
-			L_108_.Size = UDim2.new(0, 185, 0, 35)
-			L_108_.Position = UDim2.new(0.5, -92.5, 1, -40)
-			L_108_.BackgroundColor = BrickColor.new("Salmon")
-			L_108_.TextColor = BrickColor.new(L_107_arg2)
-			L_108_.Font = "GothamBlack"
-			L_108_.TextScaled = true
-			L_108_.Transparency = 0.2
-			L_108_.BorderSizePixel = 2
-			L_108_.Text = L_106_arg1
-			L_108_.BorderColor = BrickColor.new("White")
-			spawn(function()
+			local L_109_ = Instance.new("\84\101\120\116\76\97\98\101\108", L_76_)
+			L_109_.Size = UDim2.new(0, 185, 0, 35)
+			L_109_.Position = UDim2.new(0.5, -92.5, 1, -40)
+			L_109_.BackgroundColor = BrickColor.new("\83\97\108\109\111\110")
+			L_109_.TextColor = BrickColor.new(L_108_arg2)
+			L_109_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+			L_109_.TextScaled = true
+			L_109_.Transparency = 0.2
+			L_109_.BorderSizePixel = 2
+			L_109_.Text = L_107_arg1
+			L_109_.BorderColor = BrickColor.new("\87\104\105\116\101")
+			coroutine.wrap(function()
 				wait(5)
-				for L_111_forvar1 = 1, 16 do
-					L_108_.Transparency = L_108_.Transparency + 0.1 / 2
-					L_4_["RenderStepped"]:wait()
+				for L_112_forvar1 = 1, 16 do
+					L_109_.Transparency = L_109_.Transparency + 0.1 / 2
+					L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:wait()
 				end
-				L_108_:Destroy()
-			end)
-			L_4_["RenderStepped"]:wait()
-			L_6_["CanNotify"] = true
+				L_109_:Destroy()
+			end)()
+			L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:wait()
+			L_6_["\67\97\110\78\111\116\105\102\121"] = true
 		end
-	end
-
-	local function L_78_func()
-		L_4_["LocalPlayer"].Character:ClearAllChildren()
-		local L_112_ = Instance.new("Model", workspace)
-		local L_113_ = Instance.new("Part", L_112_)
-		L_113_.Name = "Torso1"
-		L_113_.Transparency = 1
-		local L_114_ = Instance.new("Part", L_112_)
-		L_114_.Name = "Head1"
-		L_114_.Transparency = 1
-		local L_115_ = Instance.new("Humanoid", L_112_)
-		L_115_.Name = "Humanoid"
-		L_4_["LocalPlayer"].Character = L_112_
 	end
 
 	local function L_79_func()
-		if L_4_["LocalPlayer"].Character ~= nil then
-			L_4_["LocalPlayer"].Character.ChildAdded:Connect(function(L_117_arg1)
-				if L_117_arg1:IsA("Tool") and L_8_func(L_117_arg1, "Ammo", "Find") ~= nil and L_6_["GunAnim"] then
-					L_4_["RenderStepped"]:wait()
-					local L_118_ = Instance.new("Animation")
-					L_118_.AnimationId = "http://asset/?id=889968874"
-					local L_119_ = L_8_func(L_4_["LocalPlayer"].Character, "Humanoid", "Wait"):LoadAnimation(L_118_)
-					L_119_:Play()
+		L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character:ClearAllChildren()
+		local L_113_ = Instance.new("\77\111\100\101\108", workspace)
+		local L_114_ = Instance.new("\80\97\114\116", L_113_)
+		L_114_.Name = "\84\111\114\115\111\49"
+		L_114_.Transparency = 1
+		local L_115_ = Instance.new("\80\97\114\116", L_113_)
+		L_115_.Name = "\72\101\97\100\49"
+		L_115_.Transparency = 1
+		local L_116_ = Instance.new("\72\117\109\97\110\111\105\100", L_113_)
+		L_116_.Name = "\72\117\109\97\110\111\105\100"
+		L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character = L_113_
+	end
+
+	local function L_80_func()
+		if L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character ~= nil then
+			L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character.ChildAdded:Connect(function(L_118_arg1)
+				if L_118_arg1:IsA("\84\111\111\108") and L_9_func(L_118_arg1, "\65\109\109\111", "\70\105\110\100") ~= nil and L_6_["\71\117\110\65\110\105\109"] then
+					L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:wait()
+					local L_119_ = Instance.new("\65\110\105\109\97\116\105\111\110")
+					L_119_.AnimationId = "\104\116\116\112\58\47\47\97\115\115\101\116\47\63\105\100\61\56\56\57\57\54\56\56\55\52"
+					local L_120_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\117\109\97\110\111\105\100", "\87\97\105\116"):LoadAnimation(L_119_)
+					L_120_:Play()
 				end
 			end)
-			L_4_["LocalPlayer"].Character.ChildRemoved:Connect(function(L_120_arg1)
-				if L_120_arg1:IsA("Tool") and L_8_func(L_120_arg1, "Ammo", "Find") ~= nil then
-					for L_121_forvar1, L_122_forvar2 in next, L_8_func(L_4_["LocalPlayer"].Character, "Humanoid", "Wait"):GetPlayingAnimationTracks() do
-						if string.find(tostring(L_122_forvar2.Animation.AnimationId), "889968874") then 
-							L_122_forvar2:Stop()
+			L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character.ChildRemoved:Connect(function(L_121_arg1)
+				if L_121_arg1:IsA("\84\111\111\108") and L_9_func(L_121_arg1, "\65\109\109\111", "\70\105\110\100") ~= nil then
+					for L_122_forvar1, L_123_forvar2 in next, L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\117\109\97\110\111\105\100", "\87\97\105\116"):GetPlayingAnimationTracks() do
+						if string.find(tostring(L_123_forvar2.Animation.AnimationId), "\56\56\57\57\54\56\56\55\52") then 
+							L_123_forvar2:Stop()
 						end
 					end
 				end
 			end)
-			if L_6_["TpBypass"] then
-				L_8_func(L_4_["LocalPlayer"].Character, "HumanoidRootPart", "Wait"):Destroy()
+			if L_6_["\84\112\66\121\112\97\115\115"] then
+				L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\117\109\97\110\111\105\100\82\111\111\116\80\97\114\116", "\87\97\105\116"):Destroy()
 			end
-			local L_116_ = L_8_func(L_4_["LocalPlayer"].Character, "Humanoid", "Wait")
-			L_116_.Changed:Connect(function(L_123_arg1)
-				if L_123_arg1 == "WalkSpeed" and L_6_["Sprint"] and L_5_["LeftShift"] then
-					L_116_.WalkSpeed = L_7_["SprintSpeed"]
+			local L_117_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\117\109\97\110\111\105\100", "\87\97\105\116")
+			L_117_.Changed:Connect(function(L_124_arg1)
+				if L_124_arg1 == "\87\97\108\107\83\112\101\101\100" and L_6_["\83\112\114\105\110\116"] and L_5_["\76\101\102\116\83\104\105\102\116"] then
+					L_117_.WalkSpeed = L_7_["\83\112\114\105\110\116\83\112\101\101\100"]
 				end
 			end)
-			L_116_.ChildAdded:Connect(function(L_124_arg1)
-				if L_124_arg1:IsA("ObjectValue") and tostring(L_124_arg1) == "creator" then
-					L_77_func("You've been attacked by " .. tostring(L_124_arg1.Value), "Really red")
+			L_117_.ChildAdded:Connect(function(L_125_arg1)
+				if L_125_arg1:IsA("\79\98\106\101\99\116\86\97\108\117\101") and tostring(L_125_arg1) == "\99\114\101\97\116\111\114" then
+					L_78_func("\89\111\117\39\118\101\32\98\101\101\110\32\97\116\116\97\99\107\101\100\32\98\121\32" .. tostring(L_125_arg1.Value), "\82\101\97\108\108\121\32\114\101\100")
 				end
 			end)
 		end
 	end
 
-	local function L_80_func(L_125_arg1)
-		local L_126_ = {}
-		if L_125_arg1 == "all" then
-			for L_127_forvar1, L_128_forvar2 in next, L_2_["Players"]:GetPlayers() do
-				if L_128_forvar2 ~= L_4_["LocalPlayer"] then
-					table.insert(L_126_, L_128_forvar2)
+	local function L_81_func(L_126_arg1)
+		local L_127_ = {}
+		if L_126_arg1 == "\97\108\108" then
+			for L_128_forvar1, L_129_forvar2 in next, L_2_["\80\108\97\121\101\114\115"]:GetPlayers() do
+				if L_129_forvar2 ~= L_4_["\76\111\99\97\108\80\108\97\121\101\114"] then
+					table.insert(L_127_, L_129_forvar2)
 				end
 			end
-			return L_126_
+			return L_127_
 		else
-			for L_129_forvar1, L_130_forvar2 in next, L_2_["Players"]:GetPlayers() do
-				if string.lower(tostring(L_125_arg1)) == string.sub(string.lower(tostring(L_130_forvar2)), 1, string.len(tostring(L_125_arg1))) then
-					table.insert(L_126_, L_130_forvar2)
-					return L_126_
+			for L_130_forvar1, L_131_forvar2 in next, L_2_["\80\108\97\121\101\114\115"]:GetPlayers() do
+				if string.lower(tostring(L_126_arg1)) == string.sub(string.lower(tostring(L_131_forvar2)), 1, string.len(tostring(L_126_arg1))) then
+					table.insert(L_127_, L_131_forvar2)
+					return L_127_
 				end
 			end
 		end
 	end
 
-	local function L_81_func()
+	local function L_82_func()
 		if writefile ~= nil and readfile ~= nil then
-			writefile("DrPoppav3Settings.lua", L_2_["HttpService"]:JSONEncode(L_7_))
+			writefile("\68\114\80\111\112\112\97\118\51\83\101\116\116\105\110\103\115\46\108\117\97", L_2_["\72\116\116\112\83\101\114\118\105\99\101"]:JSONEncode(L_7_))
 		else
-			L_77_func("Exploit unsupportive of 'writefile' and 'readfile'", "Really black")
+			L_78_func("\69\120\112\108\111\105\116\32\117\110\115\117\112\112\111\114\116\105\118\101\32\111\102\32\39\119\114\105\116\101\102\105\108\101\39\32\97\110\100\32\39\114\101\97\100\102\105\108\101\39", "\82\101\97\108\108\121\32\98\108\97\99\107")
 		end
 	end
 
-	local function L_82_func(L_131_arg1)
-		local L_132_ = L_8_func(L_4_["LocalPlayer"].Character, "Right Arm", "Find")
-		if L_132_ ~= nil then
-			return L_132_.CFrame * CFrame.new(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, -1, 0):toObjectSpace(L_131_arg1):inverse()
+	local function L_83_func(L_132_arg1)
+		local L_133_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\82\105\103\104\116\32\65\114\109", "\70\105\110\100")
+		if L_133_ ~= nil then
+			return L_133_.CFrame * CFrame.new(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, -1, 0):toObjectSpace(L_132_arg1):inverse()
 		end
 	end
 
-	local function L_83_func(L_133_arg1)
-		if L_6_["HasLooped"] then
-			L_6_["HasLooped"] = false
-			if L_4_["LocalPlayer"].Character ~= nil and L_133_arg1.Character ~= nil then
-				L_4_["LocalPlayer"].Character:BreakJoints()
-				L_78_func()
-				L_4_["LocalPlayer"].CharacterAdded:Wait()
-				L_4_["RenderStepped"]:Wait()
-				if L_4_["LocalPlayer"].Character ~= nil and L_133_arg1 ~= nil and L_133_arg1.Character ~= nil then
-					local L_134_ = L_8_func(L_4_["LocalPlayer"].Character, "Humanoid", "Wait")
-					local L_135_ = L_8_func(L_4_["LocalPlayer"].Character, "HumanoidRootPart", "Wait")
-					local L_136_ = L_8_func(L_133_arg1.Character, "Torso", "Find")
-					local L_137_ = L_8_func(L_133_arg1.Character, "Humanoid", "Find")
-					if L_134_ ~= nil and L_135_ ~= nil and L_136_ ~= nil and L_137_ ~= nil and L_137_.Health ~= 0 then
-						L_134_:UnequipTools()
-						local L_138_ = L_8_func(L_4_["LocalPlayer"].Backpack, "Tool", "Find")
-						if L_138_ ~= nil then
-							L_134_.Name = ""
-							local L_139_ = L_134_:Clone()
-							L_139_.Parent = L_4_["LocalPlayer"].Character
-							L_139_.Name = L_139_.ClassName
-							L_134_:Destroy()
-							L_139_.DisplayDistanceType = "None"
-							L_4_["Camera"].CameraSubject = L_4_["LocalPlayer"].Character
+	local function L_84_func(L_134_arg1)
+		if L_6_["\72\97\115\76\111\111\112\101\100"] then
+			L_6_["\72\97\115\76\111\111\112\101\100"] = false
+			if L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character ~= nil and L_134_arg1.Character ~= nil then
+				L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character:BreakJoints()
+				L_79_func()
+				L_4_["\76\111\99\97\108\80\108\97\121\101\114"].CharacterAdded:Wait()
+				L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:Wait()
+				if L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character ~= nil and L_134_arg1 ~= nil and L_134_arg1.Character ~= nil then
+					local L_135_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\117\109\97\110\111\105\100", "\87\97\105\116")
+					local L_136_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\117\109\97\110\111\105\100\82\111\111\116\80\97\114\116", "\87\97\105\116")
+					local L_137_ = L_9_func(L_134_arg1.Character, "\84\111\114\115\111", "\70\105\110\100")
+					local L_138_ = L_9_func(L_134_arg1.Character, "\72\117\109\97\110\111\105\100", "\70\105\110\100")
+					if L_135_ ~= nil and L_136_ ~= nil and L_137_ ~= nil and L_138_ ~= nil and L_138_.Health ~= 0 then
+						L_135_:UnequipTools()
+						local L_139_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Backpack, "\84\111\111\108", "\70\105\110\100")
+						if L_139_ ~= nil then
+							L_135_.Name = ""
+							local L_140_ = L_135_:Clone()
+							L_140_.Parent = L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character
+							L_140_.Name = L_140_.ClassName
+							L_135_:Destroy()
+							L_140_.DisplayDistanceType = "\78\111\110\101"
+							L_4_["\67\97\109\101\114\97"].CameraSubject = L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character
 							wait(0.1)
-							if L_138_ ~= nil and L_4_["LocalPlayer"].Character ~= nil then
-								L_138_.Parent = L_4_["LocalPlayer"].Character
+							if L_139_ ~= nil and L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character ~= nil then
+								L_139_.Parent = L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character
 								repeat
-									L_135_.CFrame = L_136_.CFrame + L_136_.CFrame.rightVector * -2
-									L_4_["RenderStepped"]:wait()
-								until L_133_arg1.Character == nil or L_4_["LocalPlayer"].Character == nil or L_137_ == nil or L_137_.Health == 0 or L_134_.Health == 0 or L_138_.Parent == L_133_arg1.Character
-								L_139_.Health = 0
-								L_4_["LocalPlayer"].Character = nil
+									L_136_.CFrame = L_137_.CFrame + L_137_.CFrame.rightVector * -2
+									L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:wait()
+								until L_134_arg1.Character == nil or L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character == nil or L_138_ == nil or L_138_.Health == 0 or L_135_.Health == 0 or L_139_.Parent == L_134_arg1.Character
+								L_140_.Health = 0
+								L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character = nil
 							end
 						end
 					end
 				end
 			end
-			L_6_["HasLooped"] = true
+			L_6_["\72\97\115\76\111\111\112\101\100"] = true
 		end
 	end
 
 	function GetNearestPlayerToMouse()
-		local L_140_ = {}
 		local L_141_ = {}
 		local L_142_ = {}
-		for L_144_forvar1, L_145_forvar2 in next, L_2_["Players"]:GetPlayers() do
-			if L_145_forvar2 ~= L_4_["LocalPlayer"] then
-				table.insert(L_140_, L_145_forvar2)
+		local L_143_ = {}
+		for L_145_forvar1, L_146_forvar2 in next, L_2_["\80\108\97\121\101\114\115"]:GetPlayers() do
+			if L_146_forvar2 ~= L_4_["\76\111\99\97\108\80\108\97\121\101\114"] then
+				table.insert(L_141_, L_146_forvar2)
 			end
 		end
-		for L_146_forvar1, L_147_forvar2 in next, L_140_ do
-			local L_148_ = L_8_func(L_147_forvar2.Character, "Humanoid", "Find")
-			local L_149_ = L_8_func(L_147_forvar2.Character, "Torso", "Find")
-			if L_147_forvar2.Character ~= nil and L_149_ ~= nil and L_148_ ~= nil and L_148_.Health > 0 then
-				local L_150_ = (L_149_.Position - L_4_["Camera"].CoordinateFrame.p).magnitude
-				local L_151_ = Ray.new(L_4_["Camera"].CoordinateFrame.p, (L_4_["LocalPlayer"]:GetMouse().Hit.p - L_4_["Camera"].CoordinateFrame.p).unit * L_150_)
-				local L_152_, L_153_ = workspace:FindPartOnRay(L_151_, workspace)
-				local L_154_ = math.floor((L_153_ - L_149_.Position).magnitude)
-				L_141_[L_147_forvar2.Name .. L_146_forvar1] = {}
-				L_141_[L_147_forvar2.Name .. L_146_forvar1].dist = L_150_
-				L_141_[L_147_forvar2.Name .. L_146_forvar1].plr = L_147_forvar2
-				L_141_[L_147_forvar2.Name .. L_146_forvar1].diff = L_154_
-				table.insert(L_142_, L_154_)
+		for L_147_forvar1, L_148_forvar2 in next, L_141_ do
+			local L_149_ = L_9_func(L_148_forvar2.Character, "\72\117\109\97\110\111\105\100", "\70\105\110\100")
+			local L_150_ = L_9_func(L_148_forvar2.Character, "\84\111\114\115\111", "\70\105\110\100")
+			if L_148_forvar2.Character ~= nil and L_150_ ~= nil and L_149_ ~= nil and L_149_.Health > 0 then
+				local L_151_ = (L_150_.Position - L_4_["\67\97\109\101\114\97"].CoordinateFrame.p).magnitude
+				local L_152_ = Ray.new(L_4_["\67\97\109\101\114\97"].CoordinateFrame.p, (L_4_["\76\111\99\97\108\80\108\97\121\101\114"]:GetMouse().Hit.p - L_4_["\67\97\109\101\114\97"].CoordinateFrame.p).unit * L_151_)
+				local L_153_, L_154_ = workspace:FindPartOnRay(L_152_, workspace)
+				local L_155_ = math.floor((L_154_ - L_150_.Position).magnitude)
+				L_142_[L_148_forvar2.Name .. L_147_forvar1] = {}
+				L_142_[L_148_forvar2.Name .. L_147_forvar1].dist = L_151_
+				L_142_[L_148_forvar2.Name .. L_147_forvar1].plr = L_148_forvar2
+				L_142_[L_148_forvar2.Name .. L_147_forvar1].diff = L_155_
+				table.insert(L_143_, L_155_)
 			end
 		end
         
-		local L_143_ = math.floor(math.min(unpack(L_142_)))
-		if L_143_ > 20 then
+		local L_144_ = math.floor(math.min(unpack(L_143_)))
+		if L_144_ > 20 then
 			return
 		end
         
-		for L_155_forvar1, L_156_forvar2 in pairs(L_141_) do
-			if L_156_forvar2.diff == L_143_ then
-				return L_156_forvar2.plr
+		for L_156_forvar1, L_157_forvar2 in pairs(L_142_) do
+			if L_157_forvar2.diff == L_144_ then
+				return L_157_forvar2.plr
 			end
 		end
 		return
 	end
 
-	local function L_84_func(L_157_arg1, L_158_arg2, L_159_arg3, L_160_arg4)
-		local L_161_ = L_8_func(L_157_arg1, "BillboardGui", "Find")
-		if L_161_ == nil then
-			L_161_ = Instance.new("BillboardGui", L_157_arg1)
-			L_161_.AlwaysOnTop = true
-			L_161_.Enabled = true
-			L_161_.MaxDistance = math.huge
-			L_161_.Size = UDim2.new(1, 0, 1, 0)
-			L_161_.ExtentsOffset = L_160_arg4
-			local L_162_ = Instance.new("TextLabel", L_161_)
-			L_162_.Text = L_158_arg2
-			L_162_.BackgroundTransparency = 1
-			L_162_.Position = UDim2.new(0, 0, -0.9, 0)
+	local function L_85_func(L_158_arg1, L_159_arg2, L_160_arg3, L_161_arg4)
+		local L_162_ = L_9_func(L_158_arg1, "\66\105\108\108\98\111\97\114\100\71\117\105", "\70\105\110\100")
+		if L_162_ == nil then
+			L_162_ = Instance.new("\66\105\108\108\98\111\97\114\100\71\117\105", L_158_arg1)
+			L_162_.AlwaysOnTop = true
+			L_162_.Enabled = true
+			L_162_.MaxDistance = math.huge
 			L_162_.Size = UDim2.new(1, 0, 1, 0)
-			L_162_.TextSize = 13
-			L_162_.Font = Enum.Font.SourceSansBold
-			L_162_.TextColor = BrickColor.new(L_159_arg3)
-			L_162_.TextScaled = false
-			L_162_.TextStrokeTransparency = 0.5
+			L_162_.ExtentsOffset = L_161_arg4
+			local L_163_ = Instance.new("\84\101\120\116\76\97\98\101\108", L_162_)
+			L_163_.Text = L_159_arg2
+			L_163_.BackgroundTransparency = 1
+			L_163_.Position = UDim2.new(0, 0, -0.9, 0)
+			L_163_.Size = UDim2.new(1, 0, 1, 0)
+			L_163_.TextSize = 13
+			L_163_.Font = Enum.Font.SourceSansBold
+			L_163_.TextColor = BrickColor.new(L_160_arg3)
+			L_163_.TextScaled = false
+			L_163_.TextStrokeTransparency = 0.5
 		end
-		L_161_.TextLabel.Text = L_158_arg2
-		return L_161_
+		L_162_.TextLabel.Text = L_159_arg2
+		return L_162_
 	end
 
-	local function L_85_func()
-		for L_163_forvar1 = 1, #L_6_["SpawnsTable"] do
-			for L_164_forvar1, L_165_forvar2 in next, L_6_["SpawnsTable"][L_163_forvar1]:GetDescendants() do
-				if L_6_["SpawnsEsp"] then
-					if L_165_forvar2:IsA("Sound") and tostring(L_165_forvar2) == "Fire" and string.find(L_165_forvar2.SoundId, "219397110") then
-						L_84_func(L_6_["SpawnsTable"][L_163_forvar1], "Sawed off", "Really red", Vector3.new(0, 0, 0))
-					elseif L_165_forvar2:IsA("MeshPart") and string.find(L_165_forvar2.TextureID, "511726139") then
-						L_84_func(L_6_["SpawnsTable"][L_163_forvar1], "Cash", "Really red", Vector3.new(0, 0, 0))
-					elseif L_165_forvar2:IsA("SpecialMesh") and string.find(L_165_forvar2.MeshId, "29690481") then
-						L_84_func(L_6_["SpawnsTable"][L_163_forvar1], "Bottle", "Really red", Vector3.new(0, 0, 0))
-					elseif L_165_forvar2:IsA("Sound") and tostring(L_165_forvar2) == "Fire" and string.find(L_165_forvar2.SoundId, "328964620") then
-						L_84_func(L_6_["SpawnsTable"][L_163_forvar1], "Uzi", "Really red", Vector3.new(0, 0, 0))
-					elseif L_165_forvar2:IsA("MeshPart") and string.find(L_165_forvar2.TextureID, "441573394") then
-						L_84_func(L_6_["SpawnsTable"][L_163_forvar1], "Golf Club", "Really red", Vector3.new(0, 0, 0))
-					elseif L_165_forvar2:IsA("Sound") and tostring(L_165_forvar2) == "Hit" and L_165_forvar2.Parent:IsA("UnionOperation") and string.find(L_165_forvar2.SoundId, "175024455") then
-						L_84_func(L_6_["SpawnsTable"][L_163_forvar1], "Bat", "Really red", Vector3.new(0, 0, 0))
-					elseif tostring(L_165_forvar2) == "Sign" then
-						L_84_func(L_6_["SpawnsTable"][L_163_forvar1], "Stop Sign", "Really red", Vector3.new(0, 0, 0))
-					elseif L_165_forvar2:IsA("Sound") and tostring(L_165_forvar2) == "Fire" and string.find(L_165_forvar2.SoundId, "142383762") then
-						L_84_func(L_6_["SpawnsTable"][L_163_forvar1], "Shotty", "Really red", Vector3.new(0, 0, 0))
-					elseif tostring(L_165_forvar2) == "Blade" and L_165_forvar2:IsA("MeshPart") and string.find(L_165_forvar2.TextureID, "12177147") then
-						L_84_func(L_6_["SpawnsTable"][L_163_forvar1], "Katana", "Really red", Vector3.new(0, 0, 0))
-					elseif L_165_forvar2:IsA("MeshPart") and string.find(L_165_forvar2.MeshId, "441575918") then
-						L_84_func(L_6_["SpawnsTable"][L_163_forvar1], "Machete", "Really red", Vector3.new(0, 0, 0))
-					elseif L_165_forvar2:IsA("Sound") and tostring(L_165_forvar2) == "Hit" and string.find(L_165_forvar2.SoundId, "546410481") then
-						L_84_func(L_6_["SpawnsTable"][L_163_forvar1], "Crowbar", "Really red", Vector3.new(0, 0, 0))
+	local function L_86_func()
+		for L_164_forvar1 = 1, #L_6_["\83\112\97\119\110\115\84\97\98\108\101"] do
+			for L_165_forvar1, L_166_forvar2 in next, L_6_["\83\112\97\119\110\115\84\97\98\108\101"][L_164_forvar1]:GetDescendants() do
+				if L_6_["\83\112\97\119\110\115\69\115\112"] then
+					if L_166_forvar2:IsA("\83\111\117\110\100") and tostring(L_166_forvar2) == "\70\105\114\101" and string.find(L_166_forvar2.SoundId, "\50\49\57\51\57\55\49\49\48") then
+						L_85_func(L_6_["\83\112\97\119\110\115\84\97\98\108\101"][L_164_forvar1], "\83\97\119\101\100\32\111\102\102", "\82\101\97\108\108\121\32\114\101\100", Vector3.new(0, 0, 0))
+					elseif L_166_forvar2:IsA("\77\101\115\104\80\97\114\116") and string.find(L_166_forvar2.TextureID, "\53\49\49\55\50\54\49\51\57") then
+						L_85_func(L_6_["\83\112\97\119\110\115\84\97\98\108\101"][L_164_forvar1], "\67\97\115\104", "\82\101\97\108\108\121\32\114\101\100", Vector3.new(0, 0, 0))
+					elseif L_166_forvar2:IsA("\83\112\101\99\105\97\108\77\101\115\104") and string.find(L_166_forvar2.MeshId, "\50\57\54\57\48\52\56\49") then
+						L_85_func(L_6_["\83\112\97\119\110\115\84\97\98\108\101"][L_164_forvar1], "\66\111\116\116\108\101", "\82\101\97\108\108\121\32\114\101\100", Vector3.new(0, 0, 0))
+					elseif L_166_forvar2:IsA("\83\111\117\110\100") and tostring(L_166_forvar2) == "\70\105\114\101" and string.find(L_166_forvar2.SoundId, "\51\50\56\57\54\52\54\50\48") then
+						L_85_func(L_6_["\83\112\97\119\110\115\84\97\98\108\101"][L_164_forvar1], "\85\122\105", "\82\101\97\108\108\121\32\114\101\100", Vector3.new(0, 0, 0))
+					elseif L_166_forvar2:IsA("\77\101\115\104\80\97\114\116") and string.find(L_166_forvar2.TextureID, "\52\52\49\53\55\51\51\57\52") then
+						L_85_func(L_6_["\83\112\97\119\110\115\84\97\98\108\101"][L_164_forvar1], "\71\111\108\102\32\67\108\117\98", "\82\101\97\108\108\121\32\114\101\100", Vector3.new(0, 0, 0))
+					elseif L_166_forvar2:IsA("\83\111\117\110\100") and tostring(L_166_forvar2) == "\72\105\116" and L_166_forvar2.Parent:IsA("\85\110\105\111\110\79\112\101\114\97\116\105\111\110") and string.find(L_166_forvar2.SoundId, "\49\55\53\48\50\52\52\53\53") then
+						L_85_func(L_6_["\83\112\97\119\110\115\84\97\98\108\101"][L_164_forvar1], "\66\97\116", "\82\101\97\108\108\121\32\114\101\100", Vector3.new(0, 0, 0))
+					elseif tostring(L_166_forvar2) == "\83\105\103\110" then
+						L_85_func(L_6_["\83\112\97\119\110\115\84\97\98\108\101"][L_164_forvar1], "\83\116\111\112\32\83\105\103\110", "\82\101\97\108\108\121\32\114\101\100", Vector3.new(0, 0, 0))
+					elseif L_166_forvar2:IsA("\83\111\117\110\100") and tostring(L_166_forvar2) == "\70\105\114\101" and string.find(L_166_forvar2.SoundId, "\49\52\50\51\56\51\55\54\50") then
+						L_85_func(L_6_["\83\112\97\119\110\115\84\97\98\108\101"][L_164_forvar1], "\83\104\111\116\116\121", "\82\101\97\108\108\121\32\114\101\100", Vector3.new(0, 0, 0))
+					elseif tostring(L_166_forvar2) == "\66\108\97\100\101" and L_166_forvar2:IsA("\77\101\115\104\80\97\114\116") and string.find(L_166_forvar2.TextureID, "\49\50\49\55\55\49\52\55") then
+						L_85_func(L_6_["\83\112\97\119\110\115\84\97\98\108\101"][L_164_forvar1], "\75\97\116\97\110\97", "\82\101\97\108\108\121\32\114\101\100", Vector3.new(0, 0, 0))
+					elseif L_166_forvar2:IsA("\77\101\115\104\80\97\114\116") and string.find(L_166_forvar2.MeshId, "\52\52\49\53\55\53\57\49\56") then
+						L_85_func(L_6_["\83\112\97\119\110\115\84\97\98\108\101"][L_164_forvar1], "\77\97\99\104\101\116\101", "\82\101\97\108\108\121\32\114\101\100", Vector3.new(0, 0, 0))
+					elseif L_166_forvar2:IsA("\83\111\117\110\100") and tostring(L_166_forvar2) == "\72\105\116" and string.find(L_166_forvar2.SoundId, "\53\52\54\52\49\48\52\56\49") then
+						L_85_func(L_6_["\83\112\97\119\110\115\84\97\98\108\101"][L_164_forvar1], "\67\114\111\119\98\97\114", "\82\101\97\108\108\121\32\114\101\100", Vector3.new(0, 0, 0))
 					end
-				elseif not L_6_["SpawnsEsp"] then
-					if L_165_forvar2:IsA("BillboardGui") then
-						L_165_forvar2:Destroy()
+				elseif not L_6_["\83\112\97\119\110\115\69\115\112"] then
+					if L_166_forvar2:IsA("\66\105\108\108\98\111\97\114\100\71\117\105") then
+						L_166_forvar2:Destroy()
 					end
 				end
 			end
 		end
 	end
 
-	local function L_86_func(L_166_arg1)
-		if L_166_arg1 ~= nil then
-			local L_167_ = {}
-			local L_168_ = L_8_func(L_4_["LocalPlayer"].Character, "Humanoid", "Find")
-			local L_169_ = L_8_func(L_166_arg1.Character, "Humanoid", "Find")
-			local L_170_ = L_8_func(L_166_arg1.Character, "Torso", "Find")
-			if L_168_ ~= nil and L_168_.Health ~= 0 and L_169_ ~= nil and L_169_.Health ~= 0 and L_170_ ~= nil and not L_8_func(L_4_["LocalPlayer"].Character, "KO", "Find") and not L_8_func(L_166_arg1.Character, "KO", "Find") then
-				L_168_:UnequipTools()
-				for L_172_forvar1, L_173_forvar2 in next, L_4_["LocalPlayer"].Backpack:GetChildren() do
-					if L_173_forvar2:IsA("Tool") and L_8_func(L_173_forvar2, "Ammo", "Find") and tostring(L_173_forvar2) == "Shotty" then
-						table.insert(L_167_, L_173_forvar2)
+	local function L_87_func(L_167_arg1)
+		if L_167_arg1 ~= nil then
+			local L_168_ = {}
+			local L_169_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\117\109\97\110\111\105\100", "\70\105\110\100")
+			local L_170_ = L_9_func(L_167_arg1.Character, "\72\117\109\97\110\111\105\100", "\70\105\110\100")
+			local L_171_ = L_9_func(L_167_arg1.Character, "\84\111\114\115\111", "\70\105\110\100")
+			if L_169_ ~= nil and L_169_.Health ~= 0 and L_170_ ~= nil and L_170_.Health ~= 0 and L_171_ ~= nil and not L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\75\79", "\70\105\110\100") and not L_9_func(L_167_arg1.Character, "\75\79", "\70\105\110\100") then
+				L_169_:UnequipTools()
+				for L_173_forvar1, L_174_forvar2 in next, L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Backpack:GetChildren() do
+					if L_174_forvar2:IsA("\84\111\111\108") and L_9_func(L_174_forvar2, "\65\109\109\111", "\70\105\110\100") and tostring(L_174_forvar2) == "\83\104\111\116\116\121" then
+						table.insert(L_168_, L_174_forvar2)
 					end
 				end
-				local L_171_ = L_8_func(L_4_["LocalPlayer"].Character, "Right Arm", "Find")
-				if L_171_ ~= nil then
-					for L_174_forvar1, L_175_forvar2 in next, L_167_ do
-						local L_176_ = 0
+				local L_172_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\82\105\103\104\116\32\65\114\109", "\70\105\110\100")
+				if L_172_ ~= nil then
+					for L_175_forvar1, L_176_forvar2 in next, L_168_ do
+						local L_177_ = 0
 						repeat
-							if L_175_forvar2 ~= nil then
-								L_176_ = L_176_ + 2
-								local L_177_ = L_171_.CFrame * CFrame.new(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, -1, 0)
-								local L_178_ = L_177_:toObjectSpace(L_170_.CFrame * CFrame.Angles(0, math.rad(L_176_), math.rad(L_176_ + math.random(3))) * CFrame.new(0, 5, 5)):inverse()
-								L_175_forvar2.Grip = L_178_
-								L_175_forvar2.Parent = L_4_["LocalPlayer"].Character
-								L_175_forvar2.Fire:FireServer(L_170_.Position)
-								L_4_["RenderStepped"]:wait()
-								L_175_forvar2.Parent = L_4_["LocalPlayer"].Backpack
+							if L_176_forvar2 ~= nil then
+								L_177_ = L_177_ + 2
+								local L_178_ = L_172_.CFrame * CFrame.new(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, -1, 0)
+								local L_179_ = L_178_:toObjectSpace(L_171_.CFrame * CFrame.Angles(0, math.rad(L_177_), math.rad(L_177_ + math.random(3))) * CFrame.new(0, 5, 5)):inverse()
+								L_176_forvar2.Grip = L_179_
+								L_176_forvar2.Parent = L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character
+								L_176_forvar2.Fire:FireServer(L_171_.Position)
+								L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:wait()
+								L_176_forvar2.Parent = L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Backpack
 							end
-						until L_175_forvar2 == nil or L_175_forvar2.Clips.Value == 0 and L_167_.Ammo.Value == 0 or not L_6_["Attacking"] or L_168_ == nil or L_168_.Health == 0 or L_169_ == nil or L_169_.Health == 0 or L_170_ == nil
+						until L_176_forvar2 == nil or L_176_forvar2.Clips.Value == 0 and L_168_.Ammo.Value == 0 or not L_6_["\65\116\116\97\99\107\105\110\103"] or L_169_ == nil or L_169_.Health == 0 or L_170_ == nil or L_170_.Health == 0 or L_171_ == nil
 					end
 				end
 			end
 		end
 	end
 
-	local function L_87_func(L_179_arg1)
-		local L_180_ = string.split(L_179_arg1, " ")
-		for L_181_forvar1, L_182_forvar2 in next, L_180_ do
-			L_182_forvar2 = string.lower(tostring(L_182_forvar2))
+	local function L_88_func(L_180_arg1)
+		local L_181_ = string.split(L_180_arg1, "\32")
+		for L_182_forvar1, L_183_forvar2 in next, L_181_ do
+			L_183_forvar2 = string.lower(tostring(L_183_forvar2))
 		end
-		if L_180_[1] == "airwalk" then
-			if not L_6_["Airwalk"] then
-				L_6_["Airwalk"] = true
-				L_20_.BackgroundColor = BrickColor.new("Lime green")
-			elseif L_6_["Airwalk"] then
-				L_6_["Airwalk"] = false
-				L_20_.BackgroundColor = BrickColor.new("Really red")
+		if L_181_[1] == "\97\105\114\119\97\108\107" then
+			if not L_6_["\65\105\114\119\97\108\107"] then
+				L_6_["\65\105\114\119\97\108\107"] = true
+				L_21_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+			elseif L_6_["\65\105\114\119\97\108\107"] then
+				L_6_["\65\105\114\119\97\108\107"] = false
+				L_21_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 			end
-		elseif L_180_[1] == "unairwalk" then
-			L_6_["Airwalk"] = false
-			L_20_.BackgroundColor = BrickColor.new("Really red")
-		elseif L_180_[1] == "tpbypass" then
-			if not L_6_["TpBypass"] then
-				L_6_["TpBypass"] = true
-				L_32_.BackgroundColor = BrickColor.new("Lime green")
-				L_78_func()
-			elseif L_6_["TpBypass"] then
-				L_6_["TpBypass"] = false
-				L_32_.BackgroundColor = BrickColor.new("Really red")
-				L_78_func()
+		elseif L_181_[1] == "\117\110\97\105\114\119\97\108\107" then
+			L_6_["\65\105\114\119\97\108\107"] = false
+			L_21_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+		elseif L_181_[1] == "\116\112\98\121\112\97\115\115" then
+			if not L_6_["\84\112\66\121\112\97\115\115"] then
+				L_6_["\84\112\66\121\112\97\115\115"] = true
+				L_33_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+				L_79_func()
+			elseif L_6_["\84\112\66\121\112\97\115\115"] then
+				L_6_["\84\112\66\121\112\97\115\115"] = false
+				L_33_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+				L_79_func()
 			end
-		elseif L_180_[1] == "rejoin" then
-			L_2_["TeleportService"]:Teleport(game.PlaceId, L_4_["LocalPlayer"])
-		elseif L_180_[1] == "fly" then
-			if not L_6_["Flying"] then
-				L_6_["Flying"] = true
-				L_22_.BackgroundColor = BrickColor.new("Lime green")
-			elseif L_6_["Flying"] then
-				L_6_["Flying"] = false
-				L_22_.BackgroundColor = BrickColor.new("Really red")
+		elseif L_181_[1] == "\114\101\106\111\105\110" then
+			L_2_["\84\101\108\101\112\111\114\116\83\101\114\118\105\99\101"]:Teleport(game.PlaceId, L_4_["\76\111\99\97\108\80\108\97\121\101\114"])
+		elseif L_181_[1] == "\102\108\121" then
+			if not L_6_["\70\108\121\105\110\103"] then
+				L_6_["\70\108\121\105\110\103"] = true
+				L_23_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+			elseif L_6_["\70\108\121\105\110\103"] then
+				L_6_["\70\108\121\105\110\103"] = false
+				L_23_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 			end
-		elseif L_180_[1] == "unfly" then
-			L_6_["Flying"] = false
-		elseif L_180_[1] == "flyspeed" then
-			L_49_.Text = L_180_[2]
-			L_7_["FlySpeed"] = L_180_[2]
-			L_77_func("Fly speed has been changed to " .. tostring(L_7_["FlySpeed"]), "Really black")
-			L_81_func()
-		elseif L_180_[1] == "sprintspeed" then
-			L_7_["SprintSpeed"] = L_180_[2]
-			L_77_func("Sprint speed has been changed to " .. tostring(L_7_["SprintSpeed"]), "Really black")
-			L_6_["Sprint"] = true
-			L_47_.Text = L_180_[2]
-			L_46_.BackgroundColor = BrickColor.new("Lime green")
-			L_81_func()
-		elseif L_180_[1] == "aimbotvelocity" then
-			L_7_["AimbotVelocity"] = L_180_[2]
-			L_77_func("Aim predicition velocity has been changed to " .. tostring(L_7_["AimbotVelocity"]), "Really black")
-			L_81_func()
-		elseif L_180_[1] == "camlock" then
-			local L_183_ = L_80_func(L_180_[2])
-			if L_183_ ~= nil then
-				for L_184_forvar1, L_185_forvar2 in next, L_183_ do
-					if L_185_forvar2 ~= L_4_["LocalPlayer"] then
-						L_6_["Camlocking"] = true
-						L_6_["CamlockTarget"] = L_185_forvar2
-						L_43_.BackgroundColor = BrickColor.new("Lime green")
-						L_44_.Text = tostring(L_185_forvar2)
+		elseif L_181_[1] == "\117\110\102\108\121" then
+			L_6_["\70\108\121\105\110\103"] = false
+		elseif L_181_[1] == "\102\108\121\115\112\101\101\100" then
+			L_50_.Text = L_181_[2]
+			L_7_["\70\108\121\83\112\101\101\100"] = L_181_[2]
+			L_78_func("\70\108\121\32\115\112\101\101\100\32\104\97\115\32\98\101\101\110\32\99\104\97\110\103\101\100\32\116\111\32" .. tostring(L_7_["\70\108\121\83\112\101\101\100"]), "\82\101\97\108\108\121\32\98\108\97\99\107")
+			L_82_func()
+		elseif L_181_[1] == "\115\112\114\105\110\116\115\112\101\101\100" then
+			L_7_["\83\112\114\105\110\116\83\112\101\101\100"] = L_181_[2]
+			L_78_func("\83\112\114\105\110\116\32\115\112\101\101\100\32\104\97\115\32\98\101\101\110\32\99\104\97\110\103\101\100\32\116\111\32" .. tostring(L_7_["\83\112\114\105\110\116\83\112\101\101\100"]), "\82\101\97\108\108\121\32\98\108\97\99\107")
+			L_6_["\83\112\114\105\110\116"] = true
+			L_48_.Text = L_181_[2]
+			L_47_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+			L_82_func()
+		elseif L_181_[1] == "\97\105\109\98\111\116\118\101\108\111\99\105\116\121" then
+			L_7_["\65\105\109\98\111\116\86\101\108\111\99\105\116\121"] = L_181_[2]
+			L_78_func("\65\105\109\32\112\114\101\100\105\99\105\116\105\111\110\32\118\101\108\111\99\105\116\121\32\104\97\115\32\98\101\101\110\32\99\104\97\110\103\101\100\32\116\111\32" .. tostring(L_7_["\65\105\109\98\111\116\86\101\108\111\99\105\116\121"]), "\82\101\97\108\108\121\32\98\108\97\99\107")
+			L_82_func()
+		elseif L_181_[1] == "\99\97\109\108\111\99\107" then
+			local L_184_ = L_81_func(L_181_[2])
+			if L_184_ ~= nil then
+				for L_185_forvar1, L_186_forvar2 in next, L_184_ do
+					if L_186_forvar2 ~= L_4_["\76\111\99\97\108\80\108\97\121\101\114"] then
+						L_6_["\67\97\109\108\111\99\107\105\110\103"] = true
+						L_6_["\67\97\109\108\111\99\107\84\97\114\103\101\116"] = L_186_forvar2
+						L_44_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+						L_45_.Text = tostring(L_186_forvar2)
 					end
 				end
 			end
-		elseif L_180_[1] == "feloop" then
-			local L_186_ = L_80_func(L_180_[2])
-			if L_186_ ~= nil then
-				for L_187_forvar1, L_188_forvar2 in next, L_186_ do
-					if L_188_forvar2 ~= L_4_["LocalPlayer"] then
-						L_6_["FeLooping"] = true
-						L_6_["FeLoopTarget"] = tostring(L_188_forvar2)
-						L_40_.BackgroundColor = BrickColor.new("Lime green")
-						L_41_.Text = tostring(L_188_forvar2)
+		elseif L_181_[1] == "\102\101\108\111\111\112" then
+			local L_187_ = L_81_func(L_181_[2])
+			if L_187_ ~= nil then
+				for L_188_forvar1, L_189_forvar2 in next, L_187_ do
+					if L_189_forvar2 ~= L_4_["\76\111\99\97\108\80\108\97\121\101\114"] then
+						L_6_["\70\101\76\111\111\112\105\110\103"] = true
+						L_6_["\70\101\76\111\111\112\84\97\114\103\101\116"] = tostring(L_189_forvar2)
+						L_41_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+						L_42_.Text = tostring(L_189_forvar2)
 					end
 				end
 			end
-		elseif L_180_[1] == "unfeloop" then
-			L_6_["FeLoopTarget"] = nil
-			L_6_["FeLooping"] = false
-			L_40_.BackgroundColor = BrickColor.new("Really red")
-			L_41_.Text = ""
-		elseif L_180_[1] == "loopkill" then
-			local L_189_ = L_80_func(L_180_[2])
-			if L_189_ ~= nil then
-				for L_190_forvar1, L_191_forvar2 in next, L_189_ do
-					if L_191_forvar2 ~= L_4_["LocalPlayer"] then
-						L_51_.BackgroundColor = BrickColor.new("Lime green")
-						L_52_.Text = tostring(L_191_forvar2)
-						L_6_["LoopKilling"] = true
-						L_6_["LoopKillTarget"] = tostring(L_191_forvar2)
+		elseif L_181_[1] == "\117\110\102\101\108\111\111\112" then
+			L_6_["\70\101\76\111\111\112\84\97\114\103\101\116"] = nil
+			L_6_["\70\101\76\111\111\112\105\110\103"] = false
+			L_41_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+			L_42_.Text = ""
+		elseif L_181_[1] == "\108\111\111\112\107\105\108\108" then
+			local L_190_ = L_81_func(L_181_[2])
+			if L_190_ ~= nil then
+				for L_191_forvar1, L_192_forvar2 in next, L_190_ do
+					if L_192_forvar2 ~= L_4_["\76\111\99\97\108\80\108\97\121\101\114"] then
+						L_52_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+						L_53_.Text = tostring(L_192_forvar2)
+						L_6_["\76\111\111\112\75\105\108\108\105\110\103"] = true
+						L_6_["\76\111\111\112\75\105\108\108\84\97\114\103\101\116"] = tostring(L_192_forvar2)
 					end
 				end
 			end
-		elseif L_180_[1] == "unloopkill" then
-			L_6_["LoopKilling"] = false
-			L_6_["LoopKillTarget"] = nil
-			L_6_["HasLooped"] = true
-			L_51_.BackgroundColor = BrickColor.new("Really red")
-		elseif L_180_[1] == "tp" or L_180_[1] == "teleport" or L_180_[1] == "to" then
-			local L_192_ = L_80_func(L_180_[2])
-			if L_192_ ~= nil then
-				for L_193_forvar1, L_194_forvar2 in next, L_192_ do
-					if L_194_forvar2 ~= L_4_["LocalPlayer"] then
-						L_76_func(L_194_forvar2)
+		elseif L_181_[1] == "\117\110\108\111\111\112\107\105\108\108" then
+			L_6_["\76\111\111\112\75\105\108\108\105\110\103"] = false
+			L_6_["\76\111\111\112\75\105\108\108\84\97\114\103\101\116"] = nil
+			L_6_["\72\97\115\76\111\111\112\101\100"] = true
+			L_52_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+		elseif L_181_[1] == "\116\112" or L_181_[1] == "\116\101\108\101\112\111\114\116" or L_181_[1] == "\116\111" then
+			local L_193_ = L_81_func(L_181_[2])
+			if L_193_ ~= nil then
+				for L_194_forvar1, L_195_forvar2 in next, L_193_ do
+					if L_195_forvar2 ~= L_4_["\76\111\99\97\108\80\108\97\121\101\114"] then
+						L_77_func(L_195_forvar2)
 					end
 				end
 			end
-		elseif L_180_[1] == "attack" then
-			local L_195_ = L_80_func(L_180_[2])
-			if L_195_ ~= nil then
-				for L_196_forvar1, L_197_forvar2 in next, L_195_ do
-					if L_197_forvar2 ~= L_4_["LocalPlayer"] then
-						L_6_["Attacking"] = true
-						L_86_func(L_197_forvar2)
+		elseif L_181_[1] == "\97\116\116\97\99\107" then
+			local L_196_ = L_81_func(L_181_[2])
+			if L_196_ ~= nil then
+				for L_197_forvar1, L_198_forvar2 in next, L_196_ do
+					if L_198_forvar2 ~= L_4_["\76\111\99\97\108\80\108\97\121\101\114"] then
+						L_6_["\65\116\116\97\99\107\105\110\103"] = true
+						L_87_func(L_198_forvar2)
 					end
 				end
 			end
-		elseif L_180_[1] == "users" then
-			for L_198_forvar1 = 1, #L_6_["UserTable"] do
-				L_77_func(L_6_["UserTable"][L_198_forvar1] .. " is a drpoppa user", "Really red")
+		elseif L_181_[1] == "\117\115\101\114\115" then
+			for L_199_forvar1 = 1, #L_6_["\85\115\101\114\84\97\98\108\101"] do
+				L_78_func(L_6_["\85\115\101\114\84\97\98\108\101"][L_199_forvar1] .. "\32\105\115\32\97\32\100\114\112\111\112\112\97\32\117\115\101\114", "\82\101\97\108\108\121\32\114\101\100")
 				wait(0.5)
 			end
-		elseif L_180_[1] == "esp" then
-			local L_199_ = L_80_func(L_180_[2])
-			if L_199_ ~= nil then
-				for L_200_forvar1, L_201_forvar2 in next, L_199_ do
-					if L_201_forvar2 ~= L_4_["LocalPlayer"] and not table.find(L_6_["EspTable"], tostring(L_201_forvar2)) then
-						table.insert(L_6_["EspTable"], tostring(L_201_forvar2))
+		elseif L_181_[1] == "\101\115\112" then
+			local L_200_ = L_81_func(L_181_[2])
+			if L_200_ ~= nil then
+				for L_201_forvar1, L_202_forvar2 in next, L_200_ do
+					if L_202_forvar2 ~= L_4_["\76\111\99\97\108\80\108\97\121\101\114"] and not table.find(L_6_["\69\115\112\84\97\98\108\101"], tostring(L_202_forvar2)) then
+						table.insert(L_6_["\69\115\112\84\97\98\108\101"], tostring(L_202_forvar2))
 					end
 				end
 			end
-		elseif L_180_[1] == "unesp" then
-			if L_180_[2] == nil then
-				for L_202_forvar1, L_203_forvar2 in next, L_2_["Players"]:GetPlayers() do
-					for L_204_forvar1 = 1, #L_6_["EspTable"] do
-						if L_6_["EspTable"][L_204_forvar1] == tostring(L_203_forvar2) then
-							table.remove(L_6_["EspTable"], L_204_forvar1)
-							local L_205_ = L_8_func(L_203_forvar2.Character, "Head", "Find")
-							if L_205_ ~= nil then
-								local L_206_ = L_8_func(L_205_, "BillboardGui", "Find")
-								if L_206_ ~= nil then
-									L_206_:Destroy()
+		elseif L_181_[1] == "\117\110\101\115\112" then
+			if L_181_[2] == nil then
+				for L_203_forvar1, L_204_forvar2 in next, L_2_["\80\108\97\121\101\114\115"]:GetPlayers() do
+					for L_205_forvar1 = 1, #L_6_["\69\115\112\84\97\98\108\101"] do
+						if L_6_["\69\115\112\84\97\98\108\101"][L_205_forvar1] == tostring(L_204_forvar2) then
+							table.remove(L_6_["\69\115\112\84\97\98\108\101"], L_205_forvar1)
+							local L_206_ = L_9_func(L_204_forvar2.Character, "\72\101\97\100", "\70\105\110\100")
+							if L_206_ ~= nil then
+								local L_207_ = L_9_func(L_206_, "\66\105\108\108\98\111\97\114\100\71\117\105", "\70\105\110\100")
+								if L_207_ ~= nil then
+									L_207_:Destroy()
 								end
 							end
 						end
 					end
 				end
 			else
-				local L_207_ = L_80_func(L_180_[2])
-				if L_207_ ~= nil then
-					for L_208_forvar1, L_209_forvar2 in next, L_207_ do
-						if L_209_forvar2 ~= L_4_["LocalPlayer"] then
-							for L_210_forvar1 = 1, #L_6_["EspTable"] do
-								if L_6_["EspTable"][L_210_forvar1] == tostring(L_209_forvar2) then
-									table.remove(L_6_["EspTable"], L_210_forvar1)
-									local L_211_ = L_8_func(L_209_forvar2.Character, "Head", "Find")
-									if L_211_ ~= nil then
-										local L_212_ = L_8_func(L_211_, "BillboardGui", "Find")
-										if L_212_ ~= nil then
-											L_212_:Destroy()
+				local L_208_ = L_81_func(L_181_[2])
+				if L_208_ ~= nil then
+					for L_209_forvar1, L_210_forvar2 in next, L_208_ do
+						if L_210_forvar2 ~= L_4_["\76\111\99\97\108\80\108\97\121\101\114"] then
+							for L_211_forvar1 = 1, #L_6_["\69\115\112\84\97\98\108\101"] do
+								if L_6_["\69\115\112\84\97\98\108\101"][L_211_forvar1] == tostring(L_210_forvar2) then
+									table.remove(L_6_["\69\115\112\84\97\98\108\101"], L_211_forvar1)
+									local L_212_ = L_9_func(L_210_forvar2.Character, "\72\101\97\100", "\70\105\110\100")
+									if L_212_ ~= nil then
+										local L_213_ = L_9_func(L_212_, "\66\105\108\108\98\111\97\114\100\71\117\105", "\70\105\110\100")
+										if L_213_ ~= nil then
+											L_213_:Destroy()
 										end
 									end
 								end
@@ -1310,704 +1313,717 @@ if not _G["DrPoppa"] then
 					end
 				end
 			end
-		elseif L_180_[1] == "uncamlock" then
-			L_6_["CamlockTarget"] = nil
-			L_6_["Camlocking"] = false
-			L_43_.BackgroundColor = BrickColor.new("Really red")
-			L_44_.Text = ""
-		elseif L_180_[1] == "view" then
-			local L_213_ = L_80_func(L_180_[2])
-			if L_213_ ~= nil then
-				for L_214_forvar1, L_215_forvar2 in next, L_213_ do
-					L_4_["Camera"].CameraSubject = L_215_forvar2.Character
+		elseif L_181_[1] == "\117\110\99\97\109\108\111\99\107" then
+			L_6_["\67\97\109\108\111\99\107\84\97\114\103\101\116"] = nil
+			L_6_["\67\97\109\108\111\99\107\105\110\103"] = false
+			L_44_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+			L_45_.Text = ""
+		elseif L_181_[1] == "\118\105\101\119" then
+			local L_214_ = L_81_func(L_181_[2])
+			if L_214_ ~= nil then
+				for L_215_forvar1, L_216_forvar2 in next, L_214_ do
+					L_4_["\67\97\109\101\114\97"].CameraSubject = L_216_forvar2.Character
 				end
 			end
-		elseif L_180_[1] == "unview" then
-			if L_4_["LocalPlayer"].Character ~= nil then
-				L_4_["Camera"].CameraSubject = L_4_["LocalPlayer"].Character
+		elseif L_181_[1] == "\117\110\118\105\101\119" then
+			if L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character ~= nil then
+				L_4_["\67\97\109\101\114\97"].CameraSubject = L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character
 			end
-		elseif L_180_[1] == "re" or L_180_[1] == "reset" or L_180_[1] == "respawn" then
-			L_78_func()
-		elseif L_180_[1] == "cmds" then
-			if not L_6_["CommandsOpen"] then
-				L_74_.Visible = true
-				L_6_["CommandsOpen"] = true
-			elseif L_6_["CommandsOpen"] then
-				L_6_["CommandsOpen"] = false
-				L_74_.Visible = false
+		elseif L_181_[1] == "\114\101" or L_181_[1] == "\114\101\115\101\116" or L_181_[1] == "\114\101\115\112\97\119\110" then
+			L_79_func()
+		elseif L_181_[1] == "\99\109\100\115" then
+			if not L_6_["\67\111\109\109\97\110\100\115\79\112\101\110"] then
+				L_75_.Visible = true
+				L_6_["\67\111\109\109\97\110\100\115\79\112\101\110"] = true
+			elseif L_6_["\67\111\109\109\97\110\100\115\79\112\101\110"] then
+				L_6_["\67\111\109\109\97\110\100\115\79\112\101\110"] = false
+				L_75_.Visible = false
 			end
-		elseif L_180_[1] == "kill" then
-			local L_216_ = L_80_func(L_180_[2])
-			if L_216_ ~= nil then
-				for L_217_forvar1, L_218_forvar2 in next, L_216_ do
-					L_83_func(L_218_forvar2)
+		elseif L_181_[1] == "\107\105\108\108" then
+			local L_217_ = L_81_func(L_181_[2])
+			if L_217_ ~= nil then
+				for L_218_forvar1, L_219_forvar2 in next, L_217_ do
+					L_84_func(L_219_forvar2)
 				end
 			end
 		end
 	end
 
-	L_13_.MouseButton1Down:Connect(function()
-		for L_219_forvar1, L_220_forvar2 in next, L_12_:GetChildren() do
-			L_220_forvar2.Visible = false
-		end
-		L_13_.Visible = false
-	end)
-
-	L_18_.MouseButton1Down:Connect(function()
-		for L_221_forvar1, L_222_forvar2 in next, L_12_:GetChildren() do
-			L_222_forvar2.Visible = false
-		end
-		L_14_.Visible = true
-		L_13_.Visible = true
-		L_16_.Visible = true
-	end)
-
-	L_16_.MouseButton1Down:Connect(function()
-		for L_223_forvar1, L_224_forvar2 in next, L_12_:GetChildren() do
-			L_224_forvar2.Visible = false
+	L_14_.MouseButton1Down:Connect(function()
+		for L_220_forvar1, L_221_forvar2 in next, L_13_:GetChildren() do
+			L_221_forvar2.Visible = false
 		end
 		L_14_.Visible = false
+	end)
+
+	L_19_.MouseButton1Down:Connect(function()
+		for L_222_forvar1, L_223_forvar2 in next, L_13_:GetChildren() do
+			L_223_forvar2.Visible = false
+		end
 		L_15_.Visible = true
-		L_13_.Visible = true
+		L_14_.Visible = true
+		L_17_.Visible = true
 	end)
 
 	L_17_.MouseButton1Down:Connect(function()
-		for L_225_forvar1, L_226_forvar2 in next, L_12_:GetChildren() do
-			L_226_forvar2.Visible = false
+		for L_224_forvar1, L_225_forvar2 in next, L_13_:GetChildren() do
+			L_225_forvar2.Visible = false
 		end
-		L_14_.Visible = true
 		L_15_.Visible = false
-		L_13_.Visible = true
+		L_16_.Visible = true
+		L_14_.Visible = true
 	end)
 
-	L_35_.MouseButton1Down:Connect(function()
-		if not L_6_["Aimbot"] then
-			L_6_["Aimbot"] = true
-			L_36_.BackgroundColor = BrickColor.new("Lime green")
-		elseif L_6_["Aimbot"] then
-			L_6_["Aimbot"] = false
-			L_36_.BackgroundColor = BrickColor.new("Really red")
+	L_18_.MouseButton1Down:Connect(function()
+		for L_226_forvar1, L_227_forvar2 in next, L_13_:GetChildren() do
+			L_227_forvar2.Visible = false
+		end
+		L_15_.Visible = true
+		L_16_.Visible = false
+		L_14_.Visible = true
+	end)
+
+	L_36_.MouseButton1Down:Connect(function()
+		if not L_6_["\65\105\109\98\111\116"] then
+			L_6_["\65\105\109\98\111\116"] = true
+			L_37_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+		elseif L_6_["\65\105\109\98\111\116"] then
+			L_6_["\65\105\109\98\111\116"] = false
+			L_37_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 		end
 	end)
 
-	L_42_.MouseButton1Down:Connect(function()
-		if not L_6_["Camlocking"] then
-			L_6_["Camlocking"] = true
-			L_43_.BackgroundColor = BrickColor.new("Lime green")
-		elseif L_6_["Camlocking"] then
-			L_6_["Camlocking"] = false
-			L_43_.BackgroundColor = BrickColor.new("Really red")
+	L_43_.MouseButton1Down:Connect(function()
+		if not L_6_["\67\97\109\108\111\99\107\105\110\103"] then
+			L_6_["\67\97\109\108\111\99\107\105\110\103"] = true
+			L_44_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+		elseif L_6_["\67\97\109\108\111\99\107\105\110\103"] then
+			L_6_["\67\97\109\108\111\99\107\105\110\103"] = false
+			L_44_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 		end
 	end)
 
-	L_53_.MouseButton1Down:Connect(function()
-		if not L_6_["GunAnim"] then
-			L_6_["GunAnim"] = true
-			L_54_.BackgroundColor = BrickColor.new("Lime green")
-		elseif L_6_["GunAnim"] then
-			L_6_["GunAnim"] = false
-			L_54_.BackgroundColor = BrickColor.new("Really red")
+	L_54_.MouseButton1Down:Connect(function()
+		if not L_6_["\71\117\110\65\110\105\109"] then
+			L_6_["\71\117\110\65\110\105\109"] = true
+			L_55_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+		elseif L_6_["\71\117\110\65\110\105\109"] then
+			L_6_["\71\117\110\65\110\105\109"] = false
+			L_55_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 		end
 	end)
 
-	L_21_.MouseButton1Down:Connect(function()
-		if not L_6_["Flying"] then
-			L_6_["Flying"] = true
-			L_6_["NoClip"] = true
-			L_28_.BackgroundColor = BrickColor.new("Lime green")
-			L_22_.BackgroundColor = BrickColor.new("Lime green")
-		elseif L_6_["Flying"] then
-			L_6_["Flying"] = false
-			L_6_["NoClip"] = false
-			L_28_.BackgroundColor = BrickColor.new("Really red")
-			L_22_.BackgroundColor = BrickColor.new("Really red")
+	L_22_.MouseButton1Down:Connect(function()
+		if not L_6_["\70\108\121\105\110\103"] then
+			L_6_["\70\108\121\105\110\103"] = true
+			L_6_["\78\111\67\108\105\112"] = true
+			L_29_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+			L_23_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+		elseif L_6_["\70\108\121\105\110\103"] then
+			L_6_["\70\108\121\105\110\103"] = false
+			L_6_["\78\111\67\108\105\112"] = false
+			L_29_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+			L_23_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 		end
 	end)
 
-	L_23_.MouseButton1Down:Connect(function()
-		if not L_6_["NoSlow"] then
-			L_6_["NoSlow"] = true
-			L_24_.BackgroundColor = BrickColor.new("Lime green")
-		elseif L_6_["NoSlow"] then
-			L_6_["NoSlow"] = false
-			L_24_.BackgroundColor = BrickColor.new("Really red")
+	L_24_.MouseButton1Down:Connect(function()
+		if not L_6_["\78\111\83\108\111\119"] then
+			L_6_["\78\111\83\108\111\119"] = true
+			L_25_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+		elseif L_6_["\78\111\83\108\111\119"] then
+			L_6_["\78\111\83\108\111\119"] = false
+			L_25_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 		end
 	end)
 
-	L_25_.MouseButton1Down:Connect(function()
-		if not L_6_["AutoStomp"] then
-			L_6_["AutoStomp"] = true
-			L_26_.BackgroundColor = BrickColor.new("Lime green")
-		elseif L_6_["AutoStomp"] then
-			L_6_["AutoStomp"] = false
-			L_26_.BackgroundColor = BrickColor.new("Really red")
+	L_26_.MouseButton1Down:Connect(function()
+		if not L_6_["\65\117\116\111\83\116\111\109\112"] then
+			L_6_["\65\117\116\111\83\116\111\109\112"] = true
+			L_27_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+		elseif L_6_["\65\117\116\111\83\116\111\109\112"] then
+			L_6_["\65\117\116\111\83\116\111\109\112"] = false
+			L_27_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 		end
 	end)
 
 
-	L_19_.MouseButton1Down:Connect(function()
-		if not L_6_["Airwalk"] then
-			L_6_["Airwalk"] = true
-			L_20_.BackgroundColor = BrickColor.new("Lime green")
-		elseif L_6_["Airwalk"] then
-			L_6_["Airwalk"] = false
-			L_20_.BackgroundColor = BrickColor.new("Really red")
+	L_20_.MouseButton1Down:Connect(function()
+		if not L_6_["\65\105\114\119\97\108\107"] then
+			L_6_["\65\105\114\119\97\108\107"] = true
+			L_21_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+		elseif L_6_["\65\105\114\119\97\108\107"] then
+			L_6_["\65\105\114\119\97\108\107"] = false
+			L_21_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 		end
 	end)
 
-	L_27_.MouseButton1Down:Connect(function()
-		if not L_6_["NoClip"] then
-			L_6_["NoClip"] = true
-			L_28_.BackgroundColor = BrickColor.new("Lime green")
-		elseif L_6_["NoClip"] then
-			L_6_["NoClip"] = false
-			L_28_.BackgroundColor = BrickColor.new("Really red")
+	L_28_.MouseButton1Down:Connect(function()
+		if not L_6_["\78\111\67\108\105\112"] then
+			L_6_["\78\111\67\108\105\112"] = true
+			L_29_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+		elseif L_6_["\78\111\67\108\105\112"] then
+			L_6_["\78\111\67\108\105\112"] = false
+			L_29_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 		end
 	end)
 
-	L_29_.MouseButton1Down:Connect(function()
-		if not L_6_["Triggerbot"] then
-			L_6_["Triggerbot"] = true
-			L_30_.BackgroundColor = BrickColor.new("Lime green")
-		elseif L_6_["Triggerbot"] then
-			L_6_["Triggerbot"] = false
-			L_6_["Triggered"] = false
-			L_30_.BackgroundColor = BrickColor.new("Really red")
+	L_30_.MouseButton1Down:Connect(function()
+		if not L_6_["\84\114\105\103\103\101\114\98\111\116"] then
+			L_6_["\84\114\105\103\103\101\114\98\111\116"] = true
+			L_31_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+		elseif L_6_["\84\114\105\103\103\101\114\98\111\116"] then
+			L_6_["\84\114\105\103\103\101\114\98\111\116"] = false
+			L_6_["\84\114\105\103\103\101\114\101\100"] = false
+			L_31_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 		end
 	end)
 
-	L_45_.MouseButton1Down:Connect(function()
-		if not L_6_["Sprint"] then
-			L_6_["Sprint"] = true
-			L_46_.BackgroundColor = BrickColor.new("Lime green")
-		elseif L_6_["Sprint"] then
-			L_6_["Sprint"] = false
-			L_46_.BackgroundColor = BrickColor.new("Really red")
+	L_46_.MouseButton1Down:Connect(function()
+		if not L_6_["\83\112\114\105\110\116"] then
+			L_6_["\83\112\114\105\110\116"] = true
+			L_47_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+		elseif L_6_["\83\112\114\105\110\116"] then
+			L_6_["\83\112\114\105\110\116"] = false
+			L_47_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 		end
 	end)
 
-	L_31_.MouseButton1Down:Connect(function()
-		if not L_6_["TpBypass"] then
-			L_6_["TpBypass"] = true
-			L_32_.BackgroundColor = BrickColor.new("Lime green")
-			local L_227_ = L_8_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
-			local L_228_
-			if L_227_ ~= nil then
-				L_228_ = L_227_.Position
+	L_32_.MouseButton1Down:Connect(function()
+		if not L_6_["\84\112\66\121\112\97\115\115"] then
+			L_6_["\84\112\66\121\112\97\115\115"] = true
+			L_33_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+			local L_228_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\84\111\114\115\111", "\70\105\110\100")
+			local L_229_
+			if L_228_ ~= nil then
+				L_229_ = L_228_.Position
 			end
-			L_78_func()
-			L_4_["LocalPlayer"].CharacterAdded:Wait()
-			L_4_["RenderStepped"]:Wait()
-			if L_228_ ~= nil and L_6_["TpBypass"] then
-				for L_229_forvar1 = 1, 15 do
-					L_76_func(L_228_)
-					L_4_["RenderStepped"]:Wait()
+			L_79_func()
+			L_4_["\76\111\99\97\108\80\108\97\121\101\114"].CharacterAdded:Wait()
+			L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:Wait()
+			if L_229_ ~= nil and L_6_["\84\112\66\121\112\97\115\115"] then
+				for L_230_forvar1 = 1, 15 do
+					L_77_func(L_229_)
+					L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:Wait()
 				end
 			end
-		elseif L_6_["TpBypass"] then
-			L_6_["TpBypass"] = false
-			L_32_.BackgroundColor = BrickColor.new("Really red")
-			L_78_func()
+		elseif L_6_["\84\112\66\121\112\97\115\115"] then
+			L_6_["\84\112\66\121\112\97\115\115"] = false
+			L_33_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+			L_79_func()
 		end
 	end)
 
-	L_39_.MouseButton1Down:Connect(function()
-		if not L_6_["FeLooping"] then
-			L_6_["FeLooping"] = true
-			L_40_.BackgroundColor = BrickColor.new("Lime green")
-		elseif L_6_["FeLooping"] then
-			L_6_["FeLooping"] = false
-			L_40_.BackgroundColor = BrickColor.new("Really red")
+	L_40_.MouseButton1Down:Connect(function()
+		if not L_6_["\70\101\76\111\111\112\105\110\103"] then
+			L_6_["\70\101\76\111\111\112\105\110\103"] = true
+			L_41_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+		elseif L_6_["\70\101\76\111\111\112\105\110\103"] then
+			L_6_["\70\101\76\111\111\112\105\110\103"] = false
+			L_41_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 		end
 	end)
 
-	L_50_.MouseButton1Down:Connect(function()
-		if not L_6_["LoopKilling"] then
-			L_6_["LoopKilling"] = true
-			L_51_.BackgroundColor = BrickColor.new("Lime green")
-		elseif L_6_["LoopKilling"] then
-			L_6_["LoopKilling"] = false
-			L_51_.BackgroundColor = BrickColor.new("Really red")
+	L_51_.MouseButton1Down:Connect(function()
+		if not L_6_["\76\111\111\112\75\105\108\108\105\110\103"] then
+			L_6_["\76\111\111\112\75\105\108\108\105\110\103"] = true
+			L_52_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+		elseif L_6_["\76\111\111\112\75\105\108\108\105\110\103"] then
+			L_6_["\76\111\111\112\75\105\108\108\105\110\103"] = false
+			L_52_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 		end
 	end)
 
-	L_55_.MouseButton1Down:Connect(function()
-		if not L_6_["VanDisabled"] then
-			L_6_["VanDisabled"] = true
-			L_56_.BackgroundColor = BrickColor.new("Lime green")
-			L_6_["Van"].Parent = L_2_["CoreGui"]
-		elseif L_6_["VanDisabled"] then
-			L_6_["VanDisabled"] = false
-			L_56_.BackgroundColor = BrickColor.new("Really red")
-			L_6_["Van"].Parent = workspace
+	L_56_.MouseButton1Down:Connect(function()
+		if not L_6_["\86\97\110\68\105\115\97\98\108\101\100"] then
+			L_6_["\86\97\110\68\105\115\97\98\108\101\100"] = true
+			L_57_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+			L_6_["\86\97\110"].Parent = L_2_["\67\111\114\101\71\117\105"]
+		elseif L_6_["\86\97\110\68\105\115\97\98\108\101\100"] then
+			L_6_["\86\97\110\68\105\115\97\98\108\101\100"] = false
+			L_57_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+			L_6_["\86\97\110"].Parent = workspace
 		end
 	end)
 
-	L_33_.MouseButton1Down:Connect(function()
-		if not L_6_["SpawnsEsp"] then
-			L_6_["SpawnsEsp"] = true
-			L_34_.BackgroundColor = BrickColor.new("Lime green")
-			L_85_func()
-		elseif L_6_["SpawnsEsp"] then
-			L_6_["SpawnsEsp"] = false
-			L_34_.BackgroundColor = BrickColor.new("Really red")
-			L_85_func()
+	L_34_.MouseButton1Down:Connect(function()
+		if not L_6_["\83\112\97\119\110\115\69\115\112"] then
+			L_6_["\83\112\97\119\110\115\69\115\112"] = true
+			L_35_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+			L_86_func()
+		elseif L_6_["\83\112\97\119\110\115\69\115\112"] then
+			L_6_["\83\112\97\119\110\115\69\115\112"] = false
+			L_35_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+			L_86_func()
 		end
 	end)
 
-	L_58_.MouseButton1Down:Connect(function()
-		for L_230_forvar1, L_231_forvar2 in next, L_12_:GetChildren() do
-			L_231_forvar2.Visible = false
+	L_59_.MouseButton1Down:Connect(function()
+		for L_231_forvar1, L_232_forvar2 in next, L_13_:GetChildren() do
+			L_232_forvar2.Visible = false
 		end
-		L_57_.Visible = true
-		L_13_.Visible = true
+		L_58_.Visible = true
+		L_14_.Visible = true
 	end)
 
-	L_60_.MouseButton1Down:Connect(function()
-		for L_232_forvar1, L_233_forvar2 in next, L_12_:GetChildren() do
-			L_233_forvar2.Visible = false
+	L_61_.MouseButton1Down:Connect(function()
+		for L_233_forvar1, L_234_forvar2 in next, L_13_:GetChildren() do
+			L_234_forvar2.Visible = false
 		end
-		L_59_.Visible = true
-		L_13_.Visible = true
+		L_60_.Visible = true
+		L_14_.Visible = true
 	end)
 
-	L_63_.MouseButton1Down:Connect(function()
-		if L_63_.Text ~= "Done!" then
-			L_63_.Text = "Done!"
-			if string.len(L_62_.Text) > 0 then
-				L_7_["FlyHotkey"] = string.upper(string.sub(tostring(L_62_.Text), 1, 1))
+	L_64_.MouseButton1Down:Connect(function()
+		if L_64_.Text ~= "\68\111\110\101\33" then
+			L_64_.Text = "\68\111\110\101\33"
+			if string.len(L_63_.Text) > 0 then
+				L_7_["\70\108\121\72\111\116\107\101\121"] = string.upper(string.sub(tostring(L_63_.Text), 1, 1))
 			else
-				L_7_["FlyHotkey"] = " "
+				L_7_["\70\108\121\72\111\116\107\101\121"] = "\32"
 			end
-			L_62_.Text = tostring(L_7_["FlyHotkey"])
-			L_77_func("Fly hotkey has been changed to " .. tostring(L_7_["FlyHotkey"]), "Really black")
-			L_81_func()
+			L_63_.Text = tostring(L_7_["\70\108\121\72\111\116\107\101\121"])
+			L_78_func("\70\108\121\32\104\111\116\107\101\121\32\104\97\115\32\98\101\101\110\32\99\104\97\110\103\101\100\32\116\111\32" .. tostring(L_7_["\70\108\121\72\111\116\107\101\121"]), "\82\101\97\108\108\121\32\98\108\97\99\107")
+			L_82_func()
 			wait(0.3)
-			L_63_.Text = "Apply"
+			L_64_.Text = "\65\112\112\108\121"
 		end
 	end)
 
-	L_66_.MouseButton1Down:Connect(function()
-		if L_66_.Text ~= "Done!" then
-			L_66_.Text = "Done!"
-			if string.len(L_65_.Text) > 0 then
-				L_7_["NoClipHotkey"] = string.upper(string.sub(tostring(L_65_.Text), 1, 1))
+	L_67_.MouseButton1Down:Connect(function()
+		if L_67_.Text ~= "\68\111\110\101\33" then
+			L_67_.Text = "\68\111\110\101\33"
+			if string.len(L_66_.Text) > 0 then
+				L_7_["\78\111\67\108\105\112\72\111\116\107\101\121"] = string.upper(string.sub(tostring(L_66_.Text), 1, 1))
 			else
-				L_7_["NoClipHotkey"] = " "
+				L_7_["\78\111\67\108\105\112\72\111\116\107\101\121"] = "\32"
 			end
-			L_65_.Text = tostring(L_7_["NoClipHotkey"])
-			L_77_func("NoClip hotkey has been changed to " .. tostring(L_7_["NoClipHotkey"]), "Really black")
-			L_81_func()
+			L_66_.Text = tostring(L_7_["\78\111\67\108\105\112\72\111\116\107\101\121"])
+			L_78_func("\78\111\67\108\105\112\32\104\111\116\107\101\121\32\104\97\115\32\98\101\101\110\32\99\104\97\110\103\101\100\32\116\111\32" .. tostring(L_7_["\78\111\67\108\105\112\72\111\116\107\101\121"]), "\82\101\97\108\108\121\32\98\108\97\99\107")
+			L_82_func()
 			wait(0.3)
-			L_66_.Text = "Apply"
+			L_67_.Text = "\65\112\112\108\121"
 		end
 	end)
 
-	L_69_.MouseButton1Down:Connect(function()
-		if L_69_.Text ~= "Done!" then
-			L_69_.Text = "Done!"
-			if string.len(L_68_.Text) > 0 then
-				L_7_["AirwalkHotkey"] = string.upper(string.sub(tostring(L_68_.Text), 1, 1))
+	L_70_.MouseButton1Down:Connect(function()
+		if L_70_.Text ~= "\68\111\110\101\33" then
+			L_70_.Text = "\68\111\110\101\33"
+			if string.len(L_69_.Text) > 0 then
+				L_7_["\65\105\114\119\97\108\107\72\111\116\107\101\121"] = string.upper(string.sub(tostring(L_69_.Text), 1, 1))
 			else
-				L_7_["AirwalkHotkey"] = " "
+				L_7_["\65\105\114\119\97\108\107\72\111\116\107\101\121"] = "\32"
 			end
-			L_68_.Text = tostring(L_7_["AirwalkHotkey"])
-			L_77_func("Airwalk hotkey has been changed to " .. tostring(L_7_["AirwalkHotkey"]), "Really black")
-			L_81_func()
+			L_69_.Text = tostring(L_7_["\65\105\114\119\97\108\107\72\111\116\107\101\121"])
+			L_78_func("\65\105\114\119\97\108\107\32\104\111\116\107\101\121\32\104\97\115\32\98\101\101\110\32\99\104\97\110\103\101\100\32\116\111\32" .. tostring(L_7_["\65\105\114\119\97\108\107\72\111\116\107\101\121"]), "\82\101\97\108\108\121\32\98\108\97\99\107")
+			L_82_func()
 			wait(0.3)
-			L_69_.Text = "Apply"
+			L_70_.Text = "\65\112\112\108\121"
 		end
 	end)
 
-	L_72_.MouseButton1Down:Connect(function()
-		if L_72_.Text ~= "Done!" then
-			L_72_.Text = "Done!"
-			if string.len(L_71_.Text) > 0 then
-				L_7_["ResetHotkey"] = string.upper(string.sub(tostring(L_71_.Text), 1, 1))
+	L_73_.MouseButton1Down:Connect(function()
+		if L_73_.Text ~= "\68\111\110\101\33" then
+			L_73_.Text = "\68\111\110\101\33"
+			if string.len(L_72_.Text) > 0 then
+				L_7_["\82\101\115\101\116\72\111\116\107\101\121"] = string.upper(string.sub(tostring(L_72_.Text), 1, 1))
 			else
-				L_7_["ResetHotkey"] = " "
+				L_7_["\82\101\115\101\116\72\111\116\107\101\121"] = "\32"
 			end
-			L_71_.Text = tostring(L_7_["ResetHotkey"])
-			L_77_func("Reset hotkey has been changed to " .. tostring(L_7_["ResetHotkey"]), "Really black")
-			L_81_func()
+			L_72_.Text = tostring(L_7_["\82\101\115\101\116\72\111\116\107\101\121"])
+			L_78_func("\82\101\115\101\116\32\104\111\116\107\101\121\32\104\97\115\32\98\101\101\110\32\99\104\97\110\103\101\100\32\116\111\32" .. tostring(L_7_["\82\101\115\101\116\72\111\116\107\101\121"]), "\82\101\97\108\108\121\32\98\108\97\99\107")
+			L_82_func()
 			wait(0.3)
-			L_72_.Text = "Apply"
+			L_73_.Text = "\65\112\112\108\121"
 		end
 	end)
 
-	L_73_.FocusLost:Connect(function()
-		L_73_.Visible = false
-		L_87_func(L_73_.Text)
-		L_73_.Text = ""
-		L_73_.Size = UDim2.new(0, 0, 0, 25)
-		L_73_.Position = UDim2.new(1, 0, 1, -30)
+	L_74_.FocusLost:Connect(function()
+		L_74_.Visible = false
+		L_88_func(L_74_.Text)
+		L_74_.Text = ""
+		L_74_.Size = UDim2.new(0, 0, 0, 25)
+		L_74_.Position = UDim2.new(1, 0, 1, -30)
+	end)
+
+	L_39_.FocusLost:Connect(function()
+		if string.len(L_39_.Text) > 0 then
+			local L_235_ = L_81_func(L_39_.Text)
+			if L_235_ ~= nil then
+				for L_236_forvar1, L_237_forvar2 in next, L_235_ do
+					L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"] = L_237_forvar2
+					L_78_func("\65\105\109\98\111\116\32\116\97\114\103\101\116\116\105\110\103\32" .. tostring(L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"]), "\82\101\97\108\108\121\32\98\108\97\99\107")
+				end
+			end
+		else
+			L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"] = nil
+			if L_6_["\65\105\109\98\111\116"] then
+				L_78_func("\65\105\109\98\111\116\32\116\97\114\103\101\116\32\104\97\115\32\98\101\101\110\32\99\104\97\110\103\101\100\32\116\111\32\110\111\32\111\110\101\44\32\119\105\108\108\32\110\111\119\32\115\104\111\111\116\32\97\110\121\111\110\101\32\99\108\111\115\101\115\116\32\116\111\32\109\111\117\115\101", "\82\101\97\108\108\121\32\98\108\97\99\107")
+			else
+				L_78_func("\65\105\109\98\111\116\32\116\97\114\103\101\116\32\104\97\115\32\98\101\101\110\32\99\104\97\110\103\101\100\32\116\111\32\110\111\32\111\110\101", "\82\101\97\108\108\121\32\98\108\97\99\107")
+			end
+		end
+	end)
+
+	L_45_.FocusLost:Connect(function()
+		if string.len(L_45_.Text) > 0 then
+			local L_238_ = L_81_func(L_45_.Text)
+			if L_238_ ~= nil then
+				for L_239_forvar1, L_240_forvar2 in next, L_238_ do
+					L_6_["\67\97\109\108\111\99\107\84\97\114\103\101\116"] = L_240_forvar2
+					L_78_func("\67\97\109\108\111\99\107\32\116\97\114\103\101\116\116\105\110\103\32" .. tostring(L_6_["\67\97\109\108\111\99\107\84\97\114\103\101\116"]), "\82\101\97\108\108\121\32\98\108\97\99\107")
+				end
+			end
+		else
+			L_6_["\67\97\109\108\111\99\107\84\97\114\103\101\116"] = nil
+			L_78_func("\67\97\109\108\111\99\107\32\116\97\114\103\101\116\32\104\97\115\32\98\101\101\110\32\99\104\97\110\103\101\100\32\116\111\32\110\111\32\111\110\101", "\82\101\97\108\108\121\32\98\108\97\99\107")
+		end
 	end)
 
 	L_38_.FocusLost:Connect(function()
 		if string.len(L_38_.Text) > 0 then
-			local L_234_ = L_80_func(L_38_.Text)
-			if L_234_ ~= nil then
-				for L_235_forvar1, L_236_forvar2 in next, L_234_ do
-					L_6_["AimbotTarget"] = L_236_forvar2
-					L_77_func("Aimbot targetting " .. tostring(L_6_["AimbotTarget"]), "Really black")
+			L_7_["\65\105\109\98\111\116\86\101\108\111\99\105\116\121"] = L_38_.Text
+			L_78_func("\65\105\109\32\112\114\101\100\105\99\105\116\105\111\110\32\118\101\108\111\99\105\116\121\32\104\97\115\32\98\101\101\110\32\99\104\97\110\103\101\100\32\116\111\32" .. tostring(L_7_["\65\105\109\98\111\116\86\101\108\111\99\105\116\121"]), "\82\101\97\108\108\121\32\98\108\97\99\107")
+			L_82_func()
+		end
+	end)
+
+	L_48_.FocusLost:Connect(function()
+		if string.len(L_48_.Text) > 0 then
+			L_7_["\83\112\114\105\110\116\83\112\101\101\100"] = L_48_.Text
+			L_78_func("\83\112\114\105\110\116\32\115\112\101\101\100\32\104\97\115\32\98\101\101\110\32\99\104\97\110\103\101\100\32\116\111\32" .. tostring(L_7_["\83\112\114\105\110\116\83\112\101\101\100"]), "\82\101\97\108\108\121\32\98\108\97\99\107")
+			L_82_func()
+		end
+	end)
+
+	L_50_.FocusLost:Connect(function()
+		if string.len(L_50_.Text) > 0 then
+			L_7_["\70\108\121\83\112\101\101\100"] = L_50_.Text
+			L_78_func("\70\108\121\32\115\112\101\101\100\32\104\97\115\32\98\101\101\110\32\99\104\97\110\103\101\100\32\116\111\32" .. tostring(L_7_["\70\108\121\83\112\101\101\100"]), "\82\101\97\108\108\121\32\98\108\97\99\107")
+			L_82_func()
+		end
+	end)
+
+
+	L_42_.FocusLost:Connect(function()
+		if string.len(L_42_.Text) > 0 then
+			local L_241_ = L_81_func(L_42_.Text)
+			if L_241_ ~= nil then
+				for L_242_forvar1, L_243_forvar2 in next, L_241_ do
+					L_6_["\70\101\76\111\111\112\84\97\114\103\101\116"] = tostring(L_243_forvar2)
+					L_78_func("\70\101\32\76\111\111\112\32\116\97\114\103\101\116\32\105\115\32\110\111\119\32" .. tostring(L_6_["\70\101\76\111\111\112\84\97\114\103\101\116"]), "\82\101\97\108\108\121\32\98\108\97\99\107")
 				end
 			end
 		else
-			L_6_["AimbotTarget"] = nil
-			if L_6_["Aimbot"] then
-				L_77_func("Aimbot target has been changed to no one, will now shoot anyone closest to mouse", "Really black")
-			else
-				L_77_func("Aimbot target has been changed to no one", "Really black")
-			end
+			L_6_["\70\101\76\111\111\112\84\97\114\103\101\116"] = nil
+			L_78_func("\70\101\32\76\111\111\112\32\116\97\114\103\101\116\32\104\97\115\32\98\101\101\110\32\99\104\97\110\103\101\100\32\116\111\32\110\111\32\111\110\101", "\82\101\97\108\108\121\32\98\108\97\99\107")
 		end
 	end)
 
-	L_44_.FocusLost:Connect(function()
-		if string.len(L_44_.Text) > 0 then
-			local L_237_ = L_80_func(L_44_.Text)
-			if L_237_ ~= nil then
-				for L_238_forvar1, L_239_forvar2 in next, L_237_ do
-					L_6_["CamlockTarget"] = L_239_forvar2
-					L_77_func("Camlock targetting " .. tostring(L_6_["CamlockTarget"]), "Really black")
+	L_53_.FocusLost:Connect(function()
+		if string.len(L_53_.Text) > 0 then
+			local L_244_ = L_81_func(L_53_.Text)
+			if L_244_ ~= nil then
+				for L_245_forvar1, L_246_forvar2 in next, L_244_ do
+					L_6_["\76\111\111\112\75\105\108\108\84\97\114\103\101\116"] = tostring(L_246_forvar2)
+					L_78_func("\76\111\111\112\32\75\105\108\108\32\116\97\114\103\101\116\32\105\115\32\110\111\119\32" .. tostring(L_6_["\76\111\111\112\75\105\108\108\84\97\114\103\101\116"]), "\82\101\97\108\108\121\32\98\108\97\99\107")
 				end
 			end
 		else
-			L_6_["CamlockTarget"] = nil
-			L_77_func("Camlock target has been changed to no one", "Really black")
-		end
-	end)
-
-	L_37_.FocusLost:Connect(function()
-		if string.len(L_37_.Text) > 0 then
-			L_7_["AimbotVelocity"] = L_37_.Text
-			L_77_func("Aim predicition velocity has been changed to " .. tostring(L_7_["AimbotVelocity"]), "Really black")
-			L_81_func()
-		end
-	end)
-
-	L_47_.FocusLost:Connect(function()
-		if string.len(L_47_.Text) > 0 then
-			L_7_["SprintSpeed"] = L_47_.Text
-			L_77_func("Sprint speed has been changed to " .. tostring(L_7_["SprintSpeed"]), "Really black")
-			L_81_func()
-		end
-	end)
-
-	L_49_.FocusLost:Connect(function()
-		if string.len(L_49_.Text) > 0 then
-			L_7_["FlySpeed"] = L_49_.Text
-			L_77_func("Fly speed has been changed to " .. tostring(L_7_["FlySpeed"]), "Really black")
-			L_81_func()
+			L_6_["\76\111\111\112\75\105\108\108\84\97\114\103\101\116"] = nil
+			L_78_func("\76\111\111\112\32\75\105\108\108\32\116\97\114\103\101\116\32\104\97\115\32\98\101\101\110\32\99\104\97\110\103\101\100\32\116\111\32\110\111\32\111\110\101", "\82\101\97\108\108\121\32\98\108\97\99\107")
 		end
 	end)
 
 
-	L_41_.FocusLost:Connect(function()
-		if string.len(L_41_.Text) > 0 then
-			local L_240_ = L_80_func(L_41_.Text)
-			if L_240_ ~= nil then
-				for L_241_forvar1, L_242_forvar2 in next, L_240_ do
-					L_6_["FeLoopTarget"] = tostring(L_242_forvar2)
-					L_77_func("Fe Loop target is now " .. tostring(L_6_["FeLoopTarget"]), "Really black")
+	L_2_["\85\115\101\114\73\110\112\117\116\83\101\114\118\105\99\101"].InputBegan:Connect(function(L_247_arg1, L_248_arg2)
+		if L_247_arg1.KeyCode == Enum.KeyCode.LeftShift and L_6_["\83\112\114\105\110\116"] then
+			L_5_["\76\101\102\116\83\104\105\102\116"] = true
+		end
+		if not L_248_arg2 then
+			if L_247_arg1.KeyCode == Enum.KeyCode.Quote then
+				L_74_.Size = UDim2.new(0, 0, 0, 25)
+				L_74_.Position = UDim2.new(1, 0, 1, -295)
+				L_74_.Visible = true
+				L_74_:TweenSize(UDim2.new(0, 250, 0, 25), "\79\117\116", "\81\117\97\100", 0.2, false)
+				L_74_:TweenPosition(UDim2.new(1, -250, 1, -295), "\79\117\116", "\81\117\97\100", 0.2, false)
+				L_74_:CaptureFocus()
+				L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:Wait()
+				L_74_.Text = ""
+			elseif L_247_arg1.KeyCode == Enum.KeyCode.LeftControl and L_6_["\65\105\114\119\97\108\107"] then
+				L_6_["\65\105\114\119\97\108\107\95\79\102\102\115\101\116"] = -0.5
+			elseif L_247_arg1.KeyCode == Enum.KeyCode.Space and L_6_["\65\105\114\119\97\108\107"] then
+				L_6_["\65\105\114\119\97\108\107\95\79\102\102\115\101\116"] = 0.5
+			elseif L_247_arg1.KeyCode == Enum.KeyCode.W then
+				L_5_["\87"] = true
+			elseif L_247_arg1.KeyCode == Enum.KeyCode.A then
+				L_5_["\65"] = true
+			elseif L_247_arg1.KeyCode == Enum.KeyCode.S then
+				L_5_["\83"] = true
+			elseif L_247_arg1.KeyCode == Enum.KeyCode.D then
+				L_5_["\68"] = true
+			elseif L_247_arg1.KeyCode == Enum.KeyCode.Q then
+				L_5_["\81"] = true
+			elseif L_247_arg1.KeyCode == Enum.KeyCode.E then
+				L_5_["\69"] = true
+			elseif L_7_["\78\111\67\108\105\112\72\111\116\107\101\121"] ~= "\32" and L_247_arg1.KeyCode == Enum.KeyCode[L_7_["\78\111\67\108\105\112\72\111\116\107\101\121"]] then
+				if not L_6_["\78\111\67\108\105\112"] then
+					L_6_["\78\111\67\108\105\112"] = true
+					L_29_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+				elseif L_6_["\78\111\67\108\105\112"] then
+					L_6_["\78\111\67\108\105\112"] = false
+					L_29_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 				end
-			end
-		else
-			L_6_["FeLoopTarget"] = nil
-			L_77_func("Fe Loop target has been changed to no one", "Really black")
-		end
-	end)
-
-	L_52_.FocusLost:Connect(function()
-		if string.len(L_52_.Text) > 0 then
-			local L_243_ = L_80_func(L_52_.Text)
-			if L_243_ ~= nil then
-				for L_244_forvar1, L_245_forvar2 in next, L_243_ do
-					L_6_["LoopKillTarget"] = tostring(L_245_forvar2)
-					L_77_func("Loop Kill target is now " .. tostring(L_6_["LoopKillTarget"]), "Really black")
+			elseif L_7_["\70\108\121\72\111\116\107\101\121"] ~= "\32" and L_247_arg1.KeyCode == Enum.KeyCode[L_7_["\70\108\121\72\111\116\107\101\121"]] then
+				if not L_6_["\70\108\121\105\110\103"] then
+					L_6_["\70\108\121\105\110\103"] = true
+					L_6_["\78\111\67\108\105\112"] = true
+					L_29_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+					L_23_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+				elseif L_6_["\70\108\121\105\110\103"] then
+					L_6_["\70\108\121\105\110\103"] = false
+					L_6_["\78\111\67\108\105\112"] = false
+					L_29_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
+					L_23_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 				end
-			end
-		else
-			L_6_["LoopKillTarget"] = nil
-			L_77_func("Loop Kill target has been changed to no one", "Really black")
-		end
-	end)
-
-
-	L_2_["UserInputService"].InputBegan:Connect(function(L_246_arg1, L_247_arg2)
-		if L_246_arg1.KeyCode == Enum.KeyCode.LeftShift and L_6_["Sprint"] then
-			L_5_["LeftShift"] = true
-		end
-		if not L_247_arg2 then
-			if L_246_arg1.KeyCode == Enum.KeyCode.Quote then
-				L_73_.Size = UDim2.new(0, 0, 0, 25)
-				L_73_.Position = UDim2.new(1, 0, 1, -295)
-				L_73_.Visible = true
-				L_73_:TweenSize(UDim2.new(0, 250, 0, 25), "Out", "Quad", 0.2, false)
-				L_73_:TweenPosition(UDim2.new(1, -250, 1, -295), "Out", "Quad", 0.2, false)
-				L_73_:CaptureFocus()
-				L_4_["RenderStepped"]:Wait()
-				L_73_.Text = ""
-			elseif L_246_arg1.KeyCode == Enum.KeyCode.LeftControl and L_6_["Airwalk"] then
-				L_6_["Airwalk_Offset"] = -0.5
-			elseif L_246_arg1.KeyCode == Enum.KeyCode.Space and L_6_["Airwalk"] then
-				L_6_["Airwalk_Offset"] = 0.5
-			elseif L_246_arg1.KeyCode == Enum.KeyCode.W then
-				L_5_["W"] = true
-			elseif L_246_arg1.KeyCode == Enum.KeyCode.A then
-				L_5_["A"] = true
-			elseif L_246_arg1.KeyCode == Enum.KeyCode.S then
-				L_5_["S"] = true
-			elseif L_246_arg1.KeyCode == Enum.KeyCode.D then
-				L_5_["D"] = true
-			elseif L_246_arg1.KeyCode == Enum.KeyCode.Q then
-				L_5_["Q"] = true
-			elseif L_246_arg1.KeyCode == Enum.KeyCode.E then
-				L_5_["E"] = true
-			elseif L_7_["NoClipHotkey"] ~= " " and L_246_arg1.KeyCode == Enum.KeyCode[L_7_["NoClipHotkey"]] then
-				if not L_6_["NoClip"] then
-					L_6_["NoClip"] = true
-					L_28_.BackgroundColor = BrickColor.new("Lime green")
-				elseif L_6_["NoClip"] then
-					L_6_["NoClip"] = false
-					L_28_.BackgroundColor = BrickColor.new("Really red")
+			elseif L_7_["\65\105\114\119\97\108\107\72\111\116\107\101\121"] ~= "\32" and L_247_arg1.KeyCode == Enum.KeyCode[L_7_["\65\105\114\119\97\108\107\72\111\116\107\101\121"]] then
+				if not L_6_["\65\105\114\119\97\108\107"] then
+					L_6_["\65\105\114\119\97\108\107"] = true
+					L_21_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
+				elseif L_6_["\65\105\114\119\97\108\107"] then
+					L_6_["\65\105\114\119\97\108\107"] = false
+					L_21_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 				end
-			elseif L_7_["FlyHotkey"] ~= " " and L_246_arg1.KeyCode == Enum.KeyCode[L_7_["FlyHotkey"]] then
-				if not L_6_["Flying"] then
-					L_6_["Flying"] = true
-					L_6_["NoClip"] = true
-					L_28_.BackgroundColor = BrickColor.new("Lime green")
-					L_22_.BackgroundColor = BrickColor.new("Lime green")
-				elseif L_6_["Flying"] then
-					L_6_["Flying"] = false
-					L_6_["NoClip"] = false
-					L_28_.BackgroundColor = BrickColor.new("Really red")
-					L_22_.BackgroundColor = BrickColor.new("Really red")
-				end
-			elseif L_7_["AirwalkHotkey"] ~= " " and L_246_arg1.KeyCode == Enum.KeyCode[L_7_["AirwalkHotkey"]] then
-				if not L_6_["Airwalk"] then
-					L_6_["Airwalk"] = true
-					L_20_.BackgroundColor = BrickColor.new("Lime green")
-				elseif L_6_["Airwalk"] then
-					L_6_["Airwalk"] = false
-					L_20_.BackgroundColor = BrickColor.new("Really red")
-				end
-			elseif L_7_["ResetHotkey"] ~= " " and L_246_arg1.KeyCode == Enum.KeyCode[L_7_["ResetHotkey"]] then
-				if L_4_["LocalPlayer"].Character ~= nil then
-					L_4_["LocalPlayer"].Character:BreakJoints()
+			elseif L_7_["\82\101\115\101\116\72\111\116\107\101\121"] ~= "\32" and L_247_arg1.KeyCode == Enum.KeyCode[L_7_["\82\101\115\101\116\72\111\116\107\101\121"]] then
+				if L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character ~= nil then
+					L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character:BreakJoints()
 				end
 			end
 		end
 	end)
 
-	L_2_["UserInputService"].InputEnded:Connect(function(L_248_arg1, L_249_arg2)
-		if L_248_arg1.KeyCode == Enum.KeyCode.LeftShift and L_6_["Sprint"] then
-			L_5_["LeftShift"] = false
-			local L_250_ = L_8_func(L_4_["LocalPlayer"].Character, "Humanoid", "Find")
-			if L_250_ ~= nil then
-				L_250_.WalkSpeed = 16
+	L_2_["\85\115\101\114\73\110\112\117\116\83\101\114\118\105\99\101"].InputEnded:Connect(function(L_249_arg1, L_250_arg2)
+		if L_249_arg1.KeyCode == Enum.KeyCode.LeftShift and L_6_["\83\112\114\105\110\116"] then
+			L_5_["\76\101\102\116\83\104\105\102\116"] = false
+			local L_251_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\117\109\97\110\111\105\100", "\70\105\110\100")
+			if L_251_ ~= nil then
+				L_251_.WalkSpeed = 16
 			end
-		elseif L_248_arg1.KeyCode == Enum.KeyCode.LeftControl then
-			L_6_["Airwalk_Offset"] = 0
-		elseif L_248_arg1.KeyCode == Enum.KeyCode.Space then
-			L_6_["Airwalk_Offset"] = 0
-		elseif L_248_arg1.KeyCode == Enum.KeyCode.W then
-			L_5_["W"] = false
-		elseif L_248_arg1.KeyCode == Enum.KeyCode.A then
-			L_5_["A"] = false
-		elseif L_248_arg1.KeyCode == Enum.KeyCode.S then
-			L_5_["S"] = false
-		elseif L_248_arg1.KeyCode == Enum.KeyCode.D then
-			L_5_["D"] = false
-		elseif L_248_arg1.KeyCode == Enum.KeyCode.Q then
-			L_5_["Q"] = false
-		elseif L_248_arg1.KeyCode == Enum.KeyCode.E then
-			L_5_["E"] = false
+		elseif L_249_arg1.KeyCode == Enum.KeyCode.LeftControl then
+			L_6_["\65\105\114\119\97\108\107\95\79\102\102\115\101\116"] = 0
+		elseif L_249_arg1.KeyCode == Enum.KeyCode.Space then
+			L_6_["\65\105\114\119\97\108\107\95\79\102\102\115\101\116"] = 0
+		elseif L_249_arg1.KeyCode == Enum.KeyCode.W then
+			L_5_["\87"] = false
+		elseif L_249_arg1.KeyCode == Enum.KeyCode.A then
+			L_5_["\65"] = false
+		elseif L_249_arg1.KeyCode == Enum.KeyCode.S then
+			L_5_["\83"] = false
+		elseif L_249_arg1.KeyCode == Enum.KeyCode.D then
+			L_5_["\68"] = false
+		elseif L_249_arg1.KeyCode == Enum.KeyCode.Q then
+			L_5_["\81"] = false
+		elseif L_249_arg1.KeyCode == Enum.KeyCode.E then
+			L_5_["\69"] = false
 		end
 	end)
 
     -- // BYPASS \\ --
 
-	local L_88_ = debug.getmetatable(game)
-	local L_89_ = L_88_.__newindex
-	local L_90_ = L_88_.__namecall
-	setreadonly(L_88_, false)
+	local L_89_ = debug.getmetatable(game)
+	local L_90_ = L_89_.__newindex
+	local L_91_ = L_89_.__namecall
+	setreadonly(L_89_, false)
 
-	L_88_.__newindex = newcclosure(function(L_251_arg1, L_252_arg2, L_253_arg3)
+	L_89_.__newindex = newcclosure(function(L_252_arg1, L_253_arg2, L_254_arg3)
 		if checkcaller() then 
-			return L_89_(L_251_arg1, L_252_arg2, L_253_arg3)
+			return L_90_(L_252_arg1, L_253_arg2, L_254_arg3)
 		end
-		if L_251_arg1 and L_251_arg1:IsA("Humanoid") then
-			if L_252_arg2 == "Health" and L_253_arg3 == 0 then
+		if L_252_arg1 and L_252_arg1:IsA("\72\117\109\97\110\111\105\100") then
+			if L_253_arg2 == "\72\101\97\108\116\104" and L_254_arg3 == 0 then
 				return
 			end
-			if L_252_arg2 == "WalkSpeed" and L_253_arg3 == 0 and L_6_["NoSlow"] then
+			if L_253_arg2 == "\87\97\108\107\83\112\101\101\100" and L_254_arg3 == 0 and L_6_["\78\111\83\108\111\119"] then
 				return
 			end
 		end
-		if L_252_arg2 == "CFrame" and tostring(L_251_arg1) == "Torso" or tostring(L_251_arg1) == "HumanoidRootPart" then 
+		if L_253_arg2 == "\67\70\114\97\109\101" and tostring(L_252_arg1) == "\84\111\114\115\111" or tostring(L_252_arg1) == "\72\117\109\97\110\111\105\100\82\111\111\116\80\97\114\116" then 
 			return
 		end
-		return L_89_(L_251_arg1, L_252_arg2, L_253_arg3)
+		return L_90_(L_252_arg1, L_253_arg2, L_254_arg3)
 	end)
 
-	L_88_.__namecall = newcclosure(function(L_254_arg1, ...)
-		local L_255_ = {
+	L_89_.__namecall = newcclosure(function(L_255_arg1, ...)
+		local L_256_ = {
 			...
 		}
-		local L_256_ = getnamecallmethod()
-		if not checkcaller() and L_256_ == "BreakJoints" then 
+		local L_257_ = getnamecallmethod()
+		if not checkcaller() and L_257_ == "\66\114\101\97\107\74\111\105\110\116\115" then 
 			return wait(9e9)
 		end
-		if L_256_ == "FireServer" then 
-			if tostring(L_254_arg1) == "lIII" or tostring(L_254_arg1.Parent) == "ReplicatedStorage" then 
+		if L_257_ == "\70\105\114\101\83\101\114\118\101\114" then 
+			if tostring(L_255_arg1) == "\108\73\73\73" or tostring(L_255_arg1.Parent) == "\82\101\112\108\105\99\97\116\101\100\83\116\111\114\97\103\101" then 
 				return wait(9e9)
 			end
-			if tostring(L_254_arg1) == "Fire" then
-				if L_6_["Aimbot"] and L_6_["AimbotTarget"] ~= nil then
+			if tostring(L_255_arg1) == "\70\105\114\101" then
+				if L_6_["\65\105\109\98\111\116"] and L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"] ~= nil then
 					pcall(function()
-						L_255_[1] = L_6_["AimbotTarget"].Character.Torso.CFrame + Vector3.new(L_6_["AimbotTarget"].Character.Torso.Velocity.X / L_7_["AimbotVelocity"], 0, L_6_["AimbotTarget"].Character.Torso.Velocity.Z / L_7_["AimbotVelocity"])
+						L_256_[1] = L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"].Character.Torso.CFrame + Vector3.new(L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"].Character.Torso.Velocity.X / L_7_["\65\105\109\98\111\116\86\101\108\111\99\105\116\121"], 0, L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"].Character.Torso.Velocity.Z / L_7_["\65\105\109\98\111\116\86\101\108\111\99\105\116\121"])
 					end)
-					return L_90_(L_254_arg1, unpack(L_255_))
+					return L_91_(L_255_arg1, unpack(L_256_))
 				end
 			end
-			if tostring(L_254_arg1) == "Input" then
-				if L_6_["Aimbot"] and L_6_["AimbotTarget"] ~= nil then
+			if tostring(L_255_arg1) == "\73\110\112\117\116" then
+				if L_6_["\65\105\109\98\111\116"] and L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"] ~= nil then
 					pcall(function()
-						L_255_[2]["mousehit"] = L_6_["AimbotTarget"].Character.Torso.CFrame + Vector3.new(L_6_["AimbotTarget"].Character.Torso.Velocity.X / L_7_["AimbotVelocity"], 0, L_6_["AimbotTarget"].Character.Torso.Velocity.Z / L_7_["AimbotVelocity"])
+						L_256_[2]["\109\111\117\115\101\104\105\116"] = L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"].Character.Torso.CFrame + Vector3.new(L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"].Character.Torso.Velocity.X / L_7_["\65\105\109\98\111\116\86\101\108\111\99\105\116\121"], 0, L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"].Character.Torso.Velocity.Z / L_7_["\65\105\109\98\111\116\86\101\108\111\99\105\116\121"])
 					end)
-					return L_90_(L_254_arg1, unpack(L_255_))
+					return L_91_(L_255_arg1, unpack(L_256_))
 				end
 			end
-			if L_255_[1] == "hey" then 
+			if L_256_[1] == "\104\101\121" then 
 				return wait(9e9)
 			end
 		end
-		return L_90_(L_254_arg1, ...)
+		return L_91_(L_255_arg1, ...)
 	end)
 
 
-	if L_4_["LocalPlayer"].Character ~= nil then
-		L_79_func()
+	if L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character ~= nil then
+		L_80_func()
 	end
 
-	L_4_["LocalPlayer"].CharacterAdded:Connect(function(L_257_arg1)
-		L_79_func()
+	L_4_["\76\111\99\97\108\80\108\97\121\101\114"].CharacterAdded:Connect(function(L_258_arg1)
+		L_80_func()
 	end)
 
-	workspace.ChildAdded:Connect(function(L_258_arg1)
-		if tostring(L_258_arg1) == "RandomSpawner" then
-			table.insert(L_6_["SpawnsTable"], L_258_arg1)
+	workspace.ChildAdded:Connect(function(L_259_arg1)
+		if tostring(L_259_arg1) == "\82\97\110\100\111\109\83\112\97\119\110\101\114" then
+			table.insert(L_6_["\83\112\97\119\110\115\84\97\98\108\101"], L_259_arg1)
 		end
 	end)
 
-	for L_259_forvar1, L_260_forvar2 in next, workspace:GetChildren() do
-		if tostring(L_260_forvar2) == "RandomSpawner" then
-			table.insert(L_6_["SpawnsTable"], L_260_forvar2)
+	for L_260_forvar1, L_261_forvar2 in next, workspace:GetChildren() do
+		if tostring(L_261_forvar2) == "\82\97\110\100\111\109\83\112\97\119\110\101\114" then
+			table.insert(L_6_["\83\112\97\119\110\115\84\97\98\108\101"], L_261_forvar2)
 		end
 	end
     
-	for L_261_forvar1, L_262_forvar2 in next, L_2_["Players"]:GetPlayers() do
-		if L_262_forvar2 ~= L_4_["LocalPlayer"] then
-			L_262_forvar2.Chatted:Connect(function(L_263_arg1)
-				if L_263_arg1 == "AA4AA" and not table.find(L_6_["UserTable"], tostring(L_262_forvar2)) then
-					table.insert(L_6_["UserTable"], tostring(L_262_forvar2))
-					L_77_func(tostring(L_262_forvar2) .. " just became a DrPoppa user", "Really red")
+	for L_262_forvar1, L_263_forvar2 in next, L_2_["\80\108\97\121\101\114\115"]:GetPlayers() do
+		if L_263_forvar2 ~= L_4_["\76\111\99\97\108\80\108\97\121\101\114"] then
+			L_263_forvar2.Chatted:Connect(function(L_264_arg1)
+				if L_264_arg1 == "\65\65\52\65\65" and not table.find(L_6_["\85\115\101\114\84\97\98\108\101"], tostring(L_263_forvar2)) then
+					table.insert(L_6_["\85\115\101\114\84\97\98\108\101"], tostring(L_263_forvar2))
+					L_78_func(tostring(L_263_forvar2) .. "\32\106\117\115\116\32\98\101\99\97\109\101\32\97\32\68\114\80\111\112\112\97\32\117\115\101\114", "\82\101\97\108\108\121\32\114\101\100")
 				end
 			end)
 		end
 	end
-	L_2_["Players"].PlayerAdded:Connect(function(L_264_arg1)
-		L_264_arg1.Chatted:Connect(function(L_265_arg1)
-			if L_265_arg1 == "AA4AA" and not table.find(L_6_["UserTable"], tostring(L_264_arg1)) then
-				table.insert(L_6_["UserTable"], tostring(L_264_arg1))
-				L_77_func(tostring(L_264_arg1) .. " just became a DrPoppa user", "Really red")
+	L_2_["\80\108\97\121\101\114\115"].PlayerAdded:Connect(function(L_265_arg1)
+		L_265_arg1.Chatted:Connect(function(L_266_arg1)
+			if L_266_arg1 == "\65\65\52\65\65" and not table.find(L_6_["\85\115\101\114\84\97\98\108\101"], tostring(L_265_arg1)) then
+				table.insert(L_6_["\85\115\101\114\84\97\98\108\101"], tostring(L_265_arg1))
+				L_78_func(tostring(L_265_arg1) .. "\32\106\117\115\116\32\98\101\99\97\109\101\32\97\32\68\114\80\111\112\112\97\32\117\115\101\114", "\82\101\97\108\108\121\32\114\101\100")
 			end
 		end)
 	end)
 
-	L_2_["Players"].PlayerRemoving:Connect(function(L_266_arg1)
-		for L_267_forvar1 = 1, #L_6_["EspTable"] do
-			if L_6_["EspTable"][L_267_forvar1] == tostring(L_266_arg1) then
-				table.remove(L_6_["EspTable"], L_267_forvar1)
+	L_2_["\80\108\97\121\101\114\115"].PlayerRemoving:Connect(function(L_267_arg1)
+		for L_268_forvar1 = 1, #L_6_["\69\115\112\84\97\98\108\101"] do
+			if L_6_["\69\115\112\84\97\98\108\101"][L_268_forvar1] == tostring(L_267_arg1) then
+				table.remove(L_6_["\69\115\112\84\97\98\108\101"], L_268_forvar1)
 			end
 		end
-		for L_268_forvar1 = 1, #L_6_["UserTable"] do
-			if L_6_["UserTable"][L_268_forvar1] == tostring(L_266_arg1) then
-				table.remove(L_6_["UserTable"], L_268_forvar1)
+		for L_269_forvar1 = 1, #L_6_["\85\115\101\114\84\97\98\108\101"] do
+			if L_6_["\85\115\101\114\84\97\98\108\101"][L_269_forvar1] == tostring(L_267_arg1) then
+				table.remove(L_6_["\85\115\101\114\84\97\98\108\101"], L_269_forvar1)
 			end
 		end
 	end)
 
 	coroutine.wrap(function()
-		while L_4_["RenderStepped"]:wait() do
-			if L_44_.Text ~= "" and L_6_["Camlocking"] then
-				local L_269_ = L_80_func(L_44_.Text)
-				if L_269_ ~= nil then
-					for L_270_forvar1, L_271_forvar2 in next, L_269_ do
-						if L_271_forvar2 ~= L_4_["LocalPlayer"] then
-							local L_272_ = L_8_func(L_271_forvar2.Character, "Torso", "Find")
-							if L_272_ ~= nil then
-								L_4_["Camera"].CoordinateFrame = CFrame.new(L_4_["Camera"].CoordinateFrame.p, L_272_.Position)
-							end
-						end
-					end
-				elseif L_6_["CamlockTarget"] ~= nil and L_6_["Camlocking"] then
-					local L_273_ = L_8_func(L_6_["CamlockTarget"].Character, "Torso", "Find")
-					if L_273_ ~= nil then
-						L_4_["Camera"].CoordinateFrame = CFrame.new(L_4_["Camera"].CoordinateFrame.p, L_273_.Position)
+		while L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:wait() do
+			if not L_6_["\66\108\97\99\107\67\111\111\108\100\111\119\110"] then
+				L_6_["\66\108\97\99\107\67\111\111\108\100\111\119\110"] = not L_6_["\66\108\97\99\107\67\111\111\108\100\111\119\110"]
+				for L_270_forvar1, L_271_forvar2 in next, L_8_ do
+					if tostring(L_2_["\80\108\97\121\101\114\115"]:GetUserIdFromNameAsync(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].DisplayName)) == L_270_forvar1 then
+						coroutine.wrap(function()
+							L_4_["\76\111\99\97\108\80\108\97\121\101\114"]:kick(L_271_forvar2)
+						end)()
+						wait(1)
+						repeat
+						until nil
 					end
 				end
 			end
-			if L_41_.Text ~= "" and L_6_["FeLooping"] then
-				local L_274_ = L_80_func(L_41_.Text)
-				if L_274_ ~= nil then
-					for L_275_forvar1, L_276_forvar2 in next, L_274_ do
-						if L_276_forvar2 ~= L_4_["LocalPlayer"] then
-							local L_277_ = L_8_func(L_276_forvar2.Character, "Torso", "Find")
-							local L_278_ = L_8_func(L_4_["LocalPlayer"].Character, "HumanoidRootPart", "Find")
-							local L_279_ = L_8_func(L_4_["LocalPlayer"].Character, "Humanoid", "Find")
-							for L_280_forvar1, L_281_forvar2 in next, L_4_["LocalPlayer"].Backpack:GetChildren() do
-								if L_281_forvar2:IsA("Tool") and L_4_["LocalPlayer"].Character ~= nil then
-									L_281_forvar2.Parent = L_4_["LocalPlayer"].Character
-								end
-							end
-							if L_279_ ~= nil then
-								L_279_.Name = ""
-								local L_282_ = L_279_:Clone()
-								L_282_.Parent = L_4_["LocalPlayer"].Character
-								L_282_.Name = L_282_.ClassName
-								L_279_:Destroy()
-								L_282_.DisplayDistanceType = "None"
-								L_4_["Camera"].CameraSubject = L_4_["LocalPlayer"].Character
-							end
-							if L_277_ ~= nil and L_278_ ~= nil then
-								L_278_.CFrame = L_277_.CFrame + L_277_.CFrame.rightVector * -1.5 + L_277_.CFrame.lookVector * -1
+			if L_45_.Text ~= "" and L_6_["\67\97\109\108\111\99\107\105\110\103"] then
+				local L_272_ = L_81_func(L_45_.Text)
+				if L_272_ ~= nil then
+					for L_273_forvar1, L_274_forvar2 in next, L_272_ do
+						if L_274_forvar2 ~= L_4_["\76\111\99\97\108\80\108\97\121\101\114"] then
+							local L_275_ = L_9_func(L_274_forvar2.Character, "\84\111\114\115\111", "\70\105\110\100")
+							if L_275_ ~= nil then
+								L_4_["\67\97\109\101\114\97"].CoordinateFrame = CFrame.new(L_4_["\67\97\109\101\114\97"].CoordinateFrame.p, L_275_.Position)
 							end
 						end
 					end
-				elseif L_6_["FeLoopTarget"] ~= nil and L_6_["FeLooping"] then
-					local L_283_ = L_8_func(L_2_["Players"], tostring(L_6_["FeLoopTarget"]), "Find")
-					if L_283_ ~= nil then
-						L_6_["FeLoopTarget"] = L_283_
-						local L_284_ = L_8_func(L_6_["FeLoopTarget"].Character, "Torso", "Find")
-						local L_285_ = L_8_func(L_4_["LocalPlayer"].Character, "HumanoidRootPart", "Find")
-						local L_286_ = L_8_func(L_4_["LocalPlayer"].Character, "Humanoid", "Find")
-						for L_287_forvar1, L_288_forvar2 in next, L_4_["LocalPlayer"].Backpack:GetChildren() do
-							if L_288_forvar2:IsA("Tool") and L_4_["LocalPlayer"].Character ~= nil then
-								L_288_forvar2.Parent = L_4_["LocalPlayer"].Character
+				elseif L_6_["\67\97\109\108\111\99\107\84\97\114\103\101\116"] ~= nil and L_6_["\67\97\109\108\111\99\107\105\110\103"] then
+					local L_276_ = L_9_func(L_6_["\67\97\109\108\111\99\107\84\97\114\103\101\116"].Character, "\84\111\114\115\111", "\70\105\110\100")
+					if L_276_ ~= nil then
+						L_4_["\67\97\109\101\114\97"].CoordinateFrame = CFrame.new(L_4_["\67\97\109\101\114\97"].CoordinateFrame.p, L_276_.Position)
+					end
+				end
+			end
+			if L_42_.Text ~= "" and L_6_["\70\101\76\111\111\112\105\110\103"] then
+				local L_277_ = L_81_func(L_42_.Text)
+				if L_277_ ~= nil then
+					for L_278_forvar1, L_279_forvar2 in next, L_277_ do
+						if L_279_forvar2 ~= L_4_["\76\111\99\97\108\80\108\97\121\101\114"] then
+							local L_280_ = L_9_func(L_279_forvar2.Character, "\84\111\114\115\111", "\70\105\110\100")
+							local L_281_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\117\109\97\110\111\105\100\82\111\111\116\80\97\114\116", "\70\105\110\100")
+							local L_282_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\117\109\97\110\111\105\100", "\70\105\110\100")
+							for L_283_forvar1, L_284_forvar2 in next, L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Backpack:GetChildren() do
+								if L_284_forvar2:IsA("\84\111\111\108") and L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character ~= nil then
+									L_284_forvar2.Parent = L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character
+								end
+							end
+							if L_282_ ~= nil then
+								L_282_.Name = ""
+								local L_285_ = L_282_:Clone()
+								L_285_.Parent = L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character
+								L_285_.Name = L_285_.ClassName
+								L_282_:Destroy()
+								L_285_.DisplayDistanceType = "\78\111\110\101"
+								L_4_["\67\97\109\101\114\97"].CameraSubject = L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character
+							end
+							if L_280_ ~= nil and L_281_ ~= nil then
+								L_281_.CFrame = L_280_.CFrame + L_280_.CFrame.rightVector * -1.5 + L_280_.CFrame.lookVector * -1
 							end
 						end
-						if L_286_ ~= nil then
-							L_286_.Name = ""
-							local L_289_ = L_286_:Clone()
-							L_289_.Parent = L_4_["LocalPlayer"].Character
-							L_289_.Name = L_289_.ClassName
-							L_286_:Destroy()
-							L_289_.DisplayDistanceType = "None"
-							L_4_["Camera"].CameraSubject = L_4_["LocalPlayer"].Character
+					end
+				elseif L_6_["\70\101\76\111\111\112\84\97\114\103\101\116"] ~= nil and L_6_["\70\101\76\111\111\112\105\110\103"] then
+					local L_286_ = L_9_func(L_2_["\80\108\97\121\101\114\115"], tostring(L_6_["\70\101\76\111\111\112\84\97\114\103\101\116"]), "\70\105\110\100")
+					if L_286_ ~= nil then
+						L_6_["\70\101\76\111\111\112\84\97\114\103\101\116"] = L_286_
+						local L_287_ = L_9_func(L_6_["\70\101\76\111\111\112\84\97\114\103\101\116"].Character, "\84\111\114\115\111", "\70\105\110\100")
+						local L_288_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\117\109\97\110\111\105\100\82\111\111\116\80\97\114\116", "\70\105\110\100")
+						local L_289_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\117\109\97\110\111\105\100", "\70\105\110\100")
+						for L_290_forvar1, L_291_forvar2 in next, L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Backpack:GetChildren() do
+							if L_291_forvar2:IsA("\84\111\111\108") and L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character ~= nil then
+								L_291_forvar2.Parent = L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character
+							end
 						end
-						if L_284_ ~= nil and L_285_ ~= nil then
-							L_285_.CFrame = L_284_.CFrame + L_284_.CFrame.rightVector * -1.5 + L_284_.CFrame.lookVector * -1
+						if L_289_ ~= nil then
+							L_289_.Name = ""
+							local L_292_ = L_289_:Clone()
+							L_292_.Parent = L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character
+							L_292_.Name = L_292_.ClassName
+							L_289_:Destroy()
+							L_292_.DisplayDistanceType = "\78\111\110\101"
+							L_4_["\67\97\109\101\114\97"].CameraSubject = L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character
+						end
+						if L_287_ ~= nil and L_288_ ~= nil then
+							L_288_.CFrame = L_287_.CFrame + L_287_.CFrame.rightVector * -1.5 + L_287_.CFrame.lookVector * -1
 						end
 					end
 				end
@@ -2016,217 +2032,217 @@ if not _G["DrPoppa"] then
 	end)()
 
 	coroutine.wrap(function()
-		while L_4_["Stepped"]:Wait() do
-			L_2_["StarterGui"]:SetCore("ResetButtonCallback", true)
+		while L_4_["\83\116\101\112\112\101\100"]:Wait() do
+			L_2_["\83\116\97\114\116\101\114\71\117\105"]:SetCore("\82\101\115\101\116\66\117\116\116\111\110\67\97\108\108\98\97\99\107", true)
 			coroutine.wrap(function()
-				if L_6_["LoopKilling"] and L_6_["LoopKillTarget"] ~= nil then
-					local L_292_ = L_80_func(L_6_["LoopKillTarget"])
-					for L_293_forvar1, L_294_forvar2 in next, L_292_ do
-						L_83_func(L_294_forvar2)
+				if L_6_["\76\111\111\112\75\105\108\108\105\110\103"] and L_6_["\76\111\111\112\75\105\108\108\84\97\114\103\101\116"] ~= nil then
+					local L_295_ = L_81_func(L_6_["\76\111\111\112\75\105\108\108\84\97\114\103\101\116"])
+					for L_296_forvar1, L_297_forvar2 in next, L_295_ do
+						L_84_func(L_297_forvar2)
 					end
 				end
 			end)()
-			local L_290_ = L_8_func(L_4_["LocalPlayer"].Character, "Glock", "Find")
-			if L_290_ == nil then
-				L_290_ = L_8_func(L_4_["LocalPlayer"]:WaitForChild("Backpack"), "Glock", "Find")
+			local L_293_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\71\108\111\99\107", "\70\105\110\100")
+			if L_293_ == nil then
+				L_293_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"]:WaitForChild("\66\97\99\107\112\97\99\107"), "\71\108\111\99\107", "\70\105\110\100")
 			end
-			if L_290_ ~= nil then
-				local L_295_ = L_8_func(L_290_, "Barrel", "Find")
-				if L_295_ ~= nil then
-					if L_6_["NoClip"] or L_6_["Flying"] then
-						L_295_.CanCollide = false
+			if L_293_ ~= nil then
+				local L_298_ = L_9_func(L_293_, "\66\97\114\114\101\108", "\70\105\110\100")
+				if L_298_ ~= nil then
+					if L_6_["\78\111\67\108\105\112"] or L_6_["\70\108\121\105\110\103"] then
+						L_298_.CanCollide = false
 					else
-						L_295_.CanCollide = true
+						L_298_.CanCollide = true
 					end
 				end
 			end
-			local L_291_ = L_8_func(L_4_["LocalPlayer"], "PlayerGui", "Find")
-			if L_291_ ~= nil then
-				local L_296_ = L_8_func(L_291_, "HUD", "Find")
-				if L_296_ ~= nil then
-					local L_297_ = L_8_func(L_296_, "Ammo", "Find")
-					if L_297_ ~= nil then
-						local L_298_ = L_8_func(L_4_["LocalPlayer"].Character, "Tool", "Find")
-						if L_298_  ~= nil then
-							local L_299_ = L_8_func(L_298_, "Clips", "Find")
-							local L_300_ = L_8_func(L_298_, "Ammo", "Find")
-							if L_299_ ~= nil and L_300_ ~= nil then
-								L_297_.Text = tostring(L_299_.Value) .. " Clips\n" .. tostring(L_300_.Value) .. " Ammo"
+			local L_294_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"], "\80\108\97\121\101\114\71\117\105", "\70\105\110\100")
+			if L_294_ ~= nil then
+				local L_299_ = L_9_func(L_294_, "\72\85\68", "\70\105\110\100")
+				if L_299_ ~= nil then
+					local L_300_ = L_9_func(L_299_, "\65\109\109\111", "\70\105\110\100")
+					if L_300_ ~= nil then
+						local L_301_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\84\111\111\108", "\70\105\110\100")
+						if L_301_  ~= nil then
+							local L_302_ = L_9_func(L_301_, "\67\108\105\112\115", "\70\105\110\100")
+							local L_303_ = L_9_func(L_301_, "\65\109\109\111", "\70\105\110\100")
+							if L_302_ ~= nil and L_303_ ~= nil then
+								L_300_.Text = tostring(L_302_.Value) .. "\32\67\108\105\112\115\92\110" .. tostring(L_303_.Value) .. "\32\65\109\109\111"
 							end
 						end
 					end
 				end
 			end
-			L_6_["SpawnsEspDelay"] = L_6_["SpawnsEspDelay"] + 1
-			if L_6_["SpawnsEspDelay"] > 250 then
-				L_85_func()
+			L_6_["\83\112\97\119\110\115\69\115\112\68\101\108\97\121"] = L_6_["\83\112\97\119\110\115\69\115\112\68\101\108\97\121"] + 1
+			if L_6_["\83\112\97\119\110\115\69\115\112\68\101\108\97\121"] > 250 then
+				L_86_func()
 			end
-			L_6_["UserCheckerDelay"] = L_6_["UserCheckerDelay"] + 1
-			if L_6_["UserCheckerDelay"] > 175 then
-				L_6_["UserCheckerDelay"] = 0
-				L_2_["Players"]:Chat("AA4AA")
+			L_6_["\85\115\101\114\67\104\101\99\107\101\114\68\101\108\97\121"] = L_6_["\85\115\101\114\67\104\101\99\107\101\114\68\101\108\97\121"] + 1
+			if L_6_["\85\115\101\114\67\104\101\99\107\101\114\68\101\108\97\121"] > 175 then
+				L_6_["\85\115\101\114\67\104\101\99\107\101\114\68\101\108\97\121"] = 0
+				L_2_["\80\108\97\121\101\114\115"]:Chat("\65\65\52\65\65")
 			end
-			L_6_["EspDelay"] = L_6_["EspDelay"] + 1
-			if L_6_["EspDelay"] > 24 then
-				L_6_["EspDelay"] = 0
+			L_6_["\69\115\112\68\101\108\97\121"] = L_6_["\69\115\112\68\101\108\97\121"] + 1
+			if L_6_["\69\115\112\68\101\108\97\121"] > 24 then
+				L_6_["\69\115\112\68\101\108\97\121"] = 0
 				coroutine.wrap(function()
-					for L_301_forvar1 = 1, #L_6_["EspTable"] do
-						local L_302_ = L_80_func(L_6_["EspTable"][L_301_forvar1])
-						if L_302_ ~= nil then
-							local L_303_ = L_8_func(L_302_[1].Character, "Head", "Find")
-							local L_304_ = L_8_func(L_302_[1].Character, "Humanoid", "Find")
-							local L_305_ = L_8_func(L_302_[1].Character, "Torso", "Find")
-							local L_306_ = L_8_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
-							local L_307_ = table.find(L_6_["UserTable"], tostring(L_302_[1]))
-							if L_307_ ~= nil then
-								L_307_ = true
+					for L_304_forvar1 = 1, #L_6_["\69\115\112\84\97\98\108\101"] do
+						local L_305_ = L_81_func(L_6_["\69\115\112\84\97\98\108\101"][L_304_forvar1])
+						if L_305_ ~= nil then
+							local L_306_ = L_9_func(L_305_[1].Character, "\72\101\97\100", "\70\105\110\100")
+							local L_307_ = L_9_func(L_305_[1].Character, "\72\117\109\97\110\111\105\100", "\70\105\110\100")
+							local L_308_ = L_9_func(L_305_[1].Character, "\84\111\114\115\111", "\70\105\110\100")
+							local L_309_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\84\111\114\115\111", "\70\105\110\100")
+							local L_310_ = table.find(L_6_["\85\115\101\114\84\97\98\108\101"], tostring(L_305_[1]))
+							if L_310_ ~= nil then
+								L_310_ = true
 							else
-								L_307_ = false
+								L_310_ = false
 							end
-							if L_303_ ~= nil and L_304_ ~= nil and L_305_ ~= nil and L_306_ ~= nil then
-								local L_308_ = "Name: " .. tostring(L_302_[1]) .. "\nHealth: " .. tostring(math.floor(L_304_.Health) .. "\nDistance: " .. tostring(math.floor((L_306_.Position - L_305_.Position).magnitude))) .. "\nDrPoppa user: " .. tostring(L_307_)
-								L_84_func(L_303_, L_308_, "Salmon", Vector3.new(4, 0, 0))
+							if L_306_ ~= nil and L_307_ ~= nil and L_308_ ~= nil and L_309_ ~= nil then
+								local L_311_ = "\78\97\109\101\58\32" .. tostring(L_305_[1]) .. "\92\110\72\101\97\108\116\104\58\32" .. tostring(math.floor(L_307_.Health) .. "\92\110\68\105\115\116\97\110\99\101\58\32" .. tostring(math.floor((L_309_.Position - L_308_.Position).magnitude))) .. "\92\110\68\114\80\111\112\112\97\32\117\115\101\114\58\32" .. tostring(L_310_)
+								L_85_func(L_306_, L_311_, "\83\97\108\109\111\110", Vector3.new(4, 0, 0))
 							end
 						end
 						wait()
 					end
 				end)()
 			end
-			for L_309_forvar1, L_310_forvar2 in next, L_2_["Players"]:GetPlayers() do
-				local L_311_ = L_8_func(L_310_forvar2.Character, "Humanoid", "Find")
-				if L_311_ ~= nil then
-					L_311_.NameDisplayDistance = 9e9
-					L_311_.HealthDisplayDistance = 9e9
+			for L_312_forvar1, L_313_forvar2 in next, L_2_["\80\108\97\121\101\114\115"]:GetPlayers() do
+				local L_314_ = L_9_func(L_313_forvar2.Character, "\72\117\109\97\110\111\105\100", "\70\105\110\100")
+				if L_314_ ~= nil then
+					L_314_.NameDisplayDistance = 9e9
+					L_314_.HealthDisplayDistance = 9e9
 				end
 			end
-			if L_6_["Airwalk"] then
-				local L_312_ = L_8_func(workspace, "DrPoppaAirwalkPart", "Find")
-				local L_313_ = L_8_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
-				if L_312_ == nil then
-					L_312_ = Instance.new("Part", workspace)
-					L_312_.Size = Vector3.new(5, 1, 5)
-					L_312_.Anchored = true
-					L_312_.Name = "DrPoppaAirwalkPart"
-					L_312_.Transparency = 1
+			if L_6_["\65\105\114\119\97\108\107"] then
+				local L_315_ = L_9_func(workspace, "\68\114\80\111\112\112\97\65\105\114\119\97\108\107\80\97\114\116", "\70\105\110\100")
+				local L_316_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\84\111\114\115\111", "\70\105\110\100")
+				if L_315_ == nil then
+					L_315_ = Instance.new("\80\97\114\116", workspace)
+					L_315_.Size = Vector3.new(5, 1, 5)
+					L_315_.Anchored = true
+					L_315_.Name = "\68\114\80\111\112\112\97\65\105\114\119\97\108\107\80\97\114\116"
+					L_315_.Transparency = 1
 				end
-				if L_313_ ~= nil then
-					L_312_.CFrame = CFrame.new(L_313_.Position) * CFrame.new(0, -3.5 + L_6_["Airwalk_Offset"], 0)
+				if L_316_ ~= nil then
+					L_315_.CFrame = CFrame.new(L_316_.Position) * CFrame.new(0, -3.5 + L_6_["\65\105\114\119\97\108\107\95\79\102\102\115\101\116"], 0)
 				end
-			elseif not L_6_["Airwalk"] then
-				local L_314_ = L_8_func(workspace, "DrPoppaAirwalkPart", "Find")
-				if L_314_ ~= nil then
-					L_314_:Destroy()
+			elseif not L_6_["\65\105\114\119\97\108\107"] then
+				local L_317_ = L_9_func(workspace, "\68\114\80\111\112\112\97\65\105\114\119\97\108\107\80\97\114\116", "\70\105\110\100")
+				if L_317_ ~= nil then
+					L_317_:Destroy()
 				end
 			end
 			coroutine.wrap(function()
-				if L_6_["Flying"] then
-					local L_315_ = L_8_func(L_4_["LocalPlayer"].Character, "Humanoid", "Find")
-					local L_316_ = L_8_func(L_4_["LocalPlayer"].Character, "Head", "Find")
-					local L_317_ = L_8_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
-					if L_315_ ~= nil and L_317_ ~= nil and L_316_ ~= nil then
-						local L_318_ = L_8_func(L_317_, "DrPoppaBodyGyro", "Find")
-						local L_319_ = L_8_func(L_317_, "DrPoppaBodyVelocity", "Find")
-						if L_318_ == nil then
-							L_318_ = Instance.new("BodyGyro", L_317_)
-							L_318_.MaxTorque = Vector3.new(9e9, 9e9, 9e9)
-							L_318_.Name = "DrPoppaBodyGyro"
-							L_318_.P = 9e9
+				if L_6_["\70\108\121\105\110\103"] then
+					local L_318_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\117\109\97\110\111\105\100", "\70\105\110\100")
+					local L_319_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\101\97\100", "\70\105\110\100")
+					local L_320_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\84\111\114\115\111", "\70\105\110\100")
+					if L_318_ ~= nil and L_320_ ~= nil and L_319_ ~= nil then
+						local L_321_ = L_9_func(L_320_, "\68\114\80\111\112\112\97\66\111\100\121\71\121\114\111", "\70\105\110\100")
+						local L_322_ = L_9_func(L_320_, "\68\114\80\111\112\112\97\66\111\100\121\86\101\108\111\99\105\116\121", "\70\105\110\100")
+						if L_321_ == nil then
+							L_321_ = Instance.new("\66\111\100\121\71\121\114\111", L_320_)
+							L_321_.MaxTorque = Vector3.new(9e9, 9e9, 9e9)
+							L_321_.Name = "\68\114\80\111\112\112\97\66\111\100\121\71\121\114\111"
+							L_321_.P = 9e9
 						end
-						if L_319_ == nil then
-							L_319_ = Instance.new("BodyVelocity", L_317_)
-							L_319_.MaxForce = Vector3.new(9e9, 9e9, 9e9)
-							L_319_.P = 9e4
-							L_319_.Name = "DrPoppaBodyVelocity"
+						if L_322_ == nil then
+							L_322_ = Instance.new("\66\111\100\121\86\101\108\111\99\105\116\121", L_320_)
+							L_322_.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+							L_322_.P = 9e4
+							L_322_.Name = "\68\114\80\111\112\112\97\66\111\100\121\86\101\108\111\99\105\116\121"
 						end
-						L_318_.CFrame = L_317_.CFrame
-						local L_320_ = Vector3.new(0, 0, 0)
-						if L_5_["W"] then
-							L_320_ = L_320_ + L_4_["Camera"].CoordinateFrame.lookVector * L_7_["FlySpeed"] * 25 
+						L_321_.CFrame = L_320_.CFrame
+						local L_323_ = Vector3.new(0, 0, 0)
+						if L_5_["\87"] then
+							L_323_ = L_323_ + L_4_["\67\97\109\101\114\97"].CoordinateFrame.lookVector * L_7_["\70\108\121\83\112\101\101\100"] * 25 
 						end
-						if L_5_["S"] then
-							L_320_ = L_320_ + L_4_["Camera"].CoordinateFrame.lookVector * -L_7_["FlySpeed"] * 25
+						if L_5_["\83"] then
+							L_323_ = L_323_ + L_4_["\67\97\109\101\114\97"].CoordinateFrame.lookVector * -L_7_["\70\108\121\83\112\101\101\100"] * 25
 						end
-						if L_5_["A"] then
-							L_320_ = L_320_ + L_4_["Camera"].CoordinateFrame.rightVector * -L_7_["FlySpeed"] * 25
+						if L_5_["\65"] then
+							L_323_ = L_323_ + L_4_["\67\97\109\101\114\97"].CoordinateFrame.rightVector * -L_7_["\70\108\121\83\112\101\101\100"] * 25
 						end
-						if L_5_["D"] then
-							L_320_ = L_320_ + L_4_["Camera"].CoordinateFrame.rightVector * L_7_["FlySpeed"] * 25
+						if L_5_["\68"] then
+							L_323_ = L_323_ + L_4_["\67\97\109\101\114\97"].CoordinateFrame.rightVector * L_7_["\70\108\121\83\112\101\101\100"] * 25
 						end
-						if L_5_["Q"] then
-							L_320_ = L_320_ + Vector3.new(0, -L_7_["FlySpeed"] * 25, 0)
+						if L_5_["\81"] then
+							L_323_ = L_323_ + Vector3.new(0, -L_7_["\70\108\121\83\112\101\101\100"] * 25, 0)
 						end
-						if L_5_["E"] then
-							L_320_ = L_320_ + Vector3.new(0, L_7_["FlySpeed"] * 25, 0)
+						if L_5_["\69"] then
+							L_323_ = L_323_ + Vector3.new(0, L_7_["\70\108\121\83\112\101\101\100"] * 25, 0)
 						end
-						if not L_5_["W"] and not L_5_["S"] and not L_5_["A"] and not L_5_["D"] and not L_5_["Q"] and not L_5_["E"] then
-							L_320_ = Vector3.new(0, 0, 0)
+						if not L_5_["\87"] and not L_5_["\83"] and not L_5_["\65"] and not L_5_["\68"] and not L_5_["\81"] and not L_5_["\69"] then
+							L_323_ = Vector3.new(0, 0, 0)
 						end
-						L_319_.Velocity = L_320_
-						L_318_.CFrame = L_4_["Camera"].CoordinateFrame
-						L_315_.PlatformStand = false
-						local L_321_ = L_315_.StateChanged:Connect(function(L_322_arg1, L_323_arg2)
-							if L_323_arg2 == Enum.HumanoidStateType.PlatformStanding then
-								L_315_.PlatformStand = false
+						L_322_.Velocity = L_323_
+						L_321_.CFrame = L_4_["\67\97\109\101\114\97"].CoordinateFrame
+						L_318_.PlatformStand = false
+						local L_324_ = L_318_.StateChanged:Connect(function(L_325_arg1, L_326_arg2)
+							if L_326_arg2 == Enum.HumanoidStateType.PlatformStanding then
+								L_318_.PlatformStand = false
 							end
 						end)
-						L_315_:ChangeState(3)
-						for L_324_forvar1, L_325_forvar2 in next, L_315_:GetPlayingAnimationTracks() do
-							if string.find(tostring(L_325_forvar2.Animation.AnimationId), "125750702") then 
-								L_325_forvar2:Stop()
+						L_318_:ChangeState(3)
+						for L_327_forvar1, L_328_forvar2 in next, L_318_:GetPlayingAnimationTracks() do
+							if string.find(tostring(L_328_forvar2.Animation.AnimationId), "\49\50\53\55\53\48\55\48\50") then 
+								L_328_forvar2:Stop()
 							end
 						end
-						L_4_["RenderStepped"]:Wait()
-						if L_315_ ~= nil then
-							L_315_:ChangeState(8)
+						L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:Wait()
+						if L_318_ ~= nil then
+							L_318_:ChangeState(8)
 						end
-						L_321_:Disconnect()
+						L_324_:Disconnect()
 					end
-				elseif not L_6_["Flying"] then
-					local L_326_ = L_8_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
-					local L_327_ = L_8_func(L_4_["LocalPlayer"].Character, "Head", "Find")
-					if L_326_ ~= nil and L_327_ ~= nil then
-						L_327_.CanCollide = true
-						L_326_.CanCollide = true
-						local L_328_ = L_8_func(L_326_, "DrPoppaBodyGyro", "Find")
-						local L_329_ = L_8_func(L_326_, "DrPoppaBodyVelocity", "Find")
-						if L_328_ ~= nil then
-							L_328_:Destroy()
+				elseif not L_6_["\70\108\121\105\110\103"] then
+					local L_329_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\84\111\114\115\111", "\70\105\110\100")
+					local L_330_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\101\97\100", "\70\105\110\100")
+					if L_329_ ~= nil and L_330_ ~= nil then
+						L_330_.CanCollide = true
+						L_329_.CanCollide = true
+						local L_331_ = L_9_func(L_329_, "\68\114\80\111\112\112\97\66\111\100\121\71\121\114\111", "\70\105\110\100")
+						local L_332_ = L_9_func(L_329_, "\68\114\80\111\112\112\97\66\111\100\121\86\101\108\111\99\105\116\121", "\70\105\110\100")
+						if L_331_ ~= nil then
+							L_331_:Destroy()
 						end
-						if L_329_ ~= nil then
-							L_329_:Destroy()
+						if L_332_ ~= nil then
+							L_332_:Destroy()
 						end
 					end
 				end
 			end)()
-			if L_6_["NoClip"] then
-				local L_330_ = L_8_func(L_4_["LocalPlayer"].Character, "Head", "Find")
-				local L_331_ = L_8_func(L_4_["LocalPlayer"].Character, "Torso", "Find")
-				if L_330_ ~= nil and L_331_ ~= nil then
-					L_330_.CanCollide = false
-					L_331_.CanCollide = false
+			if L_6_["\78\111\67\108\105\112"] then
+				local L_333_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\101\97\100", "\70\105\110\100")
+				local L_334_ = L_9_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\84\111\114\115\111", "\70\105\110\100")
+				if L_333_ ~= nil and L_334_ ~= nil then
+					L_333_.CanCollide = false
+					L_334_.CanCollide = false
 				end
 			end
-			if L_6_["Aimbot"] and L_38_.Text == "" then
-				L_6_["AimbotTarget"] = GetNearestPlayerToMouse()
+			if L_6_["\65\105\109\98\111\116"] and L_39_.Text == "" then
+				L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"] = GetNearestPlayerToMouse()
 			end
-			if L_6_["AimbotTarget"] ~= nil then
-				for L_332_forvar1, L_333_forvar2 in next, L_2_["Players"]:GetPlayers() do
-					local L_334_ = L_8_func(L_333_forvar2.Character, "Torso", "Find")
-					local L_335_ = L_8_func(L_333_forvar2.Character, "Torso", "Find")
-					if L_335_ ~= nil and L_334_ ~= nil then
-						local L_336_ = L_8_func(L_334_, "BoxHandleAdornment", "Find")
-						if L_336_ ~= nil and L_333_forvar2 ~= L_6_["AimbotTarget"] then
-							L_336_:Destroy()
-						elseif L_333_forvar2 == L_6_["AimbotTarget"] and not L_8_func(L_334_, "BoxHandleAdornment", "Find") then
-							local L_337_ = (L_335_.Position - L_334_.Position).magnitude / 25
-							local L_338_ = Instance.new("BoxHandleAdornment", L_334_)
-							L_338_.Adornee = L_334_
-							L_338_.AlwaysOnTop = true
-							L_338_.ZIndex = 5
-							L_338_.Transparency = 0.5
-							L_338_.Size = L_334_.Size * 2 + Vector3.new(L_337_, L_337_, L_337_)
-							L_338_.Color3 = Color3.fromRGB(196, 40, 28)
-							L_2_["Debris"]:AddItem(L_338_, 1)
+			if L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"] ~= nil then
+				for L_335_forvar1, L_336_forvar2 in next, L_2_["\80\108\97\121\101\114\115"]:GetPlayers() do
+					local L_337_ = L_9_func(L_336_forvar2.Character, "\84\111\114\115\111", "\70\105\110\100")
+					local L_338_ = L_9_func(L_336_forvar2.Character, "\84\111\114\115\111", "\70\105\110\100")
+					if L_338_ ~= nil and L_337_ ~= nil then
+						local L_339_ = L_9_func(L_337_, "\66\111\120\72\97\110\100\108\101\65\100\111\114\110\109\101\110\116", "\70\105\110\100")
+						if L_339_ ~= nil and L_336_forvar2 ~= L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"] then
+							L_339_:Destroy()
+						elseif L_336_forvar2 == L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"] and not L_9_func(L_337_, "\66\111\120\72\97\110\100\108\101\65\100\111\114\110\109\101\110\116", "\70\105\110\100") then
+							local L_340_ = (L_338_.Position - L_337_.Position).magnitude / 25
+							local L_341_ = Instance.new("\66\111\120\72\97\110\100\108\101\65\100\111\114\110\109\101\110\116", L_337_)
+							L_341_.Adornee = L_337_
+							L_341_.AlwaysOnTop = true
+							L_341_.ZIndex = 5
+							L_341_.Transparency = 0.5
+							L_341_.Size = L_337_.Size * 2 + Vector3.new(L_340_, L_340_, L_340_)
+							L_341_.Color3 = Color3.fromRGB(196, 40, 28)
+							L_2_["\68\101\98\114\105\115"]:AddItem(L_341_, 1)
 						end
 					end
 				end
@@ -2234,10 +2250,9 @@ if not _G["DrPoppa"] then
 		end
 	end)()
 
-	L_2_["Players"]:Chat("AA4AA")
-	L_81_func()
-	L_77_func("DrPoppa v3 Loaded, took " .. tick() - L_1_, "Really black")
-	L_77_func("Press ' for the command bar & enter 'cmds' for the commands", "Really black")
-	L_77_func("Join the discord if you want to suggest something, discord.gg/7KXNCPr", "Really black")
-	L_77_func("Latest update, Van Enabled/Disabler for The Streets", "Really black")
+	L_2_["\80\108\97\121\101\114\115"]:Chat("\65\65\52\65\65")
+	L_82_func()
+	L_78_func("\68\114\80\111\112\112\97\32\118\51\32\76\111\97\100\101\100\44\32\116\111\111\107\32" .. tick() - L_1_, "\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_78_func("\80\114\101\115\115\32\39\32\102\111\114\32\116\104\101\32\99\111\109\109\97\110\100\32\98\97\114\32\38\32\101\110\116\101\114\32\39\99\109\100\115\39\32\102\111\114\32\116\104\101\32\99\111\109\109\97\110\100\115", "\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_78_func("\74\111\105\110\32\116\104\101\32\100\105\115\99\111\114\100\32\105\102\32\121\111\117\32\119\97\110\116\32\116\111\32\115\117\103\103\101\115\116\32\115\111\109\101\116\104\105\110\103\44\32\100\105\115\99\111\114\100\46\103\103\47\55\75\88\78\67\80\114", "\82\101\97\108\108\121\32\98\108\97\99\107")
 end
