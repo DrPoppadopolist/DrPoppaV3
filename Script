@@ -2428,8 +2428,9 @@ if not _G["\68\114\80\111\112\112\97"] then
 			for L_352_forvar1, L_353_forvar2 in next, L_2_["\80\108\97\121\101\114\115"]:GetPlayers() do
 				local L_354_ = L_10_func(L_353_forvar2.Character, "\72\117\109\97\110\111\105\100", "\70\105\110\100")
 				if L_354_ ~= nil then
-					L_354_.NameDisplayDistance = 9e9
+					L_354_.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.Viewer
 					L_354_.HealthDisplayDistance = 9e9
+					L_354_.NameDisplayDistance = 9e9
 				end
 			end
 			if L_6_["\65\105\114\119\97\108\107"] then
