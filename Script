@@ -2566,20 +2566,29 @@ if not _G["\68\114\80\111\112\112\97"] then
 				for L_381_forvar1, L_382_forvar2 in next, L_2_["\80\108\97\121\101\114\115"]:GetPlayers() do
 					local L_383_ = L_10_func(L_382_forvar2.Character, "\84\111\114\115\111", "\70\105\110\100")
 					local L_384_ = L_10_func(L_382_forvar2.Character, "\84\111\114\115\111", "\70\105\110\100")
+					local L_385_ = L_10_func(L_382_forvar2.Character, "\72\117\109\97\110\111\105\100", "\70\105\110\100")
 					if L_384_ ~= nil and L_383_ ~= nil then
-						local L_385_ = L_10_func(L_383_, "\66\111\120\72\97\110\100\108\101\65\100\111\114\110\109\101\110\116", "\70\105\110\100")
-						if L_385_ ~= nil and L_382_forvar2 ~= L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"] then
-							L_385_:Destroy()
+						local L_386_ = L_10_func(L_383_, "\66\111\120\72\97\110\100\108\101\65\100\111\114\110\109\101\110\116", "\70\105\110\100")
+						if L_386_ ~= nil and L_382_forvar2 ~= L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"] then
+							L_386_:Destroy()
 						elseif L_382_forvar2 == L_6_["\65\105\109\98\111\116\84\97\114\103\101\116"] and not L_10_func(L_383_, "\66\111\120\72\97\110\100\108\101\65\100\111\114\110\109\101\110\116", "\70\105\110\100") then
-							local L_386_ = (L_384_.Position - L_383_.Position).magnitude / 25
-							local L_387_ = Instance.new("\66\111\120\72\97\110\100\108\101\65\100\111\114\110\109\101\110\116", L_383_)
-							L_387_.Adornee = L_383_
-							L_387_.AlwaysOnTop = true
-							L_387_.ZIndex = 5
-							L_387_.Transparency = 0.5
-							L_387_.Size = L_383_.Size * 2 + Vector3.new(L_386_, L_386_, L_386_)
-							L_387_.Color3 = Color3.fromRGB(196, 40, 28)
-							L_2_["\68\101\98\114\105\115"]:AddItem(L_387_, 1)
+							local L_387_ = (L_384_.Position - L_383_.Position).magnitude / 25
+							local L_388_ = Instance.new("\66\111\120\72\97\110\100\108\101\65\100\111\114\110\109\101\110\116", L_383_)
+							L_388_.Adornee = L_383_
+							L_388_.AlwaysOnTop = true
+							L_388_.ZIndex = 5
+							L_388_.Transparency = 0.5
+							L_388_.Size = L_383_.Size * 2 + Vector3.new(L_387_, L_387_, L_387_)
+							if L_385_ ~= nil then
+								if L_385_.Health < 21 then
+									L_388_.Color3 = Color3.fromRGB(255, 0, 0)
+								elseif L_385_.Health > 20 and L_385_.Health < 61 then
+									L_388_.Color3 = Color3.fromRGB(255, 176, 0)
+								elseif L_385_.Health > 60 then
+									L_388_.Color3 = Color3.fromRGB(0, 255, 0)
+								end
+							end
+							L_2_["\68\101\98\114\105\115"]:AddItem(L_388_, 1)
 						end
 					end
 				end
