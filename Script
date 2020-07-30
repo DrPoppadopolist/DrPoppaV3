@@ -2184,12 +2184,14 @@ if not _G["\68\114\80\111\112\112\97"] then
 	for L_281_forvar1, L_282_forvar2 in next, L_2_["\80\108\97\121\101\114\115"]:GetPlayers() do
 		if L_282_forvar2 ~= L_4_["\76\111\99\97\108\80\108\97\121\101\114"] then
 			for L_283_forvar1, L_284_forvar2 in next, L_6_["\75\111\115\71\114\111\117\112\115"] do
-				if L_282_forvar2:IsInGroup(tonumber(L_283_forvar1)) then
-					table.insert(L_6_["\75\111\115\84\97\98\108\101"], {
-						["\110\97\109\101"] = tostring(L_282_forvar2),
-						["\116\97\103"] = L_284_forvar2
-					})
-				end
+				pcall(function()
+					if L_282_forvar2:IsInGroup(tonumber(L_283_forvar1)) then
+						table.insert(L_6_["\75\111\115\84\97\98\108\101"], {
+							["\110\97\109\101"] = tostring(L_282_forvar2),
+							["\116\97\103"] = L_284_forvar2
+						})
+					end
+				end)
 			end
 			if L_97_func(L_282_forvar2) ~= nil and L_282_forvar2.Character ~= nil then
 				local L_285_ = L_9_func(L_282_forvar2.Character, "\72\101\97\100", "\70\105\110\100")
@@ -2223,12 +2225,14 @@ if not _G["\68\114\80\111\112\112\97"] then
 			end
 			if L_292_ ~= nil then
 				for L_293_forvar1, L_294_forvar2 in next, L_6_["\75\111\115\71\114\111\117\112\115"] do
-					if L_289_arg1:IsInGroup(tonumber(L_293_forvar1)) then
-						table.insert(L_6_["\75\111\115\84\97\98\108\101"], {
-							["\110\97\109\101"] = tostring(L_289_arg1),
-							["\116\97\103"] = L_294_forvar2
-						})
-					end
+					pcall(function()
+						if L_289_arg1:IsInGroup(tonumber(L_293_forvar1)) then
+							table.insert(L_6_["\75\111\115\84\97\98\108\101"], {
+								["\110\97\109\101"] = tostring(L_289_arg1),
+								["\116\97\103"] = L_294_forvar2
+							})
+						end
+					end)
 				end
 			end
 		end)
@@ -2250,12 +2254,14 @@ if not _G["\68\114\80\111\112\112\97"] then
 		end
 		if L_290_ ~= nil then
 			for L_297_forvar1, L_298_forvar2 in next, L_6_["\75\111\115\71\114\111\117\112\115"] do
-				if L_289_arg1:IsInGroup(tonumber(L_297_forvar1)) then
-					table.insert(L_6_["\75\111\115\84\97\98\108\101"], {
-						["\110\97\109\101"] = tostring(L_289_arg1),
-						["\116\97\103"] = L_298_forvar2
-					})
-				end
+				pcall(function()
+					if L_289_arg1:IsInGroup(tonumber(L_297_forvar1)) then
+						table.insert(L_6_["\75\111\115\84\97\98\108\101"], {
+							["\110\97\109\101"] = tostring(L_289_arg1),
+							["\116\97\103"] = L_298_forvar2
+						})
+					end
+				end)
 			end
 		end
 	end)
