@@ -1,6 +1,6 @@
     
 local L_1_ = tick()
-
+_G["\68\114\80\111\112\112\97"] = false
 if not _G["\68\114\80\111\112\112\97"] then
 
 	_G["\68\114\80\111\112\112\97"] = true
@@ -631,31 +631,31 @@ if not _G["\68\114\80\111\112\112\97"] then
 	L_57_.Text = ""
 
 	local L_58_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_16_)
-	LoopFlingButton.Size = UDim2.new(0, 80, 0, 20)
-	LoopFlingButton.Position = UDim2.new(0, 20, 0, 80)
-	LoopFlingButton.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
-	LoopFlingButton.BorderSizePixel = 0
-	LoopFlingButton.Text = "\76\111\111\112\32\70\108\105\110\103"
-	LoopFlingButton.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
-	LoopFlingButton.Font = "\71\111\116\104\97\109\66\108\97\99\107"
-	LoopFlingButton.TextSize = 14
+	L_58_.Size = UDim2.new(0, 80, 0, 20)
+	L_58_.Position = UDim2.new(0, 20, 0, 80)
+	L_58_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
+	L_58_.BorderSizePixel = 0
+	L_58_.Text = "\76\111\111\112\32\70\108\105\110\103"
+	L_58_.TextColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_58_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_58_.TextSize = 14
     
-	local L_59_ = Instance.new("\70\114\97\109\101", LoopFlingButton)
+	local L_59_ = Instance.new("\70\114\97\109\101", L_58_)
 	L_59_.Size = UDim2.new(0, 80, 0, 3)
 	L_59_.Position = UDim2.new(0, 0, 0, 18)
 	L_59_.BackgroundColor = BrickColor.new("\82\101\97\108\108\121\32\114\101\100")
 	L_59_.Transparency = 0.1
 	L_59_.BorderSizePixel = 0
 
-	local L_60_ = Instance.new("\84\101\120\116\66\111\120", LoopFlingButton)
-	LoopFlingUsername.Size = UDim2.new(0, 80, 0, 20)
-	LoopFlingUsername.Position = UDim2.new(0, 0, 0, 30)
-	LoopFlingUsername.BackgroundColor = BrickColor.new("\73\110\115\116\105\116\117\116\105\111\110\97\108\32\119\104\105\116\101")
-	LoopFlingUsername.BorderSizePixel = 1
-	LoopFlingUsername.Font = "\71\111\116\104\97\109\66\108\97\99\107"
-	LoopFlingUsername.BorderColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
-	LoopFlingUsername.TextSize = 12
-	LoopFlingUsername.Text = ""
+	local L_60_ = Instance.new("\84\101\120\116\66\111\120", L_58_)
+	L_60_.Size = UDim2.new(0, 80, 0, 20)
+	L_60_.Position = UDim2.new(0, 0, 0, 30)
+	L_60_.BackgroundColor = BrickColor.new("\73\110\115\116\105\116\117\116\105\111\110\97\108\32\119\104\105\116\101")
+	L_60_.BorderSizePixel = 1
+	L_60_.Font = "\71\111\116\104\97\109\66\108\97\99\107"
+	L_60_.BorderColor = BrickColor.new("\82\101\97\108\108\121\32\98\108\97\99\107")
+	L_60_.TextSize = 12
+	L_60_.Text = ""
 
 	local L_61_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_15_)
 	L_61_.Size = UDim2.new(0, 80, 0, 20)
@@ -1355,7 +1355,7 @@ if not _G["\68\114\80\111\112\112\97"] then
 					end
 				end
 			end
-		elseif L_182_[1] == "\108\111\111\102\108\105\110\103" then
+		elseif L_182_[1] == "\108\111\111\112\108\105\110\103" then
 			local L_194_ = L_86_func(L_182_[2])
 			if L_194_ ~= nil then
 				for L_195_forvar1, L_196_forvar2 in next, L_194_ do
@@ -1363,7 +1363,7 @@ if not _G["\68\114\80\111\112\112\97"] then
 						L_6_["\70\108\105\110\103\105\110\103"] = true
 						L_6_["\70\108\105\110\103\84\97\114\103\101\116"] = tostring(L_196_forvar2)
 						L_59_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
-						LoopFlingUsername.Text = tostring(L_196_forvar2)
+						L_60_.Text = tostring(L_196_forvar2)
 					end
 				end
 			end
@@ -1371,7 +1371,7 @@ if not _G["\68\114\80\111\112\112\97"] then
 			L_6_["\70\108\105\110\103\105\110\103"] = false
 			L_6_["\70\108\105\110\103\84\97\114\103\101\116"] = nil
 			L_59_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
-			LoopFlingUsername.Text = ""
+			L_60_.Text = ""
 		elseif L_182_[1] == "\102\101\108\111\111\112" then
 			local L_197_ = L_86_func(L_182_[2])
 			if L_197_ ~= nil then
@@ -1752,7 +1752,7 @@ if not _G["\68\114\80\111\112\112\97"] then
 		end
 	end)
 
-	LoopFlingButton.MouseButton1Down:Connect(function()
+	L_58_.MouseButton1Down:Connect(function()
 		if not L_6_["\70\108\105\110\103\105\110\103"] then
 			L_6_["\70\108\105\110\103\105\110\103"] = true
 			L_59_.BackgroundColor = BrickColor.new("\76\105\109\101\32\103\114\101\101\110")
@@ -1961,9 +1961,9 @@ if not _G["\68\114\80\111\112\112\97"] then
 		end
 	end)
 
-	LoopFlingUsername.FocusLost:Connect(function()
-		if string.len(LoopFlingUsername.Text) > 0 then
-			local L_257_ = L_86_func(LoopFlingUsername.Text)
+	L_60_.FocusLost:Connect(function()
+		if string.len(L_60_.Text) > 0 then
+			local L_257_ = L_86_func(L_60_.Text)
 			if L_257_ ~= nil then
 				for L_258_forvar1, L_259_forvar2 in next, L_257_ do
 					L_6_["\70\101\76\111\111\112\84\97\114\103\101\116"] = tostring(L_259_forvar2)
@@ -2278,8 +2278,8 @@ if not _G["\68\114\80\111\112\112\97"] then
 
 	coroutine.wrap(function()
 		while L_4_["\72\101\97\114\116\98\101\97\116"]:Wait() do
-			if LoopFlingUsername.Text ~= "" and L_6_["\70\108\105\110\103\105\110\103"] then
-				local L_302_ = L_86_func(LoopFlingUsername.Text)
+			if L_60_.Text ~= "" and L_6_["\70\108\105\110\103\105\110\103"] then
+				local L_302_ = L_86_func(L_60_.Text)
 				if L_302_ ~= nil then
 					for L_303_forvar1, L_304_forvar2 in next, L_302_ do
 						if L_304_forvar2 ~= L_4_["\76\111\99\97\108\80\108\97\121\101\114"] then
