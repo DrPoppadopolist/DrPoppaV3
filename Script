@@ -1355,7 +1355,7 @@ if not _G["\68\114\80\111\112\112\97"] then
 					end
 				end
 			end
-		elseif L_182_[1] == "\108\111\111\112\108\105\110\103" then
+		elseif L_182_[1] == "\108\111\111\112\102\108\105\110\103" then
 			local L_194_ = L_86_func(L_182_[2])
 			if L_194_ ~= nil then
 				for L_195_forvar1, L_196_forvar2 in next, L_194_ do
