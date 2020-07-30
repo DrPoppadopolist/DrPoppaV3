@@ -2113,10 +2113,8 @@ if not _G["\68\114\80\111\112\112\97"] then
     
 	for L_273_forvar1, L_274_forvar2 in next, L_2_["\80\108\97\121\101\114\115"]:GetPlayers() do
 		for L_275_forvar1, L_276_forvar2 in next, L_6_["\71\114\111\117\112\115"] do
-			if L_4_["\76\111\99\97\108\80\108\97\121\101\114"]:IsInGroup(L_276_forvar2) then
-				if L_274_forvar2:IsInGroup(L_276_forvar2) or table.find(L_6_["\75\111\115\84\97\98\108\101"], tostring(L_274_forvar2)) then
-					table.insert(L_6_["\75\111\115\84\97\98\108\101"], tostring(L_274_forvar2))
-				end
+			if L_274_forvar2:IsInGroup(L_276_forvar2) or table.find(L_6_["\75\111\115\84\97\98\108\101"], tostring(L_274_forvar2)) then
+				table.insert(L_6_["\75\111\115\84\97\98\108\101"], tostring(L_274_forvar2))
 			end
 		end
 		if L_274_forvar2 ~= L_4_["\76\111\99\97\108\80\108\97\121\101\114"] then
@@ -2146,10 +2144,8 @@ if not _G["\68\114\80\111\112\112\97"] then
 
 	L_2_["\80\108\97\121\101\114\115"].PlayerAdded:Connect(function(L_281_arg1)
 		for L_283_forvar1, L_284_forvar2 in next, L_6_["\71\114\111\117\112\115"] do
-			if L_4_["\76\111\99\97\108\80\108\97\121\101\114"]:IsInGroup(L_284_forvar2) then
-				if L_281_arg1:IsInGroup(tonumber(L_284_forvar2)) or table.find(L_6_["\75\111\115\84\97\98\108\101"], tostring(L_281_arg1)) then
-					table.insert(L_6_["\75\111\115\84\97\98\108\101"], tostring(L_281_arg1))
-				end
+			if L_281_arg1:IsInGroup(tonumber(L_284_forvar2)) or table.find(L_6_["\75\111\115\84\97\98\108\101"], tostring(L_281_arg1)) then
+				table.insert(L_6_["\75\111\115\84\97\98\108\101"], tostring(L_281_arg1))
 			end
 		end
 		local L_282_ = L_9_func(L_281_arg1.Character, "\72\101\97\100", "\70\105\110\100")
