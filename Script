@@ -2962,8 +2962,10 @@ if not _G["\68\114\80\111\112\112\97"] then
 			coroutine.wrap(function()
 				if L_6_["\76\111\111\112\75\105\108\108\105\110\103"] and L_6_["\76\111\111\112\75\105\108\108\84\97\114\103\101\116"] ~= nil then
 					local L_398_ = L_108_func(L_6_["\76\111\111\112\75\105\108\108\84\97\114\103\101\116"])
-					for L_399_forvar1, L_400_forvar2 in next, L_398_ do
-						L_112_func(L_400_forvar2)
+					if L_398_ ~= nil then
+						for L_399_forvar1, L_400_forvar2 in next, L_398_ do
+							L_112_func(L_400_forvar2)
+						end
 					end
 				end
 			end)()
