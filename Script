@@ -3376,6 +3376,7 @@ if not _G["\68\114\80\111\112\112\97"] then
 					local L_466_ = L_11_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\72\101\97\100", "\70\105\110\100")
 					local L_467_ = L_11_func(L_4_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\84\111\114\115\111", "\70\105\110\100")
 					if L_465_ ~= nil and L_467_ ~= nil and L_466_ ~= nil then
+						L_465_:ChangeState(8)
 						local L_468_ = L_11_func(L_467_, "\68\114\80\111\112\112\97\66\111\100\121\71\121\114\111", "\70\105\110\100")
 						local L_469_ = L_11_func(L_467_, "\68\114\80\111\112\112\97\66\111\100\121\86\101\108\111\99\105\116\121", "\70\105\110\100")
 						if L_468_ == nil then
@@ -3416,13 +3417,12 @@ if not _G["\68\114\80\111\112\112\97"] then
 						L_469_.Velocity = L_470_
 						L_468_.CFrame = L_4_["\67\97\109\101\114\97"].CoordinateFrame
 						local L_471_ = L_465_.StateChanged:Connect(function(L_472_arg1, L_473_arg2)
-							if L_473_arg2 == Enum.HumanoidStateType.FallingDown or L_473_arg2 == Enum.HumanoidStateType.PlatformStanding then
+							if L_473_arg2 == Enum.HumanoidStateType.PlatformStanding then
 								L_465_.PlatformStand = false
-								L_465_:ChangeState(8)
 							end
 						end)
 						coroutine.wrap(function()
-							L_4_["\82\101\110\100\101\114\83\116\101\112\112\101\100"]:Wait()
+							L_4_["\83\116\101\112\112\101\100"]:Wait()
 							L_471_:Disconnect()
 						end)()
 					end
