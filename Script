@@ -725,7 +725,7 @@
         
         local L_61_ = Instance.new("\84\101\120\116\66\117\116\116\111\110", L_17_)
         L_61_.Size = UDim2.new(0, 80, 0, 20)
-        L_61_.Position = UDim2.new(0, 155, 0, 120)
+        L_61_.Position = UDim2.new(0, 20, 0, 155)
         L_61_.BackgroundColor = BrickColor.new("\76\105\103\104\116\32\114\101\100")
         L_61_.BorderSizePixel = 0
         L_61_.Text = "\83\117\112\101\114\32\80\117\110\99\104"
