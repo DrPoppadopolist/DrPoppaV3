@@ -1984,6 +1984,10 @@
                 L_3_["\84\101\108\101\112\111\114\116\83\101\114\118\105\99\101"]:TeleportToPlaceInstance(game.PlaceId, L_254_[2])
             elseif L_254_[1] == "\102\111\118" then
                 L_5_["\67\97\109\101\114\97"].FieldOfView = L_254_[2]
+            elseif L_254_[1] == "\116\97\108\107" then
+                print(string.sub(L_253_arg1, string.len(L_254_[1]) + 1, string.len(L_253_arg1)))
+                L_5_["\67\104\97\116\82\101\109\111\116\101"]:FireServer(string.sub(L_253_arg1, string.len(L_254_[1]) + 2, string.len(L_253_arg1)), "\65\108\108")
+                L_3_["\80\108\97\121\101\114\115"]:Chat(string.sub(L_253_arg1, string.len(L_254_[1]) + 2, string.len(L_253_arg1)))
             elseif L_254_[1] == "\116\105\109\101" and L_254_[2] ~= nil then
                 L_7_["\84\105\109\101"] = string.lower(tostring(L_254_[2]))
                 if L_7_["\84\105\109\101"] ~= "\110\111\114\109\97\108" then
