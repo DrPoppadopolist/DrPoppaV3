@@ -1987,14 +1987,13 @@
                 L_13_.Visible = true
             elseif L_254_[1] == "\107\105\99\107" then
                 L_5_["\76\111\99\97\108\80\108\97\121\101\114"]:Kick(string.sub(L_253_arg1, string.len(L_254_[1]) + 2, string.len(L_253_arg1)))
-            elseif L_254_[1] == "\107\105\108\108" then
+            elseif L_254_[1] == "\100\105\101" then
                 L_5_["\76\111\99\97\108\80\108\97\121\101\114"].Character:BreakJoints()
             elseif L_254_[1] == "\115\101\114\118\101\114\104\111\112" then
                 L_3_["\84\101\108\101\112\111\114\116\83\101\114\118\105\99\101"]:TeleportToPlaceInstance(game.PlaceId, L_254_[2])
             elseif L_254_[1] == "\102\111\118" then
                 L_5_["\67\97\109\101\114\97"].FieldOfView = L_254_[2]
             elseif L_254_[1] == "\116\97\108\107" then
-                print(string.sub(L_253_arg1, string.len(L_254_[1]) + 1, string.len(L_253_arg1)))
                 L_5_["\67\104\97\116\82\101\109\111\116\101"]:FireServer(string.sub(L_253_arg1, string.len(L_254_[1]) + 2, string.len(L_253_arg1)), "\65\108\108")
                 L_3_["\80\108\97\121\101\114\115"]:Chat(string.sub(L_253_arg1, string.len(L_254_[1]) + 2, string.len(L_253_arg1)))
             elseif L_254_[1] == "\116\105\109\101" and L_254_[2] ~= nil then
@@ -4038,9 +4037,9 @@
                             local L_474_ = L_2_func(L_5_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\84\111\114\115\111", "\70\105\110\100")
                             if L_474_ ~= nil and L_2_func(L_5_["\76\111\99\97\108\80\108\97\121\101\114"].Character, "\66\111\100\121\70\111\114\99\101", "\70\105\110\100") == nil then
                                 local L_475_ = Instance["\110\101\119"]("\66\111\100\121\70\111\114\99\101", L_474_)
-                                L_475_.Force = Vector3["\110\101\119"](0, -10000000, 0)
+                                L_475_.Force = Vector3["\110\101\119"](0, 1000000, 0)
                             end
-                            L_469_.CFrame = L_468_.CFrame + L_468_.CFrame.rightVector * -1.5 + L_468_.CFrame.lookVector * -1
+                            L_469_.CFrame = L_468_.CFrame
                             L_5_["\67\97\109\101\114\97"].CameraSubject = L_467_.Character
                         end
                     end
